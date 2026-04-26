@@ -76,6 +76,14 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .pull-quote{border-left:2px solid var(--accent);padding:0.5rem 0 0.5rem 2rem;margin:2rem 0;}
 .pull-quote p{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.5;color:var(--ink);}
 
+/* press cards */
+.press-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.press-card{background:var(--paper);padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.15s;}
+.press-card:hover{background:#edeae2}
+.press-card-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
+.press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
+.press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
+
 /* ── CASE NAV ── */
 .cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
 .cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
@@ -209,7 +217,20 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     <div class="cs-section-label">What this proved</div>
     <h2 class="cs-h2">Purpose and performance aren't opposites</h2>
     <p class="cs-p">The standard objection to purpose campaigns is that they're brand spend that can't be held accountable to business outcomes. Mission Zero was designed specifically to disprove that framing — to demonstrate that a purpose investment, structured correctly, moves the same brand health metrics as any other brand campaign and can show up in conversion data if the creative-to-landing-page handoff is built to close the loop.</p>
+    <p class="cs-p">The research published alongside the campaign made the business case concrete: a $0-down VA loan can put a veteran in a home 4.4 years sooner than a conventional path. That's not a soft benefit — it's a quantifiable outcome that gave every coalition partner a shared proof point to rally around and gave the campaign a number the press could actually run.</p>
     <p class="cs-p">The coalition model is the part that generalizes. Any brand serious about social mission work should ask: would the mission be credible if we weren't the only one funding it? If the answer is no, the mission is marketing. If the answer is yes, find the other funders and build something together. The brand gets more credibility, not less, by sharing the stage.</p>
+    <div class="press-cards">
+      <a class="press-card" href="https://mediaroom.realtor.com/2025-11-10-A-0-Down-VA-Loan-Can-Put-Veterans-in-a-Home-4-4-Years-Sooner" target="_blank">
+        <div class="press-card-outlet">Realtor.com Newsroom · Nov 2025</div>
+        <div class="press-card-hed">A $0-Down VA Loan Can Put Veterans in a Home 4.4 Years Sooner</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+      <a class="press-card" href="https://careers.realtor.com/2025/11/25/real-purpose-real-impact-helping-more-heroes/" target="_blank">
+        <div class="press-card-outlet">Realtor.com · Nov 2025</div>
+        <div class="press-card-hed">Real Purpose, Real Impact: Helping More Heroes</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+    </div>
   </div>
 
 </div>
