@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neil Golson — Brand & Growth Executive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#c2410c;
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── HERO ── */
+.hero-wrap{max-width:1100px;margin:0 auto;border-bottom:0.5px solid var(--border);}
+.hero{display:grid;grid-template-columns:1fr 280px;gap:0;}
+.hero-content{padding:5rem 4rem;border-right:0.5px solid var(--border);}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;}
+.headline{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:640px;margin-bottom:2rem;}
+.headline em{font-style:italic;color:var(--accent);}
+.hero-p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:1rem;max-width:540px;}
+.hero-p.secondary{font-size:14px;color:var(--mid);line-height:1.8;}
+.career-strip{display:flex;flex-wrap:wrap;margin-top:2.5rem;border-top:0.5px solid var(--border);padding-top:1.25rem;}
+.career-dot{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);padding-right:1rem;margin-right:1rem;border-right:0.5px solid var(--border);line-height:1.6;}
+.career-dot:last-child{border-right:none}
+
+/* photo panel */
+.hero-photo-panel{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:3rem 2rem 2rem;background:var(--warm-white);}
+.headshot{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--paper);box-shadow:0 0 0 0.5px var(--border-strong);margin-bottom:1.25rem;}
+.hero-bio-name{font-family:var(--serif);font-size:15px;font-weight:700;text-align:center;margin-bottom:0.2rem;}
+.hero-bio-title{font-size:12px;color:var(--mid);line-height:1.5;margin-bottom:1.25rem;text-align:center;}
+.hero-triptych{width:100%;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.ht-item{padding:0.75rem 1rem;border-bottom:0.5px solid var(--border);}
+.ht-item:last-child{border-bottom:none}
+.ht-label{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:0.2rem;}
+.ht-val{font-size:12px;font-weight:500;line-height:1.4;color:var(--ink);}
+.hero-links{display:flex;gap:0.75rem;margin-top:1.25rem;flex-wrap:wrap;justify-content:center;}
+.hero-pill{font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:2px;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--mid);transition:all 0.15s;}
+.hero-pill:hover{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
+.hero-pill.primary{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
+.hero-pill.primary:hover{background:var(--accent);border-color:var(--accent);}
+
+/* ── SHARED SECTION ── */
+.section{padding:5rem 4rem;border-bottom:0.5px solid var(--border);max-width:1100px;margin:0 auto;}
+.section-header{display:flex;align-items:baseline;gap:1.25rem;margin-bottom:1rem;}
+.section-num{font-family:var(--serif);font-size:12px;color:var(--accent);letter-spacing:0.06em;font-weight:400;}
+.section-title{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:-0.015em;}
+.section-intro{font-size:14px;color:var(--mid);max-width:560px;line-height:1.8;margin-bottom:3rem;}
+.sub-header{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border);}
+.accent-rule{width:40px;height:2px;background:var(--accent);margin-bottom:1.75rem;}
+
+/* ── CASE STUDIES ── */
+.cases{display:grid;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.case{background:var(--paper);padding:2.5rem;transition:background 0.2s;}
+.case:hover{background:#edeae2}
+.case-co{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+.case-header{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem;}
+.case-title{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:-0.015em;line-height:1.25;}
+.case-tag{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);border:0.5px solid var(--border-strong);padding:4px 12px;border-radius:2px;white-space:nowrap;margin-top:4px;flex-shrink:0;}
+.case-desc{font-size:14px;color:var(--mid);line-height:1.8;max-width:640px;margin-bottom:1.5rem;}
+.case-metrics{display:flex;gap:2.5rem;flex-wrap:wrap;}
+.metric{display:flex;flex-direction:column;gap:3px;}
+.metric-val{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1;}
+.metric-label{font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mid);}
+.case-video{margin-top:1.75rem;border-radius:3px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0;background:#1a1814;}
+.case-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.case-photo{width:100%;display:block;margin-top:1.75rem;border-radius:3px;object-fit:cover;max-height:300px;border:0.5px solid var(--border);}
+.case-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;margin-top:1.75rem;width:fit-content;transition:opacity 0.15s;}
+.case-link:hover{opacity:0.65}
+
+/* ── BUILT THINGS ── */
+.built-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.built-item{background:var(--paper);display:flex;flex-direction:column;}
+.built-item-top{padding:2rem 2rem 0;}
+.built-eyebrow{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:0.5rem;}
+.built-title{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:-0.015em;margin-bottom:0.75rem;}
+.built-desc{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:1.25rem;}
+.built-stats{display:flex;gap:1.5rem;flex-wrap:wrap;border-top:0.5px solid var(--border);padding:1rem 0;margin-bottom:1rem;}
+.built-stat-val{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1;}
+.built-stat-label{font-size:10px;letter-spacing:0.07em;text-transform:uppercase;color:var(--mid);}
+.built-tech{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.tech-chip{font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);border:0.5px solid var(--border-strong);padding:3px 10px;border-radius:2px;}
+.built-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;width:fit-content;transition:opacity 0.15s;margin-bottom:2rem;}
+.built-link:hover{opacity:0.65}
+.app-screenshot{width:100%;display:block;border-top:0.5px solid var(--border);margin-top:auto;}
+.app-screenshot img{width:100%;display:block;filter:brightness(0.97);}
+
+/* ── SPEAKING ── */
+.speaking-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:3rem;}
+.talk{background:var(--paper);padding:2rem;}
+.talk-event{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+.talk-title{font-family:var(--serif);font-size:16px;font-weight:500;line-height:1.4;margin-bottom:0.25rem;}
+.talk-context{font-size:12px;color:var(--mid);line-height:1.5;margin-bottom:1rem;}
+.talk-video{margin-top:1rem;border-radius:3px;overflow:hidden;position:relative;padding-bottom:56.25%;height:0;background:#1a1814;}
+.talk-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+
+/* linkedin highlight card */
+.li-highlight{
+  background:var(--warm-white);
+  border:0.5px solid var(--border);
+  border-radius:3px;
+  padding:1.5rem 2rem;
+  margin-top:1px;
+  display:flex;
+  gap:2rem;
+  align-items:center;
+}
+.li-highlight-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:0.4rem;}
+.li-highlight-title{font-family:var(--serif);font-size:16px;font-weight:500;line-height:1.4;margin-bottom:0.4rem;}
+.li-highlight-sub{font-size:13px;color:var(--mid);line-height:1.6;}
+.li-link{display:inline-flex;align-items:center;gap:0.3rem;font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);margin-top:0.75rem;}
+.li-link:hover{opacity:0.65}
+.li-badge{background:var(--ink);color:var(--warm-white);font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
+
+/* ── PRESS ── */
+.press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.press-item{background:var(--paper);padding:1.5rem;text-decoration:none;display:block;transition:background 0.15s;}
+.press-item:hover{background:#edeae2}
+.press-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem;}
+.press-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);}
+
+/* ── CONTACT ── */
+.contact{padding:5rem 4rem 6rem;max-width:1100px;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.contact-quote{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.5;letter-spacing:-0.01em;}
+.contact-sub{font-size:14px;color:var(--mid);line-height:1.8;margin-top:1.25rem;}
+.contact-fields{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem;}
+.contact-row{display:flex;flex-direction:column;gap:3px;}
+.contact-lbl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);}
+.contact-val{font-size:15px;font-weight:500;color:var(--ink);}
+.contact-val a{color:inherit;text-decoration:none;border-bottom:0.5px solid var(--border-strong);}
+.contact-val a:hover{border-bottom-color:var(--accent);color:var(--accent);}
+.cta{display:inline-block;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-white);background:var(--ink);padding:0.8rem 1.75rem;border-radius:2px;text-decoration:none;transition:background 0.15s;}
+.cta:hover{background:var(--accent)}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+.footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
+.footer-copy{font-size:12px;color:var(--light);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav{padding:1.25rem 1.5rem}
+  .hero{grid-template-columns:1fr}
+  .hero-content{padding:3rem 1.5rem;border-right:none;border-bottom:0.5px solid var(--border);}
+  .hero-photo-panel{padding:2rem 1.5rem;}
+  .section,.contact{padding-left:1.5rem;padding-right:1.5rem}
+  .contact-grid,.built-grid,.speaking-grid{grid-template-columns:1fr}
+  footer{padding-left:1.5rem;padding-right:1.5rem}
+  .case-header{flex-direction:column;gap:0.5rem}
+  .li-highlight{flex-direction:column;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="logo">Neil Golson</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#built">Built</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Brand · Growth · Conversion</div>
+      <h1 class="headline">I've spent 25 years studying<br>the moment someone decides <em>to act.</em></h1>
+      <p class="hero-p">A $0.99 Coke from a Home Depot cooler. A $100,000-plus Tesla with solar. A multi-million-dollar parking infrastructure contract. The psychology of trust looks different at every scale. Building for all of it is the through-line of my career.</p>
+      <p class="hero-p secondary">I've led brand, go-to-market, and growth across consumer goods, retail, energy, mobility, and real estate — high-consideration categories where brand credibility directly affects revenue. I do my best work where the stakes are real and brand is expected to earn its place in the P&L.</p>
+      <div class="career-strip">
+        <span class="career-dot">Realtor.com</span>
+        <span class="career-dot">Tesla · SolarCity</span>
+        <span class="career-dot">Coca-Cola</span>
+        <span class="career-dot">FlashParking</span>
+        <span class="career-dot">Home Depot</span>
+      </div>
+    </div>
+    <div class="hero-photo-panel">
+      <img class="headshot"
+        src="https://media.licdn.com/dms/image/v2/D5603AQFeyDcPHybY7g/profile-displayphoto-crop_800_800/B56ZojGDDtI4AI-/0/1761525380374?e=1778716800&v=beta&t=Mmhwo-2p1RnBz_kpu8S8Cf8JzLVuKVgz4LsQERR56a4"
+        alt="Neil Golson">
+      <div class="hero-bio-name">Neil Golson</div>
+      <div class="hero-bio-title">VP, Brand & Creative · Realtor.com<br>Austin, TX</div>
+      <div class="hero-triptych">
+        <div class="ht-item">
+          <div class="ht-label">Targeting</div>
+          <div class="ht-val">CMO · SVP Brand/Marketing</div>
+        </div>
+        <div class="ht-item">
+          <div class="ht-label">Markets</div>
+          <div class="ht-val">Charlotte · Atlanta · Austin</div>
+        </div>
+        <div class="ht-item">
+          <div class="ht-label">Experience</div>
+          <div class="ht-val">25 years · Fortune 500 to startup</div>
+        </div>
+      </div>
+      <div class="hero-links">
+        <a href="/GolsonNeil.Resume.Summer26.VTshare.pdf" target="_blank" class="hero-pill primary">Download resume</a>
+        <a href="https://linkedin.com/in/neil-golson-3123842" target="_blank" class="hero-pill">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 01 BRAND WORK -->
+<section id="work" class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Selected work</h2>
+  </div>
+  <p class="section-intro">Four case studies across consumer goods, retail, mobility, and real estate — each a different version of the same problem: how do you get someone to trust you enough to act?</p>
+
+  <div class="cases">
+
+    <div class="case">
+      <div class="case-co">Realtor.com</div>
+      <div class="case-header">
+        <h3 class="case-title">Rebuilding a challenger brand against a 10× outspend</h3>
+        <span class="case-tag">Brand Relaunch</span>
+      </div>
+      <p class="case-desc">Repositioned a 30-year-old brand around trust and expertise while under attack from Homes.com (10× outspend) and Zillow (4×). Built the business case for celebrity, identified and negotiated Reba McEntire, and built the campaign from brief to air with GSD&M. Rebuilt an internal agency of 30+ with hires from YETI, USAA, Adobe, Expedia, and Indeed. Managed a $50M brand budget alongside a $100M performance engine — stronger brand and creative made the performance engine work harder.</p>
+      <div class="case-metrics">
+        <div class="metric"><span class="metric-val">+20%</span><span class="metric-label">CPIV improvement</span></div>
+        <div class="metric"><span class="metric-val">5 qtrs</span><span class="metric-label">Consecutive YoY revenue growth</span></div>
+        <div class="metric"><span class="metric-val">7+ mo</span><span class="metric-label">Brand health improvement streak</span></div>
+        <div class="metric"><span class="metric-val">Effie</span><span class="metric-label">Finalist</span></div>
+      </div>
+      <div class="case-video">
+        <iframe
+          src="https://www.youtube.com/embed/2QLaJFOebvY"
+          title="Realtor.com — Reba McEntire campaign"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <a href="/work/realtor/" class="case-link">Full case study ↗</a>
+    </div>
+
+    <div class="case">
+      <div class="case-co">Realtor.com + 8 Partners</div>
+      <div class="case-header">
+        <h3 class="case-title">Mission Zero: purpose built to drive business outcomes</h3>
+        <span class="case-tag">Coalition Campaign</span>
+      </div>
+      <p class="case-desc">Built a first-of-its-kind 9-partner industry coalition to address veteran homelessness — uniting housing brands (Veterans United, Home Depot, NAR, RE/MAX), veteran advocacy orgs (Homes for Our Troops, VFW), and media partners (WSJ, NY Post) around a shared mission. Every purpose dollar tracked against brand health and conversion outcomes.</p>
+      <div class="case-metrics">
+        <div class="metric"><span class="metric-val">9 Partners</span><span class="metric-label">Housing · media · veteran orgs</span></div>
+        <div class="metric"><span class="metric-val">Dual KPI</span><span class="metric-label">Brand health + conversion</span></div>
+      </div>
+      <div class="case-video">
+        <iframe
+          src="https://www.youtube.com/embed/R6OW89Dr5Ew"
+          title="Mission Zero — veteran homelessness coalition campaign"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <a href="/work/mission-zero/" class="case-link">Full case study ↗</a>
+    </div>
+
+    <div class="case">
+      <div class="case-co">FLASH · FlashParking</div>
+      <div class="case-header">
+        <h3 class="case-title">Creating a category: &lt;1% to 33% market share</h3>
+        <span class="case-tag">B2G · Category Creation</span>
+      </div>
+      <p class="case-desc">Joined as CMO when the category didn't exist. Built go-to-market from scratch across a complex B2G/B2B2C motion — cities, operators, enterprises. Named the category, wrote the narrative, built the brand. Proved that government buyers respond to brand credibility as much as procurement specs. Scaled to a $1B+ unicorn valuation.</p>
+      <div class="case-metrics">
+        <div class="metric"><span class="metric-val">&lt;1% → 33%</span><span class="metric-label">Market share</span></div>
+        <div class="metric"><span class="metric-val">$1B+</span><span class="metric-label">Unicorn valuation</span></div>
+      </div>
+      <a href="/work/flash/" class="case-link">Full case study ↗</a>
+    </div>
+
+    <div class="case">
+      <div class="case-co">Tesla · SolarCity</div>
+      <div class="case-header">
+        <h3 class="case-title">High-consideration retail, built from scratch — solar kiosks in Home Depot, EVs in the mall</h3>
+        <span class="case-tag">High-Consideration Retail</span>
+      </div>
+      <p class="case-desc">Redesigned Tesla's in-store retail experience to integrate home energy into the vehicle purchase journey — digital merchandising, test drives, come-to-you drives, and online booking into a single connected experience. At SolarCity, scaled market share from 26% to 37% by building a 1,500-person field marketing org while lowering CAC. National retail partnerships: Home Depot, Best Buy, BMW, AT&T, DIRECTV.</p>
+      <div class="case-metrics">
+        <div class="metric"><span class="metric-val">30%+</span><span class="metric-label">Energy attachment on Model 3</span></div>
+        <div class="metric"><span class="metric-val">26% → 37%</span><span class="metric-label">National market share</span></div>
+        <div class="metric"><span class="metric-val">3×</span><span class="metric-label">Install volume growth</span></div>
+      </div>
+      <img class="case-photo" src="/assets/oLr69X8ISfSUVlfuwnr_eQ.jpeg" alt="Tesla Solar + Powerwall retail display unit">
+      <a href="/work/tesla/" class="case-link">Full case study ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 02 BUILT THINGS -->
+<section id="built" class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Things I've built</h2>
+  </div>
+  <p class="section-intro">Austin is the live music capital of the world. When I'm not working I'm finding live music — and I've been building AI tools about it. These aren't side projects; they're how I stay close to the thing I care about most: why people choose what they choose, and what it takes to earn that.</p>
+
+  <div class="built-grid">
+
+    <div class="built-item">
+      <div class="built-item-top">
+        <div class="built-eyebrow">Live at panic.neilgolson.com</div>
+        <h3 class="built-title">Panic Predictor</h3>
+        <p class="built-desc">Widespread Panic has played more than 1,500 shows. Every night the setlist is different — shaped by rotation patterns, venue history, run length, and how recently each song last appeared. I built a prediction engine that ingests all of it.<br><br>The algorithm weights recency, historical play frequency, and set position to surface the top 10 most likely songs for any upcoming show. Currently loaded with 111 shows of data and predicting Jazz Fest. The name is a pun. I'm not sorry.<br><br>Next step: a live music and jamband prediction market — where fans stake real conviction on what they think will get played.</p>
+        <div class="built-stats">
+          <div class="metric"><span class="built-stat-val">111</span><span class="built-stat-label">Shows loaded</span></div>
+          <div class="metric"><span class="built-stat-val">1,500+</span><span class="built-stat-label">WSP shows in database</span></div>
+          <div class="metric"><span class="built-stat-val">Top 10</span><span class="built-stat-label">Predictions per show</span></div>
+        </div>
+        <div class="built-tech">
+          <span class="tech-chip">Claude Code</span>
+          <span class="tech-chip">Prediction algorithm</span>
+          <span class="tech-chip">Historical data</span>
+        </div>
+        <a href="https://panic.neilgolson.com" target="_blank" class="built-link">Open app ↗</a>
+      </div>
+      <div class="app-screenshot">
+        <img src="/assets/PanicPredictor.PNG" alt="Panic Predictor app">
+      </div>
+    </div>
+
+    <div class="built-item">
+      <div class="built-item-top">
+        <div class="built-eyebrow">Live at heardit.neilgolson.com</div>
+        <h3 class="built-title">HeardIt</h3>
+        <p class="built-desc">I've been to 255 concerts — Widespread Panic 150 times, My Morning Jacket 11, Phish 10, across 73 venues and 63 artists. For a long time that history lived only in memory and a few spreadsheets.<br><br>HeardIt is a concert history and setlist social network for people who take live music seriously. You log shows, track setlists, surface what happened on this day across your entire concert history, and share it with the people who were there. The social layer rewards being in the room — something streaming will never replicate.</p>
+        <div class="built-stats">
+          <div class="metric"><span class="built-stat-val">255</span><span class="built-stat-label">Shows logged</span></div>
+          <div class="metric"><span class="built-stat-val">63</span><span class="built-stat-label">Artists</span></div>
+          <div class="metric"><span class="built-stat-val">73</span><span class="built-stat-label">Venues</span></div>
+        </div>
+        <div class="built-tech">
+          <span class="tech-chip">Claude Code</span>
+          <span class="tech-chip">Social UX</span>
+          <span class="tech-chip">Live music data</span>
+        </div>
+        <a href="https://heardit.neilgolson.com/dashboard" target="_blank" class="built-link">Open app ↗</a>
+      </div>
+      <div class="app-screenshot">
+        <img src="/assets/HeardIt.Dashboard.Stats.PNG" alt="HeardIt dashboard">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 03 SPEAKING + PRESS -->
+<section id="speaking" class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Speaking &amp; press</h2>
+  </div>
+
+  <div class="sub-header">Recent speaking</div>
+  <div class="speaking-grid">
+
+    <div class="talk">
+      <div class="talk-event">SXSW 2026 · Realtor.com × GSD&amp;M</div>
+      <div class="talk-title">"Nearly Home" — How Storytelling Met Strategy to Drive Success</div>
+      <div class="talk-context">Invitation-only gathering for senior marketing and advertising leaders. How purpose-aligned storytelling drives real impact, not just attention — using the Nearly Home campaign as the case study.</div>
+      <div class="talk-video">
+        <iframe
+          src="https://www.youtube.com/embed/HmSvdU2-qlc?start=2"
+          title="Nearly Home — SXSW 2026"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="talk">
+      <div class="talk-event">SXSW 2026 · BrandComms.ai</div>
+      <div class="talk-title">Helping teams with AI in brand — a 90-second take</div>
+      <div class="talk-context">Featured highlight from the BrandComms.ai SXSW panel. A direct answer on how brand teams can use AI without losing the thing that makes brand work: a genuine point of view.</div>
+      <div style="margin-top:1rem;">
+        <a href="https://www.linkedin.com/posts/brandcomms-ai_sxsw-2026-highlight-helping-teams-with-activity-7439496589796270080-9t6i/" target="_blank" class="li-link" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);display:inline-flex;align-items:center;gap:0.3rem;">Watch on LinkedIn ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LinkedIn highlight strip -->
+  <div class="li-highlight" style="margin-bottom:3rem;">
+    <div style="flex:1;">
+      <div class="li-highlight-label">Featured · BrandComms.ai</div>
+      <div class="li-highlight-title">SXSW 2026 highlight — helping teams with AI in brand</div>
+      <div class="li-highlight-sub">A 1:30 answer that cut through the noise at a packed SXSW panel on AI and brand strategy. Featured by BrandComms.ai as a session highlight.</div>
+      <a class="li-link" href="https://www.linkedin.com/posts/brandcomms-ai_sxsw-2026-highlight-helping-teams-with-activity-7439496589796270080-9t6i/" target="_blank">View on LinkedIn ↗</a>
+    </div>
+    <div class="li-badge">90-sec highlight</div>
+  </div>
+
+  <div class="sub-header">Press &amp; recognition</div>
+  <div class="press-grid">
+    <a class="press-item" href="https://www.prnewswire.com/news-releases/welcome-to-our-open-house-realtorcom-announces-sxsw-2026-line-up-302693759.html" target="_blank">
+      <div class="press-outlet">PR Newswire · Feb 2026</div>
+      <div class="press-hed">Realtor.com announces SXSW 2026 Open House lineup</div>
+    </a>
+    <a class="press-item" href="https://www.adexchanger.com/ai/how-realtor-com-is-using-ai-creative-to-expand-its-ad-footprint/" target="_blank">
+      <div class="press-outlet">AdExchanger · Mar 2026</div>
+      <div class="press-hed">How Realtor.com Is Using AI Creative To Expand Its Ad Footprint</div>
+    </a>
+    <a class="press-item" href="https://www.parking-mobility.org/blog/from-tesla-to-parking/" target="_blank">
+      <div class="press-outlet">Parking &amp; Mobility · IPMI</div>
+      <div class="press-hed">From Tesla to Parking: An Executive's Bold Move</div>
+    </a>
+    <a class="press-item" href="#" target="_blank">
+      <div class="press-outlet">Effie Awards · 2025</div>
+      <div class="press-hed">Finalist — Realtor.com brand relaunch campaign</div>
+    </a>
+  </div>
+</section>
+
+<!-- 04 CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Let's talk</h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <div class="accent-rule"></div>
+      <p class="contact-quote">"If you're building something that requires brand to earn its place in the P&amp;L, I want to be in that room."</p>
+      <p class="contact-sub">Currently VP, Brand &amp; Creative at Realtor.com. Exploring CMO and SVP Brand/Marketing opportunities in Charlotte, Atlanta, and Austin — with a preference for Fortune 500 companies where brand drives measurable business outcomes, not just awareness.</p>
+    </div>
+    <div>
+      <div class="contact-fields">
+        <div class="contact-row">
+          <span class="contact-lbl">Email</span>
+          <span class="contact-val"><a href="mailto:neil.golson@gmail.com">neil.golson@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">LinkedIn</span>
+          <span class="contact-val"><a href="https://linkedin.com/in/neil-golson-3123842" target="_blank">linkedin.com/in/neil-golson</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">Location</span>
+          <span class="contact-val">Austin, TX · Open to Charlotte &amp; Atlanta</span>
+        </div>
+      </div>
+      <a href="/GolsonNeil.Resume.Summer26.VTshare.pdf" target="_blank" class="cta">Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Neil Golson</span>
+  <span class="footer-copy">© 2026 · neilgolson.com</span>
+</footer>
+
+</body>
+</html>

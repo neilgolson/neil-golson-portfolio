@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tesla · SolarCity — Neil Golson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#c2410c;
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
+.nav-left{display:flex;align-items:center;gap:2rem;}
+.back-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.15s;}
+.back-link:hover{color:var(--ink)}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── CASE STUDY HERO ── */
+.cs-hero{max-width:1100px;margin:0 auto;padding:5rem 4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
+.cs-eyebrow-tag{color:var(--light);font-weight:400;}
+.cs-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:760px;margin-bottom:1.75rem;}
+.cs-context{font-size:17px;line-height:1.85;color:var(--mid);max-width:660px;margin-bottom:3rem;}
+.metrics-bar{display:flex;gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.mb-item{flex:1;padding:1.25rem 1.5rem;border-right:0.5px solid var(--border);}
+.mb-item:last-child{border-right:none}
+.mb-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;margin-bottom:0.35rem;}
+.mb-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* ── CASE STUDY BODY ── */
+.cs-body{max-width:1100px;margin:0 auto;}
+.cs-section{padding:4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.cs-h2{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:1.25rem;max-width:680px;}
+.cs-p{font-size:15px;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:1.25rem;}
+.cs-p:last-child{margin-bottom:0}
+
+/* two-col layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.two-col-wide{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
+
+/* photo */
+.cs-photo{width:100%;display:block;border-radius:3px;object-fit:cover;border:0.5px solid var(--border);margin:2rem 0;}
+.photo-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);margin-top:-1rem;margin-bottom:2rem;}
+
+/* stat row */
+.stat-row{display:flex;gap:3rem;flex-wrap:wrap;margin:2rem 0;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* pull quote */
+.pull-quote{border-left:2px solid var(--accent);padding:0.5rem 0 0.5rem 2rem;margin:2rem 0;}
+.pull-quote p{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.5;color:var(--ink);}
+
+/* press cards */
+.press-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.press-card{background:var(--paper);padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.15s;}
+.press-card:hover{background:#edeae2}
+.press-card-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
+.press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
+.press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
+
+/* bridge callout */
+.bridge{background:var(--warm-white);border:0.5px solid var(--border);border-radius:3px;padding:2.5rem;margin-top:3rem;}
+.bridge-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--light);margin-bottom:0.75rem;}
+.bridge-title{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.3;margin-bottom:0.75rem;}
+.bridge-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1.25rem;max-width:580px;}
+.bridge-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;transition:opacity 0.15s;}
+.bridge-link:hover{opacity:0.65}
+
+/* ── CASE NAV ── */
+.cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
+.cs-nav-link:hover{color:var(--ink)}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+.footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
+.footer-copy{font-size:12px;color:var(--light);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav{padding:1.25rem 1.5rem}
+  .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .two-col,.two-col-wide{grid-template-columns:1fr}
+  .metrics-bar{flex-wrap:wrap}
+  .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
+  footer{padding-left:1.5rem;padding-right:1.5rem}
+  .stat-row{gap:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="/#work" class="back-link">← All work</a>
+    <a href="/" class="logo">Neil Golson</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#built">Built</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Tesla · SolarCity <span class="cs-eyebrow-tag">· High-Consideration Retail · 2016–2018</span></div>
+  <h1 class="cs-title">From the hardware store floor to building Tesla's first retail experience</h1>
+  <p class="cs-context">Two acts, one insight. At Tesla, the challenge was integrating home energy into the vehicle purchase journey — so that the moment a customer was excited about a Model 3, they were also deciding about solar and Powerwall. At SolarCity, the challenge was scaling that same idea across 800 Home Depot stores and a 1,500-person field org while lowering CAC.</p>
+  <div class="metrics-bar">
+    <div class="mb-item">
+      <div class="mb-val">30%+</div>
+      <div class="mb-label">Energy attachment on Model 3</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">26% → 37%</div>
+      <div class="mb-label">National solar market share</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">3×</div>
+      <div class="mb-label">Install volume growth</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">800</div>
+      <div class="mb-label">Home Depot locations</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- THE INSIGHT -->
+  <div class="cs-section">
+    <div class="two-col-wide">
+      <div>
+        <div class="cs-section-label">The insight</div>
+        <h2 class="cs-h2">Purchase decisions don't happen in isolation — they happen in moments</h2>
+        <p class="cs-p">The consumer psychology behind a $100,000 vehicle purchase is not fundamentally different from any other retail decision — both are governed by the same forces: desire, trust, and friction. What's different is the timeline and the number of people involved.</p>
+        <p class="cs-p">At Tesla, we identified that the vehicle purchase journey had a moment — typically after the test drive, during financing — where the customer was emotionally committed but hadn't yet signed. That window was the best possible moment to introduce home energy. They were already in a "big decision" mental state. Adding solar and Powerwall to that moment reduced perceived friction because the customer was already thinking long-term.</p>
+        <p class="cs-p">The retail design problem was: how do you make that moment feel seamless rather than like a sales add-on? The answer was integration — physical merchandising, digital tools, and advisor training that made energy a natural part of the vehicle conversation rather than an upsell.</p>
+      </div>
+      <div>
+        <div class="pull-quote">
+          <p>"The best upsell feels like the obvious next question, not a new conversation."</p>
+        </div>
+        <img class="cs-photo" src="/assets/2017-07-16_19-55-24_861.jpeg" alt="Tesla Solar retail display inside Tesla store">
+        <div class="photo-label" style="margin-top:0.5rem;">Tesla Solar in-store retail display — the integrated energy wall</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESLA ACT -->
+  <div class="cs-section">
+    <div class="cs-section-label">Act one · Tesla</div>
+    <h2 class="cs-h2">Rebuilding the in-store experience around a single customer journey</h2>
+    <p class="cs-p">When I joined Tesla, the in-store experience for vehicles and the solar/energy product line were operating as parallel tracks — different spaces, different advisors, different conversations. A customer could leave with a Model 3 having never heard about Powerwall, even if they would have bought it.</p>
+    <p class="cs-p">The redesign integrated physical merchandising — the Solar + Powerwall wall you see below — with digital tools that let advisors pull up a customer's home energy profile mid-vehicle conversation. Test drives were paired with energy consultations. Come-to-you drives included a home energy walkthrough. Online booking fed into a single CRM that treated vehicle and energy as one household decision.</p>
+
+    <div class="two-col" style="margin-top:2rem;">
+      <img class="cs-photo" style="margin:0;" src="/assets/oLr69X8ISfSUVlfuwnr_eQ.jpeg" alt="Tesla Solar + Powerwall display unit">
+      <img class="cs-photo" style="margin:0;" src="/assets/2018-03-14_21-01-59_000.jpeg" alt="Tesla Solar in Home Depot store">
+    </div>
+    <div class="photo-label" style="margin-top:0.75rem;">Left: Tesla Solar + Powerwall retail display unit · Right: Tesla Solar in Home Depot (SMM 2018)</div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-val">30%+</span>
+        <span class="stat-label">Energy / solar attachment rate on Model 3 purchases</span>
+      </div>
+    </div>
+    <p class="cs-p">A 30%+ attachment rate on a vehicle purchase for a product that requires a separate installation, separate financing, and a separate decision process is not a sales result. It's a design result. The experience created the conditions for that decision to happen naturally.</p>
+  </div>
+
+  <!-- SOLARCITY ACT -->
+  <div class="cs-section">
+    <div class="cs-section-label">Act two · SolarCity</div>
+    <h2 class="cs-h2">Scaling the same insight across 800 stores and a 1,500-person field org</h2>
+    <p class="cs-p">SolarCity (acquired by Tesla in 2016) operated a massive direct sales operation — door-to-door, events, retail partnerships. The challenge was that CAC was high and quality was inconsistent. The same insight that drove the Tesla retail redesign applied here: the moment of maximum openness to a solar conversation is when a customer is already thinking about their home.</p>
+    <p class="cs-p">The Home Depot partnership put us at the exact right moment — a customer buying a water heater or HVAC system is already in a home-improvement mindset, already thinking about energy costs. The branded display in the lumber and garden departments wasn't incidental placement. It was precision timing.</p>
+    <p class="cs-p">I built and managed the 1,500-person field marketing and lead generation organization, designed the quality and conversion tracking system, and negotiated and operationalized the national retail partnerships — Home Depot, Best Buy, BMW, AT&T, DIRECTV. Each partnership was chosen for the same reason: access to a customer in the right moment of receptivity.</p>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-val">26% → 37%</span>
+        <span class="stat-label">National solar market share</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">3×</span>
+        <span class="stat-label">Install volume</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">800</span>
+        <span class="stat-label">Home Depot store presence</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">1,500</span>
+        <span class="stat-label">Field marketing team</span>
+      </div>
+    </div>
+
+    <div class="press-cards">
+      <a class="press-card" href="https://electrek.co/2018/02/01/tesla-solar-sale-home-depots/" target="_blank">
+        <div class="press-card-outlet">Electrek · Feb 2018</div>
+        <div class="press-card-hed">Tesla's solar division is expanding to 800 Home Depot stores</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+      <a class="press-card" href="https://electrek.co/2017/06/25/tesla-solar-branded-solar-panels-store/" target="_blank">
+        <div class="press-card-outlet">Electrek · Jun 2017</div>
+        <div class="press-card-hed">Tesla solar branded panels in-store — the retail expansion begins</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- THE BRIDGE -->
+  <div class="cs-section" style="border-bottom:none;">
+    <div class="cs-section-label">What came next</div>
+    <h2 class="cs-h2">The through-line from Tesla to what followed</h2>
+    <p class="cs-p">The Tesla and SolarCity chapters taught me something about how category-defining brands operate in the physical world — and how different that is from the digital-first thinking most brand leaders are trained in. The best consumer moments aren't engineered; they're discovered and then designed around.</p>
+    <p class="cs-p">That understanding — of how trust operates at the point of transaction, not just in the awareness funnel — is what made the next chapter possible. A parking technology company with no brand, no category, and a 1% market share turned out to be a direct application of what I learned trying to sell solar panels in a Home Depot lumber aisle.</p>
+
+    <div class="bridge">
+      <div class="bridge-label">The next chapter</div>
+      <div class="bridge-title">From Tesla to Parking: An Executive's Bold Move</div>
+      <div class="bridge-desc">IPMI's Parking &amp; Mobility magazine ran a cover feature on the transition — what it meant to take a brand and go-to-market toolkit built in consumer tech into a B2G category that had never had a brand leader before. The photo of me in front of a Tesla, in a FLASH jacket, tells the story better than most copy could.</div>
+      <a class="bridge-link" href="/work/flash/">Read the FlashParking case study ↗</a>
+    </div>
+
+    <div class="press-cards" style="margin-top:2rem;">
+      <a class="press-card" href="https://www.parking-mobility.org/blog/from-tesla-to-parking/" target="_blank">
+        <div class="press-card-outlet">Parking &amp; Mobility · IPMI</div>
+        <div class="press-card-hed">From Tesla to Parking: An Executive's Bold Move</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CASE STUDY NAV -->
+<div class="cs-nav">
+  <a href="/work/mission-zero/" class="cs-nav-link">← Mission Zero</a>
+  <a href="/work/flash/" class="cs-nav-link">FlashParking →</a>
+</div>
+
+<footer>
+  <span class="footer-name">Neil Golson</span>
+  <span class="footer-copy">© 2026 · neilgolson.com</span>
+</footer>
+
+</body>
+</html>

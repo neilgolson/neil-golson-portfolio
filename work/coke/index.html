@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coca-Cola — Neil Golson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#c2410c;
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
+.nav-left{display:flex;align-items:center;gap:2rem;}
+.back-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.15s;}
+.back-link:hover{color:var(--ink)}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── CASE STUDY HERO ── */
+.cs-hero{max-width:1100px;margin:0 auto;padding:5rem 4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
+.cs-eyebrow-tag{color:var(--light);font-weight:400;}
+.cs-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:800px;margin-bottom:1.75rem;}
+.cs-context{font-size:17px;line-height:1.85;color:var(--mid);max-width:660px;margin-bottom:3rem;}
+.metrics-bar{display:flex;gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.mb-item{flex:1;padding:1.25rem 1.5rem;border-right:0.5px solid var(--border);}
+.mb-item:last-child{border-right:none}
+.mb-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;margin-bottom:0.35rem;}
+.mb-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* ── CASE STUDY BODY ── */
+.cs-body{max-width:1100px;margin:0 auto;}
+.cs-section{padding:4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.cs-h2{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:1.25rem;max-width:680px;}
+.cs-p{font-size:15px;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:1.25rem;}
+.cs-p:last-child{margin-bottom:0}
+
+/* two-col layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.two-col-wide{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
+
+/* three-col grid */
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.three-col-item{background:var(--paper);padding:0;}
+
+/* video embed */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:3px;background:#1a1814;margin:2rem 0;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-wrap.no-margin{margin:0;border-radius:0;}
+.video-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);margin-top:-1rem;margin-bottom:2rem;}
+.video-cap{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--light);padding:0.75rem 1rem;border-top:0.5px solid var(--border);}
+
+/* pull quote */
+.pull-quote{border-left:2px solid var(--accent);padding:0.5rem 0 0.5rem 2rem;margin:2rem 0;}
+.pull-quote p{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.5;color:var(--ink);}
+
+/* smithsonian callout */
+.artifact{background:var(--warm-white);border:0.5px solid var(--border);border-radius:3px;padding:2rem 2.5rem;margin:2rem 0;text-decoration:none;display:block;transition:background 0.15s;}
+.artifact:hover{background:#edeae2}
+.artifact-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+.artifact-title{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.3;color:var(--ink);margin-bottom:0.5rem;}
+.artifact-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1rem;}
+.artifact-link{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);}
+
+/* stat row */
+.stat-row{display:flex;gap:3rem;flex-wrap:wrap;margin:2rem 0;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* press cards */
+.press-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.press-card{background:var(--paper);padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.15s;}
+.press-card:hover{background:#edeae2}
+.press-card-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
+.press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
+.press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
+
+/* ── CASE NAV ── */
+.cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
+.cs-nav-link:hover{color:var(--ink)}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+.footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
+.footer-copy{font-size:12px;color:var(--light);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav{padding:1.25rem 1.5rem}
+  .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .two-col,.two-col-wide,.three-col{grid-template-columns:1fr}
+  .metrics-bar{flex-wrap:wrap}
+  .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
+  footer{padding-left:1.5rem;padding-right:1.5rem}
+  .stat-row{gap:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="/#work" class="back-link">← All work</a>
+    <a href="/" class="logo">Neil Golson</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#built">Built</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">The Coca-Cola Company <span class="cs-eyebrow-tag">· Brand Management · 2004–2011</span></div>
+  <h1 class="cs-title">Seven years at the world's most valuable brand. Four different jobs. One consistent question.</h1>
+  <p class="cs-context">How do you make people feel something about a product they've already decided they love? Coca-Cola is the most recognized brand on earth. The work isn't awareness — it's relevance, emotion, and the recurring challenge of keeping a 120-year-old brand interesting to people who already know everything about it.</p>
+  <div class="metrics-bar">
+    <div class="mb-item">
+      <div class="mb-val">7 yrs</div>
+      <div class="mb-label">Four distinct roles</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">Super Bowl</div>
+      <div class="mb-label">Cannes submission</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">Smithsonian</div>
+      <div class="mb-label">White Can in collection</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">First in 7 yrs</div>
+      <div class="mb-label">US market share growth</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- VAULT -->
+  <div class="cs-section">
+    <div class="two-col-wide">
+      <div>
+        <div class="cs-section-label">Chapter one · Vault</div>
+        <h2 class="cs-h2">Keeping a commodity brand at $0.99 through operational creativity</h2>
+        <p class="cs-p">Vault was a citrus energy drink in a crowded shelf. The brand's entire value proposition was the price point — $0.99 — in a category trending toward premium. When commodity input costs started pushing margin pressure up the chain, the obvious answer was to raise the price. That would have killed the brand.</p>
+        <p class="cs-p">Instead, we engineered the bottle. Moving from 20oz to 16oz — while maintaining the $0.99 retail price — required selling the bottling network on an operational investment that most bottlers didn't want to make. I built the business case, took it to the bottlers, and closed the deal. The consumer never noticed the ounce change. The brand kept its price. The margin recovered.</p>
+        <p class="cs-p">It's the least glamorous brand management story I have. It's also the one that most directly demonstrates what brand management actually is: defending the consumer proposition against every pressure that wants to erode it.</p>
+      </div>
+      <div>
+        <div class="pull-quote">
+          <p>"The $0.99 price point was the brand. Protecting it wasn't a pricing decision — it was a brand decision."</p>
+        </div>
+      </div>
+    </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/QwrEpYXcobc"
+        title="Vault — TV spot"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-label">Vault — TV spot</div>
+  </div>
+
+  <!-- CULTURAL MOMENTS -->
+  <div class="cs-section">
+    <div class="cs-section-label">Chapter two · Coca-Cola core</div>
+    <h2 class="cs-h2">Super Bowl, Olympics, American Idol — brand at cultural scale</h2>
+    <p class="cs-p">Moving from the citrus portfolio to the Coca-Cola core brand was a different kind of problem. Vault had a $0.99 problem. Coca-Cola had a scale problem: how do you run cultural campaigns for the world's biggest brand without them feeling generic? The answer, every time, was specificity — find the one true human moment inside the big cultural event and build the brand there.</p>
+    <div class="three-col">
+      <div class="three-col-item">
+        <div class="video-wrap no-margin">
+          <iframe
+            src="https://www.youtube.com/embed/SLWPYdsV7po"
+            title="Polar Bowl — Super Bowl campaign, Cannes submission"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-cap">Super Bowl · Polar Bowl — Cannes submission</div>
+      </div>
+      <div class="three-col-item">
+        <div class="video-wrap no-margin">
+          <iframe
+            src="https://www.youtube.com/embed/aRWvfDOsjWQ"
+            title="American Idol — Taio Cruz integration"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-cap">American Idol · Taio Cruz integration</div>
+      </div>
+      <div class="three-col-item">
+        <div style="padding:1.5rem;">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;">Olympics 2012</div>
+          <div style="font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.4;margin-bottom:0.75rem;color:var(--ink);">Jessica Long — paralympian campaign</div>
+          <div style="font-size:13px;color:var(--mid);line-height:1.8;margin-bottom:1rem;">A campaign built around a Paralympic gold medalist at a time when Paralympic storytelling was still rare in mainstream advertising. The spot ran during the London 2012 Games.</div>
+          <a href="https://www.ispot.tv/ad/7V8H/the-coca-cola-company-olympics-featuring-jessica-long" target="_blank" style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);">Watch spot ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:2rem;">
+      <div>
+        <div class="video-wrap" style="margin:0 0 0.75rem;">
+          <iframe
+            src="https://player.vimeo.com/video/68068562"
+            title="Coca-Cola — Olympic spot"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-label" style="margin:0;">Olympics · Coca-Cola spot</div>
+      </div>
+      <div>
+        <div class="video-wrap" style="margin:0 0 0.75rem;">
+          <iframe
+            src="https://www.youtube.com/embed/U7tCCHWxCII"
+            title="Coca-Cola — The Other One"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-label" style="margin:0;">Olympics · The Other One</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHITE CAN / ARCTIC HOME -->
+  <div class="cs-section">
+    <div class="cs-section-label">Chapter two, cont. · Coalition &amp; cause</div>
+    <h2 class="cs-h2">The White Can: a product you worked on is in the Smithsonian</h2>
+    <p class="cs-p">The Arctic Home campaign partnered Coca-Cola with WWF to raise awareness of polar bear habitat loss. The creative vehicle was a limited-edition white Coca-Cola can — replacing the iconic red with white to signal the melting Arctic. It was one of the most visible cause campaigns the brand had ever run, and one of the most debated internally: changing the can color, even temporarily, touched the most sacred element of the brand system.</p>
+    <p class="cs-p">I helped introduce the white can program. The can is now in the Smithsonian Institution's permanent collection — which is the kind of proof point that no press release can manufacture.</p>
+
+    <a class="artifact" href="https://www.si.edu/object/white-coca-cola-can%3Anmah_1421965" target="_blank">
+      <div class="artifact-label">Smithsonian Institution · National Museum of American History</div>
+      <div class="artifact-title">White Coca-Cola Can — Permanent Collection</div>
+      <div class="artifact-desc">The limited-edition white can produced for the Arctic Home campaign with WWF is part of the Smithsonian's permanent collection. Object ID: NMAH_1421965.</div>
+      <div class="artifact-link">View in Smithsonian collection ↗</div>
+    </a>
+
+    <div class="press-cards">
+      <a class="press-card" href="https://www.thearcticinstitute.org/coca-cola-world-wildlife-fund-arctic-home/" target="_blank">
+        <div class="press-card-outlet">The Arctic Institute</div>
+        <div class="press-card-hed">Coca-Cola &amp; World Wildlife Fund — Arctic Home campaign</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SHANGHAI / MCDONALD'S -->
+  <div class="cs-section">
+    <div class="cs-section-label">Chapter three · International</div>
+    <h2 class="cs-h2">Shanghai: brand management at McDonald's global scale</h2>
+    <p class="cs-p">A posting to Shanghai put me inside Coca-Cola's AMPEA (Asia Pacific, Middle East &amp; Africa) division, managing the McDonald's global account — one of Coke's most significant commercial relationships. The work was part brand, part supply chain, part business development: coordinating promotional programs across markets, managing the commercial terms, and keeping two enormous organizations moving in the same direction on joint campaigns.</p>
+    <p class="cs-p">The AMPEA Olympics glasses promotion — a collectible glasses program tied to the London 2012 Games — ran across McDonald's locations throughout the region. Executing a collectible promotional program at that scale requires the kind of supply chain and commercial coordination that doesn't appear in any brand marketing job description, which is exactly what makes it useful.</p>
+    <p class="cs-p">The McDonald's relationship earned a Global Benchmark Supplier designation for the Coca-Cola division — a recognition that the division had performed at the highest level across the full scope of the commercial relationship, not just the creative work.</p>
+
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/Zwk-SfR69Uw"
+        title="Coca-Cola AMPEA — Olympic Glasses promotion TV spot"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-label">Coca-Cola AMPEA · McDonald's — Olympic Glasses promotion</div>
+  </div>
+
+  <!-- MINI CAN -->
+  <div class="cs-section" style="border-bottom:none;">
+    <div class="cs-section-label">Chapter four · Mini Can</div>
+    <h2 class="cs-h2">The 100-calorie format that broke a seven-year market share drought</h2>
+    <p class="cs-p">By 2010, Coca-Cola hadn't grown US market share in seven years. The category was under pressure from energy drinks, water, and the broader health-and-wellness shift. The brand wasn't broken — but the package was. The standard 12oz can had become the default, and the default was losing consumers who wanted the taste without the full caloric commitment.</p>
+    <p class="cs-p">The Mini Can — a 7.5oz, 90-calorie format at a premium price point — was the answer. It gave health-conscious consumers a reason to come back to Coke without switching to a diet formulation. Alongside the format launch, I redesigned the grocery merchandising strategy to treat the Mini Can as a premium SKU rather than a discount play — different shelf placement, different display mechanics, different price anchor.</p>
+    <p class="cs-p">The result was the first US market share growth in seven years. The format created a new consumption occasion — the "occasional treat" — that the full can couldn't serve. It's still on shelves.</p>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-val">First</span>
+        <span class="stat-label">US market share growth in 7 years</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">90 cal</span>
+        <span class="stat-label">7.5oz Mini Can format</span>
+      </div>
+    </div>
+
+    <div class="press-cards">
+      <a class="press-card" href="https://www.bevnet.com/news/2011/coca-cola-cuts-price-on-8-pack-of-mini-cans" target="_blank">
+        <div class="press-card-outlet">BevNET · 2011</div>
+        <div class="press-card-hed">Coca-Cola cuts price on 8-pack of Mini Cans</div>
+        <div class="press-card-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CASE STUDY NAV -->
+<div class="cs-nav">
+  <a href="/work/flash/" class="cs-nav-link">← FlashParking</a>
+  <a href="/#work" class="cs-nav-link">All work ↗</a>
+</div>
+
+<footer>
+  <span class="footer-name">Neil Golson</span>
+  <span class="footer-copy">© 2026 · neilgolson.com</span>
+</footer>
+
+</body>
+</html>
