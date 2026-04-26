@@ -35,7 +35,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 
 /* ── HERO ── */
 .hero-wrap{max-width:1100px;margin:0 auto;border-bottom:0.5px solid var(--border);}
-.hero{display:grid;grid-template-columns:1fr 280px;gap:0;}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:0;}
 .hero-content{padding:3.5rem 4rem;border-right:0.5px solid var(--border);}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
 .headline{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:640px;margin-bottom:1.25rem;}
@@ -160,18 +160,31 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
 .footer-copy{font-size:12px;color:var(--light);}
 
-/* ── CINEMATIC HERO ── */
-.cinema-hero{position:relative;width:100%;height:88vh;min-height:580px;max-height:840px;overflow:hidden;background:#0a0908;}
-.cinema-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:1;}
-.cinema-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(10,9,8,0.45) 0%,rgba(10,9,8,0) 22%,rgba(10,9,8,0) 50%,rgba(10,9,8,0.92) 100%),linear-gradient(90deg,rgba(10,9,8,0.6) 0%,rgba(10,9,8,0.1) 55%,rgba(10,9,8,0) 100%);pointer-events:none;}
-.cinema-content{position:relative;z-index:3;max-width:1100px;margin:0 auto;height:100%;padding:3rem 4rem 3.5rem;display:flex;flex-direction:column;justify-content:flex-end;color:#faf8f4;}
-.cinema-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#f0a878;margin-bottom:1.25rem;}
-.cinema-headline{font-family:var(--serif);font-size:clamp(38px,5.2vw,72px);font-weight:700;line-height:1.05;letter-spacing:-0.025em;max-width:880px;margin-bottom:1.5rem;color:#faf8f4;text-shadow:0 2px 30px rgba(0,0,0,0.5);}
-.cinema-headline em{font-style:italic;color:#f0a878;}
-.cinema-sub{font-size:17px;line-height:1.7;color:rgba(250,248,244,0.9);max-width:560px;margin-bottom:2rem;text-shadow:0 1px 12px rgba(0,0,0,0.5);}
-.cinema-career{display:flex;flex-wrap:wrap;padding-top:1.25rem;border-top:0.5px solid rgba(250,248,244,0.28);}
-.cinema-career-dot{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(250,248,244,0.88);padding-right:1.25rem;margin-right:1.25rem;border-right:0.5px solid rgba(250,248,244,0.28);line-height:1.6;}
-.cinema-career-dot:last-child{border-right:none;margin-right:0;padding-right:0;}
+/* ── REEL PANEL (right column of hero) ── */
+.reel-panel{display:flex;flex-direction:column;background:var(--warm-white);padding:1.5rem;gap:0.85rem;}
+.reel-panel-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);padding-bottom:0.65rem;border-bottom:0.5px solid var(--border);margin-bottom:0.25rem;display:flex;justify-content:space-between;align-items:baseline;}
+.reel-panel-label span:last-child{color:var(--accent);font-weight:500;}
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-runtime-badge{position:absolute;bottom:6px;right:8px;background:rgba(10,9,8,0.85);color:var(--warm-white);font-size:9.5px;letter-spacing:0.08em;font-weight:500;padding:2px 6px;border-radius:2px;z-index:2;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:16px;height:16px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.6rem 0.8rem 0.75rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe{width:100%;height:100%;display:block;border:none;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
 
 /* ── BIO STRIP (compact, below hero) ── */
 .bio-strip{max-width:1100px;margin:0 auto;padding:1.6rem 4rem;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:1.75rem;}
@@ -207,11 +220,12 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   footer{padding-left:1.5rem;padding-right:1.5rem}
   .case-header{flex-direction:column;gap:0.5rem}
   .li-highlight{flex-direction:column;gap:1rem}
-  .cinema-hero{height:auto;min-height:560px;max-height:none;}
-  .cinema-content{padding:2.5rem 1.5rem 2.5rem;}
+  .reel-panel{padding:1.25rem 1.5rem 1.5rem;}
   .bio-strip{padding:1.5rem;flex-wrap:wrap;gap:1rem;}
   .bio-pills{flex-basis:100%;}
   .mz-section{padding:3.5rem 1.5rem;}
+  .lb-overlay{padding:3rem 1rem 1rem;}
+  .lb-close{top:-2rem;font-size:10px;}
 }
 </style>
 </head>
@@ -228,27 +242,72 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   </ul>
 </nav>
 
-<!-- CINEMATIC HERO -->
-<section class="cinema-hero">
-  <video class="cinema-video"
-         autoplay muted loop playsinline preload="auto"
-         poster="/assets/web/hero-poster.jpg">
-    <source src="/assets/web/reba-sizzle-tight.mp4" type="video/mp4">
-  </video>
-  <div class="cinema-overlay"></div>
-  <div class="cinema-content">
-    <div class="cinema-eyebrow">Brand · Growth · Conversion</div>
-    <h1 class="cinema-headline">I've spent 25 years studying<br>the moment someone decides <em>to act.</em></h1>
-    <p class="cinema-sub">Inventing categories. Mainstreaming sustainable energy. Defending iconic brands. Rebuilding challengers under fire. Different stakes, same work: make the decision feel inevitable.</p>
-    <div class="cinema-career">
-      <span class="cinema-career-dot">Realtor.com</span>
-      <span class="cinema-career-dot">Tesla · SolarCity</span>
-      <span class="cinema-career-dot">Coca-Cola</span>
-      <span class="cinema-career-dot">FlashParking</span>
-      <span class="cinema-career-dot">Home Depot</span>
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Brand · Growth · Conversion</div>
+      <h1 class="headline">I've spent 25 years studying<br>the moment someone decides <em>to act.</em></h1>
+      <p class="hero-p">Inventing categories. Mainstreaming sustainable energy. Defending iconic brands. Rebuilding challengers under fire. Different stakes, same work: make the decision feel inevitable.</p>
+      <p class="hero-p secondary">I've led brand, go-to-market, and growth across consumer goods, retail, energy, mobility, and real estate — high-consideration categories where brand credibility directly affects revenue. I do my best work where the stakes are real, where brand is expected to earn its place in the P&amp;L, and where the brief isn't "be creative" — it's "move the number."</p>
+      <div class="career-strip">
+        <span class="career-dot">Realtor.com</span>
+        <span class="career-dot">Tesla · SolarCity</span>
+        <span class="career-dot">Coca-Cola</span>
+        <span class="career-dot">FlashParking</span>
+        <span class="career-dot">Home Depot</span>
+      </div>
     </div>
+    <aside class="reel-panel">
+      <div class="reel-panel-label"><span>Currently shipping</span><span>Apr 2026</span></div>
+
+      <button class="reel-tile" type="button"
+              data-type="mp4"
+              data-src="/assets/web/reba-market-clock-18s.mp4"
+              data-title="Market Clock — debut of The Expert Edge">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-market-clock.jpg" alt="Market Clock — Reba McEntire as the expert in your living room">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="reel-runtime-badge">:18</span>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Realtor.com · Brand</div>
+          <div class="reel-title">Market Clock — debut of The Expert Edge</div>
+        </div>
+      </button>
+
+      <button class="reel-tile" type="button"
+              data-type="mp4"
+              data-src="/assets/web/reba-breakup-30s.mp4"
+              data-title="Nearly Home — The One Without The Breakup">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-breakup.jpg" alt="Nearly Home — The One Without The Breakup">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="reel-runtime-badge">:30</span>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Realtor.com · Brand</div>
+          <div class="reel-title">The One Without the Breakup — 500k new listings/month</div>
+        </div>
+      </button>
+
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/4hjz2R426ng?autoplay=1&amp;rel=0"
+              data-title="Mission Zero — short-form social cut">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-mission-zero.jpg" alt="Mission Zero — coalition campaign for veteran homelessness">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="reel-runtime-badge">:15</span>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Mission Zero · Cause</div>
+          <div class="reel-title">Coalition film — ending veteran homelessness</div>
+        </div>
+      </button>
+    </aside>
   </div>
-</section>
+</div>
 
 <!-- BIO STRIP -->
 <div class="bio-strip">
@@ -476,6 +535,68 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <span class="footer-name">Neil Golson</span>
   <span class="footer-copy">© 2026 · neilgolson.com · <a href="https://panic.neilgolson.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:0.5px solid var(--border);">AI playground ↗</a></span>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    // remove any prior media
+    var prior = stage.querySelector('video,iframe');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
