@@ -1,0 +1,5 @@
+.DS_Store
+**/.DS_Store
+
+# Broadcast video masters — site uses web-optimized copies in /assets/web/
+/assets/*.mp4
