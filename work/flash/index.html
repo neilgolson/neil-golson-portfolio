@@ -102,7 +102,48 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
 .footer-copy{font-size:12px;color:var(--light);}
 
+/* ── PER-SECTION GRID (text + section-specific rail) ── */
+.cs-section{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:3.5rem 4rem;border-bottom:0.5px solid var(--border);align-items:start;}
+.cs-section:last-of-type{border-bottom:none;}
+.cs-text{min-width:0;}
+.cs-rail{display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;align-self:start;}
+
+/* ── REEL TILES (videos and images) ── */
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:13px;height:13px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+.reel-tile.is-image .reel-play{background:rgba(255,255,255,0.85);}
+.reel-tile.is-image .reel-play svg{margin-left:0;}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe, .lb-stage img{width:100%;height:100%;display:block;border:none;object-fit:contain;background:#000;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
 /* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-section{grid-template-columns:1fr;gap:1.5rem;}
+}
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
@@ -173,126 +214,181 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
   </div>
 
-  <!-- THE PRESS LEAD -->
-  <div class="cs-section">
-    <div class="cs-section-label">As covered by Parking &amp; Mobility · IPMI</div>
-    <a class="press-feature" href="https://www.parking-mobility.org/blog/from-tesla-to-parking/" target="_blank">
-      <div class="press-feature-outlet">Parking &amp; Mobility Magazine · IPMI · Cover feature</div>
-      <div class="press-feature-hed">"From Tesla to Parking: An Executive's Bold Move"</div>
-      <div class="press-feature-desc">The industry's trade magazine ran a cover feature on the move — and on what brand strategy looks like when applied to a sector that has traditionally bought on specs, not story. The photo of me in front of a Tesla wearing a FlashParking jacket became the visual shorthand for the whole thesis.</div>
-      <div class="press-feature-arrow">Read the feature ↗</div>
-    </a>
-  </div>
-
-  <!-- THE CATEGORY PROBLEM -->
-  <div class="cs-section">
-    <div class="two-col-wide">
-      <div>
-        <div class="cs-section-label">The category problem</div>
-        <h2 class="cs-h2">A real category with no brand, no language, and buyers who thought they were making a procurement decision</h2>
-        <p class="cs-p">I joined FlashParking in 2019. The challenge was familiar in structure, unusual in setting: a product category with genuine differentiation and no brand to express it. Buyers — cities, commercial real estate owners, operators — were drowning in spec sheets that all looked the same. Nobody had named the category or made it feel like anything beyond a procurement exercise. The brand work that needed doing was the same work I'd seen at Tesla: make people feel something before the sales conversation starts, so the sales conversation is about confirmation, not persuasion.</p>
-        <p class="cs-p">Underneath the surface, the category was already under pressure. By 2019, parking operators were fielding the first uncomfortable questions from their own boards: what happens when the vehicles in our garages don't run on gas? The early fleet EVs — Ubers staging outside venues, Amazon vans cycling through last-mile routes — were asking a question the infrastructure wasn't built to answer. And behind that came the first serious conversations about autonomous vehicles: not passing through, but staging, dwelling, cycling through parking structures as part of a managed fleet. Operators knew something was coming that would require a fundamentally different platform than the one they'd built. The category needed to evolve. Nobody had a clear picture of what that looked like.</p>
-        <p class="cs-p">Then COVID hit. Downtown occupancy collapsed. Municipal parking revenue — a meaningful budget line for most cities — evaporated with foot traffic. Commercial real estate owners watched parking garages go from revenue generators to liabilities. Both buyer types faced the same question at the same moment: what does urban mobility infrastructure look like when you have to rebuild it from scratch?</p>
-        <p class="cs-p">That was a mandate and an opportunity. Cities needed to recover revenue and modernize aging infrastructure. Commercial real estate owners needed to add amenity value and attract tenants back to buildings suddenly competing for occupancy. FlashParking's connected platform — dynamic pricing, real-time availability, mobile-first — was built for exactly this reinvention moment. The brand had to speak to both markets simultaneously.</p>
+  <!-- 1 · THE CATEGORY PROBLEM -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The category problem</div>
+      <h2 class="cs-h2">A real category with no brand, no language, and buyers who thought they were making a procurement decision</h2>
+      <p class="cs-p">I joined FlashParking in 2019. The challenge was familiar in structure, unusual in setting: a product category with genuine differentiation and no brand to express it. Buyers — cities, commercial real estate owners, operators — were drowning in spec sheets that all looked the same. Nobody had named the category or made it feel like anything beyond a procurement exercise. The brand work that needed doing was the same work I'd seen at Tesla: make people feel something before the sales conversation starts, so the sales conversation is about confirmation, not persuasion.</p>
+      <p class="cs-p">Underneath the surface, the category was already under pressure. By 2019, parking operators were fielding the first uncomfortable questions from their own boards: what happens when the vehicles in our garages don't run on gas? The early fleet EVs — Ubers staging outside venues, Amazon vans cycling through last-mile routes — were asking a question the infrastructure wasn't built to answer. And behind that came the first serious conversations about autonomous vehicles: not passing through, but staging, dwelling, cycling through parking structures as part of a managed fleet. Operators knew something was coming that would require a fundamentally different platform than the one they'd built. The category needed to evolve. Nobody had a clear picture of what that looked like.</p>
+      <div class="pull-quote">
+        <p>"COVID didn't create the opportunity — it collapsed the timeline on a reinvention mandate that was already overdue in both markets."</p>
       </div>
-      <div>
-        <div class="pull-quote">
-          <p>"COVID didn't create the opportunity — it collapsed the timeline on a reinvention mandate that was already overdue in both markets."</p>
+      <p class="cs-p">Then COVID hit. Downtown occupancy collapsed. Municipal parking revenue — a meaningful budget line for most cities — evaporated with foot traffic. Commercial real estate owners watched parking garages go from revenue generators to liabilities. Both buyer types faced the same question at the same moment: what does urban mobility infrastructure look like when you have to rebuild it from scratch?</p>
+      <p class="cs-p">That was a mandate and an opportunity. Cities needed to recover revenue and modernize aging infrastructure. Commercial real estate owners needed to add amenity value and attract tenants back to buildings suddenly competing for occupancy. FlashParking's connected platform — dynamic pricing, real-time availability, mobile-first — was built for exactly this reinvention moment. The brand had to speak to both markets simultaneously.</p>
+      <p class="cs-p">The insight that generalized across both: procurement processes are filters, not decisions. The real decision happens before the RFP — when a buyer decides which vendors they want to win. Brand determines who gets on that shortlist, whether the buyer is a city council or a real estate board.</p>
+    </div>
+  </section>
+
+  <!-- 2 · WHAT WAS BUILT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">What was built</div>
+      <h2 class="cs-h2">Naming, positioning, and go-to-market architecture from zero</h2>
+      <p class="cs-p">The first job was naming the category — and naming it for two different audiences simultaneously. For cities, the language centered on smarter urban space utilization and revenue recovery. For commercial real estate, it centered on asset differentiation and tenant experience. "Parking technology" was descriptive but flat for both. "Mobility Hub" — the idea that a parking structure is the connective layer between vehicles, EV charging, scooters, ride share, and autonomous staging — was the frame that resonated with both markets and gave the brand room to grow into what the product was actually becoming.</p>
+      <p class="cs-p">FlashParking's model was pure enablement: we didn't own parking infrastructure, we powered it. Asset owners — from individual owners to REITs like Brookfield — hire operators to run their garages. We sat above both, providing the cloud-native platform that made the whole stack smarter. That positioning meant our go-to-market had to work across three buyer types simultaneously: cities and municipalities (B2G), commercial real estate owners and operators (B2B), and the drivers who ultimately use the product (B2C). Each required a different trust signal. The brand had to work for all three.</p>
+      <p class="cs-p">I built the marketing function from scratch — team, agency relationships, content strategy, trade presence, and the earned media program that produced the IPMI cover. In a B2G category where buyers google your company before every meeting, a trade magazine cover is a sales tool. In commercial real estate, where asset managers justify vendor choices to boards and ownership groups, it signals the same thing: legitimacy before the first call.</p>
+    </div>
+  </section>
+
+  <!-- 3 · BRAND ARCHITECTURE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The acquisition strategy · Brand architecture</div>
+      <h2 class="cs-h2">Six acquisitions, one architecture — the Mobility Hub had to hold all of it</h2>
+      <p class="cs-p">The original go-to-market was organic: build the platform, earn operators one contract at a time. COVID ended that timeline. When downtown occupancy collapsed overnight, waiting for gradual displacement wasn't a strategy. The company shifted from build to buy — six acquisitions across two years, each bringing a different asset type, a different buyer relationship, and a different operational model under one roof.</p>
+      <p class="cs-p">OmniPark brought surface lot and ungated capabilities: municipalities, airports, universities. Ticketech and ZipPark brought attended valet across the Northeast — hotels, sports venues, hospitals. Ballparc brought event parking management for sports and entertainment venues. Parkonect brought a modernization pathway for real estate owners locked into legacy infrastructure, the ones who needed to upgrade without a full rip-and-replace. Arrive brought the consumer demand layer — ParkWhiz and BestParking — connecting drivers to the entire ecosystem from the other direction.</p>
+      <p class="cs-p">Each acquisition was defensible on its own. The brand architecture challenge was making all of them feel like one platform to buyers who had no reason to care about the others. A city evaluating surface lot modernization doesn't want to hear about valet hospitality operations. A hotel group evaluating attended valet doesn't want to feel like they're getting infrastructure built for municipalities. The architecture had to hold every asset type without making any buyer feel like they were getting something generic.</p>
+      <p class="cs-p">Mobility Hub was the frame that held it. Not "parking technology" — a hub where every mobility mode converges: vehicles, EV charging, scooters, rideshare, autonomous vehicle staging. The hub metaphor was flexible enough to contain a surface lot in Hartford and a 700-facility valet operation in Manhattan without either buyer feeling like an afterthought. Sub-positioning did the specific selling. The parent brand set the credibility threshold. That's the same work as managing a brand portfolio across a CPG acquisition spree or a financial institution with multiple product lines — the architecture is what keeps it coherent as the portfolio grows.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/Flash.Trade1.jpeg"
+              data-title="Flash trade booth — walking the beat to automated solutions">
+        <div class="reel-thumb">
+          <img src="/assets/Flash.Trade1.jpeg" alt="Flash trade booth — walking the beat to automated solutions">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
         </div>
-        <p class="cs-p">The insight that generalized across both: procurement processes are filters, not decisions. The real decision happens before the RFP — when a buyer decides which vendors they want to win. Brand determines who gets on that shortlist, whether the buyer is a city council or a real estate board.</p>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI booth</div>
+          <div class="reel-title">Walking the beat → automated solutions</div>
+        </div>
+      </button>
+
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/Flash.Trade2.jpeg"
+              data-title="Flash trade booth — unknown parker to loyal consumer">
+        <div class="reel-thumb">
+          <img src="/assets/Flash.Trade2.jpeg" alt="Flash trade booth — unknown parker to loyal consumer">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI booth</div>
+          <div class="reel-title">Unknown parker → loyal consumer</div>
+        </div>
+      </button>
+
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/Flash.Trade3.jpeg"
+              data-title="Flash trade booth — server problems to cloud solutions">
+        <div class="reel-thumb">
+          <img src="/assets/Flash.Trade3.jpeg" alt="Flash trade booth — server problems to cloud solutions">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI booth</div>
+          <div class="reel-title">Server problems → cloud solutions</div>
+        </div>
+      </button>
+
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/Flash.Trade4.jpeg"
+              data-title="Flash trade booth — separate networks to unified experience">
+        <div class="reel-thumb">
+          <img src="/assets/Flash.Trade4.jpeg" alt="Flash trade booth — separate networks to unified experience">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI booth</div>
+          <div class="reel-title">Separate networks → unified experience</div>
+        </div>
+      </button>
+    </aside>
+  </section>
+
+  <!-- 4 · THE INSIGHT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The insight that generalizes</div>
+      <h2 class="cs-h2">Neither government nor commercial real estate expected to be won on brand. Both were.</h2>
+      <p class="cs-p">When COVID hit, parking was down 90% overnight. That's not a slowdown — that's an industry in freefall. Cities lost a meaningful revenue line. Commercial real estate owners watched garages flip from revenue generators to liabilities. Both buyer types had the same mandate: reinvent or deteriorate. And both were suddenly open to vendors they might have never called before.</p>
+      <p class="cs-p">The conventional wisdom in B2G is that government buyers are purely rational — specs, price, compliance. The conventional wisdom in commercial real estate is similar: it's cap rates and square footage. Both are wrong. In both cases, the decision-maker has to justify their choice to someone else — a city council, a REIT board, an asset ownership group. "They're the ones who do this specifically for assets like ours" is a far easier defense than "they had the lowest per-transaction fee." Brand determines who gets that sentence written about them.</p>
+      <p class="cs-p">The Detroit story makes the point. Ford wanted to test autonomous vehicle integrations and needed a parking partner with meaningful downtown density. Within three months, two enterprise deals — Olympia Entertainment (30% of downtown Detroit parking) and Bedrock, Dan Gilbert's commercial real estate portfolio (another 30%) — gave us 65% of parking in the city's core. That's what happens when brand and go-to-market are aligned: the right conversations lead to enterprise-scale outcomes fast.</p>
+      <p class="cs-p">We made it easy to choose us by making it easy to explain choosing us. That's brand doing its job across both markets.</p>
+      <p class="cs-p">In March 2022, FlashParking raised $250M in a strategic investment led by Vista Equity Partners and L Catterton, crossing a $1 billion valuation. The platform now operates at 16,000+ locations, processes over $1 billion in annual transactions, and reaches 450M+ driver touchpoints — delivering an average 28% NOI lift across operator locations through a combination of 23% revenue increase and 20% cost reduction. <a href="https://www.flashparking.com/" target="_blank" style="color:var(--accent);border-bottom:0.5px solid var(--accent);text-decoration:none;">flashparking.com ↗</a></p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-val">&lt;1%</span>
+          <span class="stat-label">Market share when I joined</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">33%</span>
+          <span class="stat-label">Market share at exit</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">$1B+</span>
+          <span class="stat-label">Unicorn valuation · Mar 2022</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">$250M</span>
+          <span class="stat-label">Strategic investment · Vista Equity + L Catterton</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">16,000+</span>
+          <span class="stat-label">Locations at exit</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">450M+</span>
+          <span class="stat-label">Driver touchpoints</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">28%</span>
+          <span class="stat-label">NOI lift across 20+ locations</span>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- WHAT WAS BUILT -->
-  <div class="cs-section">
-    <div class="cs-section-label">What was built</div>
-    <h2 class="cs-h2">Naming, positioning, and go-to-market architecture from zero</h2>
-    <p class="cs-p">The first job was naming the category — and naming it for two different audiences simultaneously. For cities, the language centered on smarter urban space utilization and revenue recovery. For commercial real estate, it centered on asset differentiation and tenant experience. "Parking technology" was descriptive but flat for both. "Mobility Hub" — the idea that a parking structure is the connective layer between vehicles, EV charging, scooters, ride share, and autonomous staging — was the frame that resonated with both markets and gave the brand room to grow into what the product was actually becoming.</p>
-    <p class="cs-p">FlashParking's model was pure enablement: we didn't own parking infrastructure, we powered it. Asset owners — from individual owners to REITs like Brookfield — hire operators to run their garages. We sat above both, providing the cloud-native platform that made the whole stack smarter. That positioning meant our go-to-market had to work across three buyer types simultaneously: cities and municipalities (B2G), commercial real estate owners and operators (B2B), and the drivers who ultimately use the product (B2C). Each required a different trust signal. The brand had to work for all three.</p>
-    <p class="cs-p">I built the marketing function from scratch — team, agency relationships, content strategy, trade presence, and the earned media program that produced the IPMI cover. In a B2G category where buyers google your company before every meeting, a trade magazine cover is a sales tool. In commercial real estate, where asset managers justify vendor choices to boards and ownership groups, it signals the same thing: legitimacy before the first call.</p>
-  </div>
-
-  <!-- BRAND ARCHITECTURE -->
-  <div class="cs-section">
-    <div class="cs-section-label">The acquisition strategy · Brand architecture</div>
-    <h2 class="cs-h2">Six acquisitions, one architecture — the Mobility Hub had to hold all of it</h2>
-    <p class="cs-p">The original go-to-market was organic: build the platform, earn operators one contract at a time. COVID ended that timeline. When downtown occupancy collapsed overnight, waiting for gradual displacement wasn't a strategy. The company shifted from build to buy — six acquisitions across two years, each bringing a different asset type, a different buyer relationship, and a different operational model under one roof.</p>
-    <p class="cs-p">OmniPark brought surface lot and ungated capabilities: municipalities, airports, universities. Ticketech and ZipPark brought attended valet across the Northeast — hotels, sports venues, hospitals. Ballparc brought event parking management for sports and entertainment venues. Parkonect brought a modernization pathway for real estate owners locked into legacy infrastructure, the ones who needed to upgrade without a full rip-and-replace. Arrive brought the consumer demand layer — ParkWhiz and BestParking — connecting drivers to the entire ecosystem from the other direction.</p>
-    <p class="cs-p">Each acquisition was defensible on its own. The brand architecture challenge was making all of them feel like one platform to buyers who had no reason to care about the others. A city evaluating surface lot modernization doesn't want to hear about valet hospitality operations. A hotel group evaluating attended valet doesn't want to feel like they're getting infrastructure built for municipalities. The architecture had to hold every asset type without making any buyer feel like they were getting something generic.</p>
-    <p class="cs-p">Mobility Hub was the frame that held it. Not "parking technology" — a hub where every mobility mode converges: vehicles, EV charging, scooters, rideshare, autonomous vehicle staging. The hub metaphor was flexible enough to contain a surface lot in Hartford and a 700-facility valet operation in Manhattan without either buyer feeling like an afterthought. Sub-positioning did the specific selling. The parent brand set the credibility threshold. That's the same work as managing a brand portfolio across a CPG acquisition spree or a financial institution with multiple product lines — the architecture is what keeps it coherent as the portfolio grows.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;">
-      <div><img src="/assets/Flash.Trade1.jpeg" alt="Flash trade booth — walking the beat to automated solutions" style="width:100%;display:block;"></div>
-      <div><img src="/assets/Flash.Trade2.jpeg" alt="Flash trade booth — unknown parker to loyal consumer" style="width:100%;display:block;"></div>
-      <div><img src="/assets/Flash.Trade3.jpeg" alt="Flash trade booth — server problems to cloud solutions" style="width:100%;display:block;"></div>
-      <div><img src="/assets/Flash.Trade4.jpeg" alt="Flash trade booth — separate networks to unified experience" style="width:100%;display:block;"></div>
+  <!-- 5 · PRESS -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Press &amp; media</div>
+      <h2 class="cs-h2">Earned media as category creation</h2>
+      <p class="cs-p">In a B2G and commercial real estate category where buyers read the trade press and google vendors before every meeting, earned media isn't a vanity metric. The IPMI cover established the brand story — the photo of me in front of a Tesla wearing a FlashParking jacket became the visual shorthand for the whole thesis. The Road to Autonomy podcast put the Mobility Hub thesis in front of the AV and smart city audience that was becoming a major buyer type. The unicorn announcement closed the loop — credibility, category leadership, and scale, in that order.</p>
     </div>
-    <div class="photo-label" style="margin-top:0.75rem;">Four buyer-specific executions of the same brand system at IPMI — one visual language, four different problems</div>
-  </div>
-
-  <!-- THE INSIGHT -->
-  <div class="cs-section">
-    <div class="cs-section-label">The insight that generalizes</div>
-    <h2 class="cs-h2">Neither government nor commercial real estate expected to be won on brand. Both were.</h2>
-    <p class="cs-p">When COVID hit, parking was down 90% overnight. That's not a slowdown — that's an industry in freefall. Cities lost a meaningful revenue line. Commercial real estate owners watched garages flip from revenue generators to liabilities. Both buyer types had the same mandate: reinvent or deteriorate. And both were suddenly open to vendors they might have never called before.</p>
-    <p class="cs-p">The conventional wisdom in B2G is that government buyers are purely rational — specs, price, compliance. The conventional wisdom in commercial real estate is similar: it's cap rates and square footage. Both are wrong. In both cases, the decision-maker has to justify their choice to someone else — a city council, a REIT board, an asset ownership group. "They're the ones who do this specifically for assets like ours" is a far easier defense than "they had the lowest per-transaction fee." Brand determines who gets that sentence written about them.</p>
-    <p class="cs-p">The Detroit story makes the point. Ford wanted to test autonomous vehicle integrations and needed a parking partner with meaningful downtown density. Within three months, two enterprise deals — Olympia Entertainment (30% of downtown Detroit parking) and Bedrock, Dan Gilbert's commercial real estate portfolio (another 30%) — gave us 65% of parking in the city's core. That's what happens when brand and go-to-market are aligned: the right conversations lead to enterprise-scale outcomes fast.</p>
-    <p class="cs-p">We made it easy to choose us by making it easy to explain choosing us. That's brand doing its job across both markets.</p>
-    <p class="cs-p">In March 2022, FlashParking raised $250M in a strategic investment led by Vista Equity Partners and L Catterton, crossing a $1 billion valuation. The platform now operates at 16,000+ locations, processes over $1 billion in annual transactions, and reaches 450M+ driver touchpoints — delivering an average 28% NOI lift across operator locations through a combination of 23% revenue increase and 20% cost reduction. <a href="https://www.flashparking.com/" target="_blank" style="color:var(--accent);border-bottom:0.5px solid var(--accent);text-decoration:none;">flashparking.com ↗</a></p>
-
-    <div class="stat-row">
-      <div class="stat-item">
-        <span class="stat-val">&lt;1%</span>
-        <span class="stat-label">Market share when I joined</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">33%</span>
-        <span class="stat-label">Market share at exit</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">$1B+</span>
-        <span class="stat-label">Unicorn valuation · Mar 2022</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">$250M</span>
-        <span class="stat-label">Strategic investment · Vista Equity + L Catterton</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">16,000+</span>
-        <span class="stat-label">Locations at exit</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">450M+</span>
-        <span class="stat-label">Driver touchpoints</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">28%</span>
-        <span class="stat-label">NOI lift across 20+ locations</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRESS -->
-  <div class="cs-section" style="border-bottom:none;">
-    <div class="cs-section-label">Press &amp; media</div>
-    <h2 class="cs-h2">Earned media as category creation</h2>
-    <img class="cs-photo" src="/assets/FlashParking.TradeShow.jpeg" alt="Flash trade booth at IPMI conference" style="margin-bottom:1.5rem;">
-    <div class="photo-label" style="margin-top:-1rem;margin-bottom:1.5rem;">Flash at IPMI — the brand showing up in the room where buyers decided</div>
-    <p class="cs-p">In a B2G and commercial real estate category where buyers read the trade press and google vendors before every meeting, earned media isn't a vanity metric. The IPMI cover established the brand story. The Road to Autonomy podcast put the Mobility Hub thesis in front of the AV and smart city audience that was becoming a major buyer type. The unicorn announcement closed the loop — credibility, category leadership, and scale, in that order.</p>
-    <div class="press-cards">
-      <a class="press-card" href="https://www.builtinchicago.org/articles/parking-flash-becomes-unicorn-raises-250m-hiring" target="_blank">
-        <div class="press-card-outlet">Built In Chicago · Mar 2022</div>
-        <div class="press-card-hed">FlashParking becomes a unicorn, raises $250M — and is hiring</div>
-        <div class="press-card-arrow">↗</div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/FlashParking.TradeShow.jpeg"
+              data-title="Flash at IPMI — the brand showing up in the room where buyers decided">
+        <div class="reel-thumb">
+          <img src="/assets/FlashParking.TradeShow.jpeg" alt="Flash trade booth at IPMI conference">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI</div>
+          <div class="reel-title">Flash in the room where buyers decided</div>
+        </div>
+      </button>
+      <div class="press-list-label">Press &amp; recognition</div>
+      <a class="press-link" href="https://www.parking-mobility.org/blog/from-tesla-to-parking/" target="_blank">
+        <div class="press-outlet">Parking &amp; Mobility · IPMI · Cover feature</div>
+        <div class="press-hed">"From Tesla to Parking: An Executive's Bold Move"</div>
       </a>
-      <a class="press-card" href="https://www.roadtoautonomy.com/future-parking-mobility-hubs/" target="_blank">
-        <div class="press-card-outlet">Road to Autonomy · Podcast</div>
-        <div class="press-card-hed">The Mobility Hub strategy — FlashParking's EVP on parking, EV charging, and the future of urban infrastructure</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.builtinchicago.org/articles/parking-flash-becomes-unicorn-raises-250m-hiring" target="_blank">
+        <div class="press-outlet">Built In Chicago · Mar 2022</div>
+        <div class="press-hed">FlashParking becomes a unicorn, raises $250M — and is hiring</div>
       </a>
-    </div>
-  </div>
+      <a class="press-link" href="https://www.roadtoautonomy.com/future-parking-mobility-hubs/" target="_blank">
+        <div class="press-outlet">Road to Autonomy · Podcast</div>
+        <div class="press-hed">The Mobility Hub strategy — parking, EV charging, and the future of urban infrastructure</div>
+      </a>
+    </aside>
+  </section>
 
 </div>
 
@@ -306,6 +402,71 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <span class="footer-name">Neil Golson</span>
   <span class="footer-copy">© 2026 · neilgolson.com</span>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else if(type === 'image'){
+      media = document.createElement('img');
+      media.src = src;
+      media.alt = title || '';
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe,img');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe,img');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
