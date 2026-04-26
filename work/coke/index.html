@@ -114,7 +114,48 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
 .footer-copy{font-size:12px;color:var(--light);}
 
+/* ── PER-SECTION GRID (text + section-specific rail) ── */
+.cs-section{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:3.5rem 4rem;border-bottom:0.5px solid var(--border);align-items:start;}
+.cs-section:last-of-type{border-bottom:none;}
+.cs-text{min-width:0;}
+.cs-rail{display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;align-self:start;}
+
+/* ── REEL TILES (videos and images) ── */
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:13px;height:13px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+.reel-tile.is-image .reel-play{background:rgba(255,255,255,0.85);}
+.reel-tile.is-image .reel-play svg{margin-left:0;}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe, .lb-stage img{width:100%;height:100%;display:block;border:none;object-fit:contain;background:#000;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
 /* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-section{grid-template-columns:1fr;gap:1.5rem;}
+}
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
@@ -189,121 +230,116 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
   </div>
 
-  <!-- CULTURAL MOMENTS -->
-  <div class="cs-section">
-    <div class="cs-section-label">Chapter one · Cultural entertainment brand</div>
-    <h2 class="cs-h2">Super Bowl, Olympics, American Idol — brand at cultural scale</h2>
-    <p class="cs-p">Moving from the citrus portfolio to the Coca-Cola core brand meant stepping into a different kind of problem entirely. Vault had a $0.99 problem. Coca-Cola had a cultural relevance problem: how do you run entertainment-driven campaigns for the world's most recognized brand without them feeling like wallpaper? The media and activation budget across the core brand portfolio — NASCAR, Olympics, World Cup, Holiday, American Idol — ran to $800 million annually, managed by a team of six brand and associate brand managers. The answer, every time, was specificity: find the one true human moment inside the big cultural event and build the brand there, not around it. Coca-Cola belongs inside the experience, not sponsoring it from the outside. High-stakes brand stewardship at scale, with a lean team that had to be right.</p>
-    <div class="two-col">
-      <div class="three-col-item">
-        <div style="padding:1.5rem;">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;">American Idol · Perfect Harmony</div>
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.4;margin-bottom:0.75rem;color:var(--ink);">The "Perfect Harmony" campaign</div>
-          <div style="font-size:13px;color:var(--mid);line-height:1.8;">A multi-season branded integration — Coca-Cola woven into the American Idol set, storyline, and talent rather than dropped into ad breaks. Taio Cruz was the centerpiece of the Season 10 execution.</div>
-        </div>
-      </div>
-      <div class="three-col-item">
-        <div style="padding:1.5rem;">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;">Olympics 2012</div>
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.4;margin-bottom:0.75rem;color:var(--ink);">Jessica Long — paralympian campaign</div>
-          <div style="font-size:13px;color:var(--mid);line-height:1.8;margin-bottom:1rem;">A campaign built around a Paralympic gold medalist at a time when Paralympic storytelling was still rare in mainstream advertising. The spot ran during the London 2012 Games.</div>
-          <a href="https://www.ispot.tv/ad/7V8H/the-coca-cola-company-olympics-featuring-jessica-long" target="_blank" style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);">Watch spot ↗</a>
-        </div>
-      </div>
+  <!-- 1 · CULTURAL MOMENTS -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Chapter one · Cultural entertainment brand</div>
+      <h2 class="cs-h2">Super Bowl, Olympics, American Idol — brand at cultural scale</h2>
+      <p class="cs-p">Moving from the citrus portfolio to the Coca-Cola core brand meant stepping into a different kind of problem entirely. Coca-Cola had a cultural relevance problem: how do you run entertainment-driven campaigns for the world's most recognized brand without them feeling like wallpaper? The media and activation budget across the core brand portfolio — NASCAR, Olympics, World Cup, Holiday, American Idol — ran to $800 million annually, managed by a team of six brand and associate brand managers. The answer, every time, was specificity: find the one true human moment inside the big cultural event and build the brand there, not around it. Coca-Cola belongs inside the experience, not sponsoring it from the outside. High-stakes brand stewardship at scale, with a lean team that had to be right.</p>
+      <p class="cs-p">Two examples of the work. The American Idol "Perfect Harmony" campaign was a multi-season branded integration — Coca-Cola woven into the set, storyline, and talent rather than dropped into ad breaks. Taio Cruz was the centerpiece of the Season 10 execution. The Olympics 2012 work included a campaign built around Paralympic gold medalist Jessica Long, at a time when Paralympic storytelling was still rare in mainstream advertising. The spot ran during the London 2012 Games.</p>
     </div>
-
-  </div>
-
-  <!-- WHITE CAN / ARCTIC HOME -->
-  <div class="cs-section">
-    <div class="cs-section-label">Chapter one, cont. · Coalition &amp; cause</div>
-    <h2 class="cs-h2">The White Can: a product you worked on is in the Smithsonian</h2>
-    <p class="cs-p">The Arctic Home campaign partnered Coca-Cola with WWF to raise awareness of polar bear habitat loss. The creative vehicle was a limited-edition white Coca-Cola can — replacing the iconic red with white to signal the melting Arctic. It was one of the most visible cause campaigns the brand had ever run, and one of the most debated internally: changing the can color, even temporarily, touched the most sacred element of the brand system.</p>
-    <p class="cs-p">I helped introduce the white can program. The can is now in the Smithsonian Institution's permanent collection — which is the kind of proof point that no press release can manufacture.</p>
-
-    <a class="artifact" href="https://www.si.edu/object/white-coca-cola-can%3Anmah_1421965" target="_blank">
-      <div class="artifact-label">Smithsonian Institution · National Museum of American History</div>
-      <div class="artifact-title">White Coca-Cola Can — Permanent Collection</div>
-      <div class="artifact-desc">The limited-edition white can produced for the Arctic Home campaign with WWF is part of the Smithsonian's permanent collection. Object ID: NMAH_1421965.</div>
-      <div class="artifact-link">View in Smithsonian collection ↗</div>
-    </a>
-
-    <div class="press-cards">
-      <a class="press-card" href="https://www.thearcticinstitute.org/coca-cola-world-wildlife-fund-arctic-home/" target="_blank">
-        <div class="press-card-outlet">The Arctic Institute</div>
-        <div class="press-card-hed">Coca-Cola &amp; World Wildlife Fund — Arctic Home campaign</div>
-        <div class="press-card-arrow">↗</div>
+    <aside class="cs-rail">
+      <div class="press-list-label">Selected work</div>
+      <a class="press-link" href="https://www.ispot.tv/ad/7V8H/the-coca-cola-company-olympics-featuring-jessica-long" target="_blank">
+        <div class="press-outlet">Olympics 2012 · iSpot</div>
+        <div class="press-hed">Jessica Long — Paralympian campaign spot</div>
       </a>
-    </div>
+    </aside>
+  </section>
 
-    <div style="margin-top:3rem;">
-      <div class="cs-section-label" style="margin-bottom:1rem;">Super Bowl · Polar Bowl</div>
+  <!-- 2 · WHITE CAN / ARCTIC HOME / POLAR BOWL -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Chapter one, cont. · Coalition &amp; cause</div>
+      <h2 class="cs-h2">The White Can: a product you worked on is in the Smithsonian</h2>
+      <p class="cs-p">The Arctic Home campaign partnered Coca-Cola with WWF to raise awareness of polar bear habitat loss. The creative vehicle was a limited-edition white Coca-Cola can — replacing the iconic red with white to signal the melting Arctic. It was one of the most visible cause campaigns the brand had ever run, and one of the most debated internally: changing the can color, even temporarily, touched the most sacred element of the brand system.</p>
+      <p class="cs-p">I helped introduce the white can program. The can is now in the Smithsonian Institution's permanent collection — which is the kind of proof point that no press release can manufacture.</p>
       <p class="cs-p">The polar bears from the Arctic Home campaign didn't just live on a can. For Super Bowl XLVI — New England vs. New York — Coca-Cola cast them as football fans, one rooting for each team, and invited America to watch the bears watch the game live. In real time, as the game was played, the bears reacted to every score, every halftime moment, every competitor ad that ran during the broadcast. Multiple TV versions were produced and aired based on how the game was going, synced with the live digital stream. Twitter and Facebook generated over 5,000 comments per minute. Nine million screens. Average viewing time: 28 minutes per screen. Publications ranked it a first — a new category of digital real-time advertising that hadn't existed before the game started. The campaign was submitted to Cannes. Not bad for a webcam from the Arctic.</p>
-      <div class="video-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/SLWPYdsV7po"
-          title="Polar Bowl — Super Bowl campaign, Cannes submission"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-label">Polar Bowl · Super Bowl XLVI — Cannes submission</div>
     </div>
-  </div>
-
-  <!-- MINI CAN -->
-  <div class="cs-section">
-    <div class="cs-section-label">Chapter two · Mini Can</div>
-    <h2 class="cs-h2">The 100-calorie format that broke a seven-year market share drought</h2>
-    <p class="cs-p">Running parallel to the American Idol Perfect Harmony campaign and the Arctic Home white can, the Mini Can was the format answer to the same health-and-wellness pressure. By 2010, Coca-Cola hadn't grown US market share in seven years. The category was under pressure from energy drinks, water, and a broad shift away from full-calorie sodas. The brand wasn't broken — but the package was. The standard 12oz can had become the default, and the default was losing consumers who wanted the taste without the full caloric commitment.</p>
-    <p class="cs-p">The Mini Can — a 7.5oz, 90-calorie format at a premium price point — was the answer. It gave health-conscious consumers a reason to come back to Coke without switching to a diet formulation. Alongside the format launch, I redesigned the grocery merchandising strategy to treat the Mini Can as a premium SKU rather than a discount play — different shelf placement, different display mechanics, different price anchor.</p>
-    <p class="cs-p">The result was the first US market share growth in seven years. The format created a new consumption occasion — the "occasional treat" — that the full can couldn't serve. It's still on shelves.</p>
-
-    <div class="stat-row">
-      <div class="stat-item">
-        <span class="stat-val">First</span>
-        <span class="stat-label">US market share growth in 7 years</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">90 cal</span>
-        <span class="stat-label">7.5oz Mini Can format</span>
-      </div>
-    </div>
-
-    <div class="press-cards">
-      <a class="press-card" href="https://www.bevnet.com/news/2011/coca-cola-cuts-price-on-8-pack-of-mini-cans" target="_blank">
-        <div class="press-card-outlet">BevNET · 2011</div>
-        <div class="press-card-hed">Coca-Cola cuts price on 8-pack of Mini Cans</div>
-        <div class="press-card-arrow">↗</div>
+    <aside class="cs-rail">
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/SLWPYdsV7po?autoplay=1&amp;rel=0"
+              data-title="Polar Bowl — Super Bowl XLVI · Cannes submission">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/SLWPYdsV7po/maxresdefault.jpg" alt="Polar Bowl — Super Bowl campaign">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Super Bowl XLVI</div>
+          <div class="reel-title">Polar Bowl — Cannes submission</div>
+        </div>
+      </button>
+      <div class="press-list-label">Recognition &amp; press</div>
+      <a class="press-link" href="https://www.si.edu/object/white-coca-cola-can%3Anmah_1421965" target="_blank">
+        <div class="press-outlet">Smithsonian Institution · Permanent Collection</div>
+        <div class="press-hed">White Coca-Cola Can — National Museum of American History</div>
       </a>
-    </div>
-  </div>
-
-  <!-- SHANGHAI / MCDONALD'S -->
-  <div class="cs-section" style="border-bottom:none;">
-    <div class="cs-section-label">Chapter three · International</div>
-    <h2 class="cs-h2">Shanghai: selected to accelerate Coca-Cola's fastest-growing customer in its fastest-growing region</h2>
-    <p class="cs-p">McDonald's was Coca-Cola's fastest-growing customer. Asia Pacific was the company's fastest-growing region. I was selected for the international assignment to Shanghai to accelerate both — inside the AMPEA (Asia Pacific, Middle East &amp; Africa) division, managing the McDonald's global account at the intersection of those two growth trajectories. The work was part brand, part supply chain, part business development: coordinating promotional programs across markets, managing the commercial terms, and keeping two enormous organizations moving in the same direction on joint campaigns.</p>
-    <p class="cs-p">The program I managed was the London 2012 Olympic Games collectible glasses series — six limited-edition glasses, each in a different color (Pink, Green, Blue, Aqua, Charcoal, Purple), each embossed with an official Olympic sport pictogram: Gymnastics, Athletics, Swimming, Basketball, Football, Cycling. Available only at McDonald's, only from May through September 2012, across 18 markets: China, Taiwan, Korea, Japan, Hong Kong, Macau, Australia, New Zealand, the Philippines, Malaysia, Thailand, Pakistan, South Africa, Indonesia, Tahiti, Fiji, New Caledonia, and Singapore. Executing a collectible program with that kind of market footprint requires supply chain, commercial, and brand coordination that doesn't appear in any brand marketing job description — which is exactly what makes it useful.</p>
-    <p class="cs-p">The McDonald's relationship earned a Global Benchmark Supplier designation for the Coca-Cola division — a recognition that the division had performed at the highest level across the full scope of the commercial relationship, not just the creative work.</p>
-
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/Zwk-SfR69Uw"
-        title="Coca-Cola AMPEA — Olympic Glasses promotion TV spot"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-label">Coca-Cola AMPEA · McDonald's — Olympic Glasses promotion</div>
-    <div class="press-cards">
-      <a class="press-card" href="http://www.krissyfied.com/2011/07/coca-cola-and-mcdonalds-present-new.html" target="_blank">
-        <div class="press-card-outlet">2011 · Asia Pacific launch</div>
-        <div class="press-card-hed">Coca-Cola and McDonald's present new London 2012 Olympic Games glasses — 18 markets, 6 collectible designs</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.thearcticinstitute.org/coca-cola-world-wildlife-fund-arctic-home/" target="_blank">
+        <div class="press-outlet">The Arctic Institute</div>
+        <div class="press-hed">Coca-Cola &amp; World Wildlife Fund — Arctic Home campaign</div>
       </a>
+    </aside>
+  </section>
+
+  <!-- 3 · MINI CAN -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Chapter two · Mini Can</div>
+      <h2 class="cs-h2">The 90-calorie format that broke a seven-year market share drought</h2>
+      <p class="cs-p">Running parallel to the American Idol Perfect Harmony campaign and the Arctic Home white can, the Mini Can was the format answer to the same health-and-wellness pressure. By 2010, Coca-Cola hadn't grown US market share in seven years. The category was under pressure from energy drinks, water, and a broad shift away from full-calorie sodas. The brand wasn't broken — but the package was. The standard 12oz can had become the default, and the default was losing consumers who wanted the taste without the full caloric commitment.</p>
+      <p class="cs-p">The Mini Can — a 7.5oz, 90-calorie format at a premium price point — was the answer. It gave health-conscious consumers a reason to come back to Coke without switching to a diet formulation. Alongside the format launch, I redesigned the grocery merchandising strategy to treat the Mini Can as a premium SKU rather than a discount play — different shelf placement, different display mechanics, different price anchor.</p>
+      <p class="cs-p">The result was the first US market share growth in seven years. The format created a new consumption occasion — the "occasional treat" — that the full can couldn't serve. It's still on shelves.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-val">First</span>
+          <span class="stat-label">US market share growth in 7 years</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">90 cal</span>
+          <span class="stat-label">7.5oz Mini Can format</span>
+        </div>
+      </div>
     </div>
-  </div>
+    <aside class="cs-rail">
+      <div class="press-list-label">Press</div>
+      <a class="press-link" href="https://www.bevnet.com/news/2011/coca-cola-cuts-price-on-8-pack-of-mini-cans" target="_blank">
+        <div class="press-outlet">BevNET · 2011</div>
+        <div class="press-hed">Coca-Cola cuts price on 8-pack of Mini Cans</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 4 · SHANGHAI / MCDONALD'S -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Chapter three · International</div>
+      <h2 class="cs-h2">Shanghai: selected to accelerate Coca-Cola's fastest-growing customer in its fastest-growing region</h2>
+      <p class="cs-p">McDonald's was Coca-Cola's fastest-growing customer. Asia Pacific was the company's fastest-growing region. I was selected for the international assignment to Shanghai to accelerate both — inside the AMPEA (Asia Pacific, Middle East &amp; Africa) division, managing the McDonald's global account at the intersection of those two growth trajectories. The work was part brand, part supply chain, part business development: coordinating promotional programs across markets, managing the commercial terms, and keeping two enormous organizations moving in the same direction on joint campaigns.</p>
+      <p class="cs-p">The program I managed was the London 2012 Olympic Games collectible glasses series — six limited-edition glasses, each in a different color (Pink, Green, Blue, Aqua, Charcoal, Purple), each embossed with an official Olympic sport pictogram: Gymnastics, Athletics, Swimming, Basketball, Football, Cycling. Available only at McDonald's, only from May through September 2012, across 18 markets: China, Taiwan, Korea, Japan, Hong Kong, Macau, Australia, New Zealand, the Philippines, Malaysia, Thailand, Pakistan, South Africa, Indonesia, Tahiti, Fiji, New Caledonia, and Singapore. Executing a collectible program with that kind of market footprint requires supply chain, commercial, and brand coordination that doesn't appear in any brand marketing job description — which is exactly what makes it useful.</p>
+      <p class="cs-p">The McDonald's relationship earned a Global Benchmark Supplier designation for the Coca-Cola division — a recognition that the division had performed at the highest level across the full scope of the commercial relationship, not just the creative work.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/Zwk-SfR69Uw?autoplay=1&amp;rel=0"
+              data-title="Coca-Cola AMPEA — Olympic Glasses promotion TV spot">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/Zwk-SfR69Uw/maxresdefault.jpg" alt="Coca-Cola Olympic Glasses promotion">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">AMPEA · McDonald's</div>
+          <div class="reel-title">Olympic Glasses promotion :30</div>
+        </div>
+      </button>
+      <div class="press-list-label">Press</div>
+      <a class="press-link" href="http://www.krissyfied.com/2011/07/coca-cola-and-mcdonalds-present-new.html" target="_blank">
+        <div class="press-outlet">2011 · Asia Pacific launch</div>
+        <div class="press-hed">Coca-Cola and McDonald's present new London 2012 Olympic Games glasses — 18 markets, 6 collectible designs</div>
+      </a>
+    </aside>
+  </section>
 
 </div>
 
@@ -317,6 +353,71 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <span class="footer-name">Neil Golson</span>
   <span class="footer-copy">© 2026 · neilgolson.com</span>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else if(type === 'image'){
+      media = document.createElement('img');
+      media.src = src;
+      media.alt = title || '';
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe,img');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe,img');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
