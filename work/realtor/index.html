@@ -100,10 +100,58 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
 .footer-copy{font-size:12px;color:var(--light);}
 
+/* ── CASE LAYOUT (text column + sticky rail) ── */
+.cs-layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:0 4rem;align-items:start;}
+.cs-main{min-width:0;}
+.cs-rail{position:sticky;top:5rem;align-self:start;display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;}
+
+/* override section padding when inside the layout */
+.cs-main .cs-section{padding:3.5rem 0;}
+.cs-main .cs-section:first-child{padding-top:2.5rem;}
+.cs-main .cs-section:last-child{border-bottom:none;padding-bottom:1rem;}
+
+/* ── REEL PANEL inside case rail ── */
+.reel-panel-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);margin-bottom:0.15rem;display:flex;justify-content:space-between;align-items:baseline;}
+.reel-panel-label span:last-child{color:var(--accent);font-weight:500;}
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:14px;height:14px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe{width:100%;height:100%;display:block;border:none;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
 /* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-layout{grid-template-columns:1fr;gap:0;}
+  .cs-rail{position:static;margin:2rem 0 1rem;}
+  .cs-main .cs-section:first-child{padding-top:3.5rem;}
+}
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
-  .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-hero,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-layout{padding:0 1.5rem;}
   .cs-tldr{grid-template-columns:1fr;}
   .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
   .cs-tldr-item:first-child{border-top:none;}
@@ -175,164 +223,177 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
   </div>
 
-  <!-- THE CHALLENGE -->
-  <div class="cs-section">
-    <div class="two-col-wide">
-      <div>
+  <!-- LAYOUT: text + sticky rail -->
+  <div class="cs-layout">
+
+    <main class="cs-main">
+
+      <!-- THE CHALLENGE -->
+      <section class="cs-section">
         <div class="cs-section-label">The challenge</div>
         <h2 class="cs-h2">A brand assault nobody expected</h2>
         <p class="cs-p">Realtor.com had operated as the second-largest portal in real estate for years — with credibility tied to the NAR relationship and a user base built on MLS accuracy. Then Homes.com arrived with a 10× media budget and a simple message: your listing, your lead. Zillow, already at 4× our spend, doubled down on product.</p>
         <p class="cs-p">The defensive play — match spend, chase features — wasn't available to us. We had to find a terrain where 30 years of heritage was the advantage, not a liability. That terrain turned out to be trust. Not trust as a tagline. Trust as the entire strategic frame: don't out-shout, out-clarify. The positioning we built — Expert Edge — was grounded in the insight that real estate is one of the few purchases people genuinely fear getting wrong. Not just financially. In front of their family, their partner, their life.</p>
-      </div>
-      <div>
         <div class="pull-quote">
           <p>"The brands winning share aren't the ones with the biggest budgets. They're the ones consumers believe when it matters most."</p>
         </div>
         <p class="cs-p">Real estate is one of the most segmented consumer markets in the country — buyers, sellers, owners, renters, agents, brokerages, and MLS ecosystem partners, each with different motivations, different anxieties, and different definitions of expertise. Understanding how those audiences think and what they fear was not an advertising problem. It was a research problem. Consumer insights was a core partner throughout: brand tracking, qualitative segmentation, and the ongoing work of understanding a market that shifts every time interest rates move.</p>
         <p class="cs-p">The insight was hiding in the data. Realtor.com users had the highest intent of any portal — they were closer to transaction, more likely to actually buy or sell. The brand had earned trust it hadn't yet claimed in its creative. That finding — from brand tracker research — was the strategic foundation for everything that followed.</p>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <!-- THE INSIGHT + REBA -->
-  <div class="cs-section">
-    <div class="cs-section-label">The work</div>
-    <h2 class="cs-h2">Reba McEntire and the business case for celebrity</h2>
-    <p class="cs-p">Most brand teams treat celebrity as a media buy. We treated it as a strategic signal. The question we asked wasn't "who has reach?" — it was "who do people trust when they're making the most important decision of their financial lives?" Home buyers and sellers aren't just afraid of financial loss. They're afraid of embarrassment — of getting the biggest decision of their life wrong in front of the people they love. That emotion is FOSU: fear of screwing up. It's the real engine behind every high-stakes real estate transaction.</p>
-    <p class="cs-p">Celebrity done right is a trust shortcut. It transfers credibility from a face people already believe in to a brand they're still evaluating. The consumer insights team ran trustworthiness testing across a broad celebrity set — Reba McEntire scored higher than anyone else. The qualitative work explained why: her identity as someone who navigated major life reinventions and came out stronger mapped directly to the emotional state of buyers and sellers facing the biggest financial decision of their lives. She wasn't amplifying our message. She was embodying our values.</p>
-    <p class="cs-p">The creative format — a fictional Reba-hosted show set in a familiar sitcom house — gave the brand warmth that most real estate advertising doesn't have. The coherence between who she is and what the brand stands for is what moves brand health over time, not just in the week of launch.</p>
-    <p class="cs-p">I owned the business case internally, locked Reba as the target, led the negotiation, and partnered with GSD&M to take the campaign from brief to national air. The internal agency I rebuilt — 30+ people with hires from YETI, USAA, Adobe, Expedia, and Indeed — handled production alongside the agency relationship.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/2QLaJFOebvY"
-        title="Realtor.com — Reba McEntire campaign"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-label">Realtor.com × Reba McEntire — national brand campaign</div>
-  </div>
+      <!-- THE WORK + REBA -->
+      <section class="cs-section">
+        <div class="cs-section-label">The work</div>
+        <h2 class="cs-h2">Reba McEntire and the business case for celebrity</h2>
+        <p class="cs-p">Most brand teams treat celebrity as a media buy. We treated it as a strategic signal. The question we asked wasn't "who has reach?" — it was "who do people trust when they're making the most important decision of their financial lives?" Home buyers and sellers aren't just afraid of financial loss. They're afraid of embarrassment — of getting the biggest decision of their life wrong in front of the people they love. That emotion is FOSU: fear of screwing up. It's the real engine behind every high-stakes real estate transaction.</p>
+        <p class="cs-p">Celebrity done right is a trust shortcut. It transfers credibility from a face people already believe in to a brand they're still evaluating. The consumer insights team ran trustworthiness testing across a broad celebrity set — Reba McEntire scored higher than anyone else. The qualitative work explained why: her identity as someone who navigated major life reinventions and came out stronger mapped directly to the emotional state of buyers and sellers facing the biggest financial decision of their lives. She wasn't amplifying our message. She was embodying our values.</p>
+        <p class="cs-p">The creative format — a fictional Reba-hosted show set in a familiar sitcom house — gave the brand warmth that most real estate advertising doesn't have. The coherence between who she is and what the brand stands for is what moves brand health over time, not just in the week of launch.</p>
+        <p class="cs-p">I owned the business case internally, locked Reba as the target, led the negotiation, and partnered with GSD&amp;M to take the campaign from brief to national air. The internal agency I rebuilt — 30+ people with hires from YETI, USAA, Adobe, Expedia, and Indeed — handled production alongside the agency relationship.</p>
+      </section>
 
-  <!-- REALTOR.COM+ -->
-  <div class="cs-section">
-    <div class="cs-section-label">Product launch</div>
-    <h2 class="cs-h2">Realtor.com+: the brand and the product moving together</h2>
-    <p class="cs-p">Realtor.com+ wasn't a feature launch — it was the company moving further into the transaction than it had ever gone. The strategic ambition was to increase consumer lifetime value by staying in the relationship beyond search: deeper into the journey, closer to the decision, more useful at the moment that actually matters. That meant creating value not just for home buyers and sellers, but for the agents, brokerages, and MLS ecosystem partners who are the real clients of the platform.</p>
-    <p class="cs-p">A collaborative home search tool sounds like a consumer product. The real bet was that by making the search experience genuinely useful for the consumer-agent relationship — shared shortlists, shared context, shared decision-making — Realtor.com becomes indispensable to both sides of the transaction. Agents get a platform that makes them look good. Brokerages get retention. MLS partners get engagement data. And Realtor.com moves from a portal people visit to a platform that's embedded in how real estate actually gets done.</p>
-    <p class="cs-p">The go-to-market had to work across all of those audiences simultaneously — which is exactly what a brand built around expertise and trust is positioned to do. Expert Edge wasn't consumer positioning bolted onto a B2B product. It was the throughline that made the same launch credible to a first-time buyer and a top-producing agent at the same time.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/jgywhxfOOvw"
-        title="Realtor.com+ product launch"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-label">Realtor.com+ — product launch</div>
-    <div class="press-cards" style="margin-top:1.5rem;">
-      <a class="press-card" href="https://www.prnewswire.com/news-releases/realtorcom-unveils-realtorcom-a-first-of-its-kind-collaborative-home-search-experience-302666863.html" target="_blank">
-        <div class="press-card-outlet">PR Newswire</div>
-        <div class="press-card-hed">Realtor.com unveils a first-of-its-kind collaborative home search experience</div>
-        <div class="press-card-arrow">↗</div>
+      <!-- REALTOR.COM+ -->
+      <section class="cs-section">
+        <div class="cs-section-label">Product launch</div>
+        <h2 class="cs-h2">Realtor.com+: the brand and the product moving together</h2>
+        <p class="cs-p">Realtor.com+ wasn't a feature launch — it was the company moving further into the transaction than it had ever gone. The strategic ambition was to increase consumer lifetime value by staying in the relationship beyond search: deeper into the journey, closer to the decision, more useful at the moment that actually matters. That meant creating value not just for home buyers and sellers, but for the agents, brokerages, and MLS ecosystem partners who are the real clients of the platform.</p>
+        <p class="cs-p">A collaborative home search tool sounds like a consumer product. The real bet was that by making the search experience genuinely useful for the consumer-agent relationship — shared shortlists, shared context, shared decision-making — Realtor.com becomes indispensable to both sides of the transaction. Agents get a platform that makes them look good. Brokerages get retention. MLS partners get engagement data. And Realtor.com moves from a portal people visit to a platform that's embedded in how real estate actually gets done.</p>
+        <p class="cs-p">The go-to-market had to work across all of those audiences simultaneously — which is exactly what a brand built around expertise and trust is positioned to do. Expert Edge wasn't consumer positioning bolted onto a B2B product. It was the throughline that made the same launch credible to a first-time buyer and a top-producing agent at the same time.</p>
+      </section>
+
+      <!-- AI / SELLER -->
+      <section class="cs-section">
+        <div class="cs-section-label">AI creative</div>
+        <h2 class="cs-h2">Using AI to scale without losing the brand</h2>
+        <p class="cs-p">The Seller AI campaign represented a different kind of creative challenge: how do you use AI-generated creative at scale without it feeling like a cost-cutting exercise? The answer was to treat AI as a production tool inside a brand system that was already doing the trust-building work — not as a substitute for the brand, but as a way to reach more sellers faster without diluting what the brand stood for.</p>
+        <p class="cs-p">AdExchanger covered the approach as an example of how legacy portals are rethinking their creative infrastructure — not just making cheaper ads, but building systems that let a brand position scale without decaying.</p>
+      </section>
+
+      <!-- SXSW -->
+      <section class="cs-section">
+        <div class="cs-section-label">Thought leadership</div>
+        <h2 class="cs-h2">SXSW: taking the work into the room where CMOs are made</h2>
+        <p class="cs-p">The SXSW "Nearly Home" panel was an invitation-only gathering of senior marketing and advertising leaders. The brief was to explain how purpose-aligned storytelling drives real business outcomes — not just attention. The Realtor.com brand acceleration was the case study. GSD&amp;M was on stage alongside us.</p>
+        <p class="cs-p">It was the right venue for the right message at the right time: a legacy brand winning on trust in a category being fought on price and volume. The format gave us 45 minutes to tell it properly.</p>
+      </section>
+
+      <!-- MISSION ZERO -->
+      <section class="cs-section">
+        <div class="cs-section-label">Community activation · Coalition campaign</div>
+        <h2 class="cs-h2">Mission Zero: building a community around a cause, not a campaign</h2>
+        <p class="cs-p">Veteran homelessness is a problem the housing industry is uniquely positioned to help solve. Mission Zero was designed from the start as community activation, not brand advertising — a first-of-its-kind industry coalition where Realtor.com was one voice among nine. Partners included Veterans United, Home Depot, RE/MAX, NAR, Homes for Our Troops, and the VFW on the housing and advocacy side, and the Wall Street Journal and New York Post on the media side — both of whom donated reach rather than just covering the story. That last detail matters: outlets of that scale don't donate media to cause campaigns. They donate it when the mission has cleared a higher editorial bar than a typical brand-funded initiative.</p>
+        <p class="cs-p">No single brand controlled the narrative. The coalition structure is what gave it credibility — and what made it community-building rather than marketing. Every purpose dollar was tracked against brand health and conversion outcomes. Both moved. The model generalizes to any brand serious about activation that earns trust rather than renting it.</p>
+        <a href="/work/mission-zero/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;margin-top:0.5rem;">Full Mission Zero case study ↗</a>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="cs-section">
+        <div class="cs-section-label">Results</div>
+        <h2 class="cs-h2">What the numbers say</h2>
+        <p class="cs-p">The bet was that trust compounds differently than awareness. Awareness peaks and fades. Trust builds visit share, repeat intent, and conversion over time. The data across 18 months bears that out.</p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <span class="stat-val">+20%</span>
+            <span class="stat-label">CPIV improvement</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">5</span>
+            <span class="stat-label">Consecutive quarters of YoY revenue growth</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">7+ mo</span>
+            <span class="stat-label">Brand health improvement streak</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">$143M</span>
+            <span class="stat-label">Revenue, most recent quarter (+10% YoY)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">3.4×</span>
+            <span class="stat-label">Visit share vs. Homes.com (Comscore)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">&gt;50%</span>
+            <span class="stat-label">Visit share gap closed vs. Zillow in 18 months</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-val">+17%</span>
+            <span class="stat-label">Response lift over prior creative</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="cs-rail">
+
+      <div class="reel-panel-label"><span>The work</span><span>3 reels</span></div>
+
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/2QLaJFOebvY?autoplay=1&amp;rel=0"
+              data-title="Realtor.com — Reba McEntire campaign">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/2QLaJFOebvY/maxresdefault.jpg" alt="Reba McEntire — Realtor.com brand campaign">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Brand · Reba McEntire</div>
+          <div class="reel-title">National brand campaign</div>
+        </div>
+      </button>
+
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/jgywhxfOOvw?autoplay=1&amp;rel=0"
+              data-title="Realtor.com+ product launch">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/jgywhxfOOvw/maxresdefault.jpg" alt="Realtor.com+ product launch">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Product launch · Realtor.com+</div>
+          <div class="reel-title">Collaborative home search experience</div>
+        </div>
+      </button>
+
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/HmSvdU2-qlc?autoplay=1&amp;rel=0&amp;start=2"
+              data-title="SXSW 2026 — Nearly Home panel">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/HmSvdU2-qlc/maxresdefault.jpg" alt="SXSW 2026 Nearly Home panel">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">SXSW 2026 · Realtor.com × GSD&amp;M</div>
+          <div class="reel-title">"Nearly Home" panel</div>
+        </div>
+      </button>
+
+      <div class="press-list-label">Press &amp; recognition</div>
+      <a class="press-link" href="https://s3.amazonaws.com/current.effie.org/2026/2026_Effie_US_Winners_List.pdf" target="_blank">
+        <div class="press-outlet">Effie Awards · 2026</div>
+        <div class="press-hed">Finalist — Realtor.com brand acceleration campaign</div>
       </a>
-    </div>
-  </div>
-
-  <!-- AI / SELLER -->
-  <div class="cs-section">
-    <div class="cs-section-label">AI creative</div>
-    <h2 class="cs-h2">Using AI to scale without losing the brand</h2>
-    <p class="cs-p">The Seller AI campaign represented a different kind of creative challenge: how do you use AI-generated creative at scale without it feeling like a cost-cutting exercise? The answer was to treat AI as a production tool inside a brand system that was already doing the trust-building work — not as a substitute for the brand, but as a way to reach more sellers faster without diluting what the brand stood for.</p>
-    <p class="cs-p">AdExchanger covered the approach as an example of how legacy portals are rethinking their creative infrastructure — not just making cheaper ads, but building systems that let a brand position scale without decaying.</p>
-    <div class="press-cards">
-      <a class="press-card" href="https://www.adexchanger.com/ai/how-realtor-com-is-using-ai-creative-to-expand-its-ad-footprint/" target="_blank">
-        <div class="press-card-outlet">AdExchanger · Mar 2026</div>
-        <div class="press-card-hed">How Realtor.com Is Using AI Creative To Expand Its Ad Footprint</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.adexchanger.com/ai/how-realtor-com-is-using-ai-creative-to-expand-its-ad-footprint/" target="_blank">
+        <div class="press-outlet">AdExchanger · Mar 2026</div>
+        <div class="press-hed">How Realtor.com Is Using AI Creative To Expand Its Ad Footprint</div>
       </a>
-    </div>
-  </div>
-
-  <!-- SXSW -->
-  <div class="cs-section">
-    <div class="cs-section-label">Thought leadership</div>
-    <h2 class="cs-h2">SXSW: taking the work into the room where CMOs are made</h2>
-    <p class="cs-p">The SXSW "Nearly Home" panel was an invitation-only gathering of senior marketing and advertising leaders. The brief was to explain how purpose-aligned storytelling drives real business outcomes — not just attention. The Realtor.com brand acceleration was the case study. GSD&M was on stage alongside us.</p>
-    <p class="cs-p">It was the right venue for the right message at the right time: a legacy brand winning on trust in a category being fought on price and volume. The format gave us 45 minutes to tell it properly.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/HmSvdU2-qlc?start=2"
-        title="Nearly Home — SXSW 2026"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-label">SXSW 2026 — "Nearly Home" panel, Realtor.com × GSD&M</div>
-    <div class="press-cards">
-      <a class="press-card" href="https://www.prnewswire.com/news-releases/welcome-to-our-open-house-realtorcom-announces-sxsw-2026-line-up-302693759.html" target="_blank">
-        <div class="press-card-outlet">PR Newswire · Feb 2026</div>
-        <div class="press-card-hed">Realtor.com announces SXSW 2026 Open House lineup</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.prnewswire.com/news-releases/welcome-to-our-open-house-realtorcom-announces-sxsw-2026-line-up-302693759.html" target="_blank">
+        <div class="press-outlet">PR Newswire · Feb 2026</div>
+        <div class="press-hed">Realtor.com announces SXSW 2026 Open House lineup</div>
       </a>
-      <a class="press-card" href="https://www.linkedin.com/posts/brandcomms-ai_sxsw-2026-highlight-helping-teams-with-activity-7439496589796270080-9t6i/" target="_blank">
-        <div class="press-card-outlet">BrandComms.ai · SXSW 2026</div>
-        <div class="press-card-hed">SXSW highlight — helping teams with AI in brand</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.prnewswire.com/news-releases/realtorcom-unveils-realtorcom-a-first-of-its-kind-collaborative-home-search-experience-302666863.html" target="_blank">
+        <div class="press-outlet">PR Newswire</div>
+        <div class="press-hed">Realtor.com unveils a first-of-its-kind collaborative home search experience</div>
       </a>
-    </div>
-  </div>
-
-  <!-- MISSION ZERO -->
-  <div class="cs-section">
-    <div class="cs-section-label">Community activation · Coalition campaign</div>
-    <h2 class="cs-h2">Mission Zero: building a community around a cause, not a campaign</h2>
-    <p class="cs-p">Veteran homelessness is a problem the housing industry is uniquely positioned to help solve. Mission Zero was designed from the start as community activation, not brand advertising — a first-of-its-kind industry coalition where Realtor.com was one voice among nine. Partners included Veterans United, Home Depot, RE/MAX, NAR, Homes for Our Troops, and the VFW on the housing and advocacy side, and the Wall Street Journal and New York Post on the media side — both of whom donated reach rather than just covering the story. That last detail matters: outlets of that scale don't donate media to cause campaigns. They donate it when the mission has cleared a higher editorial bar than a typical brand-funded initiative.</p>
-    <p class="cs-p">No single brand controlled the narrative. The coalition structure is what gave it credibility — and what made it community-building rather than marketing. Every purpose dollar was tracked against brand health and conversion outcomes. Both moved. The model generalizes to any brand serious about activation that earns trust rather than renting it.</p>
-    <a href="/work/mission-zero/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;margin-top:0.5rem;">Full Mission Zero case study ↗</a>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="cs-section">
-    <div class="cs-section-label">Results</div>
-    <h2 class="cs-h2">What the numbers say</h2>
-    <p class="cs-p">The bet was that trust compounds differently than awareness. Awareness peaks and fades. Trust builds visit share, repeat intent, and conversion over time. The data across 18 months bears that out.</p>
-    <div class="stat-row">
-      <div class="stat-item">
-        <span class="stat-val">+20%</span>
-        <span class="stat-label">CPIV improvement</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">5</span>
-        <span class="stat-label">Consecutive quarters of YoY revenue growth</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">7+ mo</span>
-        <span class="stat-label">Brand health improvement streak</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">$143M</span>
-        <span class="stat-label">Revenue, most recent quarter (+10% YoY)</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">3.4×</span>
-        <span class="stat-label">Visit share vs. Homes.com (Comscore)</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">&gt;50%</span>
-        <span class="stat-label">Visit share gap closed vs. Zillow in 18 months</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-val">+17%</span>
-        <span class="stat-label">Response lift over prior creative</span>
-      </div>
-    </div>
-    <div class="press-cards">
-      <a class="press-card" href="https://s3.amazonaws.com/current.effie.org/2026/2026_Effie_US_Winners_List.pdf" target="_blank">
-        <div class="press-card-outlet">Effie Awards · 2026</div>
-        <div class="press-card-hed">Finalist — Realtor.com brand acceleration campaign</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://www.linkedin.com/posts/brandcomms-ai_sxsw-2026-highlight-helping-teams-with-activity-7439496589796270080-9t6i/" target="_blank">
+        <div class="press-outlet">BrandComms.ai · SXSW 2026</div>
+        <div class="press-hed">SXSW highlight — helping teams with AI in brand</div>
       </a>
-    </div>
+
+    </aside>
+
   </div>
 
 </div>
@@ -347,6 +408,67 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <span class="footer-name">Neil Golson</span>
   <span class="footer-copy">© 2026 · neilgolson.com</span>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
