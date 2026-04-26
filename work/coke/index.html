@@ -97,6 +97,13 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
 .press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
 
+/* TL;DR */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid var(--border);}
+.cs-tldr-item{padding:1.25rem 4rem;}
+.cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+
 /* ── CASE NAV ── */
 .cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
 .cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
@@ -111,6 +118,9 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-tldr{grid-template-columns:1fr;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
   .two-col,.two-col-wide,.three-col{grid-template-columns:1fr}
   .metrics-bar{flex-wrap:wrap}
   .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
@@ -163,6 +173,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- BODY -->
 <div class="cs-body">
 
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">Brand Management · The Coca-Cola Company · 2004–2011 · Four distinct roles</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">Vault pricing defense · Super Bowl + Olympics campaigns · Arctic Home white can · Shanghai posting · Mini Can format</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">First US market share growth in 7 years · Smithsonian collection · Cannes submission · Global Benchmark Supplier</div>
+    </div>
+  </div>
+
   <!-- VAULT -->
   <div class="cs-section">
     <div class="two-col-wide">
@@ -208,15 +234,11 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
         <div class="video-cap">Super Bowl · Polar Bowl — Cannes submission</div>
       </div>
       <div class="three-col-item">
-        <div class="video-wrap no-margin">
-          <iframe
-            src="https://www.youtube.com/embed/aRWvfDOsjWQ"
-            title="American Idol — Taio Cruz integration"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+        <div style="padding:1.5rem;">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;">American Idol · Season 10</div>
+          <div style="font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.4;margin-bottom:0.75rem;color:var(--ink);">Taio Cruz brand integration</div>
+          <div style="font-size:13px;color:var(--mid);line-height:1.8;">A branded integration built around Taio Cruz's performance — Coca-Cola woven into the American Idol set and storyline rather than dropped into ad breaks.</div>
         </div>
-        <div class="video-cap">American Idol · Taio Cruz integration</div>
       </div>
       <div class="three-col-item">
         <div style="padding:1.5rem;">
@@ -228,30 +250,6 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </div>
     </div>
 
-    <div class="two-col" style="margin-top:2rem;">
-      <div>
-        <div class="video-wrap" style="margin:0 0 0.75rem;">
-          <iframe
-            src="https://player.vimeo.com/video/68068562"
-            title="Coca-Cola — Olympic spot"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-label" style="margin:0;">Olympics · Coca-Cola spot</div>
-      </div>
-      <div>
-        <div class="video-wrap" style="margin:0 0 0.75rem;">
-          <iframe
-            src="https://www.youtube.com/embed/U7tCCHWxCII"
-            title="Coca-Cola — The Other One"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-label" style="margin:0;">Olympics · The Other One</div>
-      </div>
-    </div>
   </div>
 
   <!-- WHITE CAN / ARCTIC HOME -->

@@ -83,6 +83,13 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
 .stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
 
+/* TL;DR */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid var(--border);}
+.cs-tldr-item{padding:1.25rem 4rem;}
+.cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+
 /* ── CASE NAV ── */
 .cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border);}
 .cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
@@ -97,6 +104,9 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-tldr{grid-template-columns:1fr;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
   .two-col,.two-col-wide{grid-template-columns:1fr}
   .metrics-bar{flex-wrap:wrap}
   .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
@@ -148,6 +158,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 <!-- BODY -->
 <div class="cs-body">
+
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">VP, Brand &amp; Creative · Realtor.com · 2023–2026</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">Brand repositioning · Reba McEntire campaign · internal agency (30+) · Realtor.com+ · Mission Zero coalition</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">+20% CPIV · 5 qtrs consecutive YoY revenue growth · 3.4× visit share vs. Homes.com · Effie finalist</div>
+    </div>
+  </div>
 
   <!-- THE CHALLENGE -->
   <div class="cs-section">
@@ -255,6 +281,15 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
   </div>
 
+  <!-- MISSION ZERO -->
+  <div class="cs-section">
+    <div class="cs-section-label">Coalition campaign</div>
+    <h2 class="cs-h2">Mission Zero: purpose built to drive business outcomes</h2>
+    <p class="cs-p">Veteran homelessness is a problem the housing industry is uniquely positioned to help solve — and a brand built around trust is uniquely positioned to lead on it. Mission Zero was a first-of-its-kind industry coalition: 9 partners including Veterans United, Home Depot, RE/MAX, NAR, Homes for Our Troops, the VFW, and donated reach from the Wall Street Journal and New York Post. No single brand controlled the narrative. Every purpose dollar was tracked against brand health and conversion outcomes. Both moved.</p>
+    <p class="cs-p">The coalition model is the part that generalizes. Getting the WSJ and New York Post to donate media — not just cover the story — was proof the mission had cleared a higher editorial bar than a typical brand-funded purpose initiative. A brand gets more credibility by sharing the stage, not less.</p>
+    <a href="/work/mission-zero/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;margin-top:0.5rem;">Full Mission Zero case study ↗</a>
+  </div>
+
   <!-- RESULTS -->
   <div class="cs-section">
     <div class="cs-section-label">Results</div>
@@ -304,7 +339,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- CASE STUDY NAV -->
 <div class="cs-nav">
   <a href="/#work" class="cs-nav-link">← All work</a>
-  <a href="/work/mission-zero/" class="cs-nav-link">Mission Zero →</a>
+  <a href="/work/tesla/" class="cs-nav-link">Tesla · SolarCity →</a>
 </div>
 
 <footer>

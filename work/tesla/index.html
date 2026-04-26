@@ -90,6 +90,13 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .bridge-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:0.5px solid var(--accent);padding-bottom:1px;transition:opacity 0.15s;}
 .bridge-link:hover{opacity:0.65}
 
+/* TL;DR */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid var(--border);}
+.cs-tldr-item{padding:1.25rem 4rem;}
+.cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+
 /* ── CASE NAV ── */
 .cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
 .cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
@@ -104,6 +111,9 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-tldr{grid-template-columns:1fr;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
   .two-col,.two-col-wide{grid-template-columns:1fr}
   .metrics-bar{flex-wrap:wrap}
   .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
@@ -155,6 +165,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 <!-- BODY -->
 <div class="cs-body">
+
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">Sales &amp; Energy Operations · Tesla · Field Marketing · SolarCity · 2016–2018</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">Integrated retail experience (vehicle + energy) · 1,500-person field org · national retail partnerships</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">30%+ energy attachment on Model 3 · 26%→37% national solar market share · 3× install volume</div>
+    </div>
+  </div>
 
   <!-- THE INSIGHT -->
   <div class="cs-section">
@@ -282,7 +308,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 <!-- CASE STUDY NAV -->
 <div class="cs-nav">
-  <a href="/work/mission-zero/" class="cs-nav-link">← Mission Zero</a>
+  <a href="/work/realtor/" class="cs-nav-link">← Realtor.com</a>
   <a href="/work/flash/" class="cs-nav-link">FlashParking →</a>
 </div>
 

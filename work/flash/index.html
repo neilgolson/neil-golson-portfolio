@@ -85,6 +85,13 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
 .press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
 
+/* TL;DR */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid var(--border);}
+.cs-tldr-item{padding:1.25rem 4rem;}
+.cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+
 /* ── CASE NAV ── */
 .cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
 .cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
@@ -99,6 +106,9 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-tldr{grid-template-columns:1fr;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
   .two-col-wide{grid-template-columns:1fr}
   .metrics-bar{flex-wrap:wrap}
   .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
@@ -146,6 +156,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 <!-- BODY -->
 <div class="cs-body">
+
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">CMO · FlashParking · 2019–2022</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">Category positioning (Mobility Hub) · go-to-market across B2G + commercial RE · team · earned media program</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">&lt;1%→33% market share · $1B+ unicorn valuation · $250M Vista Equity investment</div>
+    </div>
+  </div>
 
   <!-- THE PRESS LEAD -->
   <div class="cs-section">
