@@ -94,7 +94,46 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
 .footer-copy{font-size:12px;color:var(--light);}
 
+/* ── PER-SECTION GRID (text + section-specific rail) ── */
+.cs-section{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:3.5rem 4rem;border-bottom:0.5px solid var(--border);align-items:start;}
+.cs-section:last-of-type{border-bottom:none;}
+.cs-text{min-width:0;}
+.cs-rail{display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;align-self:start;}
+
+/* ── REEL TILES (videos and images) ── */
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:13px;height:13px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe, .lb-stage img{width:100%;height:100%;display:block;border:none;object-fit:contain;background:#000;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
 /* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-section{grid-template-columns:1fr;gap:1.5rem;}
+}
 @media(max-width:768px){
   .nav{padding:1.25rem 1.5rem}
   .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
@@ -124,20 +163,20 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- HERO -->
 <div class="cs-hero">
   <div class="cs-eyebrow">Realtor.com <span class="cs-eyebrow-tag">· 9-Partner Industry Coalition · 2024–2025</span></div>
-  <h1 class="cs-title">Mission Zero: purpose built to drive business outcomes</h1>
-  <p class="cs-context">Veteran homelessness is a problem the housing industry is uniquely positioned to help solve. The question was whether a brand could take on that problem without it becoming a PR exercise — and whether purpose spending could be tracked against the same metrics as any other brand investment. Mission Zero was the answer to both.</p>
+  <h1 class="cs-title">Mission Zero: every veteran deserves to know</h1>
+  <p class="cs-context">Down payment is the number one barrier to first-time home ownership in America. Veterans have a benefit that solves it — VA loans require zero down — and only 3 out of 10 veterans are aware of it. Mission Zero is the coalition campaign built to close that awareness gap, with a national audience and a single CTA: spread the word.</p>
   <div class="metrics-bar">
     <div class="mb-item">
-      <div class="mb-val">Industry-first</div>
-      <div class="mb-label">Coalition model in real estate</div>
-    </div>
-    <div class="mb-item">
-      <div class="mb-val">Dual KPI</div>
-      <div class="mb-label">Brand health + conversion</div>
+      <div class="mb-val">3 in 10</div>
+      <div class="mb-label">Veterans aware of $0-down VA benefit</div>
     </div>
     <div class="mb-item">
       <div class="mb-val">9 Partners</div>
       <div class="mb-label">Housing · media · veteran orgs</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">4.4 yrs</div>
+      <div class="mb-label">Sooner to homeownership with VA loan</div>
     </div>
   </div>
 </div>
@@ -145,93 +184,104 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- BODY -->
 <div class="cs-body">
 
-  <!-- THE PROBLEM -->
-  <div class="cs-section">
-    <div class="two-col-wide">
-      <div>
-        <div class="cs-section-label">The problem</div>
-        <h2 class="cs-h2">Why veteran homelessness — and why now</h2>
-        <p class="cs-p">About 33,000 veterans experience homelessness on any given night in the United States. The housing industry — the companies that make money when people find homes — is structurally positioned to help and had mostly stayed quiet about it.</p>
-        <p class="cs-p">For Realtor.com, a brand in the middle of rebuilding its position around trust and expertise, a social mission that was both genuine and directly tied to housing was not a stretch. It was a logical extension of what the brand stood for. The risk wasn't association — it was execution. Purpose campaigns fail when they feel like marketing. The only way to prevent that was to actually build something, not just run a campaign.</p>
+  <!-- 1 · THE PROBLEM -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The problem</div>
+      <h2 class="cs-h2">The awareness gap nobody was closing</h2>
+      <p class="cs-p">Down payment is the number one barrier to first-time home ownership in America. The VA loan — zero down payment, available to those who served — exists to solve exactly that. The catch: only 3 out of 10 veterans are aware of it. The benefit they earned is sitting on the shelf because nobody told them it's there.</p>
+      <p class="cs-p">For Realtor.com — a brand rebuilding its position around trust and expertise — a mission tied directly to home ownership wasn't a stretch. It was a logical extension of what the brand stood for. The risk wasn't association. It was execution. Purpose campaigns fail when they feel like marketing. The only way to prevent that was to build something real, not just run a campaign.</p>
+      <div class="pull-quote">
+        <p>"Purpose campaigns fail when the brand is the hero. The cause has to be the hero."</p>
       </div>
-      <div>
-        <div class="pull-quote">
-          <p>"Purpose campaigns fail when the brand is the hero. The cause has to be the hero."</p>
+      <p class="cs-p">The design challenge was a coalition that would make Realtor.com one partner among several — which paradoxically made the brand look bigger, not smaller, because it signaled genuine conviction rather than opportunistic positioning.</p>
+    </div>
+  </section>
+
+  <!-- 2 · THE COALITION MODEL -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The architecture</div>
+      <h2 class="cs-h2">Why a coalition — and how we built one</h2>
+      <p class="cs-p">The decision to build a coalition rather than run a solo brand campaign was strategic, not altruistic. A coalition signals that the mission is real — no single brand controls the narrative, the funds are pooled, the impact is independently verifiable.</p>
+      <p class="cs-p">Nine partners joined: housing and finance brands with direct stakes in veteran homeownership (Realtor.com, Veterans United, Home Depot, NAR, RE/MAX), veteran advocacy organizations with credibility in the community (Homes for Our Troops, VFW), and media partners who donated reach rather than just covered the story (New York Post, Wall Street Journal). That last category mattered. Media partners of that scale don't join cause campaigns out of goodwill — they join when the mission has editorial credibility. Getting them in the coalition was proof the campaign had cleared a higher bar than a typical brand-funded purpose initiative.</p>
+      <p class="cs-p">The structure we designed gave each partner a role in the campaign creative, shared attribution across earned media, and a unified tracking model that measured brand health lift alongside direct conversion outcomes. Every dollar of purpose spend was accountable to the same P&amp;L logic as brand spend.</p>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Brand KPI</div>
+          <div class="kpi-title">Brand health tracking</div>
+          <div class="kpi-desc">Awareness, trust, and consideration tracked throughout the campaign run. Both moved. Purpose spend had to show up in brand health metrics, not just impressions — and it did.</div>
         </div>
-        <p class="cs-p">The design challenge was to build a coalition that would make Realtor.com one partner among several — which paradoxically made the brand look bigger, not smaller, because it signaled genuine conviction rather than opportunistic positioning.</p>
+        <div class="kpi-item">
+          <div class="kpi-label">Business KPI</div>
+          <div class="kpi-title">Conversion outcomes</div>
+          <div class="kpi-desc">Lead quality, visit-to-contact rates, and agent connection rates tracked alongside brand metrics for the duration of the campaign. Both grew. The mission demonstrated it was also a business investment.</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- THE COALITION MODEL -->
-  <div class="cs-section">
-    <div class="cs-section-label">The architecture</div>
-    <h2 class="cs-h2">Why a coalition — and how we built one</h2>
-    <p class="cs-p">The decision to build a coalition rather than run a solo brand campaign was strategic, not altruistic. A coalition signals that the mission is real — no single brand controls the narrative, the funds are pooled, the impact is independently verifiable.</p>
-    <p class="cs-p">Nine partners joined: housing and finance brands with direct stakes in veteran homeownership (Realtor.com, Veterans United, Home Depot, NAR, RE/MAX), veteran advocacy organizations with credibility in the community (Homes for Our Troops, VFW), and media partners who donated reach rather than just covered the story (New York Post, Wall Street Journal). That last category mattered. Media partners of that scale don't join cause campaigns out of goodwill — they join when the mission has editorial credibility. Getting them in the coalition was proof the campaign had cleared a higher bar than a typical brand-funded purpose initiative.</p>
-    <p class="cs-p">The structure we designed gave each partner a role in the campaign creative, shared attribution across earned media, and a unified tracking model that measured brand health lift alongside direct conversion outcomes. Every dollar of purpose spend was accountable to the same P&L logic as brand spend.</p>
-    <div class="kpi-grid">
-      <div class="kpi-item">
-        <div class="kpi-label">Brand KPI</div>
-        <div class="kpi-title">Brand health tracking</div>
-        <div class="kpi-desc">Awareness, trust, and consideration tracked throughout the campaign run. Both moved. Purpose spend had to show up in brand health metrics, not just impressions — and it did.</div>
-      </div>
-      <div class="kpi-item">
-        <div class="kpi-label">Business KPI</div>
-        <div class="kpi-title">Conversion outcomes</div>
-        <div class="kpi-desc">Lead quality, visit-to-contact rates, and agent connection rates tracked alongside brand metrics for the duration of the campaign. Both grew. The mission demonstrated it was also a business investment.</div>
-      </div>
+  <!-- 3 · THE CREATIVE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The creative</div>
+      <h2 class="cs-h2">A campaign in two registers: long-form and short-form</h2>
+      <p class="cs-p">The long-form film was designed to do the emotional heavy lifting — to establish the awareness gap, introduce the veterans whose stories anchored the campaign, and make the case for why the housing industry had a role to play. It ran in digital and was the foundation for earned media pickup.</p>
+      <p class="cs-p">The film worked because it avoided the trap most purpose campaigns fall into: the brand as hero, veterans as backdrop. Real veterans told their own stories — a man who served 24 years and just wanted something to call his own after a lifetime of moving; a wife who survived breast cancer while her husband found the home that gave her something to fight for; a single parent transitioning out of service, his daughter teaching him how to settle down. Veterans United's VA loan with zero down payment appeared not as a product pitch but as a peer recommendation, one veteran to another. The brand was the infrastructure. The veterans were the story.</p>
+      <p class="cs-p">The short-form version was built for social distribution and designed to drive action — sharing the message, clicking through to the coalition page, or connecting with a participating partner. The two formats worked as a system: the long film built the emotional context that made the short-form CTA feel earned rather than transactional.</p>
     </div>
-  </div>
+    <aside class="cs-rail">
+      <button class="reel-tile" type="button"
+              data-type="mp4"
+              data-src="/assets/web/mission-zero-15s.mp4"
+              data-title="Mission Zero — :15 cutdown">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-mission-zero.jpg" alt="Mission Zero — :15 cutdown">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Mission Zero · Short cut</div>
+          <div class="reel-title">A coalition, a cause, an insight :15</div>
+        </div>
+      </button>
 
-  <!-- THE CREATIVE — LONG FORM -->
-  <div class="cs-section">
-    <div class="cs-section-label">The creative</div>
-    <h2 class="cs-h2">A campaign in two registers: long-form and short-form</h2>
-    <p class="cs-p">The long-form film was designed to do the emotional heavy lifting — to establish the problem, introduce the veterans whose stories anchored the campaign, and make the case for why the housing industry had a role to play. It ran in digital and was the foundation for earned media pickup.</p>
-    <p class="cs-p">The film worked because it avoided the trap most purpose campaigns fall into: the brand as hero, veterans as backdrop. Real veterans told their own stories — a man who served 24 years and just wanted something to call his own after a lifetime of moving; a wife who survived breast cancer while her husband found the home that gave her something to fight for; a single parent transitioning out of service, his daughter teaching him how to settle down. Veterans United's VA loan with zero down payment appeared not as a product pitch but as a peer recommendation, one veteran to another. The brand was the infrastructure. The veterans were the story.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/R6OW89Dr5Ew"
-        title="Mission Zero — long-form campaign film"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <button class="reel-tile" type="button"
+              data-type="mp4"
+              data-src="/assets/web/mission-zero-longform.mp4"
+              data-title="Mission Zero — long-form film 3:55">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-mz-longform.jpg" alt="Mission Zero — long-form coalition film">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Mission Zero · Long form</div>
+          <div class="reel-title">Coalition film 3:55</div>
+        </div>
+      </button>
+    </aside>
+  </section>
+
+  <!-- 4 · WHAT THIS PROVED -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">What this proved</div>
+      <h2 class="cs-h2">Purpose and performance aren't opposites</h2>
+      <p class="cs-p">The standard objection to purpose campaigns is that they're brand spend that can't be held accountable to business outcomes. Mission Zero was built with that objection in mind — measuring both brand health and conversion outcomes for the duration of the campaign. Both grew. That's not a controlled proof, but it's the honest version of what most purpose campaigns never bother to track at all.</p>
+      <p class="cs-p">The research published alongside the campaign made the business case concrete: a $0-down VA loan can put a veteran in a home 4.4 years sooner than a conventional path. That's not a soft benefit — it's a quantifiable outcome that gave every coalition partner a shared proof point to rally around and gave the campaign a number the press could actually run.</p>
+      <p class="cs-p">The coalition model is the part that generalizes. Any brand serious about social mission work should ask: would the mission be credible if we weren't the only one funding it? If the answer is no, the mission is marketing. If the answer is yes, find the other funders and build something together. The brand gets more credibility, not less, by sharing the stage.</p>
     </div>
-    <div class="video-label">Mission Zero — long-form campaign film</div>
-
-    <p class="cs-p">The short-form version was built for social distribution and designed to drive action — clicking through to the coalition page, making a pledge, or connecting with a participating partner. The two formats worked as a system: the long film built the emotional context that made the short-form CTA feel earned rather than transactional.</p>
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/4hjz2R426ng"
-        title="Mission Zero — short-form social version"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="video-label">Mission Zero — short-form social cut</div>
-  </div>
-
-  <!-- WHAT THIS PROVED -->
-  <div class="cs-section">
-    <div class="cs-section-label">What this proved</div>
-    <h2 class="cs-h2">Purpose and performance aren't opposites</h2>
-    <p class="cs-p">The standard objection to purpose campaigns is that they're brand spend that can't be held accountable to business outcomes. Mission Zero was built with that objection in mind — measuring both brand health and conversion outcomes for the duration of the campaign. Both grew. That's not a controlled proof, but it's the honest version of what most purpose campaigns never bother to track at all.</p>
-    <p class="cs-p">The research published alongside the campaign made the business case concrete: a $0-down VA loan can put a veteran in a home 4.4 years sooner than a conventional path. That's not a soft benefit — it's a quantifiable outcome that gave every coalition partner a shared proof point to rally around and gave the campaign a number the press could actually run.</p>
-    <p class="cs-p">The coalition model is the part that generalizes. Any brand serious about social mission work should ask: would the mission be credible if we weren't the only one funding it? If the answer is no, the mission is marketing. If the answer is yes, find the other funders and build something together. The brand gets more credibility, not less, by sharing the stage.</p>
-    <div class="press-cards">
-      <a class="press-card" href="https://mediaroom.realtor.com/2025-11-10-A-0-Down-VA-Loan-Can-Put-Veterans-in-a-Home-4-4-Years-Sooner" target="_blank">
-        <div class="press-card-outlet">Realtor.com Newsroom · Nov 2025</div>
-        <div class="press-card-hed">A $0-Down VA Loan Can Put Veterans in a Home 4.4 Years Sooner</div>
-        <div class="press-card-arrow">↗</div>
+    <aside class="cs-rail">
+      <div class="press-list-label">Press &amp; recognition</div>
+      <a class="press-link" href="https://mediaroom.realtor.com/2025-11-10-A-0-Down-VA-Loan-Can-Put-Veterans-in-a-Home-4-4-Years-Sooner" target="_blank">
+        <div class="press-outlet">Realtor.com Newsroom · Nov 2025</div>
+        <div class="press-hed">A $0-Down VA Loan Can Put Veterans in a Home 4.4 Years Sooner</div>
       </a>
-      <a class="press-card" href="https://careers.realtor.com/2025/11/25/real-purpose-real-impact-helping-more-heroes/" target="_blank">
-        <div class="press-card-outlet">Realtor.com · Nov 2025</div>
-        <div class="press-card-hed">Real Purpose, Real Impact: Helping More Heroes</div>
-        <div class="press-card-arrow">↗</div>
+      <a class="press-link" href="https://careers.realtor.com/2025/11/25/real-purpose-real-impact-helping-more-heroes/" target="_blank">
+        <div class="press-outlet">Realtor.com · Nov 2025</div>
+        <div class="press-hed">Real Purpose, Real Impact: Helping More Heroes</div>
       </a>
-    </div>
-  </div>
+    </aside>
+  </section>
 
 </div>
 
@@ -245,6 +295,71 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <span class="footer-name">Neil Golson</span>
   <span class="footer-copy">© 2026 · neilgolson.com</span>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else if(type === 'image'){
+      media = document.createElement('img');
+      media.src = src;
+      media.alt = title || '';
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe,img');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe,img');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
