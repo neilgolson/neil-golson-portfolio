@@ -6,7 +6,7 @@
 <title>Neil Golson — Brand & Growth Executive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
@@ -38,14 +38,14 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .hero-wrap{max-width:1100px;margin:0 auto;border-bottom:0.5px solid var(--border);}
 .hero{display:grid;grid-template-columns:1fr 312px;gap:0;}
 .hero-content{padding:2.5rem 2.5rem 2rem 4rem;border-right:0.5px solid var(--border);}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
 .headline{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:720px;margin-bottom:1.25rem;}
 .headline em{font-style:italic;color:var(--accent);white-space:nowrap;}
 .hero-p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:2rem;max-width:640px;}
 .hero-p.secondary{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1.25rem;}
 .career-strip{margin-top:0.75rem;border-top:0.5px solid var(--border);padding-top:1rem;color:var(--mid);line-height:1.5;}
 .career-label{display:block;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.08em;opacity:0.7;font-weight:500;margin-bottom:0.4rem;}
-.career-list{display:block;font-size:0.95rem;font-weight:500;opacity:0.9;}
+.career-list{display:block;font-size:0.95rem;font-weight:500;color:#444;opacity:0.9;}
 
 /* photo panel */
 .hero-photo-panel{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:2rem 2rem 1.5rem;background:var(--warm-white);}
@@ -162,7 +162,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .footer-copy{font-size:12px;color:var(--light);}
 
 /* ── REEL PANEL (right column of hero) ── */
-.reel-panel{display:flex;flex-direction:column;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;gap:0.45rem;}
+.reel-panel{display:flex;flex-direction:column;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;gap:0.75rem;}
 .reel-panel-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);margin-bottom:0.15rem;display:flex;justify-content:space-between;align-items:baseline;}
 .reel-panel-label span:last-child{color:var(--accent);font-weight:500;}
 .reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
@@ -176,8 +176,8 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
 .reel-play svg{width:16px;height:16px;fill:var(--ink);margin-left:2px;}
 .reel-meta{padding:0.4rem 0.7rem 0.55rem;}
-.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
-.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+.reel-co{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:#1a1a1a;}
 
 /* ── LIGHTBOX ── */
 .lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
@@ -193,17 +193,17 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .bio-meta{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0;}
 .bio-name-line{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
 .bio-title-line{font-size:12.5px;color:var(--mid);letter-spacing:0.01em;line-height:1.5;}
-.bio-pill{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:10px 14px;border-radius:2px;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--mid);transition:all 0.15s;white-space:nowrap;}
+.bio-pill{font-size:0.9rem;font-weight:500;letter-spacing:0.02em;text-transform:none;padding:10px 16px;border-radius:2px;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--mid);transition:all 0.15s;white-space:nowrap;}
 .bio-pill:hover{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
 .bio-pill.primary{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
 .bio-pill.primary:hover{background:var(--accent);border-color:var(--accent);}
 
 /* ── HERO BIO (inside left hero column, under career strip) ── */
-.hero-bio{display:flex;align-items:center;gap:1rem;margin-top:0.625rem;}
-.hero-bio .bio-headshot{width:64px;height:64px;flex-shrink:0;}
+.hero-bio{display:flex;align-items:center;gap:1rem;margin-top:1rem;}
+.hero-bio .bio-headshot{width:72px;height:72px;flex-shrink:0;}
 .hero-bio .bio-content{display:flex;flex-direction:column;min-width:0;max-width:480px;}
 .hero-bio .bio-meta{display:flex;flex-direction:column;gap:3px;min-width:0;}
-.hero-bio .bio-name-line{font-size:1.1rem;}
+.hero-bio .bio-name-line{font-size:1.05rem;font-weight:600;color:#1a1a1a;}
 .hero-bio .bio-title-line{font-size:12px;}
 .hero-bio .bio-ctas{margin-top:0.625rem;display:flex;gap:0.625rem;flex-wrap:wrap;}
 
@@ -291,7 +291,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </div>
     </div>
     <aside class="reel-panel">
-      <div class="reel-panel-label"><span>Currently shipping</span><span>Apr 2026</span></div>
+      <div class="reel-panel-label"><span>Currently shipping</span><span id="current-month-year">Apr 2026</span></div>
 
       <button class="reel-tile" type="button"
               data-type="mp4"
@@ -560,6 +560,15 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 </div>
 
 <script>
+(function(){
+  var el = document.getElementById('current-month-year');
+  if(el){
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var now = new Date();
+    el.textContent = months[now.getMonth()] + ' ' + now.getFullYear();
+  }
+})();
+
 (function(){
   var overlay = document.getElementById('lb');
   var stage = document.getElementById('lb-stage');
