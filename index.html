@@ -42,8 +42,8 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .headline{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:720px;margin-bottom:1.25rem;}
 .headline em{font-style:italic;color:var(--accent);white-space:nowrap;}
 .hero-p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:2rem;max-width:640px;}
-.hero-p.secondary{font-size:14px;color:var(--mid);line-height:1.8;}
-.career-strip{margin-top:2rem;border-top:0.5px solid var(--border);padding-top:1rem;font-size:13px;font-weight:500;letter-spacing:0.01em;color:var(--mid);line-height:1.7;}
+.hero-p.secondary{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1.25rem;}
+.career-strip{margin-top:1.25rem;border-top:0.5px solid var(--border);padding-top:1rem;font-size:13px;font-weight:500;letter-spacing:0.01em;color:var(--mid);line-height:1.7;}
 .career-label{display:block;color:var(--light);margin-bottom:0.3rem;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;}
 
 /* photo panel */
@@ -192,20 +192,19 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .bio-meta{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0;}
 .bio-name-line{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
 .bio-title-line{font-size:12.5px;color:var(--mid);letter-spacing:0.01em;line-height:1.5;}
-.bio-pills-row{display:flex;gap:0.5rem;}
-.bio-pills-row .bio-pill{flex:1;text-align:center;}
-.bio-pill{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:8px 14px;border-radius:2px;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--mid);transition:all 0.15s;white-space:nowrap;}
+.bio-pill{font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:10px 14px;border-radius:2px;text-decoration:none;border:0.5px solid var(--border-strong);color:var(--mid);transition:all 0.15s;white-space:nowrap;}
 .bio-pill:hover{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
 .bio-pill.primary{background:var(--ink);color:var(--warm-white);border-color:var(--ink);}
 .bio-pill.primary:hover{background:var(--accent);border-color:var(--accent);}
 
 /* ── HERO BIO (inside left hero column, under career strip) ── */
-.hero-bio{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"headshot meta" "ctas ctas";align-items:center;column-gap:1rem;row-gap:0.75rem;margin-top:1.75rem;}
-.hero-bio .bio-headshot{width:54px;height:54px;grid-area:headshot;}
-.hero-bio .bio-meta{grid-area:meta;display:flex;flex-direction:column;gap:3px;min-width:0;}
+.hero-bio{display:flex;align-items:center;gap:1rem;margin-top:1rem;}
+.hero-bio .bio-headshot{width:54px;height:54px;flex-shrink:0;}
+.hero-bio .bio-content{display:flex;flex-direction:column;min-width:0;}
+.hero-bio .bio-meta{display:flex;flex-direction:column;gap:3px;min-width:0;}
 .hero-bio .bio-name-line{font-size:16px;}
 .hero-bio .bio-title-line{font-size:12px;}
-.hero-bio .bio-ctas{grid-area:ctas;display:flex;gap:0.5rem;flex-wrap:wrap;}
+.hero-bio .bio-ctas{margin-top:0.5rem;display:flex;gap:0.625rem;flex-wrap:wrap;}
 
 /* ── MISSION ZERO SLOT ── */
 .mz-section{background:var(--ink);color:var(--warm-white);padding:5rem 4rem;}
@@ -269,22 +268,24 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       <h1 class="headline">I've spent 25 years<br>at the moment someone decides <em>to act.</em></h1>
       <p class="hero-p">Inventing categories. Mainstreaming sustainable energy. Defending iconic brands. Rebuilding challengers under fire. Different stakes, same work: earn the decision.</p>
       <p class="hero-p secondary">I do my best work where the stakes are real — where brand earns its place in the P&amp;L and is accountable for moving the number. That work is connecting brand, demand, product, and sales into one system that drives the business.</p>
-      <div class="career-strip">
-        <span class="career-label">Built and scaled systems across:</span> Realtor.com · Tesla · Coca-Cola · FlashParking · Home Depot
-      </div>
       <div class="hero-bio">
         <img class="bio-headshot"
              src="/assets/GolsenFamily-381.NG.Headshot.jpg"
              alt="Neil Golson">
-        <div class="bio-meta">
-          <div class="bio-name-line">Turning brand into measurable growth</div>
-          <div class="bio-title-line">VP Brand &amp; Creative, Realtor.com · Austin, TX</div>
+        <div class="bio-content">
+          <div class="bio-meta">
+            <div class="bio-name-line">Turning brand into measurable growth</div>
+            <div class="bio-title-line">VP Brand &amp; Creative, Realtor.com · Austin, TX</div>
+          </div>
+          <div class="bio-ctas">
+            <a href="mailto:neil.golson@gmail.com" class="bio-pill primary">Start a conversation</a>
+            <a href="/assets/Neil-Golson-CMO-Resume.pdf?v=20260427" target="_blank" class="bio-pill">View experience</a>
+            <a href="https://linkedin.com/in/neil-golson-3123842" target="_blank" class="bio-pill">LinkedIn</a>
+          </div>
         </div>
-        <div class="bio-ctas">
-          <a href="mailto:neil.golson@gmail.com" class="bio-pill primary">Start a conversation</a>
-          <a href="/assets/Neil-Golson-CMO-Resume.pdf?v=20260427" target="_blank" class="bio-pill">View experience</a>
-          <a href="https://linkedin.com/in/neil-golson-3123842" target="_blank" class="bio-pill">LinkedIn</a>
-        </div>
+      </div>
+      <div class="career-strip">
+        <span class="career-label">Built and scaled systems across:</span> Realtor.com · Tesla · Coca-Cola · FlashParking · Home Depot
       </div>
     </div>
     <aside class="reel-panel">
