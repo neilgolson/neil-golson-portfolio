@@ -23,13 +23,13 @@
   --sans:'DM Sans',system-ui,sans-serif;
 }
 
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
 body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
 
 /* ── NAV ── */
 .nav{border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.25rem 1.25rem 4rem;max-width:1100px;margin:0 auto;}
-.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;white-space:nowrap;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
 .nav-links a:hover{color:var(--ink)}
@@ -40,7 +40,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .hero-content{padding:2.5rem 2.5rem 2rem 4rem;border-right:0.5px solid var(--border);}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
 .headline{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:720px;margin-bottom:1.25rem;}
-.headline em{font-style:italic;color:var(--accent);}
+.headline em{font-style:italic;color:var(--accent);white-space:nowrap;}
 .hero-p{font-size:17px;line-height:1.85;color:var(--ink);margin-bottom:2rem;max-width:640px;}
 .hero-p.secondary{font-size:14px;color:var(--mid);line-height:1.8;}
 .career-strip{display:flex;flex-wrap:wrap;justify-content:space-between;margin-top:2rem;border-top:0.5px solid var(--border);padding-top:1rem;}
@@ -219,9 +219,17 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .nav-inner{padding:1.25rem 1.5rem}
+  html{scroll-padding-top:80px;}
+  .nav-inner{padding:1rem 1.25rem;gap:1rem;}
+  .logo{font-size:16px;}
+  .nav-links{gap:1.1rem;}
+  .nav-links a{font-size:11px;letter-spacing:0.06em;}
+  .career-strip{justify-content:flex-start;gap:0.4rem 0.9rem;margin-top:0.75rem;padding-top:0.75rem;}
+  .career-dot{padding-right:0;margin-right:0;border-right:none;}
   .hero{grid-template-columns:1fr}
-  .hero-content{padding:3rem 1.5rem;border-right:none;border-bottom:0.5px solid var(--border);}
+  .hero-content{padding:1.25rem 1.5rem 1.5rem;border-right:none;border-bottom:0.5px solid var(--border);}
+  .headline{margin-bottom:0.75rem;}
+  .hero-p{margin-bottom:0.75rem;}
   .hero-photo-panel{padding:2rem 1.5rem;}
   .section,.contact{padding-left:1.5rem;padding-right:1.5rem}
   .contact-grid,.built-grid,.speaking-grid{grid-template-columns:1fr}
@@ -312,7 +320,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
         </div>
         <div class="reel-meta">
           <div class="reel-co">Mission Zero · Coalition film</div>
-          <div class="reel-title">Work that earns the outcome</div>
+          <div class="reel-title">Work that drives the business</div>
         </div>
       </button>
 
@@ -326,7 +334,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
           <span class="reel-runtime-badge">:30</span>
         </div>
         <div class="reel-meta">
-          <div class="reel-co">AI System · Seller</div>
+          <div class="reel-co">AI Creative · Seller</div>
           <div class="reel-title">Speed and scale that deliver</div>
         </div>
       </button>
