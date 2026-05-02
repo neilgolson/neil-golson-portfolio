@@ -46,10 +46,13 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .career-strip{margin-top:0.86rem;border-top:0.5px solid var(--border);padding-top:1rem;color:var(--mid);line-height:1.5;}
 .career-label{display:block;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.08em;opacity:0.7;font-weight:500;margin-bottom:0.4rem;}
 .career-list{display:block;font-size:0.95rem;font-weight:500;color:#444;opacity:0.9;}
-.career-logos{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap;padding-top:0.15rem;}
-.career-logos img{height:22px;width:auto;object-fit:contain;filter:grayscale(1) contrast(0.95);opacity:0.55;transition:opacity 0.2s, filter 0.2s;}
-.career-logos img.logo-tall{height:28px;}
-.career-logos img.logo-square{height:26px;}
+.career-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding-top:0.25rem;}
+.career-logos img{width:auto;object-fit:contain;filter:grayscale(1) contrast(0.95);opacity:0.55;transition:opacity 0.2s, filter 0.2s;}
+.career-logos img.logo-realtor{height:16px;}
+.career-logos img.logo-tesla{height:22px;}
+.career-logos img.logo-coke{height:26px;}
+.career-logos img.logo-flash{height:34px;margin:-4px 0;}
+.career-logos img.logo-hd{height:30px;margin:-2px 0;}
 .career-logos img:hover{opacity:1;filter:grayscale(0) contrast(1);}
 
 /* photo panel */
@@ -293,11 +296,11 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       <div class="career-strip">
         <span class="career-label">Built and scaled revenue systems across</span>
         <div class="career-logos">
-          <img src="/assets/realtor-logo.png" alt="Realtor.com">
-          <img src="/assets/tesla-logo.png" alt="Tesla" class="logo-tall">
-          <img src="/assets/coca-cola-logo.png" alt="Coca-Cola" class="logo-tall">
-          <img src="/assets/flash-logo.webp" alt="FLASH (FlashParking)" class="logo-square">
-          <img src="/assets/home-depot-logo.webp" alt="The Home Depot" class="logo-square">
+          <img src="/assets/realtor-logo.png" alt="Realtor.com" class="logo-realtor">
+          <img src="/assets/tesla-logo.png" alt="Tesla" class="logo-tesla">
+          <img src="/assets/coca-cola-logo.png" alt="Coca-Cola" class="logo-coke">
+          <img src="/assets/flash-logo.webp" alt="FLASH (FlashParking)" class="logo-flash">
+          <img src="/assets/home-depot-logo.webp" alt="The Home Depot" class="logo-hd">
         </div>
       </div>
     </div>
