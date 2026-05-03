@@ -37,7 +37,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .nav-links a:hover{color:var(--ink)}
 
 /* ── CASE STUDY HERO ── */
-.cs-hero{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 2rem;border-bottom:0.5px solid var(--border);}
+.cs-hero{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 2rem;}
 .cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
 .cs-eyebrow-tag{color:var(--light);font-weight:400;}
 .cs-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:760px;margin-bottom:1.75rem;}
@@ -84,7 +84,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
 
 /* TL;DR */
-.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid var(--border);border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border:0.5px solid var(--border);margin:0 4rem;}
 .cs-tldr-item{padding:1.25rem 4rem;}
 .cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
 .cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
@@ -146,7 +146,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   .nav{padding:1.25rem 1.5rem}
   .nav-links{display:none;}
   .cs-hero,.cs-nav,.cs-section{padding-left:1.5rem;padding-right:1.5rem}
-  .cs-tldr{grid-template-columns:1fr;}
+  .cs-tldr{grid-template-columns:1fr;margin:0;}
   .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
   .cs-tldr-item:first-child{border-top:none;}
   .two-col,.two-col-wide{grid-template-columns:1fr}
@@ -209,7 +209,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
     <div class="cs-tldr-item">
       <div class="cs-tldr-label">Built</div>
-      <div class="cs-tldr-val">Brand repositioning ·<br>consumer insights program ·<br>Reba McEntire campaign ·<br>internal agency (30+) ·<br>Realtor.com+ ·<br>Mission Zero coalition</div>
+      <div class="cs-tldr-val">Brand repositioning ·<br>Consumer insights program ·<br>Reba McEntire campaign ·<br>Internal agency (30+) ·<br>Realtor.com+ ·<br>Mission Zero coalition</div>
     </div>
     <div class="cs-tldr-item">
       <div class="cs-tldr-label">Produced</div>
@@ -443,10 +443,13 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <section class="cs-section">
     <div class="cs-text">
       <div class="cs-section-label">Thought leadership</div>
-      <h2 class="cs-h2">SXSW 2026: an Open House on the future of housing</h2>
-      <p class="cs-p">SXSW is Realtor.com's hometown moment — Austin is our HQ, the festival is the city's signature week. We hosted an Open House. Over seven days, executives appeared on panels across the city while our office became a three-day destination hosting seven distinct events and 1,000+ guests. The thesis carried into every conversation: homeownership remains the single most powerful wealth-building tool for ordinary Americans, and Realtor.com is the company willing to have the hard conversation about access. My session — "Nearly Home: Aligning Celebrity, Creativity, and Brand," co-presented with TPA and GSD&amp;M — was the only marketing track at SXSW that showed how celebrity partnerships actually get built, not just celebrated.</p>
-      <p class="cs-p">Three panels carried the agenda beyond marketing. Anna Marie Castiglioni convened Dr. Jessica Lautz (NAR), Lindsey Stanberry (The Purse), and Sheryl Palmer (Taylor Morrison) on why single women now buy homes at twice the rate of single men. A structural-barriers panel — Colin Allen (American Property Owners Alliance), Danielle Hale, Jung Hyun Choi (Urban Institute), Dr. Lautz — dissected credit access, zoning policy, and down payment requirements. CEO Damian Eales and Austin Mayor Kirk Watson closed the series on local housing challenges. Alongside, the PropTech Startup Showdown — six finalists, $15K, judges from Google, BuildXact, Texas REALTORS®, and Realtor.com — ran on the floor; three finalists are now in pilot conversations.</p>
-      <p class="cs-p">On day two, Mickey Neuberger handed REALTORS® Relief Foundation past President Mike McGrew a $100,000 check — the largest single corporate donation in RRF's recent history, earning Vanguard Club designation, with every additional dollar raised through May 31 matched. SXSW is chaotic, crowded, unforgiving; most brands are forgotten the moment the music stops. The press took notice that Realtor.com wasn't most brands. Forbes ran "Competition Goes A Long Way For The Future Of Housing" and "Target The Female Homebuyer." Fox 7 Austin broadcast live from our HQ throughout.</p>
+      <h2 class="cs-h2">What I went to SXSW to do</h2>
+      <p class="cs-p">SXSW 2026 had three jobs. Establish a brand point of view the industry pays attention to. Make the case for Realtor.com as an Austin brand and an employer of choice for senior talent the city's tech employers also recruit. Differentiate Realtor.com's position from Zillow and Homes.com on something more durable than spend. One week, three objectives, and a calendar built to hit all three.</p>
+      <p class="cs-p">Thursday 3/12, before the festival proper began. A room of senior operators and prospective hires at HQ. The argument I came to make: real estate refuses to stay in one lane. It is a data problem, a design problem, a behavioral psychology problem, and a technology problem — and the output isn't clicks or engagement metrics. It is the place someone wakes up in the morning, the place someone's kids grow up, the place someone builds their life. That is a meaningful problem to work on. The line that closed: if the idea of helping millions of people make one of the biggest decisions of their lives — with better data, better tools, and better guidance — sounds interesting to you, you are in the right room.</p>
+      <p class="cs-p">Friday 3/13 — "Is Brand Dead? The Brand Leader's Playbook for the AI Era," with Dawn Holliday (Taco Bell) and Adam Cook (Hershey), moderated by Brandcomms.AI's Isobell Roberts. The differentiation argument: the brief is no longer "what do we say?" It is "what must remain locked-in across every generative output so people still trust it's us?" AI made content infinite. It also made trust scarce. The proof I brought to the room was Nearly Home — one human problem, one authority figure, one product resolution, one signature close. That coherence drove a +17% response lift over prior creative. Brand isn't dead. Trust is just being stress-tested faster than it ever has been.</p>
+      <p class="cs-p">Wednesday 3/18 — "Trust, Tech &amp; Disruption: Brand Love When Stakes Are High," with Helen Melluish (VRBO) and Jennifer Bridie (Southwest Airlines), moderated by GSD&amp;M CSO Kate Rush Sheehy. Three brands serving the highest-stakes decisions consumers make. What I told that room: in high-consideration categories, brand love isn't joy. It is confidence. Confidence proven under pressure becomes loyalty. Realtor.com posted seven consecutive months of brand-health improvement after Nearly Home launched.</p>
+      <p class="cs-p">Those were the two panels SXSW put me on. The next two days were ours, programmed out of the Realtor.com office on Sixth Street — the conversations the category typically avoids: why single women now buy at twice the rate of single men, the structural barriers that have pushed the average first-time buyer toward forty, what a city the size of Austin can actually do about supply, a question Austin Mayor Kirk Watson and CEO Damian Eales took up on the closing panel. Zillow and Homes.com do not host structural-barriers panels at SXSW. Realtor.com does. The PropTech Startup Showdown ran on the floor; three finalists are in pilot. On day two we handed the REALTORS® Relief Foundation a $100,000 check, the largest single corporate donation in the foundation's recent history.</p>
+      <p class="cs-p">Forbes wrote it up twice. Fox 7 broadcast live from HQ all week. Thought leadership and Austin presence both registered in the press the way they were supposed to. Employer of choice is the longest-payback objective of the three; senior recruiting runs in quarters, not days, and that work is in pipeline rather than headlines. The numbers at the top of this case study are what coherence looks like.</p>
     </div>
     <aside class="cs-rail">
       <button class="reel-tile" type="button"
