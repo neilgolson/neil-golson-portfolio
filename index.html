@@ -235,9 +235,23 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   .nav-links a{font-size:11px;letter-spacing:0.06em;}
   .career-strip{margin-top:0.75rem;padding-top:0.75rem;}
   .hero{grid-template-columns:1fr}
-  .hero-content{padding:1.25rem 1.5rem 1.5rem;border-right:none;border-bottom:0.5px solid var(--border);}
+  .hero-content{padding:1.25rem 1.5rem 1.5rem;border-right:none;border-bottom:0.5px solid var(--border);display:flex;flex-direction:column;}
+  .hero-content .eyebrow{order:1;}
+  .hero-content .headline{order:2;font-size:30px;}
+  .hero-content .career-strip{order:3;margin-top:0.25rem;margin-bottom:1.25rem;border-top:0;padding-top:0;}
+  .hero-content .hero-p{order:4;}
+  .hero-content .hero-bio{order:5;}
+  .hero-content .hero-p.secondary{display:none;}
   .headline{margin-bottom:0.75rem;}
   .hero-p{margin-bottom:0.75rem;}
+  .career-logos{flex-wrap:nowrap;gap:0;justify-content:space-between;align-items:flex-end;margin-top:0.35rem;}
+  .career-logos img{flex:0 0 auto;}
+  .career-logos img.logo-realtor{height:14px;}
+  .career-logos img.logo-tesla{height:12px;}
+  .career-logos img.logo-coke{height:15px;}
+  .career-logos img.logo-flash{height:50px;margin:0 0 -19px;}
+  .career-logos img.logo-hd{height:24px;margin:0;}
+  .bio-ctas a[href*="Resume"]{display:none;}
   .hero-photo-panel{padding:2rem 1.5rem;}
   .section,.contact{padding-left:1.5rem;padding-right:1.5rem}
   .contact-grid,.built-grid,.speaking-grid{grid-template-columns:1fr}
