@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Topgolf — Engineer the visit. Own the return. | Neil Golson</title>
-<meta name="description" content="A system-level POV on growing Topgolf — prepared for David McKillips by Neil Golson.">
+<title>Topgolf — CMO candidate brief | Neil Golson</title>
+<meta name="description" content="A CMO candidate brief for Topgolf — prepared by Neil Golson.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,9 @@
   --warm-white:#faf8f4;
   --mid:#6b6560;
   --light:#9b9590;
-  --accent:#003b7e;          /* Topgolf navy */
+  --accent:#003b7e;
   --accent-soft:rgba(0,59,126,0.05);
   --accent-tint:rgba(0,59,126,0.10);
-  --green:#1f7a44;
   --border:rgba(26,24,20,0.12);
   --border-strong:rgba(26,24,20,0.25);
   --serif:'Playfair Display',Georgia,serif;
@@ -63,64 +62,61 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 }
 
 /* ── HERO ── */
-.cs-hero{max-width:1100px;margin:0 auto;padding:2.5rem 4rem 2.5rem;}
-.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
+.cs-hero{max-width:1100px;margin:0 auto;padding:3rem 4rem 3rem;}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
 .cs-eyebrow-tag{color:var(--light);font-weight:400;}
-.cs-title{font-family:var(--serif);font-size:clamp(34px,4.5vw,58px);font-weight:700;line-height:1.05;letter-spacing:-0.025em;max-width:880px;margin-bottom:1.5rem;}
+.cs-title{font-family:var(--serif);font-size:clamp(34px,4.5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-0.025em;max-width:920px;margin-bottom:1.75rem;}
 .cs-title em{font-style:italic;color:var(--accent);}
-.cs-context{font-size:18px;line-height:1.7;color:var(--ink);max-width:760px;margin-bottom:0.75rem;font-weight:500;}
-.cs-context em{font-style:italic;color:var(--accent);}
-.cs-context-sub{font-size:15px;line-height:1.8;color:var(--mid);max-width:760px;margin-bottom:2rem;}
-.cs-context-sub strong{color:var(--ink);font-weight:600;}
+.cs-context{font-size:18px;line-height:1.7;color:var(--ink);max-width:780px;margin-bottom:0.5rem;font-weight:500;}
+.cs-context strong{font-weight:600;}
 
-.metrics-bar{display:flex;gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;background:var(--warm-white);}
-.mb-item{flex:1;padding:1.25rem 1.5rem;border-right:0.5px solid var(--border);}
-.mb-item:last-child{border-right:none}
-.mb-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;margin-bottom:0.4rem;letter-spacing:-0.015em;}
-.mb-val em{font-style:italic;color:var(--accent);}
-.mb-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
-.mb-cite{font-size:9.5px;letter-spacing:0.04em;color:var(--light);margin-top:0.35rem;font-style:italic;}
-
-/* ── WHITEBOARD ARTIFACT ── */
-.board-wrap{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 3rem;}
-.board-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.85rem;}
-.board-label-l{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
-.board-label-r{font-size:11px;letter-spacing:0.06em;color:var(--light);font-style:italic;}
-.board{
-  border:0.5px solid var(--border-strong);
-  border-radius:3px;overflow:hidden;
-  box-shadow:0 1px 2px rgba(26,24,20,0.04), 0 14px 40px rgba(26,24,20,0.10);
-  background:#fff;
+/* ── DIAGNOSTIC INSIGHT (full-bleed callout) ── */
+.diagnostic{
+  max-width:1100px;margin:0 auto;
+  padding:3rem 4rem 3rem;
+  border-top:0.5px solid var(--border);
+  border-bottom:0.5px solid var(--border);
+  background:var(--accent-soft);
 }
-.board img{width:100%;display:block;}
-.board-cap{margin-top:0.8rem;font-size:12px;color:var(--mid);font-style:italic;line-height:1.6;max-width:760px;}
-
-/* ── BODY ── */
-.cs-body{max-width:1100px;margin:0 auto;}
-
-.cs-section{padding:4rem 4rem;border-top:0.5px solid var(--border);}
-.cs-section:first-child{border-top:none;}
-
-.cs-num{
-  font-family:var(--serif);font-style:italic;font-size:13px;
-  letter-spacing:0.04em;color:var(--accent);
-  display:flex;align-items:center;gap:0.85rem;margin-bottom:0.8rem;
+.diagnostic-kicker{
+  font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.25rem;font-weight:600;
 }
-.cs-num::after{
-  content:"";flex:1;max-width:48px;height:1px;background:var(--accent);opacity:0.4;
+.diagnostic-body{
+  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);
+  font-weight:600;line-height:1.3;letter-spacing:-0.018em;
+  max-width:880px;color:var(--ink);
 }
-.cs-section-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:0.85rem;}
-.cs-h2{font-family:var(--serif);font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-0.018em;line-height:1.18;margin-bottom:1.4rem;max-width:780px;}
-.cs-h2 em{font-style:italic;color:var(--accent);}
-.cs-p{font-size:16px;line-height:1.85;color:var(--mid);max-width:720px;margin-bottom:1.1rem;}
-.cs-p:last-child{margin-bottom:0;}
-.cs-p strong{color:var(--ink);font-weight:600;}
-.cs-p em{font-style:italic;}
+.diagnostic-body em{font-style:italic;color:var(--accent);}
 
-/* citation marker */
-.cite{font-size:11.5px;letter-spacing:0.02em;color:var(--light);font-weight:400;font-style:italic;}
+/* ── SECTION SHELL ── */
+.section{max-width:1100px;margin:0 auto;padding:5rem 4rem;border-top:0.5px solid var(--border);}
+.section.no-border{border-top:none;}
+.section-kicker{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600;}
+.section-h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.022em;line-height:1.12;margin-bottom:1.5rem;max-width:840px;}
+.section-h2 em{font-style:italic;color:var(--accent);}
+.section-lede{font-size:16px;line-height:1.8;color:var(--mid);max-width:720px;margin-bottom:2.5rem;}
+.section-lede strong{color:var(--ink);font-weight:600;}
 
-/* in-section callback box */
+/* ── WHAT I'D MOVE — lever cards ── */
+.movers{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
+}
+.mover{
+  background:var(--paper);
+  padding:1.75rem 1.6rem 1.85rem;
+  display:flex;flex-direction:column;gap:0.5rem;
+}
+.mover-num{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--accent);letter-spacing:0.04em;}
+.mover-h{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:0.35rem;}
+.mover-b{font-size:14px;line-height:1.7;color:var(--mid);}
+.mover-b strong{color:var(--ink);font-weight:600;}
+.mover-cite{margin-top:auto;padding-top:0.85rem;font-size:10.5px;letter-spacing:0.06em;color:var(--accent);font-weight:500;border-top:0.5px solid var(--border);}
+.mover-cite em{font-style:italic;}
+
+/* in-section callback */
 .callback{
   margin:1.5rem 0;
   padding:1.1rem 1.4rem;
@@ -138,139 +134,115 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   line-height:1.7;color:var(--ink);
 }
 
-/* two column with rail */
-.cs-grid{display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start;}
-.cs-rail{
-  background:var(--warm-white);
-  border:0.5px solid var(--border);
-  border-radius:3px;
-  padding:1.4rem 1.5rem;
+/* ── DEEPER VIEW (whiteboard, demoted) ── */
+.board-section{
+  max-width:1100px;margin:0 auto;
+  padding:5rem 4rem;border-top:0.5px solid var(--border);
 }
-.rail-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.9rem;padding-bottom:0.7rem;border-bottom:0.5px solid var(--border);}
-.rail-list{list-style:none;display:flex;flex-direction:column;gap:0.85rem;}
-.rail-list li{font-size:14px;line-height:1.55;color:var(--ink);}
-.rail-list li .ri-h{display:block;font-weight:600;letter-spacing:-0.005em;margin-bottom:2px;font-family:var(--serif);font-size:15px;}
-.rail-list li .ri-b{display:block;color:var(--mid);font-size:13.5px;line-height:1.55;}
-
-/* loop pills */
-.loop{
-  display:flex;align-items:center;flex-wrap:wrap;gap:0.5rem 0.85rem;
-  margin:0.5rem 0 1.6rem;
+.board-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.5rem;}
+.board-meta-l{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+.board-meta-r{font-size:11.5px;color:var(--light);font-style:italic;}
+.board-h{font-family:var(--serif);font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1.5rem;max-width:780px;}
+.board{
+  border:0.5px solid var(--border-strong);
+  border-radius:3px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(26,24,20,0.04), 0 14px 40px rgba(26,24,20,0.10);
+  background:#fff;
 }
-.loop-pill{
-  font-family:var(--serif);font-size:14px;font-weight:600;letter-spacing:-0.005em;
-  padding:0.45rem 0.95rem;border:0.5px solid var(--border-strong);border-radius:999px;
-  background:var(--warm-white);color:var(--ink);
+.board img{width:100%;display:block;}
+.board-cap{margin-top:1rem;font-size:13px;color:var(--mid);line-height:1.7;max-width:780px;font-style:italic;}
+
+/* ── BACKGROUND CARDS ── */
+.bg-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:1px;background:var(--border);
+  border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
 }
-.loop-pill em{font-style:italic;color:var(--accent);font-weight:600;}
-.loop-arrow{color:var(--light);font-size:14px;}
-.loop-cap{font-size:12.5px;color:var(--light);font-style:italic;margin-top:-0.5rem;margin-bottom:1.5rem;}
-
-/* growth vectors */
-.vectors{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;background:var(--border);margin-top:0.5rem;}
-.vector{background:var(--warm-white);padding:1.1rem 1.1rem 1.25rem;}
-.vector.lead{background:var(--accent-soft);}
-.vector-tag{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.4rem;display:block;}
-.vector-h{font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:-0.005em;margin-bottom:0.4rem;}
-.vector-b{font-size:12px;line-height:1.55;color:var(--mid);}
-
-/* lever cards */
-.levers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:0.75rem;}
-.lever{background:var(--paper);padding:1.6rem 1.6rem 1.75rem;display:flex;flex-direction:column;gap:0.4rem;}
-.lever-num{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--accent);letter-spacing:0.04em;}
-.lever-h{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.012em;margin-bottom:0.25rem;}
-.lever-b{font-size:13.5px;line-height:1.65;color:var(--mid);margin-bottom:0.6rem;}
-.lever-tag{
-  margin-top:auto;font-size:11px;letter-spacing:0.06em;
-  color:var(--accent);font-weight:500;
-  border-top:0.5px solid var(--border);padding-top:0.7rem;
+.bg-card{
+  background:var(--paper);
+  padding:1.5rem 1.25rem 1.6rem;
+  display:flex;flex-direction:column;gap:0.4rem;
 }
-.lever-tag em{font-style:italic;}
+.bg-card-eyebrow{font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.25rem;}
+.bg-card-co{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-0.015em;line-height:1.15;margin-bottom:0.4rem;}
+.bg-card-line{font-size:13px;line-height:1.6;color:var(--mid);}
 
-/* AI grid */
-.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:0.5rem;}
-.ai-cell{background:var(--warm-white);padding:1.25rem 1.4rem;}
-.ai-cell.shipped{background:var(--paper);}
-.ai-cell .ai-status{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.4rem;}
-.ai-h{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:0.3rem;letter-spacing:-0.005em;}
-.ai-b{font-size:13px;line-height:1.6;color:var(--mid);}
-
-/* value */
-.value-row{display:flex;gap:0;border:0.5px solid var(--border-strong);border-radius:3px;overflow:hidden;background:#fff;margin-top:0.5rem;}
-.value-cell{flex:1;padding:1.6rem 1.75rem;border-right:0.5px solid var(--border);}
-.value-cell:last-child{border-right:none;}
-.value-val{font-family:var(--serif);font-size:36px;font-weight:700;line-height:1;letter-spacing:-0.02em;margin-bottom:0.45rem;color:var(--accent);}
-.value-val em{font-style:italic;}
-.value-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
-.value-foot{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.4rem;padding-top:1.2rem;border-top:0.5px solid var(--border);}
-.value-foot-item{display:flex;flex-direction:column;gap:3px;}
-.value-foot-val{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:-0.005em;}
-.value-foot-lbl{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
-
-/* footnote */
-.footnote{
-  margin-top:1.6rem;padding-top:1rem;border-top:0.5px dashed var(--border);
-  font-size:12px;color:var(--mid);line-height:1.65;font-style:italic;max-width:760px;
+/* ── CAPABILITY SPREAD (Swiss Army knife) ── */
+.capability{
+  max-width:1100px;margin:0 auto;
+  padding:3rem 4rem 3rem;border-top:0.5px solid var(--border);
 }
-.footnote strong{font-style:normal;font-weight:600;color:var(--ink);}
+.capability-cap{
+  font-family:var(--serif);font-style:italic;font-size:16px;
+  line-height:1.6;color:var(--mid);max-width:680px;margin-bottom:1.25rem;
+}
+.capability-cap strong{font-style:normal;color:var(--ink);font-weight:600;}
+.blades{display:flex;flex-wrap:wrap;gap:0.6rem;}
+.blade{
+  font-family:var(--serif);font-size:15px;font-weight:600;letter-spacing:-0.005em;
+  padding:0.6rem 1.2rem;border:0.5px solid var(--accent);border-radius:999px;
+  background:var(--paper);color:var(--accent);
+}
 
-/* "you've done this before" cards */
-.played-intro{font-size:14px;color:var(--mid);max-width:680px;line-height:1.75;margin-bottom:1.4rem;}
-.played-grid{
+/* ── HUMILITY ANCHOR ── */
+.humility{
+  max-width:1100px;margin:0 auto;
+  padding:3.5rem 4rem;border-top:0.5px solid var(--border);
+  text-align:center;
+}
+.humility-body{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(18px,2.1vw,22px);
+  line-height:1.55;color:var(--ink);
+  max-width:720px;margin:0 auto;
+}
+.humility-body em{font-style:normal;color:var(--accent);font-weight:600;}
+
+/* ── OPERATING PLAN ── */
+.plan-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--accent);border:0.5px solid var(--accent);border-radius:3px;overflow:hidden;
-  margin-top:0.5rem;
+  gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
 }
-.played-cell{background:var(--accent-soft);padding:1.6rem 1.5rem 1.7rem;display:flex;flex-direction:column;gap:0.5rem;}
-.played-eyebrow{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem;font-weight:600;}
-.played-h{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-0.012em;line-height:1.25;margin-bottom:0.25rem;}
-.played-b{font-size:13px;line-height:1.6;color:var(--mid);margin-bottom:0.4rem;}
-.played-arrow{
-  margin-top:auto;font-size:11.5px;color:var(--accent);
-  letter-spacing:0.04em;font-weight:500;
-  padding-top:0.7rem;border-top:0.5px solid rgba(0,59,126,0.18);
+.plan-col{
+  padding:1.75rem 1.75rem 2rem;
+  border-right:0.5px solid var(--border);
+  background:var(--warm-white);
 }
-.played-arrow em{font-style:italic;}
+.plan-col:last-child{border-right:none;}
+.plan-col.featured{background:var(--accent-soft);}
+.plan-col-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;font-weight:600;}
+.plan-col-h{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:-0.015em;margin-bottom:1rem;}
+.plan-col-h em{font-style:italic;color:var(--accent);}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+.plan-list li{
+  font-size:13.5px;line-height:1.6;color:var(--ink);
+  padding-left:1.1rem;position:relative;
+}
+.plan-list li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:6px;height:2px;background:var(--accent);
+}
+.plan-list li strong{font-weight:600;}
 
-/* priorities */
-.prio-list{display:flex;flex-direction:column;border-top:0.5px solid var(--border);}
-.prio-row{
-  display:grid;grid-template-columns:60px 1fr;gap:2rem;
-  padding:1.6rem 0;border-bottom:0.5px solid var(--border);
-  align-items:start;
-}
-.prio-num{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--accent);letter-spacing:0.04em;padding-top:4px;}
-.prio-h{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:-0.015em;margin-bottom:0.5rem;}
-.prio-b{font-size:14.5px;line-height:1.75;color:var(--mid);max-width:620px;}
-.prio-b strong{color:var(--ink);font-weight:600;}
-.prio-foot{margin-top:1.5rem;font-size:14px;line-height:1.7;max-width:680px;color:var(--mid);font-style:italic;}
-
-/* credibility */
-.cred-list{list-style:none;display:flex;flex-direction:column;gap:1rem;max-width:760px;}
-.cred-list li{font-size:15px;line-height:1.75;color:var(--ink);padding-left:1.5rem;position:relative;}
-.cred-list li::before{
-  content:"";position:absolute;left:0;top:11px;
-  width:10px;height:2px;background:var(--accent);
-}
-.cred-list li strong{font-weight:600;}
-
-/* close */
+/* ── CLOSE ── */
 .close{
   max-width:1100px;margin:0 auto;
   padding:5rem 4rem 4rem;
   border-top:0.5px solid var(--border);
   text-align:center;
 }
-.close-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem;}
+.close-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem;font-weight:600;}
 .close-h{
-  font-family:var(--serif);font-size:clamp(28px,3.6vw,42px);
-  font-weight:700;line-height:1.1;letter-spacing:-0.025em;
-  margin-bottom:0.9rem;max-width:720px;margin-left:auto;margin-right:auto;
+  font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);
+  font-weight:700;line-height:1.18;letter-spacing:-0.022em;
+  max-width:760px;margin:0 auto 0.6rem;
 }
 .close-h em{font-style:italic;color:var(--accent);}
-.close-q{
-  font-size:16px;line-height:1.7;color:var(--mid);
-  max-width:580px;margin:0 auto 2.4rem;
+.close-cta{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(22px,2.8vw,30px);font-weight:600;
+  color:var(--accent);letter-spacing:-0.015em;
+  margin:1.4rem 0 2.6rem;
 }
 .sig{
   display:inline-flex;flex-direction:column;align-items:center;gap:0.4rem;
@@ -288,31 +260,27 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 }
 .sig-links a:hover{color:var(--accent);border-color:var(--accent);}
 
-/* responsive */
+/* ── RESPONSIVE ── */
 @media(max-width:980px){
-  .cs-grid{grid-template-columns:1fr;gap:1.5rem;}
-  .vectors{grid-template-columns:repeat(2,1fr);}
-  .levers{grid-template-columns:1fr;}
-  .ai-grid{grid-template-columns:1fr;}
-  .value-row{flex-direction:column;}
-  .value-cell{border-right:none;border-bottom:0.5px solid var(--border);}
-  .value-cell:last-child{border-bottom:none;}
-  .played-grid{grid-template-columns:1fr;}
+  .movers{grid-template-columns:repeat(2,1fr);}
+  .bg-grid{grid-template-columns:repeat(2,1fr);}
+  .plan-grid{grid-template-columns:1fr;}
+  .plan-col{border-right:none;border-bottom:0.5px solid var(--border);}
+  .plan-col:last-child{border-bottom:none;}
 }
 @media(max-width:768px){
   body{font-size:15.5px;}
   .dochead{padding:1.25rem 1.5rem 1rem;flex-wrap:wrap;gap:0.4rem;}
   .fieldnote{padding:1.75rem 1.5rem 0.25rem;}
-  .cs-hero{padding:1.5rem 1.5rem 1.5rem;}
-  .board-wrap{padding:1rem 1.5rem 2rem;}
-  .cs-section{padding:3rem 1.5rem;}
+  .cs-hero{padding:1.75rem 1.5rem 2.25rem;}
+  .diagnostic{padding:2.25rem 1.5rem;}
+  .section{padding:3.5rem 1.5rem;}
+  .board-section{padding:3.5rem 1.5rem;}
+  .capability{padding:2.25rem 1.5rem;}
+  .humility{padding:2.5rem 1.5rem;}
   .close{padding:3.5rem 1.5rem 3rem;}
-  .metrics-bar{flex-wrap:wrap}
-  .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
-  .mb-item:nth-child(odd){border-right:0.5px solid var(--border);}
-  .vectors{grid-template-columns:1fr;}
-  .prio-row{grid-template-columns:1fr;gap:0.4rem;}
-  .prio-num{padding-top:0;}
+  .movers{grid-template-columns:1fr;}
+  .bg-grid{grid-template-columns:1fr;}
   .sig-links{flex-direction:column;gap:0.7rem;align-items:center;}
 }
 
@@ -329,330 +297,192 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 <!-- DOC HEADER -->
 <header class="dochead">
   <div class="dochead-l">Neil Golson</div>
-  <div class="dochead-r">Prepared for David McKillips · Topgolf · May 2026</div>
+  <div class="dochead-r">CMO candidate brief · Topgolf · May 2026</div>
 </header>
 
 <!-- FIELD NOTE -->
 <section class="fieldnote">
   <div class="fieldnote-inner fade">
     <div class="fieldnote-kicker">Field note</div>
-    <p class="fieldnote-body">Wednesday, April 29 — last week. <em>Topgolf Austin.</em> I'd come to pick up my wife from a CenTex Plaster educational seminar — a pool-industry trade event with zero golf adjacency — and ended up walking the building for an hour while it ran. <em>Bays at maybe 1 in 10.</em> The CenTex group in a corner running the exact meet → eat → compete arc this deck argues for. The room was alive — the operating model just wasn't priced for what was actually happening in it.</p>
-    <p class="fieldnote-outro">The whiteboard below started there.</p>
+    <p class="fieldnote-body">Wednesday, April 29 — last week. <em>Topgolf Austin.</em> I'd come to pick up my wife from a CenTex Plaster educational seminar — a pool-industry trade event with zero golf adjacency — and ended up walking the building for an hour while it ran. <em>Bays at maybe 1 in 10.</em> The CenTex group in a corner running the exact meet → eat → compete arc this brief argues for. The room was alive — the operating model just wasn't priced for what was actually happening in it.</p>
+    <p class="fieldnote-outro">That's where this brief started.</p>
   </div>
 </section>
 
 <!-- HERO -->
 <section class="cs-hero">
-  <div class="cs-eyebrow fade">A system-level POV <span class="cs-eyebrow-tag">· From the field, then the calls · Apr 2026</span></div>
-  <h1 class="cs-title fade">Engineer the visit. <em>Own the return.</em></h1>
-  <p class="cs-context fade">More people. More often. More value <em>every</em> visit.</p>
-  <p class="cs-context-sub fade">Topgolf isn't a venue. It's a <strong>Player journey</strong> — and the operating model around it should be a visit system, not a real-estate footprint. The unlock isn't a new build. It's a different way to run the <strong>100+ venues you already have</strong>.</p>
+  <div class="cs-eyebrow fade">Prepared for David McKillips, Vince Thompson, and senior Topgolf leadership <span class="cs-eyebrow-tag">· May 2026</span></div>
+  <h1 class="cs-title fade">Topgolf has already won awareness. The next phase is <em>frequency, yield, and repeat behavior.</em></h1>
+  <p class="cs-context fade">I'm pitching myself as a CMO candidate. <strong>Fixer and builder. Growth operator with brand range. An entrepreneur disguised as a suit.</strong> The page below is the case — short, scannable, and grounded in your business, not mine.</p>
+</section>
 
-  <div class="metrics-bar fade">
-    <div class="mb-item">
-      <div class="mb-val">1.5×</div>
-      <div class="mb-label">Player visits / year</div>
-      <div class="mb-cite">Q3 2025 call · Brewer</div>
+<!-- DIAGNOSTIC INSIGHT -->
+<section class="diagnostic">
+  <div class="diagnostic-kicker fade">The frame</div>
+  <p class="diagnostic-body fade">Topgolf isn't competing for golfers. It's competing for <em>nights out, group occasions, corporate events, birthdays, date nights,</em> and the repeatable social habits people build the rest of their week around.</p>
+</section>
+
+<!-- WHAT I'D MOVE -->
+<section class="section">
+  <div class="section-kicker fade">What I'd move</div>
+  <h2 class="section-h2 fade">Six commercial levers. None of them require a new venue.</h2>
+  <p class="section-lede fade">The 100+ venues you already operate are the asset. These are the dials I'd turn first — informed by the calls, the field, and the operating moves the company has already shipped.</p>
+
+  <div class="movers fade">
+    <div class="mover">
+      <div class="mover-num">Lever 01</div>
+      <div class="mover-h">Revenue per bay</div>
+      <div class="mover-b">F&amp;B attach, dynamic add-ons (+30 min, dessert), and time-based bundles layered on top of the <strong>60/90-min reservations already at half of digital mix.</strong></div>
     </div>
-    <div class="mb-item">
-      <div class="mb-val">20%</div>
-      <div class="mb-label">3+ bay (corporate) share, FY24</div>
-      <div class="mb-cite">Q3 2025 call</div>
+    <div class="mover">
+      <div class="mover-num">Lever 02</div>
+      <div class="mover-h">Peak / off-peak utilization</div>
+      <div class="mover-b">Productize the midweek 3–6 PM slot. <strong>The CenTex daypart</strong> — the most under-monetized inventory in the building.</div>
+      <div class="mover-cite"><em>Field-observed, Apr 29 2026</em></div>
     </div>
-    <div class="mb-item">
-      <div class="mb-val">+13 pts</div>
-      <div class="mb-label">Same-venue sales swing, 2025</div>
-      <div class="mb-cite">Q1 −12% → Q3 +1%</div>
+    <div class="mover">
+      <div class="mover-num">Lever 03</div>
+      <div class="mover-h">Frequency &amp; loyalty</div>
+      <div class="mover-b">Evolve <strong>PlayMore</strong> from a single $20/mo offer into tiered progression with status unlocks, corporate membership, and habit-forming triggers.</div>
     </div>
-    <div class="mb-item">
-      <div class="mb-val">100+</div>
-      <div class="mb-label">Venues already built</div>
-      <div class="mb-cite">FY 2025</div>
+    <div class="mover">
+      <div class="mover-num">Lever 04</div>
+      <div class="mover-h">Group &amp; corporate events</div>
+      <div class="mover-b">Package meet → eat → compete and sell against <strong>hotel ballrooms, not bars</strong>. 3+ bay is 20% of FY revenue and the largest stated YoY drag.</div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 05</div>
+      <div class="mover-h">Local market activation</div>
+      <div class="mover-b">Venue-by-venue partnerships, sports tie-ins, and community programs that turn each location into a <strong>local cultural anchor</strong>, not a chain outpost.</div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 06</div>
+      <div class="mover-h">CRM, data &amp; adaptive ops</div>
+      <div class="mover-b">Convert the <strong>CDP and Toast POS</strong> already shipping into a per-Player decision engine — dynamic pricing, predictive next-visit, in-venue media as inventory.</div>
+    </div>
+  </div>
+
+  <div class="callback">
+    <div class="callback-label">From the field note</div>
+    <p class="callback-body">If a regional pool-plaster company will fill a Wednesday at 4:30, the corporate format works for any B2B audience — and the addressable market is materially larger than the operating model currently prices it as.</p>
+  </div>
+</section>
+
+<!-- DEEPER VIEW · WHITEBOARD -->
+<section class="board-section">
+  <div class="board-meta fade">
+    <div class="board-meta-l">The deeper view</div>
+    <div class="board-meta-r">whiteboard, April 2026</div>
+  </div>
+  <h3 class="board-h fade">The six levers above sit on top of a fuller seven-layer system view.</h3>
+  <figure class="board fade">
+    <img src="../assets/NG.TG.Whiteboard.Apr26.png" alt="Whiteboard system map: Topgolf — More people. More often. More value every visit. Seven layers from Reframe to Value, three levers, and the AI unlock that turns the system from static to adaptive.">
+  </figure>
+  <p class="board-cap">From a reframe of what Topgolf actually is, through the core Player loop, the three levers, and the AI layer that turns the room into a yield-managed system. The artifact is here as proof that the levers above sit on top of a complete operating model — happy to walk it line-by-line live.</p>
+</section>
+
+<!-- WHY MY BACKGROUND MAPS -->
+<section class="section">
+  <div class="section-kicker fade">Why this fits</div>
+  <h2 class="section-h2 fade">Five companies. <em>Five disciplines</em> Topgolf needs in one operator.</h2>
+  <p class="section-lede fade">Each of these is a piece of the Topgolf P&amp;L: brand at scale, retail traffic, demand engineering, occasion-building, and trust-driven response.</p>
+
+  <div class="bg-grid fade">
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Tesla</div>
+      <div class="bg-card-co">Conviction at scale</div>
+      <div class="bg-card-line">Turning category curiosity into conviction and demand — at premium price points and against entrenched incumbents.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Coca-Cola</div>
+      <div class="bg-card-co">Brand &amp; occasion</div>
+      <div class="bg-card-line">Brand, retail, occasion-building, and the commercial discipline of operating at billion-dollar scale across thousands of touchpoints.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Home Depot</div>
+      <div class="bg-card-co">Local store traffic</div>
+      <div class="bg-card-line">Local store traffic, retail partnerships, and the operational marketing rhythm of driving foot traffic to physical locations week in, week out.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">SolarCity</div>
+      <div class="bg-card-co">Demand engine</div>
+      <div class="bg-card-line">Demand generation, partnerships, field execution, and funnel creation — built the engine that made retail the primary growth channel.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Realtor.com</div>
+      <div class="bg-card-co">Trust &amp; response</div>
+      <div class="bg-card-line">Brand transformation, trust, audience strategy, and measurable response — five quarters of consecutive YoY revenue growth in a contested category.</div>
     </div>
   </div>
 </section>
 
-<!-- WHITEBOARD -->
-<div class="board-wrap fade">
-  <div class="board-label">
-    <div class="board-label-l">The artifact · whiteboard, April 2026</div>
-    <div class="board-label-r">read top-to-bottom; the page below walks each layer</div>
+<!-- CAPABILITY SPREAD -->
+<section class="capability">
+  <p class="capability-cap fade"><strong>The CMO Swiss Army knife</strong> — every blade I've sharpened is one Topgolf needs.</p>
+  <div class="blades fade">
+    <span class="blade">Brand</span>
+    <span class="blade">Growth</span>
+    <span class="blade">Demand</span>
+    <span class="blade">CRM</span>
+    <span class="blade">Ops</span>
+    <span class="blade">Partnerships</span>
   </div>
-  <figure class="board">
-    <img src="../assets/NG.TG.Whiteboard.Apr26.png" alt="Whiteboard system map: Topgolf — More people. More often. More value every visit. Seven layers from Reframe to Value, three levers (Energy, Monetization, Frequency), and the AI unlock that turns the system from static to adaptive.">
-  </figure>
-  <p class="board-cap">One page, seven layers: from a reframe of what Topgolf actually is, through the core Player loop, to the three levers and the AI layer that turn the room into a yield-managed system. The page that follows is the walk-through — pressure-tested against the last 24 months of earnings calls.</p>
-</div>
+</section>
 
-<!-- BODY -->
-<div class="cs-body">
+<!-- HUMILITY ANCHOR -->
+<section class="humility">
+  <p class="humility-body fade">"I'd start by <em>listening to the team,</em> pressure-testing assumptions against the data, and then moving fast where the opportunity is clear."</p>
+</section>
 
-  <!-- 01 · REFRAME -->
-  <section class="cs-section">
-    <div class="cs-num">01 — Reframe</div>
-    <div class="cs-section-label">From selling bays to orchestrating Player journeys</div>
-    <h2 class="cs-h2">Topgolf isn't a venue. It's a <em>visit system</em>.</h2>
-    <p class="cs-p">Treating Topgolf as real estate forces every growth conversation to start with another build. Treating it as a Player visit system shifts the question to <strong>what happens between the moment a Player decides to come and the moment they decide to come back</strong> — and that surface area is where the underused margin lives.</p>
-    <p class="cs-p">This isn't a contrarian take anymore — it's company doctrine. Only <strong>4 venues opened in 2025, 3 planned for 2026</strong>, against the 2023 Investor Day target of 10 per year.<span class="cite"> · Q3 2025</span> The page that follows is the operating manual for the SVS-first reality the business has already chosen.</p>
-  </section>
+<!-- OPERATING PLAN -->
+<section class="section">
+  <div class="section-kicker fade">The plan</div>
+  <h2 class="section-h2 fade">First 90 days. Month 6. Month 12.</h2>
+  <p class="section-lede fade">Specific, sequenced, and biased toward action — but front-loaded with listening so the moves are real, not imported.</p>
 
-  <!-- 02 · THE PROBLEM -->
-  <section class="cs-section">
-    <div class="cs-num">02 — The problem</div>
-    <div class="cs-section-label">The system starts too late and ends too early</div>
-    <div class="cs-grid">
-      <div>
-        <h2 class="cs-h2">Arrival is the <em>first moment of value</em> — and we're giving it away.</h2>
-        <p class="cs-p">The current model treats Parking → Arrival → Bays → F&amp;B → Exit as a linear funnel where revenue starts at the bay. Everything before the bay reads as friction to remove rather than inventory to monetize. The first 20–30 minutes is the most underpriced asset in the building — intent is highest, attention is captive, and competitors don't exist.</p>
-        <p class="cs-p"><strong>The slowdown isn't structural — it's an unmonetized arrival window and an under-engineered return loop.</strong> Both are operating model, not category. <em>Player frequency sits at 1.5 visits/year today; the system below targets 2.5+ without a single new venue.</em><span class="cite"> · Q3 2025</span></p>
-
-        <div class="callback">
-          <div class="callback-label">From the field note above</div>
-          <p class="callback-body">That Wednesday at Topgolf Austin was the proof. CenTex Plaster — a regional pool-trade company with no golf adjacency at all — was a paying corporate buyer using the venue exactly the way this section argues for. The building's pricing, energy, and arrival flow were all calibrated for a Saturday night that wasn't going to happen for another 50 hours — while 9 of every 10 bays sat unsold around the one room that was working.</p>
-        </div>
-
-        <p class="cs-p">Same logic on the back end: the visit doesn't end at the exit, it ends when we decide the next one is happening. Today that decision belongs to the Player. It should belong to the system — which is what <strong>Topgolf PlayMore</strong> begins, and what Section 05 finishes.</p>
-      </div>
-      <aside class="cs-rail">
-        <div class="rail-label">Inventory we don't price</div>
-        <ul class="rail-list">
-          <li>
-            <span class="ri-h">Parking &amp; valet</span>
-            <span class="ri-b">Caddie-grade hospitality, not a hand-off.</span>
-          </li>
-          <li>
-            <span class="ri-h">Pre-bay 20–30 min</span>
-            <span class="ri-b">First product moment. Currently dead.</span>
-          </li>
-          <li>
-            <span class="ri-h">Midweek 3–6 PM</span>
-            <span class="ri-b">The Centex slot. Almost entirely unsold.</span>
-          </li>
-          <li>
-            <span class="ri-h">The exit</span>
-            <span class="ri-b">Last best chance to set the next visit.</span>
-          </li>
-        </ul>
-      </aside>
+  <div class="plan-grid fade">
+    <div class="plan-col">
+      <div class="plan-col-eyebrow">First 90 days</div>
+      <div class="plan-col-h"><em>Listen.</em> Audit. Diagnose.</div>
+      <ul class="plan-list">
+        <li>Listen to leadership, operators, field teams, and Players.</li>
+        <li>Audit acquisition, CRM, pricing, loyalty, local activation, and the events pipeline.</li>
+        <li>Identify the biggest friction points in <strong>first visit, repeat visit, and group/event sales.</strong></li>
+        <li>Walk 8–10 venues across markets and dayparts.</li>
+        <li>Stand up a single weekly operating cadence around frequency, yield, and conversion.</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- 03 · THE CORE SYSTEM -->
-  <section class="cs-section">
-    <div class="cs-num">03 — The core system</div>
-    <div class="cs-section-label">Experience → repeat visits drives everything</div>
-    <h2 class="cs-h2">A loop that's <em>social, competitive, and worth coming back for</em>.</h2>
-    <p class="cs-p">The flywheel is the asset. The five steps below map cleanly to the company's stated three-pillar framework — <strong>digital, experience, value</strong><span class="cite"> · Q1 2024 call · Brewer</span> — and every operating decision should be measured against whether it tightens the loop or leaks energy out of it.</p>
-    <div class="loop">
-      <span class="loop-pill"><em>Belong</em></span><span class="loop-arrow">→</span>
-      <span class="loop-pill"><em>Engage</em></span><span class="loop-arrow">→</span>
-      <span class="loop-pill"><em>Play</em></span><span class="loop-arrow">→</span>
-      <span class="loop-pill"><em>Indulge</em></span><span class="loop-arrow">→</span>
-      <span class="loop-pill"><em>Return</em></span>
+    <div class="plan-col featured">
+      <div class="plan-col-eyebrow">By month 6</div>
+      <div class="plan-col-h"><em>Launch.</em> Sharpen. Test.</div>
+      <ul class="plan-list">
+        <li>Launch 1–2 growth plays from the lever set above.</li>
+        <li>Sharpen segmentation and messaging — Player-first, not golfer-first.</li>
+        <li>Test membership, loyalty, and frequency programs (PlayMore tiers, corporate variant).</li>
+        <li>Align brand, digital, venue, and CRM around <strong>repeatable playbooks</strong> instead of one-off campaigns.</li>
+        <li>Stand up a corporate-events product with packaging, pricing, and a sales motion.</li>
+      </ul>
     </div>
-    <p class="loop-cap">Belong + Engage = digital · Play = experience · Indulge + Return = value</p>
-    <p class="cs-p"><strong>Belong</strong> is the part the industry forgets: your crew, your place, your bay number that the staff already knows. That's what creates the next visit. The rest of the loop is execution — and PlayMore is the first product the company has shipped that lives in the Belong layer.</p>
-  </section>
-
-  <!-- 04 · THE GROWTH ENGINE -->
-  <section class="cs-section">
-    <div class="cs-num">04 — The growth engine</div>
-    <div class="cs-section-label">We don't just create demand — we distribute it</div>
-    <h2 class="cs-h2">Five vectors. The first one is the <em>flywheel</em>.</h2>
-    <p class="cs-p">Demand creation is solved at most consumer brands. Demand <strong>routing</strong> isn't. The five vectors below already exist in the world — the job is to wire them into a single distribution layer that points at visits, not impressions. Brand partnerships leads because <em>that's the discipline this business is built to scale</em>: the Visa partnership <span class="cite">June 2024</span> is the proof point, the Sonic and NFL game integrations<span class="cite"> · Q3 2024 / Q3 2025</span> are the format.</p>
-    <div class="vectors">
-      <div class="vector lead">
-        <span class="vector-tag">Lead vector</span>
-        <div class="vector-h">Brand partnerships</div>
-        <div class="vector-b">In-game co-creation. Visa, Sonic, NFL. Sponsorship as a P&amp;L line, not a marketing line.</div>
-      </div>
-      <div class="vector">
-        <div class="vector-h">Creator engine</div>
-        <div class="vector-b">Content, challenges, amplify the game.</div>
-      </div>
-      <div class="vector">
-        <div class="vector-h">Collegiate / NIL</div>
-        <div class="vector-b">Athletes, rivalries, on-campus competitions.</div>
-      </div>
-      <div class="vector">
-        <div class="vector-h">Stadium / events</div>
-        <div class="vector-b">Pop-ups, festivals, tailgates.</div>
-      </div>
-      <div class="vector">
-        <div class="vector-h">Campus loops</div>
-        <div class="vector-b">Leagues, organizations, habit formation.</div>
-      </div>
+    <div class="plan-col">
+      <div class="plan-col-eyebrow">By month 12</div>
+      <div class="plan-col-h"><em>Compound.</em> Scale. Operate.</div>
+      <ul class="plan-list">
+        <li>Improve frequency, utilization, revenue per bay, and repeat visits — measurably.</li>
+        <li>Build a scalable marketing operating system that runs across all venues.</li>
+        <li>Make Topgolf feel less like an occasional outing and more like a <strong>recurring social sports habit</strong>.</li>
+        <li>Convert the CDP and Toast layer into an adaptive yield + retention engine.</li>
+        <li>Hand the CEO a brand and demand machine that compounds without needing a new venue.</li>
+      </ul>
     </div>
-  </section>
-
-  <!-- 05 · THE LEVERS -->
-  <section class="cs-section">
-    <div class="cs-num">05 — The levers</div>
-    <div class="cs-section-label">Three levers drive the system</div>
-    <h2 class="cs-h2">Energy, spend per visit, frequency — in that order.</h2>
-    <p class="cs-p">The same building, run with these three dials turned up, behaves like a different business. None of them require new construction; all of them require the operating model to treat the room as an active surface, not a static one. The 60/90-minute reservations rolled out system-wide in Q2 2025 — <em>about half of digital reservations now</em><span class="cite"> · Q2 2025 call</span> — are the proof the company can move on this kind of change quickly.</p>
-    <div class="levers">
-      <div class="lever">
-        <div class="lever-num">Lever 01</div>
-        <div class="lever-h">Energy</div>
-        <div class="lever-b">Live leaderboard. Visible competition. The IP/game pipeline you already invest in — <strong>Sonic, Captain America, the football game in 51 venues with pro-spec field goal posts</strong><span class="cite"> · Q3 2025</span> — extended into the room, not just the bay.</div>
-        <div class="lever-tag"><em>Make the room watch the room.</em></div>
-      </div>
-      <div class="lever">
-        <div class="lever-num">Lever 02</div>
-        <div class="lever-h">Spend per visit</div>
-        <div class="lever-b">F&amp;B attach + alcohol attachment + time-based bundles. The <strong>$5 drafts, $6 margaritas, FUNDAY faves</strong><span class="cite"> · Q1 2025</span> menu work is the foundation. Layer on +30-min / +dessert dynamic add-ons. <strong>+$8 per Player ≈ +$2M per venue at current traffic.</strong></div>
-        <div class="lever-tag"><em>F&amp;B attach is the spend-per-visit lever.</em></div>
-      </div>
-      <div class="lever">
-        <div class="lever-num">Lever 03</div>
-        <div class="lever-h">Frequency</div>
-        <div class="lever-b"><strong>Topgolf PlayMore</strong> is the wedge<span class="cite"> · launched Oct 8, 2025</span>. The next layer is tiered progression, status unlocks, a corporate offsite tier that competes with hotel ballrooms — <em>productize the membership the company just bought into.</em></div>
-        <div class="lever-tag"><em>PlayMore is the foundation, not the ceiling.</em></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 · AI UNLOCK -->
-  <section class="cs-section">
-    <div class="cs-num">06 — The AI unlock</div>
-    <div class="cs-section-label">From static to adaptive</div>
-    <div class="cs-grid">
-      <div>
-        <h2 class="cs-h2">AI doesn't replace the operating model. It <em>runs</em> it — in real time.</h2>
-        <p class="cs-p">The three levers above are valuable when a GM tunes them weekly. They're transformative when the system tunes them every minute. The good news: <strong>the substrate is already bought and shipping</strong>. Toast POS lands in every venue by end of Q2 2026<span class="cite"> · Q3 2025</span>. The consumer data platform launched ahead of schedule in Q1 2024<span class="cite"> · Q1 2024 call</span>. The AI layer below sits on top of both.</p>
-        <p class="cs-p">Build that, and the levers tune themselves: pricing moves with demand, the next visit is recommended before it's requested, and the attention already in the room becomes inventory.</p>
-      </div>
-      <div class="ai-grid">
-        <div class="ai-cell shipped">
-          <div class="ai-status">Build on Toast</div>
-          <div class="ai-h">Real-time bay intelligence</div>
-          <div class="ai-b">Coaching, prompts, timing — per bay, per Player, per minute. Sits on the POS already shipping.</div>
-        </div>
-        <div class="ai-cell">
-          <div class="ai-status">New layer</div>
-          <div class="ai-h">AI yield management</div>
-          <div class="ai-b">Pricing, capacity, offers — moved by demand, not by calendar. 15-min bay re-pricing on top of the 60/90-min layer already live.</div>
-        </div>
-        <div class="ai-cell shipped">
-          <div class="ai-status">Build on the CDP</div>
-          <div class="ai-h">Predictive loyalty</div>
-          <div class="ai-b">Next visit, next best experience — the CDP becomes a per-Player decision engine, not just a segmentation tool.</div>
-        </div>
-        <div class="ai-cell">
-          <div class="ai-status">Six Flags TV, for the bay</div>
-          <div class="ai-h">In-venue media network</div>
-          <div class="ai-b">The attention in the room is inventory. Productize it the way Six Flags TV did — brand integration, not interruption.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 · VALUE -->
-  <section class="cs-section">
-    <div class="cs-num">07 — The value</div>
-    <div class="cs-section-label">What this unlocks per venue</div>
-    <h2 class="cs-h2">The math is conservative. The mechanism is the point.</h2>
-    <p class="cs-p">The numbers below are what an average venue should produce once the loop is engineered and the levers are pulled — not the headline case, the median one. The mechanism is durable because it's compound: more Players improves frequency, frequency improves spend per visit, spend per visit funds the AI layer that improves all three.</p>
-    <p class="cs-p"><strong>The mechanism is already proven at small scale.</strong> Q2 2025: traffic up, EBITDAR margin <em>held flat</em> despite a 50% gameplay discount<span class="cite"> · Q2 2025 call</span>. F&amp;B held price while golf went on sale. The system below is what happens when that mechanism gets engineered, not improvised.</p>
-    <div class="value-row">
-      <div class="value-cell">
-        <div class="value-val">+$5–8M</div>
-        <div class="value-label">Incremental revenue / venue</div>
-      </div>
-      <div class="value-cell">
-        <div class="value-val">+$3–5M</div>
-        <div class="value-label">Incremental EBITDA / venue</div>
-      </div>
-    </div>
-    <div class="value-foot">
-      <div class="value-foot-item"><div class="value-foot-val">More people</div><div class="value-foot-lbl">Distribution layer</div></div>
-      <div class="value-foot-item"><div class="value-foot-val">More time</div><div class="value-foot-lbl">F&amp;B attach + energy</div></div>
-      <div class="value-foot-item"><div class="value-foot-val">More value</div><div class="value-foot-lbl">Yield + loyalty</div></div>
-      <div class="value-foot-item"><div class="value-foot-val">More revenue</div><div class="value-foot-lbl">Compounded</div></div>
-    </div>
-    <p class="footnote"><strong>The math:</strong> calibrated to a ~$17M average-venue revenue baseline (FY 2024 segment economics). The +$5–8M revenue range is +30–47% per venue, layered across frequency (1.5× → 2.0–2.5×), spend per visit (+$5–10), and 3+ bay corporate (recovering from −36% on 2-yr stack as of Q3 2024). EBITDA flow-through assumes <strong>~50–60% incremental margin</strong> on the new revenue layer, consistent with a fixed-cost venue base absorbing additional traffic and spend without proportional cost growth — and consistent with the Q1 2025 long-term margin guide of "north of 35%."</p>
-  </section>
-
-  <!-- FIRST MOVES -->
-  <section class="cs-section">
-    <div class="cs-num">First moves</div>
-    <div class="cs-section-label">Where I'd start in the first 90 days</div>
-    <h2 class="cs-h2">Three moves that change utilization, time, and revenue per visit — without breaking ground.</h2>
-    <div class="prio-list">
-      <div class="prio-row">
-        <div class="prio-num">Move 01</div>
-        <div>
-          <div class="prio-h">Corporate offsite as a product</div>
-          <p class="prio-b">Package the full arc — meet → eat → compete — and sell against hotel ballrooms, not bars. <strong>3+ bay is 20% of FY revenue and the largest stated YoY drag</strong><span class="cite"> · Q3 2025</span>. The CenTex moment in the field note above is the format spec; the Q4 2024 call cited <em>tripling sales with one national retailer by working with their HQ on holiday parties</em> as the existence proof. <strong>If pool-plaster contractors will fill a Wednesday at 4:30, this format works for any B2B audience</strong> — and the corporate addressable market is materially larger than the operating model currently prices it as. This is the highest-leverage 90-day move.</p>
-        </div>
-      </div>
-      <div class="prio-row">
-        <div class="prio-num">Move 02</div>
-        <div>
-          <div class="prio-h">Arrival → play conversion</div>
-          <p class="prio-b">Treat arrival as the first product moment. <strong>Pull spend forward and extend session length</strong> before the Player ever reaches a bay. Booking fees were already removed system-wide in Jan 2025<span class="cite"> · Q4 2024 call</span> — the next friction layer is the unmonetized 20–30 minutes between door and bay.</p>
-        </div>
-      </div>
-      <div class="prio-row">
-        <div class="prio-num">Move 03</div>
-        <div>
-          <div class="prio-h">In-venue energy loops</div>
-          <p class="prio-b">Live leaderboard. Visible competition. Plug the existing IP pipeline (Sonic, Cap, NFL) into the room itself, not just the bay. <strong>Time on site, engagement, and repeat all move together</strong> when the room becomes its own content.</p>
-        </div>
-      </div>
-    </div>
-    <p class="prio-foot">These three are the wedge. They prove the operating model before any new capex, and they fund the AI layer that compounds the rest.</p>
-  </section>
-
-  <!-- "YOU'VE DONE THIS BEFORE" -->
-  <section class="cs-section">
-    <div class="cs-num">The fit</div>
-    <div class="cs-section-label">You've already run this playbook</div>
-    <h2 class="cs-h2">This isn't a new operating model. It's the one you ran before — at <em>higher ARPU</em>.</h2>
-    <p class="played-intro">The three levers above map to the three credentials you brought into the chair on Feb 23. None of this is theory you'd be installing fresh — it's the playbook you've already proven, applied to a venue type with three to four times the average ticket of a Chuck E. Cheese and the captive attention of a Six Flags coaster line.</p>
-    <div class="played-grid">
-      <div class="played-cell">
-        <div class="played-eyebrow">Membership economics</div>
-        <div class="played-h">CEC: launched the membership program.</div>
-        <div class="played-b">Topgolf has PlayMore in market for ~7 months. The next layer — tiers, progression, corporate — is the wedge into Lever 03.</div>
-        <div class="played-arrow"><em>→ Frequency</em></div>
-      </div>
-      <div class="played-cell">
-        <div class="played-eyebrow">Sponsorship as a P&amp;L line</div>
-        <div class="played-h">Six Flags: founded the sponsorship sales division.</div>
-        <div class="played-b">Visa, Sonic, NFL are the proof Topgolf can run brand co-creation as inventory. The lead vector in Section 04 is the discipline you built from scratch.</div>
-        <div class="played-arrow"><em>→ Growth engine</em></div>
-      </div>
-      <div class="played-cell">
-        <div class="played-eyebrow">In-venue media network</div>
-        <div class="played-h">Six Flags: launched Six Flags TV Network.</div>
-        <div class="played-b">The attention in 100+ Topgolf rooms is inventory. The AI 2×2's in-venue media cell is the model you've already proven works — at a fraction of Topgolf's per-Player time-on-site.</div>
-        <div class="played-arrow"><em>→ AI unlock</em></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BACKGROUND -->
-  <section class="cs-section">
-    <div class="cs-num">Background</div>
-    <div class="cs-section-label">Relevant experience</div>
-    <h2 class="cs-h2">Operator across brand, demand, and revenue systems.</h2>
-    <ul class="cred-list">
-      <li>Built the demand engine at <strong>SolarCity</strong> that turned retail (Home Depot, Best Buy) into the primary growth channel — same model logic the page above argues for: distribute demand, don't just create it.</li>
-      <li>Led brand and growth across <strong>Tesla, Home Depot, and Coca-Cola</strong> environments — both as marketer and as operator of the systems behind them.</li>
-      <li>Most recently <strong>VP, Brand &amp; Creative at Realtor.com</strong> — five quarters of consecutive YoY revenue growth, 3.4× visit share vs. Homes.com, Effie finalist 2025. Rebuilt a 30+ person internal agency in the process.</li>
-    </ul>
-  </section>
-
-</div>
+  </div>
+</section>
 
 <!-- CLOSE -->
 <section class="close">
-  <div class="close-tag">The thesis, in one line</div>
-  <h2 class="close-h">Engineer the visit. <em>Own the return.</em></h2>
-  <p class="close-q">Curious where this matches — or misses — how you're thinking about the first 100 days. Happy to walk the board live, pressure-test the math, or just trade notes.</p>
-  <div class="sig">
+  <div class="close-tag fade">The close</div>
+  <h2 class="close-h fade">You're building the future of <em>experiential sports.</em><br>I build the systems that make it scale.</h2>
+  <p class="close-cta fade">Let's tee it up.</p>
+  <div class="sig fade">
     <div class="sig-name">Neil Golson</div>
     <div class="sig-role">Brand &amp; growth operator · Austin, TX</div>
     <div class="sig-links">
