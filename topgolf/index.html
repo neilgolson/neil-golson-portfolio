@@ -69,8 +69,10 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .cs-title em{font-style:italic;color:var(--accent);}
 .cs-context{font-size:18px;line-height:1.7;color:var(--ink);max-width:780px;margin-bottom:0.5rem;font-weight:500;}
 .cs-context strong{font-weight:600;}
+.cs-credentials{font-size:14.5px;line-height:1.75;color:var(--mid);max-width:780px;margin-top:1.1rem;font-weight:400;letter-spacing:-0.005em;}
+.cs-credentials strong{color:var(--ink);font-weight:600;}
 
-/* ── DIAGNOSTIC INSIGHT (full-bleed callout) ── */
+/* ── DIAGNOSTIC INSIGHT ── */
 .diagnostic{
   max-width:1100px;margin:0 auto;
   padding:3rem 4rem 3rem;
@@ -98,7 +100,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .section-lede{font-size:16px;line-height:1.8;color:var(--mid);max-width:720px;margin-bottom:2.5rem;}
 .section-lede strong{color:var(--ink);font-weight:600;}
 
-/* ── WHAT I'D MOVE — lever cards ── */
+/* ── WHAT I'D MOVE ── */
 .movers{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--border);
@@ -134,7 +136,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   line-height:1.7;color:var(--ink);
 }
 
-/* ── DEEPER VIEW (whiteboard, demoted) ── */
+/* ── DEEPER VIEW ── */
 .board-section{
   max-width:1100px;margin:0 auto;
   padding:5rem 4rem;border-top:0.5px solid var(--border);
@@ -152,37 +154,21 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .board img{width:100%;display:block;}
 .board-cap{margin-top:1rem;font-size:13px;color:var(--mid);line-height:1.7;max-width:780px;font-style:italic;}
 
-/* ── BACKGROUND CARDS ── */
+/* ── BACKGROUND CARDS (6 cards, 3x2) ── */
 .bg-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);
+  display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:var(--border);
   border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
 }
 .bg-card{
   background:var(--paper);
-  padding:1.5rem 1.25rem 1.6rem;
+  padding:1.6rem 1.5rem 1.7rem;
   display:flex;flex-direction:column;gap:0.4rem;
 }
-.bg-card-eyebrow{font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.25rem;}
-.bg-card-co{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-0.015em;line-height:1.15;margin-bottom:0.4rem;}
-.bg-card-line{font-size:13px;line-height:1.6;color:var(--mid);}
-
-/* ── CAPABILITY SPREAD (Swiss Army knife) ── */
-.capability{
-  max-width:1100px;margin:0 auto;
-  padding:3rem 4rem 3rem;border-top:0.5px solid var(--border);
-}
-.capability-cap{
-  font-family:var(--serif);font-style:italic;font-size:16px;
-  line-height:1.6;color:var(--mid);max-width:680px;margin-bottom:1.25rem;
-}
-.capability-cap strong{font-style:normal;color:var(--ink);font-weight:600;}
-.blades{display:flex;flex-wrap:wrap;gap:0.6rem;}
-.blade{
-  font-family:var(--serif);font-size:15px;font-weight:600;letter-spacing:-0.005em;
-  padding:0.6rem 1.2rem;border:0.5px solid var(--accent);border-radius:999px;
-  background:var(--paper);color:var(--accent);
-}
+.bg-card-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.3rem;}
+.bg-card-co{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-0.012em;line-height:1.22;margin-bottom:0.55rem;color:var(--ink);}
+.bg-card-line{font-size:13.5px;line-height:1.7;color:var(--mid);}
+.bg-card-line strong{color:var(--ink);font-weight:600;}
 
 /* ── HUMILITY ANCHOR ── */
 .humility{
@@ -242,8 +228,14 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   font-family:var(--serif);font-style:italic;
   font-size:clamp(22px,2.8vw,30px);font-weight:600;
   color:var(--accent);letter-spacing:-0.015em;
-  margin:1.4rem 0 2.6rem;
+  margin:1.4rem 0 0.9rem;
 }
+.close-ask{
+  font-size:14.5px;font-weight:500;color:var(--ink);
+  margin:0 auto 2.6rem;max-width:520px;
+  letter-spacing:-0.005em;line-height:1.6;
+}
+.close-ask strong{font-weight:600;}
 .sig{
   display:inline-flex;flex-direction:column;align-items:center;gap:0.4rem;
   padding-top:1.6rem;border-top:0.5px solid var(--border);
@@ -276,7 +268,6 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   .diagnostic{padding:2.25rem 1.5rem;}
   .section{padding:3.5rem 1.5rem;}
   .board-section{padding:3.5rem 1.5rem;}
-  .capability{padding:2.25rem 1.5rem;}
   .humility{padding:2.5rem 1.5rem;}
   .close{padding:3.5rem 1.5rem 3rem;}
   .movers{grid-template-columns:1fr;}
@@ -304,16 +295,17 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 <section class="fieldnote">
   <div class="fieldnote-inner fade">
     <div class="fieldnote-kicker">Field note</div>
-    <p class="fieldnote-body">Wednesday, April 29 — last week. <em>Topgolf Austin.</em> I'd come to pick up my wife from a CenTex Plaster educational seminar — a pool-industry trade event with zero golf adjacency — and ended up walking the building for an hour while it ran. <em>Bays at maybe 1 in 10.</em> The CenTex group in a corner running the exact meet → eat → compete arc this brief argues for. The room was alive — the operating model just wasn't priced for what was actually happening in it.</p>
+    <p class="fieldnote-body">Wednesday, April 29 — last week. <em>Topgolf Austin.</em> I'd come to pick up my wife from a CenTex Plaster educational seminar — a pool-industry trade event with zero golf adjacency — and ended up walking the building for an hour while it ran. <em>Bays at maybe 1 in 5.</em> The CenTex group of ~100 in a conference room running the meet → eat → compete arc.</p>
     <p class="fieldnote-outro">That's where this brief started.</p>
   </div>
 </section>
 
 <!-- HERO -->
 <section class="cs-hero">
-  <div class="cs-eyebrow fade">Prepared for David McKillips, Vince Thompson, and senior Topgolf leadership <span class="cs-eyebrow-tag">· May 2026</span></div>
+  <div class="cs-eyebrow fade">Prepared for David McKillips &amp; Vince Thompson</div>
   <h1 class="cs-title fade">Topgolf has already won awareness. The next phase is <em>frequency, yield, and repeat behavior.</em></h1>
   <p class="cs-context fade">I'm pitching myself as a CMO candidate. <strong>Fixer and builder. Growth operator with brand range. An entrepreneur disguised as a suit.</strong> The page below is the case — short, scannable, and grounded in your business, not mine.</p>
+  <p class="cs-credentials fade"><strong>VP, Brand &amp; Creative at Realtor.com</strong> today. <strong>CMO at FlashParking</strong> before that. Operator chairs across Tesla, Coca-Cola, SolarCity, and Home Depot earlier — full breakdown in the cards below.</p>
 </section>
 
 <!-- DIAGNOSTIC INSIGHT -->
@@ -381,51 +373,43 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   <p class="board-cap">From a reframe of what Topgolf actually is, through the core Player loop, the three levers, and the AI layer that turns the room into a yield-managed system. The artifact is here as proof that the levers above sit on top of a complete operating model — happy to walk it line-by-line live.</p>
 </section>
 
-<!-- WHY MY BACKGROUND MAPS -->
+<!-- WHY I FIT -->
 <section class="section">
-  <div class="section-kicker fade">Why this fits</div>
-  <h2 class="section-h2 fade">Five companies. <em>Five disciplines</em> Topgolf needs in one operator.</h2>
-  <p class="section-lede fade">Each of these is a piece of the Topgolf P&amp;L: brand at scale, retail traffic, demand engineering, occasion-building, and trust-driven response.</p>
+  <div class="section-kicker fade">Why I fit</div>
+  <h2 class="section-h2 fade">Six companies. <em>Six disciplines.</em> One operator.</h2>
+  <p class="section-lede fade">Each is a piece of the Topgolf P&amp;L — and I've held a real seat at all six: <strong>brand transformation, category creation, demand generation, occasion-building, retail-as-growth-channel, and venue-floor operations.</strong></p>
 
   <div class="bg-grid fade">
     <div class="bg-card">
+      <div class="bg-card-eyebrow">Realtor.com</div>
+      <div class="bg-card-co">VP, Brand &amp; Creative</div>
+      <div class="bg-card-line">Brand transformation, audience strategy, trust-led response. <strong>5 quarters consecutive YoY revenue growth, 3.4× visit share vs. Homes.com, Effie finalist 2025.</strong></div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">FlashParking</div>
+      <div class="bg-card-co">Chief Marketing Officer</div>
+      <div class="bg-card-line"><strong>Category creation.</strong> Built and named a new software category — drove brand, demand, and pricing power where neither customers nor competitors existed yet.</div>
+    </div>
+    <div class="bg-card">
       <div class="bg-card-eyebrow">Tesla</div>
-      <div class="bg-card-co">Conviction at scale</div>
-      <div class="bg-card-line">Turning category curiosity into conviction and demand — at premium price points and against entrenched incumbents.</div>
+      <div class="bg-card-co">Head of Energy Marketing &amp; Sales Ops</div>
+      <div class="bg-card-line"><strong>Demand generation, retail partnerships, and category conviction.</strong> Brought Tesla energy products into a national retail channel against entrenched incumbents — the funnel that scaled the category.</div>
     </div>
     <div class="bg-card">
       <div class="bg-card-eyebrow">Coca-Cola</div>
-      <div class="bg-card-co">Brand &amp; occasion</div>
-      <div class="bg-card-line">Brand, retail, occasion-building, and the commercial discipline of operating at billion-dollar scale across thousands of touchpoints.</div>
-    </div>
-    <div class="bg-card">
-      <div class="bg-card-eyebrow">Home Depot</div>
-      <div class="bg-card-co">Local store traffic</div>
-      <div class="bg-card-line">Local store traffic, retail partnerships, and the operational marketing rhythm of driving foot traffic to physical locations week in, week out.</div>
+      <div class="bg-card-co">Director, Asia Supply Chain &amp; US Brand</div>
+      <div class="bg-card-line"><strong>Brand, retail, occasion-building, and commercial discipline at billion-dollar scale</strong> — across two hemispheres and the full range of brand-to-supply functions.</div>
     </div>
     <div class="bg-card">
       <div class="bg-card-eyebrow">SolarCity</div>
-      <div class="bg-card-co">Demand engine</div>
-      <div class="bg-card-line">Demand generation, partnerships, field execution, and funnel creation — built the engine that made retail the primary growth channel.</div>
+      <div class="bg-card-co">Head of Demand Generation &amp; Partnerships</div>
+      <div class="bg-card-line">Built the original <strong>retail-as-growth-channel engine</strong> for solar — the playbook that proved the model Tesla later scaled.</div>
     </div>
     <div class="bg-card">
-      <div class="bg-card-eyebrow">Realtor.com</div>
-      <div class="bg-card-co">Trust &amp; response</div>
-      <div class="bg-card-line">Brand transformation, trust, audience strategy, and measurable response — five quarters of consecutive YoY revenue growth in a contested category.</div>
+      <div class="bg-card-eyebrow">Home Depot</div>
+      <div class="bg-card-co">Store Manager</div>
+      <div class="bg-card-line">Ran a store. <strong>Lived inside the operating model of a 2,000+ location retail brand from the venue floor</strong> — same lens I bring to a Topgolf bay.</div>
     </div>
-  </div>
-</section>
-
-<!-- CAPABILITY SPREAD -->
-<section class="capability">
-  <p class="capability-cap fade"><strong>The CMO Swiss Army knife</strong> — every blade I've sharpened is one Topgolf needs.</p>
-  <div class="blades fade">
-    <span class="blade">Brand</span>
-    <span class="blade">Growth</span>
-    <span class="blade">Demand</span>
-    <span class="blade">CRM</span>
-    <span class="blade">Ops</span>
-    <span class="blade">Partnerships</span>
   </div>
 </section>
 
@@ -448,7 +432,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
         <li>Listen to leadership, operators, field teams, and Players.</li>
         <li>Audit acquisition, CRM, pricing, loyalty, local activation, and the events pipeline.</li>
         <li>Identify the biggest friction points in <strong>first visit, repeat visit, and group/event sales.</strong></li>
-        <li>Walk 8–10 venues across markets and dayparts.</li>
+        <li>Walk every state in the US footprint — one venue minimum, across dayparts, day-of-week, and group formats. <strong>~30 states at one venue per ~3 days, with leadership immersion running parallel in weeks 1–2.</strong></li>
         <li>Stand up a single weekly operating cadence around frequency, yield, and conversion.</li>
       </ul>
     </div>
@@ -459,7 +443,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
         <li>Launch 1–2 growth plays from the lever set above.</li>
         <li>Sharpen segmentation and messaging — Player-first, not golfer-first.</li>
         <li>Test membership, loyalty, and frequency programs (PlayMore tiers, corporate variant).</li>
-        <li>Align brand, digital, venue, and CRM around <strong>repeatable playbooks</strong> instead of one-off campaigns.</li>
+        <li>Align brand, digital, venue, and CRM around <strong>repeatable playbooks</strong>.</li>
         <li>Stand up a corporate-events product with packaging, pricing, and a sales motion.</li>
       </ul>
     </div>
@@ -482,6 +466,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   <div class="close-tag fade">The close</div>
   <h2 class="close-h fade">You're building the future of <em>experiential sports.</em><br>I build the systems that make it scale.</h2>
   <p class="close-cta fade">Let's tee it up.</p>
+  <p class="close-ask fade"><strong>30 minutes by phone next week, or 60 in Dallas — your call.</strong></p>
   <div class="sig fade">
     <div class="sig-name">Neil Golson</div>
     <div class="sig-role">Brand &amp; growth operator · Austin, TX</div>
