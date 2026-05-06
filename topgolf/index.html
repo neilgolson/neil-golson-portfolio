@@ -40,8 +40,12 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .dochead-l{font-family:var(--serif);font-size:14px;font-weight:600;letter-spacing:-0.005em;}
 .dochead-r{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);}
 
+/* ── PREPARED FOR (above field note) ── */
+.brief-prepared{max-width:1100px;margin:0 auto;padding:2rem 4rem 0;}
+.brief-prepared .cs-eyebrow{margin-bottom:0;}
+
 /* ── FIELD NOTE ── */
-.fieldnote{max-width:1100px;margin:0 auto;padding:2.5rem 4rem 0.25rem;}
+.fieldnote{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 0.25rem;}
 .fieldnote-inner{
   border-left:2px solid var(--accent);
   padding:0.3rem 0 0.3rem 1.6rem;
@@ -154,6 +158,44 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 .board img{width:100%;display:block;}
 .board-cap{margin-top:1rem;font-size:13px;color:var(--mid);line-height:1.7;max-width:840px;font-style:italic;}
 
+/* clickable whiteboard → fullscreen dialog */
+.board{cursor:zoom-in;position:relative;}
+.board:focus{outline:2px solid var(--accent);outline-offset:3px;}
+.board-expand{
+  position:absolute;top:0.85rem;right:0.85rem;
+  font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:#fff;background:rgba(26,24,20,0.7);
+  padding:0.4rem 0.7rem;border-radius:2px;
+  pointer-events:none;font-weight:500;
+  opacity:0;transition:opacity 0.18s ease;
+}
+.board:hover .board-expand,
+.board:focus .board-expand{opacity:1;}
+.board-modal{
+  border:none;padding:0;background:transparent;
+  max-width:100vw;max-height:100vh;width:100vw;height:100vh;
+  margin:0;
+}
+.board-modal::backdrop{background:rgba(20,18,14,0.94);}
+.board-modal-inner{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  padding:2.5rem;cursor:zoom-out;
+}
+.board-modal-inner img{
+  max-width:100%;max-height:100%;
+  object-fit:contain;display:block;
+  box-shadow:0 4px 40px rgba(0,0,0,0.5);
+}
+.board-modal-close{
+  position:fixed;top:1.25rem;right:1.5rem;z-index:1;
+  background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.35);
+  color:#f5f2ec;font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.55rem 0.9rem;border-radius:2px;cursor:pointer;
+  transition:background 0.15s,border-color 0.15s;
+}
+.board-modal-close:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.6);}
+
 /* ── BACKGROUND CARDS (6 cards, 3x2) ── */
 .bg-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -263,7 +305,8 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 @media(max-width:768px){
   body{font-size:15.5px;}
   .dochead{padding:1.25rem 1.5rem 1rem;flex-wrap:wrap;gap:0.4rem;}
-  .fieldnote{padding:1.75rem 1.5rem 0.25rem;}
+  .brief-prepared{padding:1.5rem 1.5rem 0;}
+  .fieldnote{padding:1.25rem 1.5rem 0.25rem;}
   .cs-hero{padding:1.75rem 1.5rem 2.25rem;}
   .diagnostic{padding:2.25rem 1.5rem;}
   .section{padding:3.5rem 1.5rem;}
@@ -291,6 +334,11 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
   <div class="dochead-r">CMO candidate brief · Topgolf · May 2026</div>
 </header>
 
+<!-- PREPARED FOR -->
+<section class="brief-prepared">
+  <div class="cs-eyebrow fade">Prepared for David McKillips</div>
+</section>
+
 <!-- FIELD NOTE -->
 <section class="fieldnote">
   <div class="fieldnote-inner fade">
@@ -302,10 +350,9 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 
 <!-- HERO -->
 <section class="cs-hero">
-  <div class="cs-eyebrow fade">Prepared for David McKillips</div>
   <h1 class="cs-title fade">Topgolf has already won awareness. The next phase is <em>frequency, yield, and repeat behavior.</em></h1>
   <p class="cs-context fade">I'm pitching myself as a CMO candidate. <strong>Fixer and builder. Growth operator with brand range. An entrepreneur disguised as a suit.</strong> The page below is the case — short, scannable, and grounded in your business, not mine.</p>
-  <p class="cs-credentials fade"><strong>VP, Brand &amp; Creative at Realtor.com</strong> today — two-sided marketplace, authentic challenger brand, larger P&amp;L. <strong>CMO at FlashParking</strong> before that. Operator chairs across Tesla, Coca-Cola, SolarCity, and Home Depot earlier — full breakdown in the cards below.</p>
+  <p class="cs-credentials fade"><strong>VP, Brand &amp; Creative at Realtor.com</strong> today — <em>chosen for the scope</em>: two-sided marketplace P&amp;L, brand value built inside a performance-marketing system, internal agency, NewsCorp parent reach, and an authentic challenger seat. <strong>CMO at FlashParking</strong> before that. Operator chairs across Tesla, Coca-Cola, SolarCity, and Home Depot earlier — full breakdown in the cards below.</p>
 </section>
 
 <!-- DIAGNOSTIC INSIGHT -->
@@ -335,7 +382,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
     <div class="mover">
       <div class="mover-num">Lever 03</div>
       <div class="mover-h">Frequency &amp; loyalty</div>
-      <div class="mover-b">Evolve <strong>PlayMore</strong> from a single $20/mo offer into tiered progression with status unlocks, corporate membership, and habit-forming triggers.</div>
+      <div class="mover-b">Evolve <strong>PlayMore</strong> beyond a single $20/mo offer. The multi-tier hospitality membership model is well-proven — <strong>Dave &amp; Buster's Rewards, Equinox tiers, Costco's two-step</strong> — but the right tiering for PlayMore gets calibrated to <em>Topgolf cohort data</em>, not borrowed from analog comps. Status unlocks, a corporate variant, and frequency triggers — sequenced behind retention proof.</div>
     </div>
     <div class="mover">
       <div class="mover-num">Lever 04</div>
@@ -367,11 +414,20 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
     <div class="board-meta-r">whiteboard, April 2026</div>
   </div>
   <h3 class="board-h fade">The six levers above sit on top of a fuller seven-layer system view.</h3>
-  <figure class="board fade">
+  <figure class="board fade" id="board-thumb" tabindex="0" role="button" aria-label="View whiteboard at full size">
     <img src="../assets/NG.TG.Whiteboard.Apr26.png" alt="Whiteboard system map: Topgolf — More people. More often. More value every visit. Seven layers from Reframe to Value, three levers, and the AI unlock that turns the system from static to adaptive.">
+    <span class="board-expand">Click to expand ↗</span>
   </figure>
   <p class="board-cap">From a reframe of what Topgolf actually is, through the core Player loop, the three levers, and the AI layer that turns the room into a yield-managed system. The artifact is here as proof that the levers above sit on top of a complete operating model — happy to walk it line-by-line live.</p>
 </section>
+
+<!-- WHITEBOARD FULLSCREEN MODAL -->
+<dialog class="board-modal" id="board-modal" aria-label="Whiteboard, full size">
+  <button class="board-modal-close" type="button" aria-label="Close">Close ✕</button>
+  <div class="board-modal-inner">
+    <img src="../assets/NG.TG.Whiteboard.Apr26.png" alt="">
+  </div>
+</dialog>
 
 <!-- WHY I FIT -->
 <section class="section">
@@ -403,7 +459,7 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
     <div class="bg-card">
       <div class="bg-card-eyebrow">SolarCity</div>
       <div class="bg-card-co">Head of Demand Generation &amp; Partnerships</div>
-      <div class="bg-card-line">Built the original <strong>retail-as-growth-channel engine</strong> for solar — the playbook that proved the model Tesla later scaled.</div>
+      <div class="bg-card-line">Built the original <strong>retail-as-growth-channel engine</strong> for solar — the playbook that proved the model Tesla later scaled. Operating math: <strong>opportunity-per-store-hour × sit-rate × close-rate × AOV.</strong> <em>Same shape as bay-hour × attach × AOV at Topgolf.</em></div>
     </div>
     <div class="bg-card">
       <div class="bg-card-eyebrow">Home Depot</div>
@@ -495,6 +551,30 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var modal = document.getElementById('board-modal');
+  var thumb = document.getElementById('board-thumb');
+  if (!modal || !thumb) return;
+  var closeBtn = modal.querySelector('.board-modal-close');
+  var inner = modal.querySelector('.board-modal-inner');
+  function open(){
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open','');
+  }
+  function close(){
+    if (typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+  }
+  thumb.addEventListener('click', open);
+  thumb.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
+  });
+  closeBtn.addEventListener('click', close);
+  inner.addEventListener('click', function(e){
+    if (e.target === inner || e.target.tagName !== 'IMG') close();
+  });
 })();
 </script>
 
