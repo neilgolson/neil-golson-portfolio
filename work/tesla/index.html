@@ -558,5 +558,15 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 })();
 </script>
 
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  if(p.get('from') === 'may26atl'){
+    var bl = document.querySelector('.back-link');
+    if(bl){ bl.href = '/may26atl/'; bl.textContent = '← Back'; }
+  }
+})();
+</script>
+
 </body>
 </html>
