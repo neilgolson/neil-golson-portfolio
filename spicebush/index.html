@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,noimageindex">
+<title>Spicebush Rental Audit</title>
+<meta name="description" content="Board brief prepared for the Spicebush at Sea Pines Board of Directors, October 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: single reading column, full-bleed data tables */
+:root{
+  --paper:#FBFAF7;
+  --surface:#FFFFFF;
+  --ink:#15201D;
+  --muted:#65736D;
+  --rule:#E3E5E0;
+  --accent:#0E6A61;
+  --accent-soft:#E4F0ED;
+  --blocked:#AC3A2C;
+  --blocked-soft:#F7E8E5;
+  --font-display:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1513;
+    --surface:#161E1B;
+    --ink:#E7EBE7;
+    --muted:#93A09A;
+    --rule:#273330;
+    --accent:#4FC3B4;
+    --accent-soft:#16302C;
+    --blocked:#E8897A;
+    --blocked-soft:#32201D;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1513;
+  --surface:#161E1B;
+  --ink:#E7EBE7;
+  --muted:#93A09A;
+  --rule:#273330;
+  --accent:#4FC3B4;
+  --accent-soft:#16302C;
+  --blocked:#E8897A;
+  --blocked-soft:#32201D;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.6;
+  margin:0;
+}
+.wrap{max-width:46rem;margin:0 auto;padding-inline:20px;padding-block:0 4rem}
+
+.mast{border-bottom:2px solid var(--ink);padding-block:2.5rem 1rem;margin-bottom:2rem}
+.kicker{
+  font-family:var(--font-display);font-weight:700;font-size:.6875rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .75rem
+}
+h1{
+  font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,6vw,2.9rem);
+  line-height:1.05;letter-spacing:-.02em;margin:0 0 .75rem;text-wrap:balance
+}
+.standfirst{font-size:1.1875rem;color:var(--muted);margin:0 0 1.25rem;max-width:34em}
+.byline{
+  font-family:var(--font-mono);font-size:.75rem;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:.4rem 1.25rem;margin:0
+}
+
+section{margin-block:2.75rem}
+h2{
+  font-family:var(--font-display);font-weight:800;font-size:1.3125rem;letter-spacing:-.01em;
+  margin:0 0 .25rem;text-wrap:balance
+}
+h2 .num{
+  font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:var(--accent);
+  display:block;letter-spacing:.08em;margin-bottom:.4rem
+}
+h3{font-family:var(--font-display);font-weight:700;font-size:1rem;margin:1.75rem 0 .5rem}
+p{margin:0 0 1rem}
+p:last-child{margin-bottom:0}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.lede{font-size:1.125rem}
+
+.verdict{
+  background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);
+  padding:1.125rem 1.25rem;margin-block:1.5rem
+}
+.verdict p{font-family:var(--font-display);font-weight:500;font-size:1.0625rem;line-height:1.45}
+
+.tablewrap{overflow-x:auto;margin-block:1.25rem;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:34rem;font-family:var(--font-mono);font-size:.8125rem;font-variant-numeric:tabular-nums}
+caption{
+  caption-side:top;text-align:left;font-family:var(--font-display);font-weight:700;
+  font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  padding:.75rem 1rem .5rem
+}
+th,td{text-align:left;padding:.5rem 1rem;border-top:1px solid var(--rule);vertical-align:baseline}
+thead th{
+  border-top:0;font-family:var(--font-display);font-weight:700;font-size:.6875rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap
+}
+tbody tr:hover{background:var(--accent-soft)}
+td.num{text-align:right;white-space:nowrap}
+.zero{color:var(--blocked);font-weight:600}
+.hit{color:var(--accent);font-weight:600}
+.check{white-space:nowrap;font-size:.75rem}
+.na{color:var(--muted)}
+
+/* Forward-inventory bars: Spicebush units bookable out of 24 */
+.curve{list-style:none;padding:0;margin:1.25rem 0;display:grid;gap:.55rem}
+.curve li{display:grid;grid-template-columns:9.5rem 1fr 2.5rem;gap:.6rem;align-items:center;font-family:var(--font-mono);font-size:.75rem}
+.curve .when{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.curve .track{background:var(--accent-soft);height:1.1rem;position:relative;min-width:0}
+.curve .bar{background:var(--accent);height:100%;display:block}
+.curve .bar.none{background:var(--blocked)}
+.curve .count{text-align:right;font-weight:600}
+.curve .count.zero{color:var(--blocked)}
+@media (max-width:30rem){
+  .curve li{grid-template-columns:7rem 1fr 2.2rem}
+}
+.scalenote{font-family:var(--font-mono);font-size:.6875rem;color:var(--muted);margin-top:.5rem}
+
+.titles{list-style:none;padding:0;margin:1.25rem 0;display:grid;gap:.6rem}
+.titles li{border-left:3px solid var(--rule);padding:.15rem 0 .15rem .85rem}
+.titles .t{font-family:var(--font-mono);font-size:.875rem;display:block}
+.titles .note{font-size:.8125rem;color:var(--muted)}
+.titles li.named{border-left-color:var(--accent)}
+
+ol.asks{padding-left:1.2rem;margin:1.25rem 0;display:grid;gap:.85rem}
+ol.asks li{padding-left:.3rem}
+ol.asks strong{font-family:var(--font-display);font-weight:700}
+
+details{border-top:1px solid var(--rule);padding-top:1rem;margin-top:3rem}
+summary{
+  font-family:var(--font-display);font-weight:700;font-size:.75rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);cursor:pointer
+}
+details p{font-size:.9375rem;color:var(--muted);margin-top:.85rem}
+
+footer{
+  border-top:2px solid var(--ink);margin-top:3rem;padding-top:1rem;
+  font-family:var(--font-mono);font-size:.75rem;color:var(--muted)
+}
+
+/* Print and PDF. Force light, keep tables whole, open the methodology note. */
+@media print{
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"]{
+    --paper:#FFFFFF;
+    --surface:#FFFFFF;
+    --ink:#111111;
+    --muted:#444444;
+    --rule:#BBBBBB;
+    --accent:#0E6A61;
+    --accent-soft:#EEF4F2;
+    --blocked:#AC3A2C;
+    --blocked-soft:#F7E8E5;
+    color-scheme:light;
+  }
+  @page{margin:0.6in}
+  body{background:#fff;color:#111;font-size:10.5pt;line-height:1.45}
+  .wrap{max-width:none;padding:0}
+  .mast{padding-block:0 .75rem}
+  h1{font-size:24pt}
+  .standfirst{font-size:12pt}
+  section{margin-block:1.5rem}
+  h2{font-size:14pt}
+  h2,h3{break-after:avoid}
+  .tablewrap{overflow:visible;break-inside:avoid}
+  table{min-width:0;font-size:8.5pt}
+  th,td{padding:.3rem .5rem}
+  tbody tr:hover{background:none}
+  .curve,.verdict,.titles li,ol.asks li{break-inside:avoid}
+  details{margin-top:1.5rem;break-inside:auto}
+  a{color:#0E6A61}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Spicebush at Sea Pines &middot; Board brief</p>
+  <h1>Nine empty villas on Halloween weekend</h1>
+  <p class="standfirst">All nine priced at $185. Three weeks out. And by February we have nothing left to sell at all.</p>
+  <p class="byline">
+    <span>Neil Golson, Board of Directors</span>
+    <span>Verified Friday, October 9, 2026</span>
+  </p>
+</header>
+
+<section>
+  <p class="lede">We have two problems, and they point in opposite directions. Close in, units sit open at one flat price. Further out, there's nothing in the calendar to work.</p>
+
+  <div class="verdict">
+    <p>Nine of our 24 villas are bookable for Halloween weekend, every one at $185 a night. By mid-January we're down to one. By February, zero.</p>
+  </div>
+
+  <p>Every link opens the live booking site in a new tab. Run any of these yourself. The numbers move as inventory sells or gets loaded, which is why every number here is a link you can run.</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 01</span>All 24 units are in the program</h2>
+  <p>Heritage Vacations is The Club Group's own booking site. Its property filter reads: All 82, Private Villas 21, Spicebush 24, Swallowtail 37. Every unit we own exists in the system and the listing work is done. What follows is about which nights get released, and on which channel.</p>
+  <p><a href="https://book.heritagevacations.com/all-listings" target="_blank" rel="noopener">Open the Heritage listings page</a></p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 02</span>Next weekend shows nothing. The two after it are wide open.</h2>
+  <p>Search October 16 to 19 and the whole 82-listing portfolio returns three properties, none of them ours. Fine. Mid-October is busy and owners are in their weeks.</p>
+  <p>Push out two weeks and it flips.</p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Friday-to-Monday weekends, two guests</caption>
+      <thead>
+        <tr><th>Weekend</th><th class="num">Portfolio</th><th class="num">Spicebush</th><th>Our rate</th><th>Check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Oct 16&ndash;19</td><td class="num">3 of 82</td><td class="num zero">0 of 24</td><td class="na">n/a</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-16&amp;end=2026-10-19&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Oct 23&ndash;26</td><td class="num">19 of 82</td><td class="num hit">8 of 24</td><td class="na">n/a</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-23&amp;end=2026-10-26&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Oct 30&ndash;Nov 2</td><td class="num">16 of 82</td><td class="num hit">9 of 24</td><td>$185/night, $554 quoted</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-30&amp;end=2026-11-02&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Nov 20&ndash;23</td><td class="num">19 of 82</td><td class="num hit">5 of 24</td><td>$214/night, $642</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-11-20&amp;end=2026-11-23&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Nine villas open on Halloween weekend: 573, 574, 576, 584, 586, 587, 588, 589 and 590. Every one at exactly $185 a night. Three of the private villas sitting next to them on the same results page are cheaper.</p>
+  <p>Nine units, one price, on a holiday weekend three weeks out. Nobody is working the rate.</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 03</span>What's left from December through March</h2>
+  <p>Same search, pushed further out each time. The bar is Spicebush units bookable against all 24.</p>
+
+  <ul class="curve">
+    <li><span class="when">Oct 16&ndash;19</span><span class="track"><span class="bar none" style="width:3px"></span></span><span class="count zero">0</span></li>
+    <li><span class="when">Oct 23&ndash;26</span><span class="track"><span class="bar" style="width:33.3%"></span></span><span class="count">8</span></li>
+    <li><span class="when">Oct 30&ndash;Nov 2</span><span class="track"><span class="bar" style="width:37.5%"></span></span><span class="count">9</span></li>
+    <li><span class="when">Nov 20&ndash;23</span><span class="track"><span class="bar" style="width:20.8%"></span></span><span class="count">5</span></li>
+    <li><span class="when">Dec 11&ndash;15</span><span class="track"><span class="bar" style="width:16.7%"></span></span><span class="count">4</span></li>
+    <li><span class="when">Jan 15&ndash;19</span><span class="track"><span class="bar" style="width:4.2%"></span></span><span class="count">1</span></li>
+    <li><span class="when">Feb 12&ndash;19</span><span class="track"><span class="bar none" style="width:3px"></span></span><span class="count zero">0</span></li>
+    <li><span class="when">Mar 13&ndash;20</span><span class="track"><span class="bar none" style="width:3px"></span></span><span class="count zero">0</span></li>
+  </ul>
+  <p class="scalenote">Full bar = 24 units. Lengths vary by month to clear the minimum in Finding 05. February and March were also tested at four nights, with the same result.</p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>The same searches, with links</caption>
+      <thead>
+        <tr><th>Dates</th><th>Nights</th><th class="num">Portfolio</th><th class="num">Spicebush</th><th>Check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dec 11&ndash;15</td><td>4</td><td class="num">38 of 82</td><td class="num">4</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-12-11&amp;end=2026-12-15&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Jan 15&ndash;19</td><td>4</td><td class="num">7 of 82</td><td class="num">1</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2027-01-15&amp;end=2027-01-19&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Feb 12&ndash;16</td><td>4</td><td class="num">6 of 82</td><td class="num zero">0</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2027-02-12&amp;end=2027-02-16&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Feb 12&ndash;19</td><td>7</td><td class="num">6 of 82</td><td class="num zero">0</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2027-02-12&amp;end=2027-02-19&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Mar 13&ndash;20</td><td>7</td><td class="num">8 of 82</td><td class="num zero">0</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2027-03-13&amp;end=2027-03-20&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>By February, Spicebush and Swallowtail are both gone and only private villas come back. Those villas sell March weeks at $283 to $479 a night. Somebody planning a spring trip today can book a Club Group property. They can't book ours.</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 04</span>A Thursday arrival works, until December</h2>
+  <p>Between now and the end of November the engine takes any check-in day and any length. Thursday to Monday over Halloween returns three of our units: 584, 586 and 589.</p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Late October, varying the arrival day</caption>
+      <thead>
+        <tr><th>Dates</th><th>Nights</th><th>Start</th><th class="num">Portfolio</th><th class="num">Spicebush</th><th>Check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Oct 29&ndash;Nov 2</td><td>4</td><td>Thu</td><td class="num">10 of 82</td><td class="num hit">3</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-29&amp;end=2026-11-02&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Oct 29&ndash;Nov 1</td><td>3</td><td>Thu</td><td class="num">10 of 82</td><td class="num hit">3</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-29&amp;end=2026-11-01&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Oct 27&ndash;30</td><td>3</td><td>Tue</td><td class="num">22 of 82</td><td class="num hit">6</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-10-27&amp;end=2026-10-30&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Dec 14&ndash;18</td><td>4</td><td>Mon</td><td class="num">40 of 82</td><td class="num hit">4</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-12-14&amp;end=2026-12-18&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A Monday arrival in December works too, so there's no arrival-day rule through the end of the year. February is where that changes. Friday and Saturday return results; Thursday, Sunday and Monday all return nothing, and the only inventory left by then is private villas anyway.</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 05</span>A four-night minimum is in force in December and kills the long weekend</h2>
+  <p>One setting, and it does a lot of damage. Same week in December, one night apart:</p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>December 11, three nights versus four</caption>
+      <thead>
+        <tr><th>Dates</th><th>Nights</th><th class="num">Bookable</th><th>Check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dec 11&ndash;14</td><td>3</td><td class="num zero">0 of 82</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-12-11&amp;end=2026-12-14&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+        <tr><td>Dec 11&ndash;15</td><td>4</td><td class="num hit">38 of 82</td><td class="check"><a href="https://book.heritagevacations.com/search?city=Hilton+Head+Island&amp;start=2026-12-11&amp;end=2026-12-15&amp;numberOfGuests=2" target="_blank" rel="noopener">Run it</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Add one night and 38 properties appear. On the December dates I tested, nobody can book a Friday-to-Monday weekend anywhere in the portfolio. In October the same three-night search returns 16 to 22. So this is a seasonal setting somebody picked, and somebody can change it.</p>
+
+  <h3>Why three nights is the number that matters</h3>
+  <p>Our owner weeks run Friday to Friday, 4pm in and 10am out. Housekeeping cleans every unit on Friday for a fixed fee whatever the stay, and can't come another day. The Heritage listing pages carry those same times.</p>
+  <p>Friday is a turn day we already pay for. A Friday-to-Monday guest rides a cleaning we're buying anyway and is out four days before the next one. That puts the marginal cost near zero and makes the long weekend the easiest sale we have. The four-night minimum takes it off the table for the winter.</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 06</span>Heritage shows nine. Airbnb shows two.</h2>
+  <p>Management confirms all 24 units are listed on Airbnb. I searched on a tight map box over the property across three date windows. Four turned up:</p>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Spicebush units found on Airbnb</caption>
+      <thead>
+        <tr><th>Unit</th><th>Title as it appears</th><th>Link</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>574</td><td>574 - Scenic Sea Pines Villa | Pool | Lagoon View</td><td class="check"><a href="https://www.airbnb.com/rooms/1397103784222429862" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>579</td><td>579 - Pool, Fire Pit, 2 Bedrooms, Steps to Beach</td><td class="check"><a href="https://www.airbnb.com/rooms/1405161173282680723" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>583</td><td>583 - Spicebush Sleeps 6, Lagoon Views + Pool</td><td class="check"><a href="https://www.airbnb.com/rooms/1405055480149265970" target="_blank" rel="noopener">Open</a></td></tr>
+        <tr><td>587</td><td>587 - Sleeps 6, Pool, Tennis, Fire Pit - Sea Pines</td><td class="check"><a href="https://www.airbnb.com/rooms/1405093279282461616" target="_blank" rel="noopener">Open</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The gap shows up on specific dates. Halloween weekend, Heritage lists nine of our units as bookable. An Airbnb map over the same ground returns two. November 20 to 23, Heritage lists five and Airbnb returns one.</p>
+  <p>Airbnb is where most people look for a Hilton Head villa. On every date I checked, a fraction of what Heritage has open reaches them.</p>
+  <p>The 579 calendar is worth opening on its own. Every day from January 1 through April 30 is struck through. Ask for February 13 to 17 and Airbnb says those dates aren't available.</p>
+  <p>
+    <a href="https://www.airbnb.com/rooms/1405161173282680723?check_in=2027-02-13&amp;check_out=2027-02-17&amp;adults=2" target="_blank" rel="noopener">Try the February dates on 579</a>
+  </p>
+  <p>It has one review. The copy on it today reads "your summer sanctuary is waiting."</p>
+</section>
+
+<section>
+  <h2><span class="num">Finding 07</span>Nobody searching Hilton Head knows what "579" is</h2>
+  <p>The unit number leads every title, and the unit number is the one thing a guest can't use.</p>
+
+  <ul class="titles">
+    <li class="named"><span class="t">583 - Spicebush Sleeps 6, Lagoon Views + Pool</span> <span class="note">The only one carrying the name. <a href="https://www.airbnb.com/rooms/1405055480149265970" target="_blank" rel="noopener">Airbnb</a></span></li>
+    <li><span class="t">574 - Scenic Sea Pines Villa | Pool | Lagoon View</span> <span class="note"><a href="https://www.airbnb.com/rooms/1397103784222429862" target="_blank" rel="noopener">Airbnb</a></span></li>
+    <li><span class="t">579 - Pool, Fire Pit, 2 Bedrooms, Steps to Beach</span> <span class="note"><a href="https://www.airbnb.com/rooms/1405161173282680723" target="_blank" rel="noopener">Airbnb</a></span></li>
+    <li><span class="t">587 - Sleeps 6, Pool, Tennis, Fire Pit - Sea Pines</span> <span class="note"><a href="https://www.airbnb.com/rooms/1405093279282461616" target="_blank" rel="noopener">Airbnb</a></span></li>
+    <li><span class="t">567 - Sea Pines Getaway-Heated Pool, Sleeps 6</span> <span class="note">On Expedia and Travelocity. <a href="https://www.travelocity.com/Hilton-Head-Island-Hotels-567-Sea-Pines-Getaway-Heated-Pool.h104199927.Hotel-Information" target="_blank" rel="noopener">See it</a></span></li>
+    <li><span class="t">570 - Sleeps 6, Pool, Fire Pit - Sea Pines</span> <span class="note">On Orbitz. <a href="https://www.orbitz.com/Hilton-Head-Island-Hotels-570-Sleeps-6.h116664191.Hotel-Information" target="_blank" rel="noopener">See it</a></span></li>
+    <li><span class="t">585 - Perfect Getaway | Pool &amp; Island Bliss</span> <span class="note">On Orbitz. <a href="https://www.orbitz.com/Hilton-Head-Island-Hotels-585-Perfect-Getaway-Pool-Island-Bliss.h116664061.Hotel-Information" target="_blank" rel="noopener">See it</a></span></li>
+  </ul>
+
+  <p>Seven units, no shared convention. One says Spicebush.</p>
+  <p>Twenty-four villas competing against each other as anonymous numbers. None of them builds the name. Every new listing restarts at zero reviews, and review count is among the strongest signals in where a listing lands in an Airbnb search.</p>
+</section>
+
+<section>
+  <h2><span class="num">The ask</span>Five questions for management</h2>
+  <ol class="asks">
+    <li><strong>Nine units are open on Halloween weekend at $185 each.</strong> What's the plan to fill them, and who sets that number? One price across nine villas on a holiday weekend isn't pricing.</li>
+    <li><strong>Trailing twelve months, by unit, delivered by December 1:</strong> nights available to rent, nights booked, nights blocked for owner use, average daily rate, gross rental revenue. Without it the board can't tell a sold-out night from a closed one.</li>
+    <li><strong>Through what date are Spicebush calendars and rates loaded?</strong> We show four units in December, one in January, none in February or March, while the private villas sell March at $283 to $479.</li>
+    <li><strong>Who set the four-night minimum starting December 1, and what would it cost to make it three?</strong> Friday is a turn day we already pay for.</li>
+    <li><strong>All 24 units are listed on Airbnb. Where does the availability gap come from?</strong> Halloween weekend, Heritage shows nine of ours bookable and an Airbnb map search returns two. November 20 to 23, Heritage shows five and Airbnb returns one.</li>
+  </ol>
+  <p>One and two decide the rest.</p>
+</section>
+
+<details>
+  <summary>How this was checked</summary>
+  <p>Every search ran on book.heritagevacations.com on Friday, October 9, 2026, for two guests, no filters beyond the dates shown. Dates before October 16 are left out on purpose, since the board is on property this week and current occupancy says nothing useful. Availability and rates move by the hour, so these counts are a snapshot and the links are live.</p>
+  <p>The Airbnb units were found by searching a tight map box over the property across three date windows and checking each result for our description text, since Airbnb now shows its own generated titles in the search grid. That method finds what a guest can find. Management has since confirmed all 24 are listed, so these counts measure what shows up and can be booked on a given date.</p>
+  <p>Two limits worth stating. A public booking site can't tell a night that sold from a night that was never released, which is why question two exists. And February and March were tested at four and seven nights, so the zero for Spicebush in those months is a real absence of inventory. The minimum stay is not hiding it.</p>
+  <p>The Friday turnover, the fixed housekeeping fee and the single cleaning day come from board and owner knowledge. The website does not show them.</p>
+</details>
+
+<footer>
+  Prepared for the Spicebush at Sea Pines Board of Directors &middot; October 10, 2026
+</footer>
+
+</div>
+
+<script>
+// Expand the methodology note before printing so it appears in the PDF.
+(function () {
+  function openAll() {
+    document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+  }
+  window.addEventListener('beforeprint', openAll);
+  if (window.matchMedia) {
+    var mq = window.matchMedia('print');
+    if (mq.addEventListener) { mq.addEventListener('change', function (e) { if (e.matches) openAll(); }); }
+  }
+})();
+</script>
+
+</body>
+</html>
