@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Topgolf, booking teardown | Neil Golson</title>
+<meta name="description" content="A teardown of the Topgolf Charleston booking flow on 8 October 2026, prepared by Neil Golson.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@600&family=DM+Sans:wght@500&display=swap">
+
+<style>
+/* Layout: a single narrow reading column of argument, interrupted by full-width
+   evidence blocks where a screen sits beside the sentence it proves. */
+:root{
+  --bg:#F6F7FA;
+  --panel:#FFFFFF;
+  --tray:#ECEFF5;
+  --ink:#0B1220;
+  --muted:#5A6477;
+  --rule:#DBE0EA;
+  --accent:#1A35FF;
+  --cost:#9E1420;
+  --cost-bg:#FBEDEE;
+
+  --f-display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --col:min(100%,68ch);
+  --wide:min(100%,1180px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#090D15;
+    --panel:#111825;
+    --tray:#0E141F;
+    --ink:#E9EDF5;
+    --muted:#8D98AD;
+    --rule:#212A3B;
+    --accent:#6E85FF;
+    --cost:#F2737F;
+    --cost-bg:#231318;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#090D15;
+  --panel:#111825;
+  --tray:#0E141F;
+  --ink:#E9EDF5;
+  --muted:#8D98AD;
+  --rule:#212A3B;
+  --accent:#6E85FF;
+  --cost:#F2737F;
+  --cost-bg:#231318;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:1.0625rem;
+  line-height:1.62;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  width:100%;
+  max-width:var(--wide);
+  margin-inline:auto;
+  padding-inline:20px;
+}
+.col{width:var(--col)}
+p{margin:0 0 1.1em}
+a{color:var(--accent)}
+strong{font-weight:600}
+em{font-style:italic}
+
+/* ---------- masthead ---------- */
+.mast{
+  border-bottom:1px solid var(--rule);
+  padding-block:clamp(44px,8vw,84px) clamp(32px,5vw,52px);
+}
+.kicker{
+  font-family:var(--f-data);
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 1.6em;
+}
+h1{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:clamp(2.3rem,7.2vw,4.4rem);
+  line-height:1.0;
+  letter-spacing:-.028em;
+  margin:0 0 .4em;
+  text-wrap:balance;
+  max-width:16ch;
+}
+.dek{
+  font-size:clamp(1.1rem,2.4vw,1.35rem);
+  line-height:1.45;
+  color:var(--muted);
+  max-width:48ch;
+  margin:0 0 2em;
+}
+.byline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5em 1.6em;
+  font-family:var(--f-data);
+  font-size:.74rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border-top:1px solid var(--rule);
+  padding-top:1.3em;
+}
+.byline b{color:var(--ink);font-weight:600}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:var(--f-data);
+  font-size:.7rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 1.5em;
+}
+h2{
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:clamp(1.55rem,3.6vw,2.3rem);
+  line-height:1.1;
+  letter-spacing:-.02em;
+  margin:0 0 .7em;
+  text-wrap:balance;
+  max-width:22ch;
+}
+h3{
+  font-family:var(--f-display);
+  font-weight:600;
+  font-size:1.14rem;
+  line-height:1.3;
+  letter-spacing:-.008em;
+  margin:0 0 .5em;
+}
+.lede{font-size:1.18rem;line-height:1.55}
+
+/* ---------- the receipt ---------- */
+.receipt{
+  background:var(--panel);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  padding:clamp(20px,3.5vw,30px);
+  margin:2em 0;
+  max-width:46ch;
+  font-family:var(--f-data);
+  font-size:.82rem;
+  line-height:1.9;
+}
+.receipt .rhead{
+  font-size:.68rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border-bottom:1px solid var(--rule);
+  padding-bottom:.8em;
+  margin-bottom:.9em;
+}
+.rline{display:flex;justify-content:space-between;gap:1.5em}
+.rline span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.rline.neg span:last-child{color:var(--cost)}
+.rline.tot{
+  border-top:1px solid var(--rule);
+  margin-top:.8em;
+  padding-top:.8em;
+  font-weight:600;
+  font-size:.95rem;
+}
+
+.opener{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:clamp(20px,3vw,40px);
+  margin:2em 0;
+}
+.opener .receipt{margin:0;flex:1 1 320px}
+.ereceipt{flex:0 1 240px;max-width:240px}
+
+/* ---------- findings ---------- */
+.finding{
+  padding-block:clamp(36px,5vw,58px);
+  border-bottom:1px solid var(--rule);
+}
+.finding:last-child{border-bottom:0}
+.fnum{
+  font-family:var(--f-data);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.14em;
+  color:var(--accent);
+  margin:0 0 1em;
+}
+.finding h3{
+  font-size:clamp(1.3rem,2.9vw,1.75rem);
+  font-weight:700;
+  letter-spacing:-.016em;
+  line-height:1.16;
+  margin:0 0 1.1em;
+  max-width:26ch;
+  text-wrap:balance;
+}
+.fgrid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(22px,3vw,40px);
+  align-items:start;
+}
+@media (min-width:860px){
+  .fgrid{grid-template-columns:minmax(0,1fr) minmax(0,360px)}
+  .fgrid.flip{grid-template-columns:minmax(0,360px) minmax(0,1fr)}
+  .fgrid.flip .ftext{order:2}
+  .fgrid.flip .eshelf{order:1}
+}
+.ftext{min-width:0}
+.ftext p:last-child{margin-bottom:0}
+
+/* ---------- evidence ---------- */
+.eshelf{
+  min-width:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+figure{margin:0;flex:1 1 150px;min-width:0;max-width:360px}
+.eshelf:has(figure:nth-child(3)) figure{flex:1 1 calc(50% - 7px);max-width:calc(50% - 7px)}
+figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid var(--rule);
+  border-radius:9px;
+  background:var(--tray);
+}
+figcaption{
+  font-family:var(--f-data);
+  font-size:.66rem;
+  line-height:1.5;
+  letter-spacing:.03em;
+  color:var(--muted);
+  margin-top:.7em;
+}
+figcaption b{color:var(--ink);font-weight:600;letter-spacing:.08em}
+
+/* ---------- cost callout ---------- */
+.cost{
+  border-left:2px solid var(--cost);
+  background:var(--cost-bg);
+  padding:.95em 1.2em;
+  margin-top:1.4em;
+  font-size:.97rem;
+  line-height:1.52;
+}
+.cost b{
+  display:block;
+  font-family:var(--f-data);
+  font-size:.66rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--cost);
+  margin-bottom:.45em;
+  font-weight:600;
+}
+.cost p{margin:0}
+
+/* ---------- pull ---------- */
+.pull{
+  font-family:var(--f-display);
+  font-weight:600;
+  font-size:clamp(1.3rem,3.2vw,1.95rem);
+  line-height:1.24;
+  letter-spacing:-.018em;
+  color:var(--ink);
+  border-top:2px solid var(--accent);
+  padding-top:.8em;
+  margin:2.2em 0;
+  max-width:28ch;
+  text-wrap:balance;
+}
+
+/* ---------- ledger table ---------- */
+.scroll{overflow-x:auto;margin-top:2em;border:1px solid var(--rule);border-radius:3px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+th,td{text-align:left;padding:.85em 1.1em;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:var(--f-data);
+  font-size:.65rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+  white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--f-data);font-size:.78rem;color:var(--muted);white-space:nowrap}
+td.them{color:var(--muted)}
+
+/* ---------- figures row ---------- */
+.nums{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  margin:2em 0;
+  overflow:hidden;
+}
+.num{background:var(--panel);padding:1.3em 1.4em}
+.num .v{
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:clamp(1.6rem,4vw,2.1rem);
+  letter-spacing:-.025em;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  display:block;
+  margin-bottom:.4em;
+}
+.num .l{font-size:.92rem;line-height:1.42;color:var(--muted);display:block}
+
+/* ---------- moves ---------- */
+.move{
+  border-top:1px solid var(--rule);
+  padding-block:1.9em;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:.7em 2.2em;
+}
+@media (min-width:760px){
+  .move{grid-template-columns:3.2rem minmax(0,1fr)}
+}
+.mnum{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.5rem;
+  letter-spacing:-.03em;
+  color:var(--accent);
+  line-height:1.1;
+  font-variant-numeric:tabular-nums;
+}
+.move h3{margin-bottom:.45em}
+.move p{margin-bottom:.7em}
+.move p:last-child{margin-bottom:0}
+.tag{
+  display:inline-block;
+  font-family:var(--f-data);
+  font-size:.64rem;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:.28em .65em;
+  margin:.1em .35em .1em 0;
+}
+
+/* ---------- question list ---------- */
+ol.q{margin:1.6em 0 0;padding-left:0;list-style:none;counter-reset:q}
+ol.q li{
+  counter-increment:q;
+  border-top:1px solid var(--rule);
+  padding:1em 0 1em 3rem;
+  position:relative;
+}
+ol.q li::before{
+  content:counter(q,decimal-leading-zero);
+  position:absolute;
+  left:0;
+  top:1.15em;
+  font-family:var(--f-data);
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  color:var(--accent);
+}
+
+/* ---------- method / footer ---------- */
+.method{font-size:.95rem;color:var(--muted)}
+.method h2{color:var(--ink)}
+.method a{color:var(--accent)}
+footer{padding-block:clamp(40px,6vw,70px)}
+.sig{
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:clamp(1.3rem,3vw,1.7rem);
+  letter-spacing:-.02em;
+  margin:0 0 .5em;
+}
+.contact{
+  font-family:var(--f-data);
+  font-size:.82rem;
+  color:var(--muted);
+  line-height:2;
+}
+.contact a{text-decoration:none;border-bottom:1px solid var(--rule)}
+
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---------- top bar back to the brief ---------- */
+.tgbar{border-bottom:0.5px solid var(--rule)}
+.tgbar-in{max-width:var(--wide);margin-inline:auto;padding:1.1rem 20px .9rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem 1rem}
+.tgbar a{text-decoration:none;color:var(--ink)}
+.tgbar a:hover{color:var(--accent)}
+.tgbar-back{font-family:"Playfair Display",Georgia,serif;font-size:14px;font-weight:600}
+.tgbar-next{font-family:"DM Sans",system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
+.tgbar-next:hover{color:var(--accent)!important}
+</style>
+</head>
+<body>
+
+<nav class="tgbar" aria-label="Topgolf brief">
+  <div class="tgbar-in">
+    <a class="tgbar-back" href="/topgolf/">← Back to the brief</a>
+    <a class="tgbar-next" href="/topgolf/day-of/">Day-of teardown →</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Booking-flow teardown &middot; Topgolf Charleston &middot; 8 October 2026</p>
+  <h1>Forty-three minutes at Topgolf</h1>
+  <p class="dek">I booked a bay for two people, booked it again, got blocked, cancelled, and booked a third time. The booking came to $51.19, and Topgolf learned four things about me. Here is everything it already had in hand and did not use.</p>
+  <p class="byline"><span>Prepared for <b>David McKillips</b></span><span>By <b>Neil Golson</b></span><span>Charleston, SC &middot; 6:14&ndash;6:57 PM CT</span></p>
+</header>
+
+<section>
+  <div class="col">
+    <p class="eyebrow">The transaction</p>
+    <p class="lede">On Thursday evening I booked Topgolf Charleston for Saturday, two players, 90 minutes. Then I moved it from 2:30 PM to noon, because Carolina kicks off at twelve.</p>
+    <p>That move is the whole document. A known golf fan, booking a Saturday in October, pulls his reservation forward to catch a kickoff. Topgolf has a game-day program. It has a Tailgate Package built for exactly this. It never asked why I moved, so it never sold me any of it.</p>
+    <p>Moving it took four attempts: a completed web booking at 2:30, a second attempt in the app at 4:00 that died against a wall, a cancellation, and a third booking at noon. Three of those four touched the payment screen.</p>
+  </div>
+
+  <div class="opener">
+  <div class="receipt">
+    <p class="rhead">Reservation 856B4500 &middot; 10 Oct 2026 &middot; 12:00&ndash;1:30 PM</p>
+    <p class="rline"><span>Game play, 90 min, one bay</span><span>$65.00</span></p>
+    <p class="rline"><span>Booking fee</span><span>$0.00</span></p>
+    <p class="rline"><span>Floor (first available)</span><span>$0.00</span></p>
+    <p class="rline neg"><span>DRIVE25, 25% off game play</span><span>&minus;$16.25</span></p>
+    <p class="rline"><span>Tax</span><span>$2.44</span></p>
+    <p class="rline tot"><span>Total</span><span>$51.19</span></p>
+    <p class="rline" style="margin-top:.6em"><span>Deposit taken now</span><span>$12.80</span></p>
+    <p class="rline"><span>Due at the venue</span><span>$38.39</span></p>
+  </div>
+  <figure class="ereceipt">
+    <img src="assets/01-topgolf-confirmation-email-showing-reservation-details.jpg" alt="Topgolf confirmation email showing the reservation details and a total of $51.19 after a 25 percent discount.">
+    <figcaption><b>Still, 6:55 PM</b> &middot; The confirmation email, 41 minutes in.</figcaption>
+  </figure>
+  </div>
+
+  <div class="col">
+    <p>Twenty-five dollars and sixty cents a head, before food, for a Saturday bay. A code Topgolf had emailed me took a $43 bay-hour down to $32.50, in a window Topgolf posts at $40 and $50 and charges $66 for four hours later.</p>
+    <p><strong>What Topgolf learned in those 43 minutes:</strong> my name, my phone number, my email address, and that I do not need a wheelchair.</p>
+    <p><strong>What it did not learn:</strong> that I live near Austin and was booking Charleston. That there were two of us, which is the exact party size your price-value problem lives in. That I had played four times before. That I moved the booking for a football game. It did not learn any of it because it never asked.</p>
+
+    <p class="pull">You launched a media network in July selling first-party audience data against 42 million annual visits. This is the flow that collects it.</p>
+
+    <p>So this is not a usability review. The booking flow is the only moment in the business where a guest volunteers intent, and it is the top of the funnel for CRM, for membership, for pricing architecture and for the data Topgolf Media Networks is now being sold on. Right now it collects four fields and a payment.</p>
+    <p>Eleven findings, every one tied to a screen from Thursday night.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">The findings</p>
+
+  <article class="finding">
+    <p class="fnum">01</p>
+    <h3>The flow asks four questions. None of them is why you came.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>Name, phone, email. Then one open text field: <em>&ldquo;Please note any guests requiring special accommodations here (i.e. wheelchair).&rdquo;</em> That is the only free-form question in the entire reservation.</p>
+        <p>Occasion does exist at Topgolf. Birthdays, company events, fundraisers, social get-togethers all have their own path, and that path routes to an events salesperson. A guest booking one bay is, as far as the system is concerned, a guest booking one bay.</p>
+        <p>Caesars pays guests to declare an occasion. The Celebration Dinner runs $100 at Diamond and $500 at Seven Stars. MGM does the same thing with tier celebration credits, $200 at Platinum and $500 at Noir. Both treat <em>what are you here for</em> as a revenue question. Topgolf treats it as a routing question for a different department.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>One dropdown. No inventory risk, no pricing change, no new product. It is also the input every other move on this page depends on, which is why it goes first.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/02-topgolf-checkout-empty-state-showing-three.jpg" alt="Topgolf checkout in its empty state, showing three required fields for full name, phone number and email address.">
+          <figcaption><b>R1 / 210s</b> &middot; Everything the reservation demands: three required fields.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/03-topgolf-checkout-showing-name-phone-email.jpg" alt="Topgolf checkout showing name, phone and email fields, an unchecked offers opt-in, and a free-text accessibility field.">
+          <figcaption><b>R1 / 219s</b> &middot; And everything it holds afterwards. The marketing opt-in sits unchecked under a wall of legal copy.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">02</p>
+    <h3>Topgolf recognized me. It waited until after I&rsquo;d paid to do it.</h3>
+    <div class="fgrid flip">
+      <div class="ftext">
+        <p>On the web, sign-in appears at step five, after I had already picked the date, the time, the duration and the floor. The heading reads <em>&ldquo;Look up your Topgolf Account to save time the day of your reservation.&rdquo;</em> Sign-in is sold as a convenience and weighted equally against <em>Continue as Guest</em>. I continued as a guest and typed my own name in.</p>
+        <p>In the app I rebuilt the whole booking from scratch. Date, time, duration, floor, a $99 total confirmed on screen. Only then did it ask for a phone number, and only after the code came back did it return <strong>&ldquo;Welcome back Neil. Your Topgolf Account has been active since 2026,&rdquo;</strong> followed immediately by <em>&ldquo;Reservation already booked! You&rsquo;re booked to play during this date &amp; time. Since we&rsquo;re pretty sure there aren&rsquo;t two of you, please select another.&rdquo;</em></p>
+        <p>The identity exists. The system knows me, knows I have played four times, knows I am about to double-book, and is funny about it. It fires all of that at the bottom of the funnel, where the only thing left to do is catch a mistake, instead of at the top, where it could price, merchandise and personalize.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>Every guest who clicks past sign-in is a visit that never attaches to a record. On the Q2 2025 call Topgolf put the value-offer split at roughly one-third new players and two-thirds repeat. The flow is built so a repeat guest can complete a purchase without ever being one.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/04-topgolf-web-checkout-offering-find-account.jpg" alt="Topgolf web checkout offering Find Account or Continue as Guest, framed as saving time on the day.">
+          <figcaption><b>R1 / 192s</b> &middot; Sign-in offered as a time-saver, after floor selection.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/05-topgolf-app-showing-welcome-back-neil.jpg" alt="Topgolf app showing Welcome Back Neil, account active since 2026.">
+          <figcaption><b>R2 / 107s</b> &middot; The recognition, after the total was confirmed.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/06-topgolf-app-warning-reservation-already-booked.jpg" alt="Topgolf app warning that a reservation is already booked for this date and time.">
+          <figcaption><b>R2 / 114s</b> &middot; It knew all along. Six screens too late to matter.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">03</p>
+    <h3>Your email sent me the code. Your app said I had no offers.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>Topgolf emailed me the discount. Subject line: <em>&ldquo;Weekend Deal Alert: 25% Off Play Inside.&rdquo;</em> Code <span style="font-family:var(--f-data);font-size:.9em">DRIVE25</span>, good before 5 p.m. Friday through Monday. Sent to my address, from a mailing list, to an account with four games on it.</p>
+        <p>Then I opened the app. Offers tab: <em>&ldquo;You don&rsquo;t have any offers yet, check back soon for updates!&rdquo;</em> Promo drawer: <em>&ldquo;Looks like there are no offers or promos to redeem right now. Check back later or enter a promo code if you have one!&rdquo;</em></p>
+        <p>Same company, same guest, same address, same week. The email system knows about the promotion. The app has never heard of it. I went back to my inbox, copied a code Topgolf had already sent me, and pasted it into a box that had just told me no offers existed.</p>
+        <p>Then read what the email coaches me to do with it: <em>&ldquo;Insider tip: you can even STACK the code on top of our already great Sunday Funday hourly rates to play even longer for less!&rdquo;</em> That is the house teaching its own list to compound discounts, in the house&rsquo;s own send.</p>
+        <p>The offer itself worked. I remembered seeing it and went back to find it, which is more than most email earns. Change one thing about my Thursday and it works harder than that: a 25% code landing while I am hunting for somewhere to watch Carolina on Saturday is exactly the nudge that fills a bay. The email did its job. Nothing downstream of it could tell that it had.</p>
+        <p>The taxonomy is what buries it. One app screen stacks <em>Offers</em>, <em>Promotions</em> and <em>Happenings</em> as three separate things, and checkout adds a fourth called <em>available promo codes</em>. Eat &amp; Golf sits under Promotions. Golf. Beer. Football sits under Happenings. Offers is empty and available promo codes is empty. A live, redeemable, Topgolf-issued code was sitting in my inbox and appeared in none of the four.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>An offer the booking engine cannot see is an offer you cannot target, cap, attribute or measure. Right now the email channel sets the discount, the app denies it exists, the guest arbitrages the gap, and the marketing writes the stacking instructions.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/07-topgolf-marketing-email-headed-weekend-deal.jpg" alt="Topgolf marketing email headed Weekend Deal Alert, 25% Off Play Inside, with code DRIVE25.">
+          <figcaption><b>Inbox</b> &middot; Topgolf sends the code the app says does not exist.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/08-topgolf-app-offers-tab-reading-you.jpg" alt="Topgolf app Offers tab reading: you don't have any offers yet, with an Eat and Golf Combo promotion directly below.">
+          <figcaption><b>Still, 6:53 PM</b> &middot; &ldquo;No offers yet,&rdquo; with the $45 combo on the next card down.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/09-topgolf-app-promo-drawer-saying-there.jpg" alt="Topgolf app promo drawer saying there are no offers or promos to redeem right now.">
+          <figcaption><b>R3 / 54s</b> &middot; And again, in the promo drawer.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/10-topgolf-checkout-drive25-promo-applied-25.jpg" alt="Topgolf checkout with DRIVE25 promo applied, 25 percent off game play, total reduced.">
+          <figcaption><b>R1 / 249s</b> &middot; Pasted back in by hand, accepted instantly.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">04</p>
+    <h3>The product built for two people is switched off.</h3>
+    <div class="fgrid flip">
+      <div class="ftext">
+        <p>Sixty minutes is described, in Topgolf&rsquo;s own words, as <em>&ldquo;a fun, quick session perfect for singles or small groups.&rdquo;</em> Perfect for me. Greyed out, and marked <strong>Unavailable</strong>.</p>
+        <p>Blocked at 2:30 on Saturday. Blocked again in the app at noon. The one session built for the number of people I brought is the one session I cannot buy, in either flow.</p>
+        <p>Then count how many times the booking tells a party of two it is the wrong size. The pricing card: <em>&ldquo;Each bay can fit up to 6 players, so bring your friends and split the cost 6 ways!&rdquo;</em> Further down the same page: <em>&ldquo;Pricing is for the group, not per person.&rdquo;</em> The widget: <em>1-6 players.</em> The duration I was allowed to buy: <em>&ldquo;Great for small to medium-sized groups.&rdquo;</em> The confirmation: <em>Players 1/6.</em></p>
+        <p>Five reminders that I brought too few people, wrapped around the one product sized for the number I brought, switched off.</p>
+        <p>Of 21 entertainment and dining brands measured by HundredX, Topgolf ranks first for fun, for atmosphere and for food and drink, sixteenth for value and nineteenth for price. That gap is not a perception problem. It is this screen.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>Turning the short session off pushes a two-person party up to a 90-minute bay rate or out the door. It also removes the obvious filler for the dayparts you are trying to fill. A 60-minute bay at noon on a Saturday isn&rsquo;t cannibalisation. It is the only thing in the lineup priced for the party size that scores you worst on value.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/11-topgolf-duration-picker-showing-90-120.jpg" alt="Topgolf duration picker showing 90 and 120 minute options priced, and 60 minutes marked unavailable.">
+          <figcaption><b>R1 / 171s</b> &middot; The 60-minute session, built for two, unavailable.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/12-topgolf-charleston-saturday-per-bay-pricing.jpg" alt="Topgolf Charleston Saturday per-bay pricing card with a six-dollar account activation fee notice.">
+          <figcaption><b>R1 / 72s</b> &middot; Per-bay pricing, and the instruction to bring four more people.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">05</p>
+    <h3>The membership math never meets the cart.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>PlayMore is $20 a month: a free hour of play every month, a free appetizer every visit, up to five guests. I paid $51.19. The two numbers never met.</p>
+        <p>It does get pitched, twice, and both times in the wrong room. On the web it is a third card in a horizontal carousel, parked past <em>Reserve a Bay</em> and <em>Walk In</em> and half off the edge of the screen until you swipe. It shows up while you are choosing how to book, before the flow has quoted you anything, so there is no number to weigh $20 against. In the app it is a banner inside Account, which I only opened because I was trying to fix my home venue.</p>
+        <p>It is not in Offers. Not in Promotions. Not in available promo codes. At the one screen where a $20 subscription could do arithmetic against a $65 cart, it is nowhere.</p>
+        <p>Deeper in the app, under Account, sit two more tiers nobody mentioned. <strong>Platinum Club</strong> is described, in Topgolf&rsquo;s own words, as <em>&ldquo;perfect for up to two members with a serious love for golf&rdquo;</em>: free weekday play until 5 PM, 20% off food, 20% off retail. <strong>Platinum Elite</strong> adds evenings and weekends, priority bay access and 20% off private events.</p>
+        <p>That is an answer to the two-person problem. Topgolf wrote it, priced it, published it on venue pages, and then put it where only a guest who has already bought, already paid and already downloaded the app will find it.</p>
+        <p>The two programmes don&rsquo;t connect to each other either. PlayMore is $20 a month everywhere in the country. Platinum is priced venue by venue, $100 a month in Atlanta and $225 in Las Vegas. They run on separate agreements, and Topgolf still publishes a live agreement for a third generation of tiers, Practice Pass, Silver and Gold, that no longer appears on the membership page at all. Three programmes running in parallel, no path between them, and nothing a guest can climb.</p>
+        <p>And there is no free rung anywhere on the ladder. No points, no status, nothing to earn. The first step is a $6 charge for the account itself and the second is a $20 monthly subscription, so a returning guest who wants to be recognised has to buy the privilege twice before anything is given back.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>At a $65 cart, &ldquo;$20 a month pays for itself before you leave today&rdquo; is one line of arithmetic the checkout could run and doesn&rsquo;t. Every full-price booking by an unrecognized repeat guest is a conversion you paid for twice.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/13-topgolf-web-booking-page-playmore-membership.jpg" alt="Topgolf web booking page with the PlayMore membership card half off the edge of a horizontal carousel.">
+          <figcaption><b>R1 / 129s</b> &middot; Third card in a carousel, before the flow quotes a price.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/14-topgolf-app-account-screen-playmore-membership.jpg" alt="Topgolf app Account screen with a PlayMore membership banner above account details.">
+          <figcaption><b>R2 / 146s</b> &middot; And again in Account, which I opened to fix my home venue.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/15-topgolf-app-platinum-club-platinum-elite.jpg" alt="Topgolf app Platinum Club and Platinum Elite membership tiers, buried under the Account tab.">
+          <figcaption><b>R2 / 150s</b> &middot; Platinum Club, &ldquo;perfect for up to two members,&rdquo; four taps deep in Account.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">06</p>
+    <h3>A new guest pays $6 to enter the database.</h3>
+    <div class="ftext col">
+      <p>In the fine print on the pricing card: <em>&ldquo;$6 account activation fee required for new players.&rdquo;</em> Every player needs an account, and the account is the thing that holds their name, their scores and their history.</p>
+      <p>So the first-time guest is charged for the privilege of being known, at the one moment you are trying to acquire them. The fee is already waived in three places: 2-Bay Packages, 3+ Bay Events, and anyone who signs up for PlayMore at the venue. Platinum Club adds five free registrations per visit as a membership perk. Four separate waivers exist. None of them is pointed at acquisition.</p>
+      <p>Where it lands is worse than what it costs. I booked for two and paid for two. The second player meets the $6 on her phone before she registers, and it lands again at the bay as a line on the table&rsquo;s check, during paid playing time. That is a six-dollar argument in the first five minutes of a 90-minute reservation, at the exact moment the table is deciding whether to order food and drinks.</p>
+      <p>Charge it in the flow where I can see it, waive it outright, or trade it. &ldquo;Add your guest now and we&rsquo;ll waive the fee&rdquo; costs you six dollars and buys you a second named guest before anybody arrives.</p>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">07</p>
+    <h3>The confirmation page had the right offer. It showed it after I paid.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>Golf. Beer. Football. <em>&ldquo;Experience football our way.&rdquo;</em> Stacked on the confirmation screen with four other banners, underneath a receipt.</p>
+        <p>I had moved that reservation to noon on a Saturday in October for a kickoff. Topgolf&rsquo;s game-day programming is real and it is good: the Field Goal Challenge, picking which game runs in your bay, the Tailgate Package of two side-by-side bays for three hours with food and drink. Last season the field goal posts went into the outfield at 51 venues and premium suites ran at twenty.</p>
+        <p>The Tailgate Package runs at every venue except Las Vegas and is bookable only through a request form or the local sales team. It never appears in the self-serve flow. And the generic version of all of it showed up on my screen as wallpaper, after the money had changed hands, on the single most obviously game-day booking of the week.</p>
+        <p>Every bookable piece of it is sized for a crowd. The Tailgate Package is two bays. The suites are built for groups. The Field Goal Challenge is the only part that works at any party size, and it is a game inside the bay rather than a reason to book one. Two people who want to watch a game get the banner.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>The content problem is already solved. The targeting problem is that nothing in the system knows who is looking at the banner. Same creative, placed one screen earlier against a declared occasion, is an upsell instead of decoration.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/16-topgolf-confirmation-page-showing-golf-beer.jpg" alt="Topgolf confirmation page showing a Golf Beer Football game-day banner below the booking receipt.">
+          <figcaption><b>R1 / 276s</b> &middot; Game-day merchandising, served as a receipt decoration.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">08</p>
+    <h3>Signing in made it worse.</h3>
+    <div class="fgrid flip">
+      <div class="ftext">
+        <p>Ten minutes after paying online, I downloaded the app. It opened with <strong>&ldquo;Welcome, Guest&rdquo;</strong> and offered me tonight&rsquo;s 8:30, 8:45 and 9:00 slots. Same email, same phone, same device, same ten minutes. It did show Charleston, but only because the setup screen made me type Charleston in. Nothing was inferred.</p>
+        <p>Then I signed in, and it moved my home venue to <strong>Georgia, Atlanta</strong>. My Offers tab came back headed <em>&ldquo;Offers at Atlanta.&rdquo;</em> Half an hour later the home screen was still Atlanta, still pushing that night&rsquo;s 9:00, 9:15 and 9:30 slots, with my confirmed Charleston reservation sitting on the same screen.</p>
+        <p>Atlanta is where I last played. So the one piece of history the app did apply, it used to overwrite the city I had typed in myself ten minutes earlier, on a screen that was displaying my Charleston reservation at the same time. Meanwhile its own location search put Topgolf Austin, 12 miles away, at the top, because Austin is where I live.</p>
+        <p>Three cities, and it committed to the one I had neither chosen nor come from.</p>
+        <p>There is nowhere to fix it. I went into the profile looking for a home-venue setting and there isn&rsquo;t one. The app picks your home by wherever you last played, which makes it wrong for anyone who travels and wrong again after every trip. Since the Saturday visit it has been showing me Charleston.</p>
+        <p>There is a real signal inside that mistake. An Atlanta player booking Charleston is a traveller, and cross-market play is the first thing a casino group learns to monetise. Topgolf held the fact and spent it on picking the wrong home screen.</p>
+        <p>You described Toptracer and Topgolf as Apple and Android. The same is true of Topgolf signed out and Topgolf signed in.</p>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/17-topgolf-app-home-screen-reading-welcome.jpg" alt="Topgolf app home screen reading Welcome, Guest and offering tonight's tee times.">
+          <figcaption><b>R2 / 48s &middot; 6:22 PM</b> &middot; Signed out. Charleston, because I typed it. The guest who just paid is &ldquo;Guest.&rdquo;</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/18-topgolf-app-home-screen-after-sign.jpg" alt="Topgolf app home screen after sign-in showing Georgia Atlanta as the home venue and tonight's time slots.">
+          <figcaption><b>R3 / 2s &middot; 6:54 PM</b> &middot; Signed in. Atlanta, my last venue played, and tonight&rsquo;s bays.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/19-topgolf-app-showing-upcoming-charleston-visit.jpg" alt="Topgolf app showing an upcoming Charleston visit while promoting tonight's Atlanta time slots.">
+          <figcaption><b>R3 / 90s &middot; 6:55 PM</b> &middot; A confirmed noon visit, with tonight&rsquo;s bays sold underneath it.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">09</p>
+    <h3>The birthday field is optional.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>I was in the app profile for a different reason, hunting for the home-venue setting that does not exist. While I was there: first name, last name, phone and email all carry a required asterisk. Birthday does not.</p>
+        <p>Puttshack captures date of birth at free enrollment and pays it back with a free round every year. It costs them one game and buys a dated, reliable, annual reason to contact every member they have.</p>
+        <p>Topgolf sells birthday parties as a named product line and does not ask when your birthday is.</p>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/20-topgolf-app-edit-profile-screen-required.jpg" alt="Topgolf app Edit Profile screen with required name, phone and email fields and an empty optional birthday field.">
+          <figcaption><b>R2 / 165s</b> &middot; Four required fields. Birthday isn&rsquo;t one.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">10</p>
+    <h3>The discount freezes the reservation, and the cancellation asks nothing.</h3>
+    <div class="fgrid flip">
+      <div class="ftext">
+        <p>When I tried to move the 2:30 booking to noon: <strong>&ldquo;Coupon not supported. You can&rsquo;t edit a reservation if a coupon was used on the original booking. You can always cancel your reservation and book a new one instead.&rdquo;</strong></p>
+        <p>So the discount became a switching cost, and I cancelled. The cancellation email runs four lines. The one that carries the message: <em>&ldquo;Your reservation has been canceled. We look forward to assisting you with future reservations.&rdquo;</em> The rest is a refund figure and a link to the FAQ.</p>
+        <p>No reason code. No save offer. No alternate time. No question at all. A Saturday bay went back on the shelf two days out and nothing in the system asked why or tried to refill it.</p>
+        <p>Then I rebuilt the booking from scratch and applied the same 25% a second time. Topgolf discounted the same guest twice for the same visit, and the cancellation reason it never captured was the most commercially valuable thing I did all night.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>Cancellation is the highest-intent moment in lifecycle marketing and the only one where a guest will tell you something true about demand. Yours sends a receipt.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/21-topgolf-app-modal-reading-coupon-not.jpg" alt="Topgolf app modal reading Coupon Not Supported, preventing edits to a discounted reservation.">
+          <figcaption><b>Still, 6:52 PM</b> &middot; A discount that locks the booking.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/22-topgolf-cancellation-email-confirming-refund-no.jpg" alt="Topgolf cancellation email confirming a refund with no save offer or reason request.">
+          <figcaption><b>Still, 6:53 PM</b> &middot; The entire win-back programme.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <article class="finding">
+    <p class="fnum">11</p>
+    <h3>I told it there were two of us. It never asked who the other one was.</h3>
+    <div class="fgrid">
+      <div class="ftext">
+        <p>The very first thing the booking form asked was how many players. I said two. Then the confirmed reservation screen reads <strong>Players 1/6</strong>, lists one name, and stops.</p>
+        <p>It never asked who the second person was. Not a name, not a number, not an email. I volunteered that a second human being would be standing in that bay on Saturday, and the form took the integer and threw the person away.</p>
+        <p>Underneath the empty slots: <em>&ldquo;Super Fast Sign In! On the day of your reservation, you&rsquo;ll receive a text from us with a link to sign in to your bay&hellip; you&rsquo;ll also be able to invite your friends.&rdquo;</em> The text arrives 90 minutes before the bay. Not two days out, when there is still time for four more people to say yes, and not at the moment I told you one of them already exists.</p>
+        <p>You run a per-bay business with off-peak occupancy in the twenties and a price-value problem rooted entirely in party size. Your own confirmation screen prints the gap as a fraction and waits until the morning of play to mention filling it.</p>
+        <div class="cost">
+          <b>What it costs</b>
+          <p>A declared second player is a free named lead: dated, attached to a paid reservation, arriving with someone who has already converted. I handed you one and the form discarded it. Four more sat on the screen as empty slots with nothing sold against them. That is the cheapest acquisition inventory in the company and it is the only kind you are not selling.</p>
+        </div>
+      </div>
+      <div class="eshelf">
+        <figure>
+          <img src="assets/23-topgolf-reservation-screen-showing-players-1.jpg" alt="Topgolf reservation screen showing Players 1 of 6 with only the host listed.">
+          <figcaption><b>R2 / 122s</b> &middot; The business model, displaying its own gap.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <div class="col">
+    <p class="eyebrow">The capture ledger</p>
+    <h2>Same eleven steps, run by an operator who counts</h2>
+    <p>Step by step through Thursday night, against what a casino or resort group holds at the same keystroke. Not an analogy. These are operating mechanics from the two programmes your board has already run.</p>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr><th>Step</th><th>What Topgolf learned</th><th>What a casino or resort holds here</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Venue page</td><td>Nothing. No recognition surfaced.</td><td class="them">Tier and last visit, before anything is clicked.</td></tr>
+        <tr><td>Date and time</td><td>Saturday, 2:30 PM, and the number two.</td><td class="them">Same, plus who the second person is, and whether this guest runs peak or value.</td></tr>
+        <tr><td>Duration</td><td>90 minutes, chosen from the two on offer.</td><td class="them">Same, plus whether the shorter product should have been shown at all.</td></tr>
+        <tr><td>Floor</td><td>First available.</td><td class="them">Same, priced against a history of paying for position.</td></tr>
+        <tr><td>Identity</td><td>Offered fifth, as a time-saver. Declined.</td><td class="them">Required first, and paid for with recognition.</td></tr>
+        <tr><td>Contact</td><td>Name, phone, email. Typed by hand.</td><td class="them">Already on file. Confirmed, not collected.</td></tr>
+        <tr><td>Open question</td><td>Whether I need a wheelchair.</td><td class="them">Why you are coming, and what that occasion is worth.</td></tr>
+        <tr><td>Discount</td><td>A code Topgolf emailed, that Topgolf&rsquo;s app denied existed.</td><td class="them">An offer the house selected, priced to a known worth.</td></tr>
+        <tr><td>Payment</td><td>25% deposit, $12.80.</td><td class="them">Same, against a reinvestment figure for the trip.</td></tr>
+        <tr><td>Confirmation</td><td>A receipt and five untargeted banners.</td><td class="them">A pre-arrival sell priced to this guest.</td></tr>
+        <tr><td>Cancellation</td><td>&ldquo;We look forward to assisting you.&rdquo;</td><td class="them">A reason code and a save offer.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="eyebrow">What it is worth</p>
+    <h2>The arithmetic, on your numbers</h2>
+    <p>Three figures, each from Topgolf&rsquo;s own disclosures, each shown with the working so you can argue with it.</p>
+  </div>
+
+  <div class="nums">
+    <div class="num"><span class="v">$42M</span><span class="l">One additional dollar of spend per guest visit, against the 42 million annual visits cited at the Media Networks launch.</span></div>
+    <div class="num"><span class="v">~$18M</span><span class="l">One point of comp, against a comp base sitting inside FY2025 Topgolf segment revenue guidance of $1.77&ndash;1.79B.</span></div>
+    <div class="num"><span class="v">$32.50</span><span class="l">The bay-hour Topgolf actually realised on my Saturday, in a window it posts at $40 and $50 and prices at $66 four hours later.</span></div>
+  </div>
+
+  <div class="col">
+    <p>The second-quarter 2025 split is the one that matters, because it is the shape of the problem rather than its size. Traffic up 6%, same-venue sales down 6%. In the one- and two-bay business, sales down 5% on traffic up mid-to-high single digits. Every segment carries the same signature.</p>
+    <p>That divergence has a plain reading. The system is good at filling bays and has no idea who is in them. Value bought the traffic. Nothing in the flow converts that traffic into a known guest, a declared occasion, a second visit or a larger check.</p>
+    <p>None of the eleven findings needs a pricing decision to fix. Several need no engineering at all.</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="eyebrow">The sequence</p>
+    <h2>Five moves, in order</h2>
+    <p>Ordered by what each one unlocks for the next, not by size. The first three ship without touching pricing or inventory.</p>
+  </div>
+
+  <div class="col">
+    <div class="move">
+      <div class="mnum">1</div>
+      <div>
+        <h3>Ask one question</h3>
+        <p>A single occasion field in the reservation: birthday, date night, game day, clients, friends, practice. Six options, no free text, no inventory risk.</p>
+        <p>In the same step, ask for the people. The form already collects a party size; collecting a name and a number for the second player costs one field and turns an integer into a lead. Offer the $6 waiver for doing it.</p>
+        <p>Both route to merchandising that already exists. Game day has the Field Goal Challenge and the Tailgate Package. Birthdays have a product. The occasion field turns each of those from a banner into a targeted offer, and together the two fields start the only dataset that makes the other four moves possible.</p>
+        <p><span class="tag">No engineering beyond a form field</span><span class="tag">90 days</span><span class="tag">Marketing owns</span></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="mnum">2</div>
+      <div>
+        <h3>Move recognition to the front and pay for it</h3>
+        <p>Sign-in goes to step one, and it stops being a favour the guest does you. Show the returning guest their last bay, their usual daypart, what they paid last time and what they have banked. Waive the $6 activation inside the flow, the way you already waive it at the host stand.</p>
+        <p>The app proved the recognition works. It said my name. It caught my double-booking. Fire it at the top of the funnel instead of the bottom and it becomes a pricing and merchandising surface rather than an error catcher.</p>
+        <p><span class="tag">Reorders existing steps</span><span class="tag">Two quarters</span><span class="tag">Marketing and product</span></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="mnum">3</div>
+      <div>
+        <h3>Take the discount back from the guest</h3>
+        <p>Start by connecting two systems you already run. If the email channel sends a guest a code, the app should already be holding it for them, priced and attributed, instead of telling them they have no offers. That alone is an integration, not a strategy.</p>
+        <p>Then collapse Offers, Promotions, Happenings and available promo codes into one surface, because four names for the same shelf is how a live code goes missing. Make it a ranked list where the house proposes rather than a box the guest types into. And stop printing stacking instructions in your own marketing.</p>
+        <p>Last, unfreeze the discounted reservation. A coupon should not stop a guest moving their time, because the guest moving their time is the signal worth having.</p>
+        <p><span class="tag">Offer engine</span><span class="tag">Two quarters</span><span class="tag">Revenue management owns</span></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="mnum">4</div>
+      <div>
+        <h3>Put the membership against the cart, and build the rung below it</h3>
+        <p>At a $65 cart, run the $20 arithmetic on screen. Surface Platinum Club where two people are buying, since Topgolf already wrote it for exactly them.</p>
+        <p>Then build the free tier that does not exist anywhere in the business. No points, no status, no earn, nothing beneath a paid subscription. Dave &amp; Buster&rsquo;s earns on food and beverage spend and tiers on chips played, so the ladder itself drives attach. Puttshack takes a date of birth at free signup and pays it back with one round a year. Topgolf charges $6 for the account and $20 a month for the first benefit.</p>
+        <p><span class="tag">Needs a loyalty build</span><span class="tag">Three to four quarters</span><span class="tag">CRM and revenue management</span></p>
+      </div>
+    </div>
+
+    <div class="move">
+      <div class="mnum">5</div>
+      <div>
+        <h3>Switch the lifecycle on</h3>
+        <p>Four emails do most of the work and none of them exist yet. A confirmation that sells the occasion the guest just declared. A pre-arrival that fills the four empty seats on a 1-of-6 booking. A cancellation that asks one question and offers one alternative. A post-visit that uses the Toptracer data already sitting in the account, because a guest who is told they improved has a reason to come back that a bar cannot copy.</p>
+        <p><span class="tag">Email and CRM build</span><span class="tag">Two to three quarters</span><span class="tag">Lifecycle owns</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="eyebrow">What I&rsquo;d go find out</p>
+    <h2>The five questions I can&rsquo;t answer from outside</h2>
+    <p>Each of these changes which of the five moves goes first. I would want all five answered in the first thirty days.</p>
+    <ol class="q">
+      <li>Does the value guest ever become a full-price guest, or are they two different audiences wearing the same email address? If they are two audiences, move four comes before move three.</li>
+      <li>What share of bookings complete without ever touching an account? That number sizes move two on its own.</li>
+      <li>Can you attribute a visit to the send that drove it? DRIVE25 came back to you through a free-text box with nothing tying it to the email that issued it, which means the channel you can prove works is the one you cannot measure.</li>
+      <li>What is the attach rate on a 60-minute session against a 90-minute one, in the dayparts where the 60 is currently switched off?</li>
+      <li>How many confirmed bookings arrive with fewer players than they booked for, and what happens to the revenue per bay when they do?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="method">
+  <div class="col">
+    <p class="eyebrow">Method</p>
+    <h2>What this is, and what it isn&rsquo;t</h2>
+    <p>One guest, one venue, one Thursday night. Charleston, 8 October 2026, 6:14 to 6:57 PM Central: two completed bookings, one attempt blocked, one cancellation, one app install. Captured in three screen recordings and four email screenshots. Every finding cites the recording and the elapsed second it came from, so each one can be checked or contradicted. Nothing here is modelled or inferred from a panel.</p>
+    <p>It is a teardown, not a study. A single session cannot tell you how often any of this happens, only that all of it is possible in one uninterrupted sitting by a repeat guest with the app installed. The visit itself is on 10 October, so the in-venue experience, the Toptracer handoff and whatever post-visit contact follows are not in evidence here. One observation sits outside the recordings and is flagged where it appears: since that visit the app has been defaulting to Charleston, which is the home-venue behaviour in finding 08 doing to Charleston exactly what it did to Atlanta.</p>
+    <p>Company figures are from Topgolf&rsquo;s own releases and from Topgolf Callaway Brands reporting through the third quarter of 2025, the last clean quarter before deconsolidation. Comparison mechanics are the published terms of Caesars Rewards, MGM Rewards, Dave &amp; Buster&rsquo;s Rewards and Puttshack Perks. Where a number is a guideline rather than an actual, it says so.</p>
+    <p>Prices quoted are Topgolf Charleston on the dates shown and vary by venue.</p>
+    <p><strong>Corrections, 13 October.</strong> The booking night was Thursday, not Wednesday. The second player&rsquo;s $6 fee shows on her phone before she registers. The sign-in text arrives 90 minutes before the bay. The day-of teardown has the screens.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <p class="sig">Neil Golson</p>
+    <p>I bought the thing you just started selling, and I&rsquo;ve sold it too. Happy to walk this through live, or to go answer the five questions above with the data behind them.</p>
+    <p class="contact">
+      neil.golson@gmail.com<br>
+      <a href="https://neilgolson.com">neilgolson.com</a><br>
+      October 2026
+    </p>
+  </div>
+</footer>
+
+</div>
+
+
+</body></html>
