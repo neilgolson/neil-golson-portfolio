@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topgolf — CMO candidate brief | Neil Golson</title>
+<meta name="description" content="A CMO candidate brief for Topgolf — prepared by Neil Golson.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#003b7e;
+  --accent-soft:rgba(0,59,126,0.05);
+  --accent-tint:rgba(0,59,126,0.10);
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── DOC HEADER ── */
+.dochead{
+  max-width:1100px;margin:0 auto;
+  padding:1.5rem 4rem 1rem;
+  display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:0.5px solid var(--border);
+}
+.dochead-l{font-family:var(--serif);font-size:14px;font-weight:600;letter-spacing:-0.005em;}
+.dochead-r{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);}
+
+/* ── PREPARED FOR (above field note) ── */
+.brief-prepared{max-width:1100px;margin:0 auto;padding:2rem 4rem 0;}
+.brief-prepared .cs-eyebrow{margin-bottom:0;}
+
+/* ── FIELD NOTE ── */
+.fieldnote{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 0.25rem;}
+.fieldnote-inner{
+  border-left:2px solid var(--accent);
+  padding:0.3rem 0 0.3rem 1.6rem;
+  max-width:760px;
+}
+.fieldnote-kicker{
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:0.75rem;font-weight:600;
+}
+.fieldnote-body{
+  font-family:var(--serif);font-style:italic;
+  font-size:17px;line-height:1.75;color:var(--ink);
+}
+.fieldnote-body em{font-style:normal;color:var(--accent);font-weight:600;}
+.fieldnote-outro{
+  margin-top:0.85rem;font-size:13px;color:var(--mid);
+  font-weight:500;letter-spacing:0.02em;
+}
+
+/* ── HERO ── */
+.cs-hero{max-width:1100px;margin:0 auto;padding:3rem 4rem 3rem;}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
+.cs-eyebrow-tag{color:var(--light);font-weight:400;}
+.cs-title{font-family:var(--serif);font-size:clamp(34px,4.5vw,56px);font-weight:700;line-height:1.08;letter-spacing:-0.025em;max-width:920px;margin-bottom:1.75rem;}
+.cs-title em{font-style:italic;color:var(--accent);}
+.cs-context{font-size:18px;line-height:1.7;color:var(--ink);max-width:840px;margin-bottom:0.5rem;font-weight:500;}
+.cs-context strong{font-weight:600;}
+.cs-credentials{font-size:14.5px;line-height:1.75;color:var(--mid);max-width:840px;margin-top:1.1rem;font-weight:400;letter-spacing:-0.005em;}
+.cs-credentials strong{color:var(--ink);font-weight:600;}
+
+/* ── DIAGNOSTIC INSIGHT ── */
+.diagnostic{
+  max-width:1100px;margin:0 auto;
+  padding:3rem 4rem 3rem;
+  border-top:0.5px solid var(--border);
+  border-bottom:0.5px solid var(--border);
+  background:var(--accent-soft);
+}
+.diagnostic-kicker{
+  font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.25rem;font-weight:600;
+}
+.diagnostic-body{
+  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);
+  font-weight:600;line-height:1.3;letter-spacing:-0.018em;
+  max-width:880px;color:var(--ink);
+}
+.diagnostic-body em{font-style:italic;color:var(--accent);}
+
+/* ── SECTION SHELL ── */
+.section{max-width:1100px;margin:0 auto;padding:5rem 4rem;border-top:0.5px solid var(--border);}
+.section.no-border{border-top:none;}
+.section-kicker{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600;}
+.section-h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-0.022em;line-height:1.12;margin-bottom:1.5rem;max-width:840px;}
+.section-h2 em{font-style:italic;color:var(--accent);}
+.section-lede{font-size:16px;line-height:1.8;color:var(--mid);max-width:840px;margin-bottom:2.5rem;}
+.section-lede strong{color:var(--ink);font-weight:600;}
+
+/* ── WHAT I'D MOVE ── */
+.movers{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
+}
+.mover{
+  background:var(--paper);
+  padding:1.75rem 1.6rem 1.85rem;
+  display:flex;flex-direction:column;gap:0.5rem;
+}
+.mover-num{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--accent);letter-spacing:0.04em;}
+.mover-h{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:0.35rem;}
+.mover-b{font-size:14px;line-height:1.7;color:var(--mid);}
+.mover-b strong{color:var(--ink);font-weight:600;}
+.mover-cite{margin-top:auto;padding-top:0.85rem;font-size:10.5px;letter-spacing:0.06em;color:var(--accent);font-weight:500;border-top:0.5px solid var(--border);}
+.mover-cite em{font-style:italic;}
+
+/* in-section callback */
+.callback{
+  margin:1.5rem 0;
+  padding:1.1rem 1.4rem;
+  background:var(--accent-soft);
+  border-left:2px solid var(--accent);
+  border-radius:0 3px 3px 0;
+  max-width:840px;
+}
+.callback-label{
+  font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin-bottom:0.45rem;
+}
+.callback-body{
+  font-family:var(--serif);font-style:italic;font-size:15px;
+  line-height:1.7;color:var(--ink);
+}
+
+/* ── DEEPER VIEW ── */
+.board-section{
+  max-width:1100px;margin:0 auto;
+  padding:5rem 4rem;border-top:0.5px solid var(--border);
+}
+.board-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.5rem;}
+.board-meta-l{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+.board-meta-r{font-size:11.5px;color:var(--light);font-style:italic;}
+.board-h{font-family:var(--serif);font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1.5rem;max-width:840px;}
+.board{
+  border:0.5px solid var(--border-strong);
+  border-radius:3px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(26,24,20,0.04), 0 14px 40px rgba(26,24,20,0.10);
+  background:#fff;
+}
+.board img{width:100%;display:block;}
+.board-cap{margin-top:1rem;font-size:13px;color:var(--mid);line-height:1.7;max-width:840px;font-style:italic;}
+
+/* clickable whiteboard → fullscreen dialog */
+.board{cursor:zoom-in;position:relative;}
+.board:focus{outline:2px solid var(--accent);outline-offset:3px;}
+.board-expand{
+  position:absolute;top:0.85rem;right:0.85rem;
+  font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:#fff;background:rgba(26,24,20,0.7);
+  padding:0.4rem 0.7rem;border-radius:2px;
+  pointer-events:none;font-weight:500;
+  opacity:0;transition:opacity 0.18s ease;
+}
+.board:hover .board-expand,
+.board:focus .board-expand{opacity:1;}
+.board-modal{
+  border:none;padding:0;background:transparent;
+  max-width:100vw;max-height:100vh;width:100vw;height:100vh;
+  margin:0;
+}
+.board-modal::backdrop{background:rgba(20,18,14,0.94);}
+.board-modal-inner{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  padding:2.5rem;cursor:zoom-out;
+}
+.board-modal-inner img{
+  max-width:100%;max-height:100%;
+  object-fit:contain;display:block;
+  box-shadow:0 4px 40px rgba(0,0,0,0.5);
+}
+.board-modal-close{
+  position:fixed;top:1.25rem;right:1.5rem;z-index:1;
+  background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.35);
+  color:#f5f2ec;font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.55rem 0.9rem;border-radius:2px;cursor:pointer;
+  transition:background 0.15s,border-color 0.15s;
+}
+.board-modal-close:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.6);}
+
+/* ── BACKGROUND CARDS (6 cards, 3x2) ── */
+.bg-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
+}
+.bg-card{
+  background:var(--paper);
+  padding:1.6rem 1.5rem 1.7rem;
+  display:flex;flex-direction:column;gap:0.4rem;
+}
+.bg-card-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.3rem;}
+.bg-card-co{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:-0.012em;line-height:1.22;margin-bottom:0.55rem;color:var(--ink);}
+.bg-card-line{font-size:13.5px;line-height:1.7;color:var(--mid);}
+.bg-card-line strong{color:var(--ink);font-weight:600;}
+
+/* ── HUMILITY ANCHOR ── */
+.humility{
+  max-width:1100px;margin:0 auto;
+  padding:3.5rem 4rem;border-top:0.5px solid var(--border);
+  text-align:center;
+}
+.humility-body{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(18px,2.1vw,22px);
+  line-height:1.55;color:var(--ink);
+  max-width:720px;margin:0 auto;
+}
+.humility-body em{font-style:normal;color:var(--accent);font-weight:600;}
+
+/* ── OPERATING PLAN ── */
+.plan-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
+}
+.plan-col{
+  padding:1.75rem 1.75rem 2rem;
+  border-right:0.5px solid var(--border);
+  background:var(--warm-white);
+}
+.plan-col:last-child{border-right:none;}
+.plan-col.featured{background:var(--accent-soft);}
+.plan-col-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;font-weight:600;}
+.plan-col-h{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:-0.015em;margin-bottom:1rem;}
+.plan-col-h em{font-style:italic;color:var(--accent);}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+.plan-list li{
+  font-size:13.5px;line-height:1.6;color:var(--ink);
+  padding-left:1.1rem;position:relative;
+}
+.plan-list li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:6px;height:2px;background:var(--accent);
+}
+.plan-list li strong{font-weight:600;}
+
+/* ── CLOSE ── */
+.close{
+  max-width:1100px;margin:0 auto;
+  padding:5rem 4rem 4rem;
+  border-top:0.5px solid var(--border);
+  text-align:center;
+}
+.close-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem;font-weight:600;}
+.close-h{
+  font-family:var(--serif);font-size:clamp(26px,3.4vw,38px);
+  font-weight:700;line-height:1.18;letter-spacing:-0.022em;
+  max-width:760px;margin:0 auto 0.6rem;
+}
+.close-h em{font-style:italic;color:var(--accent);}
+.close-cta{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(22px,2.8vw,30px);font-weight:600;
+  color:var(--accent);letter-spacing:-0.015em;
+  margin:1.4rem 0 0.9rem;
+}
+.close-ask{
+  font-size:14.5px;font-weight:500;color:var(--ink);
+  margin:0 auto 2.6rem;max-width:520px;
+  letter-spacing:-0.005em;line-height:1.6;
+}
+.close-ask strong{font-weight:600;}
+.sig{
+  display:inline-flex;flex-direction:column;align-items:center;gap:0.4rem;
+  padding-top:1.6rem;border-top:0.5px solid var(--border);
+  font-size:14px;
+}
+.sig-name{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:-0.005em;}
+.sig-role{font-size:12px;letter-spacing:0.04em;color:var(--mid);}
+.sig-links{display:flex;gap:1.4rem;margin-top:0.7rem;flex-wrap:wrap;justify-content:center;}
+.sig-links a{
+  font-size:12px;font-weight:500;letter-spacing:0.04em;
+  color:var(--mid);text-decoration:none;
+  border-bottom:0.5px solid var(--border-strong);padding-bottom:1px;
+  transition:color 0.15s,border-color 0.15s;
+}
+.sig-links a:hover{color:var(--accent);border-color:var(--accent);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:980px){
+  .movers{grid-template-columns:repeat(2,1fr);}
+  .bg-grid{grid-template-columns:repeat(2,1fr);}
+  .plan-grid{grid-template-columns:1fr;}
+  .plan-col{border-right:none;border-bottom:0.5px solid var(--border);}
+  .plan-col:last-child{border-bottom:none;}
+}
+@media(max-width:768px){
+  body{font-size:15.5px;}
+  .dochead{padding:1.25rem 1.5rem 1rem;flex-wrap:wrap;gap:0.4rem;}
+  .brief-prepared{padding:1.5rem 1.5rem 0;}
+  .fieldnote{padding:1.25rem 1.5rem 0.25rem;}
+  .cs-hero{padding:1.75rem 1.5rem 2.25rem;}
+  .diagnostic{padding:2.25rem 1.5rem;}
+  .section{padding:3.5rem 1.5rem;}
+  .board-section{padding:3.5rem 1.5rem;}
+  .humility{padding:2.5rem 1.5rem;}
+  .close{padding:3.5rem 1.5rem 3rem;}
+  .movers{grid-template-columns:1fr;}
+  .bg-grid{grid-template-columns:1fr;}
+  .sig-links{flex-direction:column;gap:0.7rem;align-items:center;}
+}
+
+/* fade-in */
+.fade{opacity:0;transform:translateY(10px);transition:opacity 0.7s ease, transform 0.7s ease;}
+.fade.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .fade{opacity:1;transform:none;transition:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- DOC HEADER -->
+<header class="dochead">
+  <div class="dochead-l">Neil Golson</div>
+  <div class="dochead-r">CMO candidate brief · Topgolf · May 2026</div>
+</header>
+
+<!-- PREPARED FOR -->
+<section class="brief-prepared">
+  <div class="cs-eyebrow fade">Prepared for David McKillips</div>
+</section>
+
+<!-- FIELD NOTE -->
+<section class="fieldnote">
+  <div class="fieldnote-inner fade">
+    <div class="fieldnote-kicker">Field note</div>
+    <p class="fieldnote-body">Wednesday, April 29 — last week. <em>Topgolf Austin.</em> I'd come to pick up my wife from a CenTex Plaster educational seminar — a pool-industry trade event with zero golf adjacency — and ended up walking the building for an hour while it ran. <em>Bays at maybe 1 in 5.</em> The CenTex group of ~100 in a conference room running the meet → eat → compete arc.</p>
+    <p class="fieldnote-outro">That's where this brief started.</p>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <h1 class="cs-title fade">Topgolf has already won awareness. The next phase is <em>frequency, yield, and repeat behavior.</em></h1>
+  <p class="cs-context fade">I'm pitching myself as a CMO candidate. <strong>Fixer and builder. Growth operator with brand range. An entrepreneur disguised as a suit.</strong> The page below is the case — short, scannable, and grounded in your business, not mine.</p>
+  <p class="cs-credentials fade"><strong>VP, Brand &amp; Creative at Realtor.com</strong> today — <em>chosen for the scope</em>: two-sided marketplace P&amp;L, brand value built inside a performance-marketing system, internal agency, NewsCorp parent reach, and an authentic challenger seat. <strong>CMO at FlashParking</strong> before that. Operator chairs across Tesla, Coca-Cola, SolarCity, and Home Depot earlier — full breakdown in the cards below.</p>
+</section>
+
+<!-- DIAGNOSTIC INSIGHT -->
+<section class="diagnostic">
+  <div class="diagnostic-kicker fade">The frame</div>
+  <p class="diagnostic-body fade">Topgolf isn't competing for golfers. It's competing for <em>nights out, group occasions, corporate events, birthdays, date nights,</em> and the repeatable social habits people build the rest of their week around.</p>
+</section>
+
+<!-- WHAT I'D MOVE -->
+<section class="section">
+  <div class="section-kicker fade">What I'd move</div>
+  <h2 class="section-h2 fade">Six commercial levers. None of them require a new venue.</h2>
+  <p class="section-lede fade">The 100+ venues you already operate are the asset. These are the dials I'd turn first — informed by the calls, the field, and the operating moves the company has already shipped.</p>
+
+  <div class="movers fade">
+    <div class="mover">
+      <div class="mover-num">Lever 01</div>
+      <div class="mover-h">Revenue per bay</div>
+      <div class="mover-b">F&amp;B attach, dynamic add-ons (+30 min, dessert), and time-based bundles layered on top of the <strong>60/90-min reservations already at half of digital mix.</strong></div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 02</div>
+      <div class="mover-h">Peak / off-peak utilization</div>
+      <div class="mover-b">Productize the midweek 3–6 PM slot. <strong>The CenTex daypart</strong> — the most under-monetized inventory in the building.</div>
+      <div class="mover-cite"><em>Field-observed, Apr 29 2026</em></div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 03</div>
+      <div class="mover-h">Frequency &amp; loyalty</div>
+      <div class="mover-b">Evolve <strong>PlayMore</strong> beyond a single $20/mo offer. The multi-tier hospitality membership model is well-proven — <strong>Dave &amp; Buster's Rewards, Equinox tiers, Costco's two-step</strong> — but the right tiering for PlayMore gets calibrated to <em>Topgolf cohort data</em>, not borrowed from analog comps. Status unlocks, a corporate variant, and frequency triggers — sequenced behind retention proof.</div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 04</div>
+      <div class="mover-h">Group &amp; corporate events</div>
+      <div class="mover-b">Package meet → eat → compete and sell against <strong>hotel ballrooms, not bars</strong>. 3+ bay is 20% of FY revenue and the largest stated YoY drag.</div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 05</div>
+      <div class="mover-h">Local market activation</div>
+      <div class="mover-b">Venue-by-venue partnerships, sports tie-ins, and community programs that turn each location into a <strong>local cultural anchor</strong>, not a chain outpost.</div>
+    </div>
+    <div class="mover">
+      <div class="mover-num">Lever 06</div>
+      <div class="mover-h">CRM, data &amp; adaptive ops</div>
+      <div class="mover-b">Convert the <strong>CDP and Toast POS</strong> already shipping into a per-Player decision engine — dynamic pricing, predictive next-visit, in-venue media as inventory.</div>
+    </div>
+  </div>
+
+  <div class="callback">
+    <div class="callback-label">From the field note</div>
+    <p class="callback-body">If a regional pool-plaster company will fill a Wednesday at 4:30, the corporate format works for any B2B audience — and the addressable market is materially larger than the operating model currently prices it as.</p>
+  </div>
+</section>
+
+<!-- DEEPER VIEW · WHITEBOARD -->
+<section class="board-section">
+  <div class="board-meta fade">
+    <div class="board-meta-l">The deeper view</div>
+    <div class="board-meta-r">whiteboard, April 2026</div>
+  </div>
+  <h3 class="board-h fade">The six levers above sit on top of a fuller seven-layer system view.</h3>
+  <figure class="board fade" id="board-thumb" tabindex="0" role="button" aria-label="View whiteboard at full size">
+    <img src="../../assets/NG.TG.Whiteboard.Apr26.png" alt="Whiteboard system map: Topgolf — More people. More often. More value every visit. Seven layers from Reframe to Value, three levers, and the AI unlock that turns the system from static to adaptive.">
+    <span class="board-expand">Click to expand ↗</span>
+  </figure>
+  <p class="board-cap">From a reframe of what Topgolf actually is, through the core Player loop, the three levers, and the AI layer that turns the room into a yield-managed system. The artifact is here as proof that the levers above sit on top of a complete operating model — happy to walk it line-by-line live.</p>
+</section>
+
+<!-- WHITEBOARD FULLSCREEN MODAL -->
+<dialog class="board-modal" id="board-modal" aria-label="Whiteboard, full size">
+  <button class="board-modal-close" type="button" aria-label="Close">Close ✕</button>
+  <div class="board-modal-inner">
+    <img src="../../assets/NG.TG.Whiteboard.Apr26.png" alt="">
+  </div>
+</dialog>
+
+<!-- WHY I FIT -->
+<section class="section">
+  <div class="section-kicker fade">Why I fit</div>
+  <h2 class="section-h2 fade">Six companies. <em>Six disciplines.</em> One operator.</h2>
+  <p class="section-lede fade">Each is a piece of the Topgolf P&amp;L — and I've held a real seat at all six: <strong>brand transformation, category creation, demand generation, occasion-building, retail-as-growth-channel, and venue-floor operations.</strong></p>
+
+  <div class="bg-grid fade">
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Realtor.com</div>
+      <div class="bg-card-co">VP, Brand &amp; Creative</div>
+      <div class="bg-card-line">Brand transformation, audience strategy, trust-led response. <strong>5 quarters consecutive YoY revenue growth against Zillow and Homes.com, 3.4× visit share, Effie finalist 2025.</strong></div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">FlashParking</div>
+      <div class="bg-card-co">Chief Marketing Officer</div>
+      <div class="bg-card-line"><strong>Category creation.</strong> Built and named a software category from zero — drove brand, demand, and pricing power where neither customers nor competitors existed yet.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Tesla</div>
+      <div class="bg-card-co">Head of Energy Marketing &amp; Sales Ops</div>
+      <div class="bg-card-line"><strong>Demand generation, retail partnerships, and category conviction.</strong> Brought Tesla energy products into a national retail channel against entrenched incumbents — the funnel that scaled the category.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Coca-Cola</div>
+      <div class="bg-card-co">Director, US Brand → Asia-Pacific Foodservice</div>
+      <div class="bg-card-line">Two sequential Director seats — US Brand, then Asia-Pacific Foodservice. <strong>Brand, retail, occasion-building, and commercial discipline at billion-dollar scale</strong> — across two hemispheres and the full range of brand-to-channel functions.</div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">SolarCity</div>
+      <div class="bg-card-co">Head of Demand Generation &amp; Partnerships</div>
+      <div class="bg-card-line">Built the original <strong>retail-as-growth-channel engine</strong> for solar — the playbook that proved the model Tesla later scaled. Operating math: <strong>opportunity-per-store-hour × sit-rate × close-rate × AOV.</strong> <em>Same shape as bay-hour × attach × AOV at Topgolf.</em></div>
+    </div>
+    <div class="bg-card">
+      <div class="bg-card-eyebrow">Home Depot</div>
+      <div class="bg-card-co">Store Manager</div>
+      <div class="bg-card-line">Ran a store. <strong>Lived inside the operating model of a 2,000+ location retail brand from the venue floor</strong> — same lens I bring to a Topgolf bay.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HUMILITY ANCHOR -->
+<section class="humility">
+  <p class="humility-body fade">"I'd start by <em>listening to the team,</em> pressure-testing assumptions against the data, and then moving fast where the opportunity is clear."</p>
+</section>
+
+<!-- OPERATING PLAN -->
+<section class="section">
+  <div class="section-kicker fade">The plan</div>
+  <h2 class="section-h2 fade">First 90 days. Month 6. Month 12.</h2>
+  <p class="section-lede fade">Specific, sequenced, and biased toward action — but front-loaded with listening so the moves are real, not imported.</p>
+
+  <div class="plan-grid fade">
+    <div class="plan-col">
+      <div class="plan-col-eyebrow">First 90 days</div>
+      <div class="plan-col-h"><em>Listen.</em> Audit. Diagnose.</div>
+      <ul class="plan-list">
+        <li>Listen to leadership, operators, field teams, and Players.</li>
+        <li>Audit acquisition, CRM, pricing, loyalty, local activation, and the events pipeline.</li>
+        <li>Identify the biggest friction points in <strong>first visit, repeat visit, and group/event sales.</strong></li>
+        <li>Walk every state in the US footprint — one venue minimum, across dayparts, day-of-week, and group formats. <strong>~30 states at one venue per ~3 days, with leadership immersion running parallel in weeks 1–2.</strong></li>
+        <li>Stand up a single weekly operating cadence around frequency, yield, and conversion.</li>
+      </ul>
+    </div>
+    <div class="plan-col featured">
+      <div class="plan-col-eyebrow">By month 6</div>
+      <div class="plan-col-h"><em>Launch.</em> Sharpen. Test.</div>
+      <ul class="plan-list">
+        <li>Launch 1–2 growth plays from the lever set above.</li>
+        <li>Sharpen segmentation and messaging — Player-first, not golfer-first.</li>
+        <li>Test membership, loyalty, and frequency programs (PlayMore tiers, corporate variant).</li>
+        <li>Align brand, digital, venue, and CRM around <strong>repeatable playbooks</strong>.</li>
+        <li>Stand up a corporate-events product with packaging, pricing, and a sales motion.</li>
+      </ul>
+    </div>
+    <div class="plan-col">
+      <div class="plan-col-eyebrow">By month 12</div>
+      <div class="plan-col-h"><em>Compound.</em> Scale. Operate.</div>
+      <ul class="plan-list">
+        <li>Improve frequency, utilization, revenue per bay, and repeat visits — measurably.</li>
+        <li>Build a scalable marketing operating system that runs across all venues.</li>
+        <li>Make Topgolf feel less like an occasional outing and more like a <strong>recurring social sports habit</strong>.</li>
+        <li>Convert the CDP and Toast layer into an adaptive yield + retention engine.</li>
+        <li>Hand the CEO a brand and demand machine that compounds without needing a new venue.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="close-tag fade">The close</div>
+  <h2 class="close-h fade">You're building the future of <em>experiential sports.</em><br>I build the systems that make it scale.</h2>
+  <p class="close-cta fade">Let's tee it up.</p>
+  <p class="close-ask fade"><strong>30 minutes by phone next week, or 60 in Dallas — your call.</strong></p>
+  <div class="sig fade">
+    <div class="sig-name">Neil Golson</div>
+    <div class="sig-role">Brand &amp; growth operator · Austin, TX</div>
+    <div class="sig-links">
+      <a href="../../assets/Neil-Golson-CMO-Resume.pdf" target="_blank" rel="noopener">Full resume</a>
+      <a href="https://neilgolson.com">neilgolson.com</a>
+      <a href="mailto:neil.golson@gmail.com">neil.golson@gmail.com</a>
+      <a href="https://linkedin.com/in/neil-golson-3123842" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.fade');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var modal = document.getElementById('board-modal');
+  var thumb = document.getElementById('board-thumb');
+  if (!modal || !thumb) return;
+  var closeBtn = modal.querySelector('.board-modal-close');
+  var inner = modal.querySelector('.board-modal-inner');
+  function open(){
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open','');
+  }
+  function close(){
+    if (typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+  }
+  thumb.addEventListener('click', open);
+  thumb.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
+  });
+  closeBtn.addEventListener('click', close);
+  inner.addEventListener('click', function(e){
+    if (e.target === inner || e.target.tagName !== 'IMG') close();
+  });
+})();
+</script>
+
+</body>
+</html>
