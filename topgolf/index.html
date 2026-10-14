@@ -41,7 +41,6 @@ a{color:var(--accent)}
 .title em{font-style:italic;color:var(--accent)}
 .context{font-size:18px;line-height:1.7;max-width:840px;font-weight:500}
 .context strong{font-weight:600}
-.context-sub{font-size:16px;line-height:1.7;max-width:840px;margin-top:.6rem}
 .creds{font-size:14.5px;line-height:1.75;color:var(--mid);max-width:840px;margin-top:1.1rem}
 .creds strong{color:var(--ink);font-weight:600}
 
@@ -90,19 +89,20 @@ a{color:var(--accent)}
 .callback-body{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.7}
 
 /* whiteboard */
-.board-meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
-.board-meta-r{font-size:11.5px;color:var(--light);font-style:italic}
-.board{border:0.5px solid var(--border-strong);border-radius:3px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,20,.04),0 14px 40px rgba(26,24,20,.10);background:#fff;cursor:zoom-in;position:relative;margin:0}
-.board img{width:100%;height:auto;display:block}
+.board{position:relative;margin:0;cursor:zoom-in;border:0.5px solid var(--border-strong);border-radius:3px;overflow:hidden;box-shadow:0 1px 2px rgba(26,24,20,.04),0 14px 40px rgba(26,24,20,.10);background:#fff;max-width:none}
+.board figure,.board-modal figure{margin:0;max-width:none}
+.board img{width:100%;display:block}
+.board figcaption,.board-modal figcaption{display:none}
 .board:focus{outline:2px solid var(--accent);outline-offset:3px}
-.board-expand{position:absolute;top:.85rem;right:.85rem;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(26,24,20,.7);padding:.4rem .7rem;border-radius:2px;pointer-events:none;font-weight:500;opacity:0;transition:opacity .18s ease}
+.board-expand{position:absolute;top:.85rem;right:.85rem;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(26,24,20,.7);padding:.4rem .7rem;border-radius:2px;pointer-events:none;opacity:0;transition:opacity .18s}
 .board:hover .board-expand,.board:focus .board-expand{opacity:1}
 .board-modal{border:none;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
 .board-modal::backdrop{background:rgba(20,18,14,.94)}
-.board-modal-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:2.5rem;cursor:zoom-out}
-.board-modal-inner img{max-width:100%;max-height:100%;object-fit:contain;display:block;box-shadow:0 4px 40px rgba(0,0,0,.5)}
-.board-modal-close{position:fixed;top:1.25rem;right:1.5rem;z-index:1;background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.35);color:#f5f2ec;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.55rem .9rem;border-radius:2px;cursor:pointer;transition:background .15s,border-color .15s}
-.board-modal-close:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.6)}
+.board-modal-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+.board-modal-inner img{max-width:100%;max-height:calc(100vh - 4rem);object-fit:contain;display:block}
+.board-modal-close{position:fixed;top:1.25rem;right:1.5rem;z-index:1;background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.35);color:#f5f2ec;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:.55rem .9rem;border-radius:2px;cursor:pointer}
+.board-meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.board-meta-r{font-size:11.5px;color:var(--light);font-style:italic}
 .board-cap{margin-top:1rem;font-size:13.5px;color:var(--mid);line-height:1.7;max-width:860px}
 
 /* the visit */
@@ -130,6 +130,7 @@ td.could{color:var(--accent)}
 td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
 .strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:2.4rem}
 .strip figure{margin:0;min-width:0}
+.strip .lowcrop img{object-position:center 78%}
 .strip img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;border:0.5px solid var(--border-strong);border-radius:4px;background:var(--warm-white)}
 .evidence-links{margin-top:2rem;font-size:14px;color:var(--mid);max-width:860px}
 .evidence-links a{font-weight:600}
@@ -165,6 +166,9 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
 @media(max-width:768px){.stack-grid{grid-template-columns:1fr}}
 .bg-backs{margin-top:auto;padding-top:.7rem;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;border-top:0.5px solid var(--border)}
 
+.humility{padding-block:3.5rem;border-top:0.5px solid var(--border);text-align:center}
+.humility-body{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.1vw,22px);line-height:1.55;max-width:740px;margin:0 auto}
+.humility-body em{font-style:normal;color:var(--accent);font-weight:600}
 
 .plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0.5px solid var(--border);border-radius:3px;overflow:hidden}
 .plan-col{padding:1.7rem 1.6rem 1.9rem;border-right:0.5px solid var(--border);background:var(--warm-white);min-width:0}
@@ -190,6 +194,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
 .sig-role{font-size:12px;color:var(--mid)}
 .sig-links{display:flex;gap:1.4rem;margin-top:.7rem;flex-wrap:wrap;justify-content:center;font-size:12px}
 .sig-links a{font-weight:500;color:var(--mid);text-decoration:none;border-bottom:0.5px solid var(--border-strong)}
+.sig-links span{color:var(--mid);user-select:all}
 
 @media(max-width:1060px){
   .strip{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -212,10 +217,6 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
   .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
   .sig-links{flex-direction:column;gap:.6rem;align-items:center}
 }
-/* fade-in: the script adds .fade, so nothing is hidden without JavaScript */
-.fade{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
-.fade.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -237,8 +238,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
 
 <section class="hero wrapx">
   <h1 class="title">Engineer the visit. <em>Own the return.</em></h1>
-  <p class="context">Candidate for Chief Commercial Officer. <strong>P&amp;L marketer. Multi-unit retail operator. Builder of systems that know the customer.</strong></p>
-  <p class="context-sub">Today, I’m VP, Brand &amp; Creative at Realtor.com: a 35-person team running $50M of brand spend sitting behind $100M of performance. CMO at FlashParking before that, and operator seats at Tesla, SolarCity, Coca-Cola and Home Depot.</p>
+  <p class="context">Candidate for Chief Commercial Officer. <strong>P&amp;L marketer. Multi-unit retail operator. Builder of systems that know the customer.</strong><br>Today, I’m <strong>VP, Brand &amp; Creative at Realtor.com</strong>: a 35-person team running $50M of brand spend sitting behind $100M of performance. <strong>CMO at FlashParking</strong> before that, and operator seats at Tesla, SolarCity, Coca-Cola and Home Depot.</p>
 </section>
 
 <section class="diagnostic">
@@ -263,8 +263,8 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
       <div class="mover-num">Lever 01 · start here</div>
       <div class="mover-h">Ask why they came, and engage every player</div>
       <div class="mover-jobs">Bring them back · Bring golfers in</div>
-      <div class="mover-b">Add one occasion question at booking, with six distinct options. <strong>Capture every player’s name and number as soon as the reservation is made.</strong> Use the invite as a funnel, push every player into the app, and alert the host when it fails.</div>
-      <div class="mover-saw"><b>What I saw</b>Four booking fields and an accessibility box. My wife’s registration failed three times on mobile web, regardless of which boxes she checked.</div>
+      <div class="mover-b">Add one occasion question at booking, with six distinct options. <strong>Capture every player’s name and number in the same step.</strong> Use the invite as a funnel, push every player into the app, and alert the host when it fails.</div>
+      <div class="mover-saw"><b>What I saw</b>Four booking fields and an accessibility box. My wife’s registration failed three times on mobile web, whatever combination of boxes she checked.</div>
       <dl class="mover-cite"><div><dt>Owner</dt><dd>VP, CRM &amp; Lifecycle</dd></div><div><dt>KPI</dt><dd>Invite completion: sent, opened, registered</dd></div><div><dt>Timing</dt><dd>Live in one region in 90 days</dd></div></dl>
     </div>
     <div class="mover">
@@ -279,7 +279,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
       <div class="mover-num">Lever 03</div>
       <div class="mover-h">One offer engine, priced for party size and the weather</div>
       <div class="mover-jobs">Fill the bays · Bring golfers in</div>
-      <div class="mover-b">One offer set, valid today. No coupon locks a booking. Every cancel gets a save. <strong>The price shown per person</strong>, with a dry-day return offer for every player the rain sends in.</div>
+      <div class="mover-b">One offer set, valid today. No coupon locks a booking. <strong>The price shown per person</strong>, with a dry-day return offer for every player the rain sends in.</div>
       <div class="mover-saw"><b>What I saw</b>The site told me five times the bay is built for six. On Saturday the app showed a $45 combo that runs Monday to Thursday.</div>
       <dl class="mover-cite"><div><dt>Owner</dt><dd>VP, Revenue Management</dd></div><div><dt>KPI</dt><dd>Off-peak occupancy</dd></div><div><dt>Timing</dt><dd>Two quarters</dd></div></dl>
     </div>
@@ -303,7 +303,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
       <div class="mover-num">Lever 06</div>
       <div class="mover-h">Make live TV and getting better the new news</div>
       <div class="mover-jobs">Bring them back · Bring golfers in</div>
-      <div class="mover-b">Kickoff times and a TV guide in the remote. An event bundle for two in self-serve. <strong>Every shot gets a golf tip from Toptracer.</strong> Run local events through the regional marketing directors.</div>
+      <div class="mover-b">Kickoff times and a TV guide in the remote. An event bundle for two in self-serve. <strong>Every shot shown back with one golf tip from Toptracer.</strong> Run locally through the ten regional marketing directors you’re standing up.</div>
       <div class="mover-saw"><b>What I saw</b>I found my game. The dad at the next table streamed his on his phone. With Toptracer stats on the TV, my first-time player opened YouTube for a lesson.</div>
       <dl class="mover-cite"><div><dt>Owner</dt><dd>VP, Marketing &amp; Media, with Sponsorships &amp; Partnerships and Golf Marketing</dd></div><div><dt>KPI</dt><dd>Golfer share of visits</dd></div><div><dt>Timing</dt><dd>Two quarters</dd></div></dl>
     </div>
@@ -315,21 +315,18 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
     <div class="kicker" style="margin:0">The deeper view</div>
     <div class="board-meta-r">system map, October 2026</div>
   </div>
-  <h2 class="section-h2">The six levers sit on a seven-layer system. The visit filled in panel 2.</h2>
+  <h2 class="section-h2">The six levers sit on one system.</h2>
 
-  <figure class="board" id="board-thumb" tabindex="0" role="button" aria-label="View the whiteboard at full size">
-    <img src="../assets/NG.TG.Whiteboard.Oct26.png" width="1536" height="1024" alt="Whiteboard system map: Topgolf. More people. More often. More value every visit. Seven panels: Reframe, The problem, The core system, The growth engine, The levers, The AI unlock and The value, ending in Engineer the visit. Own the return.">
+  <figure class="board" id="board-thumb" tabindex="0" role="button" aria-label="View the system map at full size">
+    <figure class="boardimg"><img src="../assets/NG.TG.Whiteboard.Oct26.png" alt="Topgolf system map: More people. More often. More value every visit. Six panels from Reframe to the AI unlock, with the value and the line Engineer the visit, own the return."><figcaption></figcaption></figure>
     <span class="board-expand">Click to expand ↗</span>
   </figure>
-  <p class="board-cap">The map runs from what Topgolf is, through the player loop and the levers, to the AI layer that makes the room a yield-managed system. Panel 2 now carries the clock times from Charleston. Panel 3 adds Improve for the golfer. Click or tap the board to see it full size. I’m happy to walk it line by line.</p>
+  <dialog class="board-modal" id="board-modal" aria-label="System map, full size">
+    <button class="board-modal-close" type="button">Close ✕</button>
+    <div class="board-modal-inner"><img id="board-full" alt=""></div>
+  </dialog>
+  <p class="board-cap">The system map runs from what Topgolf is, through the player loop and the levers, to the AI layer that turns the room into a yield-managed system. Panel 2 carries the three jobs. Panel 3 adds Improve for the golfer. I’m happy to walk it line by line.</p>
 </section>
-
-<dialog class="board-modal" id="board-modal" aria-label="Whiteboard, full size">
-  <button class="board-modal-close" type="button" aria-label="Close">Close ✕</button>
-  <div class="board-modal-inner">
-    <img src="../assets/NG.TG.Whiteboard.Oct26.png" alt="">
-  </div>
-</dialog>
 
 <section class="section wrapx">
   <div class="kicker">The visit</div>
@@ -365,7 +362,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
         <tr><td>Thu · booking</td><td>Asked my name, phone, email, and whether I need a wheelchair.</td><td class="could">Ask why we’re coming, with six options. Capture every player’s name and number.</td><td class="mv">01</td></tr>
         <tr><td>Thu · sign-in</td><td>Offered it fifth. Then called me Guest and moved me to Atlanta.</td><td class="could">Know me at step one, at the venue I booked and my home location.</td><td class="mv">02</td></tr>
         <tr><td>Thu · pricing</td><td>Told me five times the bay is built for six. Switched off the 60-minute bay.</td><td class="could">Show the price per person, with loyalty and membership value built in.</td><td class="mv">03</td></tr>
-        <tr><td>Thu · discount</td><td>Emailed 25% off. The app said no offers. The code locked the booking, so I had to cancel to change.</td><td class="could">One offer set, valid today. No coupon locks a booking. Every cancel gets a save.</td><td class="mv">03</td></tr>
+        <tr><td>Thu · discount</td><td>Emailed 25% off. The app said no offers. The code locked the booking, so I cancelled.</td><td class="could">One offer set, valid today. No coupon locks a booking.</td><td class="mv">03</td></tr>
         <tr><td>Sat 10:31</td><td>Sent a check-in link, 90 minutes out.</td><td class="could">Sell the occasion early. Invite the group, plan the party and give them control.</td><td class="mv">04</td></tr>
         <tr><td>Sat 10:34</td><td>The second player’s invite: Try Again, no second route.</td><td class="could">Push every player into the app, and alert the host when it fails.</td><td class="mv">01</td></tr>
         <tr><td>Sat 11:54</td><td>A list of TV stations.</td><td class="could">Kickoff times and a TV guide in the remote.</td><td class="mv">06</td></tr>
@@ -380,14 +377,14 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
   </div>
 
   <div class="strip">
-    <figure><img src="assets/1031-check-in-text-lock-screen.jpg" alt="Lock screen at 10:31 with a text notification about checking in for you and your crew, with a link."><figcaption><b>10:31 AM</b> · The check-in text, 90 minutes out.</figcaption></figure>
+    <figure class="lowcrop"><img src="assets/1031-check-in-text-lock-screen.jpg" alt="Lock screen at 10:31 with a text notification about checking in for you and your crew, with a link."><figcaption><b>10:31 AM</b> · The check-in text, 90 minutes out.</figcaption></figure>
     <figure><img src="assets/1034-second-player-try-again.jpg" alt="Phone screen with a yellow exclamation mark and a Try Again label, clock reading 10:34."><figcaption><b>10:34 AM</b> · Try Again, on the second player’s phone.</figcaption></figure>
     <figure><img src="assets/1151-bay-tv-remote-channels.jpg" alt="Topgolf app Bay 111 TV Remote listing seven channels with show titles, ESPN College GameDay highlighted."><figcaption><b>11:51 AM</b> · A list of TV stations. College GameDay on ESPN.</figcaption></figure>
     <figure><img src="assets/1156-playmore-membership-door-sign.jpg" alt="A sign on a glass door reading Play More membership, Members get more: Free Game Play, Free Appetizers, Exclusive Perks, with a Join Today badge."><figcaption><b>11:56 AM</b> · Membership, sold at the door.</figcaption></figure>
     <figure><img src="assets/1209-first-timer-swing-bay-111.jpg" alt="A person in a black top swinging a driver on a turf mat in a Topgolf bay, with the target field beyond and a TV on the wall showing a football game, the game screen and a How to Play tile."><figcaption><b>12:09 PM</b> · Every player wants to get better.</figcaption></figure>
     <figure><img src="assets/1224-flatbread-beer-and-soda.jpg" alt="A pepperoni flatbread on a slate board next to a half-empty glass of beer and a soda, on a granite table."><figcaption><b>12:24 PM</b> · Ordered in the app 12:03 to 12:08. On the table by 12:24.</figcaption></figure>
   </div>
-  <p class="evidence-links">The full evidence, with every frame and timestamp: the <a href="/topgolf/booking/">booking teardown</a> and the <a href="/topgolf/day-of/">day-of teardown</a>.</p>
+  <p class="evidence-links">The full evidence, with every frame and timestamp: the <a href="/topgolf/booking/">booking teardown</a> and the <a href="/topgolf/day-of/">day-of teardown</a>. The teardowns number their findings their own way.</p>
 </section>
 
 <section class="section wrapx">
@@ -395,7 +392,7 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
   <h2 class="section-h2">Six companies. <em>Six disciplines.</em> One operator.</h2>
   <p class="lede">Each is a piece of the Topgolf P&amp;L, and I’ve held a real seat at all six: <strong>brand transformation, category creation, demand generation, occasion-building, retail-as-growth-channel, and venue-floor operations.</strong> Multi-unit retail runs through it: 950 retail locations, 85 Tesla showrooms and service centers, and a store of my own. At Ribbon I owned revenue outright, zero to $1M ARR, acquired by our largest customer.</p>
   <div class="bg-grid">
-    <div class="bg-card"><div class="bg-eyebrow">Realtor.com</div><div class="bg-co">VP, Brand &amp; Creative</div><div class="bg-line">Brand transformation, audience strategy, trust-led response. <strong>5 quarters consecutive YoY revenue growth against Zillow and Homes.com, 3.4× visit share, Effie finalist 2025.</strong> Known users at 45%, heading to 50%. The Reba McEntire campaign made brand spend 25% more efficient. Sold Mission Zero to Veterans United for $1.6M in media.</div></div>
+    <div class="bg-card"><div class="bg-eyebrow">Realtor.com</div><div class="bg-co">VP, Brand &amp; Creative</div><div class="bg-line">Brand transformation, audience strategy, trust-led response. <strong>7 straight quarters of YoY revenue growth against Zillow and Homes.com, 3.4× visit share, Effie finalist 2025.</strong> Known users at 45%, heading to 50%. The Reba McEntire campaign made brand spend 25% more efficient. Sold Mission Zero to Veterans United for $1.6M in media.</div></div>
     <div class="bg-card"><div class="bg-eyebrow">FlashParking</div><div class="bg-co">Chief Marketing Officer</div><div class="bg-line"><strong>Category creation.</strong> Built and named a software category from zero. Drove brand, demand, and pricing power where neither customers nor competitors existed yet. <strong>Inventory that expires, yield management designed for two turns a day, and growth from under 1% to a third of US off-street paid parking.</strong> Connected the garage to the venue, hotel, airport and office around it.</div></div>
     <div class="bg-card"><div class="bg-eyebrow">Tesla</div><div class="bg-co">Head of Energy Marketing &amp; Sales Ops</div><div class="bg-line"><strong>Demand generation, retail partnerships, and category conviction.</strong> Brought Tesla energy products into a national retail channel against entrenched incumbents. The funnel that scaled the category. <strong>85 showrooms and service centers at the Model 3 launch. Attach over 30%.</strong> Wired Salesforce to the production line, so what a reservation holder got depended on where their car was.</div></div>
     <div class="bg-card"><div class="bg-eyebrow">Coca-Cola</div><div class="bg-co">Director, US Brand, then Asia-Pacific Foodservice</div><div class="bg-line">Two sequential Director seats, US Brand, then Asia-Pacific Foodservice. <strong>Brand, retail, occasion-building, and commercial discipline at billion-dollar scale</strong>, across two hemispheres and the full range of brand-to-channel functions. <strong>Grew the flagship brand for the first time in seven years.</strong> Bought and activated CMA Fest.</div></div>
@@ -412,10 +409,14 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
   </div>
 </section>
 
+<section class="humility wrapx">
+  <p class="humility-body">“I’d start by <em>listening to the team,</em> pressure-testing assumptions against the data, and then moving fast where the opportunity is clear.”</p>
+</section>
+
 <section class="section wrapx">
   <div class="kicker">The plan</div>
   <h2 class="section-h2">First 90 days. Month 6. Month 12.</h2>
-  <p class="lede">Specific, sequenced, and biased toward action. Front-loaded to meet private equity timeline expectations.</p>
+  <p class="lede">Specific, sequenced, and biased toward action, but front-loaded with listening so the moves are real, not imported.</p>
   <div class="plan-grid">
     <div class="plan-col">
       <div class="plan-eyebrow">First 90 days</div>
@@ -468,56 +469,16 @@ td.mv{white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppe
     <div class="sig-links">
       <a href="https://neilgolson.com">neilgolson.com</a>
       <a href="https://linkedin.com/in/neil-golson-3123842">LinkedIn</a>
-      <a href="https://neilgolson.com/assets/Neil-Golson-CMO-Resume.pdf?v=20260427" target="_blank" rel="noopener">Resume</a>
+      <span>neil.golson@gmail.com</span>
     </div>
   </div>
 </section>
 
 <script>
-(function(){
-  if (!('IntersectionObserver' in window)) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var els = document.querySelectorAll('.fieldnote-inner, .hero > *, .diagnostic .wrapx > *, .section > *, .close > *');
-  var heard = false;
-  var io = new IntersectionObserver(function(entries){
-    heard = true;
-    entries.forEach(function(e){
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(function(el){ el.classList.add('fade'); io.observe(el); });
-  // the observer always reports once on start; if it never does, show everything
-  setTimeout(function(){
-    if (!heard) els.forEach(function(el){ el.classList.add('in'); });
-  }, 1000);
-})();
-
-(function(){
-  var modal = document.getElementById('board-modal');
-  var thumb = document.getElementById('board-thumb');
-  if (!modal || !thumb) return;
-  var closeBtn = modal.querySelector('.board-modal-close');
-  var inner = modal.querySelector('.board-modal-inner');
-  function open(){
-    if (typeof modal.showModal === 'function') modal.showModal();
-    else modal.setAttribute('open','');
-  }
-  function close(){
-    if (typeof modal.close === 'function') modal.close();
-    else modal.removeAttribute('open');
-  }
-  thumb.addEventListener('click', open);
-  thumb.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
-  });
-  closeBtn.addEventListener('click', close);
-  inner.addEventListener('click', function(e){
-    if (e.target === inner || e.target.tagName !== 'IMG') close();
-  });
-})();
+(function(){var m=document.getElementById('board-modal'),t=document.getElementById('board-thumb');if(!m||!t)return;
+function o(){var f=document.getElementById('board-full'),i=t.querySelector('img');if(f&&i&&!f.src)f.src=i.src;if(m.showModal)m.showModal();else m.setAttribute('open','')}function c(){if(m.close)m.close();else m.removeAttribute('open')}
+t.addEventListener('click',o);t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();o()}});
+m.querySelector('.board-modal-close').addEventListener('click',c);m.querySelector('.board-modal-inner').addEventListener('click',c);})();
 </script>
 
 </body></html>
