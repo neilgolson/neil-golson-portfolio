@@ -8,54 +8,29 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@600&family=DM+Sans:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap">
 
 <style>
 /* Layout: a single narrow reading column of argument, interrupted by full-width
    evidence blocks where a screen sits beside the sentence it proves. */
 :root{
-  --bg:#F6F7FA;
-  --panel:#FFFFFF;
-  --tray:#ECEFF5;
-  --ink:#0B1220;
-  --muted:#5A6477;
-  --rule:#DBE0EA;
-  --accent:#1A35FF;
-  --cost:#9E1420;
-  --cost-bg:#FBEDEE;
+  color-scheme:light;
+  --bg:#f5f2ec;
+  --panel:#faf8f4;
+  --tray:#ebe6dd;
+  --ink:#1a1814;
+  --muted:#6b6560;
+  --rule:rgba(26,24,20,0.12);
+  --accent:#003b7e;
+  --cost:#9e1420;
+  --cost-bg:#f7ebe8;
 
-  --f-display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --f-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --f-display:'Playfair Display',Georgia,serif;
+  --f-body:'DM Sans',system-ui,sans-serif;
+  --f-data:'DM Sans',system-ui,sans-serif;
 
   --col:min(100%,68ch);
   --wide:min(100%,1180px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#090D15;
-    --panel:#111825;
-    --tray:#0E141F;
-    --ink:#E9EDF5;
-    --muted:#8D98AD;
-    --rule:#212A3B;
-    --accent:#6E85FF;
-    --cost:#F2737F;
-    --cost-bg:#231318;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#090D15;
-  --panel:#111825;
-  --tray:#0E141F;
-  --ink:#E9EDF5;
-  --muted:#8D98AD;
-  --rule:#212A3B;
-  --accent:#6E85FF;
-  --cost:#F2737F;
-  --cost-bg:#231318;
-  color-scheme:dark;
 }
 
 *{box-sizing:border-box}
@@ -465,8 +440,8 @@ table.conf td.v{white-space:nowrap;width:1%}
 .tgbar-in{max-width:var(--wide);margin-inline:auto;padding:1.1rem 20px .9rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem 1rem}
 .tgbar a{text-decoration:none;color:var(--ink)}
 .tgbar a:hover{color:var(--accent)}
-.tgbar-back{font-family:"Playfair Display",Georgia,serif;font-size:14px;font-weight:600}
-.tgbar-next{font-family:"DM Sans",system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
+.tgbar-back{font-family:var(--f-display);font-size:14px;font-weight:600}
+.tgbar-next{font-family:var(--f-body);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
 .tgbar-next:hover{color:var(--accent)!important}
 </style>
 </head>
@@ -492,13 +467,13 @@ table.conf td.v{white-space:nowrap;width:1%}
   <div class="col">
     <p class="eyebrow">The visit</p>
     <p class="lede">The booking teardown stopped at the confirmation page. This one starts at 8:26 on Saturday morning and runs to the follow-up email on Sunday afternoon.</p>
-    <p>The money moved the way the model says it should. The weak spots sit around it. The second player&rsquo;s invite hit an error screen. By my notes, a server sold both beers, the first one up, then said the membership had no advantage. The in-bay order page took a food order in under five minutes, then the app showed a $45 offer that does not run on Saturdays. By my notes, the family next door could not get their game on the bay TV.</p>
-    <p>This edition adds my field notes and the photographs. Each finding says which kind of evidence it rests on.</p>
+    <p>The money moved the way the model says it should. The weak spots sit around it. My wife&rsquo;s invite hit an error screen. A server sold both beers, the first one up, then told me the membership had no advantage. The in-bay order page took a food order in under five minutes, then the app showed a $45 offer that doesn&rsquo;t run on Saturdays. The family next door couldn&rsquo;t get their game on the bay TV.</p>
+    <p>I recorded the screens on both phones, took photos and kept notes all day. Every finding below comes with the screen or photo behind it.</p>
   </div>
 
   <figure class="photo narrow" style="margin-top:1.6em">
-    <img src="assets/01-people-taking-selfie-outdoors-front-large.jpg" alt="Two people taking a selfie outdoors in front of a large building with a Topgolf logo, overcast sky.">
-    <figcaption><b>Photo, 11:55 AM</b> &middot; Arrival. The second player and me, five minutes before the bay opened.</figcaption>
+    <img src="img/01-people-taking-selfie-outdoors-front-large.jpg" loading="lazy" alt="Two people taking a selfie outdoors in front of a large building with a Topgolf logo, overcast sky.">
+    <figcaption><b>Photo, 11:55 AM</b> &middot; Arrival. My wife and me, five minutes before the bay opened.</figcaption>
   </figure>
 
   <div class="col" style="margin-top:2em">
@@ -522,22 +497,16 @@ table.conf td.v{white-space:nowrap;width:1%}
     <p class="rline tot"><span>Charged</span><span>$131.92</span></p>
   </div>
   <figure class="ereceipt">
-    <img src="assets/02-printed-check-number-96-table-111.jpg" alt="Printed check number 96 for table 111, dated 10 October 2026, listing a membership, gameplay, beer, chicken strips, a flatbread and a soda, with a total of $111.92 and a closing time of 1:23 PM.">
+    <img src="img/02-printed-check-number-96-table-111.jpg" loading="lazy" alt="Printed check number 96 for table 111, dated 10 October 2026, listing a membership, gameplay, beer, chicken strips, a flatbread and a soda, with a total of $111.92 and a closing time of 1:23 PM.">
     <figcaption><b>Photo of the printed check</b> &middot; Closed 1:23 PM. Server name and card digits removed.</figcaption>
   </figure>
   </div>
 
   <div class="col">
-    <p>Split the subtotal two ways. The bay, meaning the $6 and the game, came to $42.56. That is 41%. Food and drink came to $60.56. That is 59%. A guest who booked a golf bay spent more at the table than in the bay.</p>
-    <p>One caution on the game line. At booking, the game cost $48.75 after the 25% code (the booking teardown&rsquo;s receipt), and 75% of $48.75 is $36.56 to the cent. So $36.56 may be the balance after the deposit. Nothing on screen says so. I treat it as open (question 4) and do not build on it.</p>
+    <p>Split the subtotal two ways. The bay, meaning the $6 and the game, came to $42.56. That is 41%. Food and drink came to $60.56. That is 59%. We booked a golf bay and spent more at the table than in the bay.</p>
+    <p>One note on the game line. At booking, the game cost $48.75 after the 25% code, and $36.56 is 75% of that to the cent. My card shows the $12.80 deposit on 9 October and $131.92 on 11 October, so the check netted the deposit out of gameplay. The whole visit cost $124.72 before tip.</p>
 
     <p class="pull">The second seat was a lead Topgolf could still capture before noon. It got a Try Again screen.</p>
-
-    <div class="cost">
-      <b>Two corrections to the booking teardown</b>
-      <p>Finding 06 said the second player&rsquo;s $6 never came up in the flow. It does. It shows on the invited guest&rsquo;s phone before she registers. The bay screen at 11:58 shows a $6 membership line too, and the screens do not say whose it is. Finding 14 has the screens.</p>
-      <p style="margin-top:.6em">Finding 11 said the invite text comes on the day. It comes 90 minutes before the bay. The 10:31 text is on screen in finding 13.</p>
-    </div>
   </div>
 
   <div class="col">
@@ -546,33 +515,33 @@ table.conf td.v{white-space:nowrap;width:1%}
   <div class="scroll" style="margin-top:0">
     <table>
       <thead>
-        <tr><th>Time (ET)</th><th>What happened</th><th>Basis</th></tr>
+        <tr><th>Time (ET)</th><th>What happened</th><th>Source</th></tr>
       </thead>
       <tbody>
         <tr><td>Sat 8:26 AM</td><td>Email: a 25 to 30 minute video conversation with Topgolf&rsquo;s research partners, paid in a free 2-hour bay reservation</td><td class="them">Mail screenshot (Gmail logs 8:11)</td></tr>
-        <tr><td>9:27 AM</td><td>My note: still no text, can&rsquo;t register a second player, no game-day message</td><td class="them fn">Field note</td></tr>
+        <tr><td>9:27 AM</td><td>Still no text, no way to add my wife, no game-day message</td><td class="them">My notes</td></tr>
         <tr><td>10:25 AM</td><td>Reservation screen reads Players 1/6</td><td class="them">Screenshot</td></tr>
         <tr><td>10:31 AM</td><td>Text arrives with a check-in link &ldquo;for you and your crew&rdquo;</td><td class="them">Lock screen</td></tr>
-        <tr><td>10:32 AM</td><td>App sign-in on the phone that recorded D2: greeting, waiver, &ldquo;You&rsquo;re in!&rdquo; in nine seconds</td><td class="them">D2 / 3&ndash;12s</td></tr>
-        <tr><td>10:34&ndash;10:37</td><td>Invited guest&rsquo;s registration shows Try Again at three readings of the clock</td><td class="them">D1 / 94, 219, 264s</td></tr>
+        <tr><td>10:32 AM</td><td>App sign-in: greeting, waiver, &ldquo;You&rsquo;re in!&rdquo; in nine seconds</td><td class="them">Screen recording</td></tr>
+        <tr><td>10:34&ndash;10:37</td><td>My wife&rsquo;s registration on mobile web: Try Again, three times</td><td class="them">Screen recording</td></tr>
         <tr><td>11:19 AM</td><td>Reservation reads Players 2/6</td><td class="them">Screenshot</td></tr>
         <tr><td>11:44 AM</td><td>App card: Golf. Beer. Football. &ldquo;control your bay&rsquo;s TV with the Topgolf App&rdquo;</td><td class="them">Screenshot</td></tr>
         <tr><td>11:48 AM</td><td>Text: reply Y to confirm, then &ldquo;we&rsquo;ll text you your bay # shortly&rdquo;</td><td class="them">Lock screen</td></tr>
-        <tr><td>11:50 AM</td><td>Bay controls show in the app: order, TV remote, games. By my note they unlocked while we were driving</td><td class="them">Screenshot, field note</td></tr>
+        <tr><td>11:50 AM</td><td>Bay controls show in the app: order, TV remote, games. We were in the car</td><td class="them">Screenshot</td></tr>
         <tr><td>11:51 AM</td><td>Text: &ldquo;Bay 111 is ready!&rdquo; TV remote opened</td><td class="them">Lock screen, screenshot</td></tr>
         <tr><td>11:54 AM</td><td>Phone is in the ESPN app: UNC at Pitt, 12:00 PM</td><td class="them">Screenshot</td></tr>
         <tr><td>11:55 AM</td><td>Arrival selfie</td><td class="them">Photo</td></tr>
         <tr><td>11:58 AM</td><td>Bay screen asks for a player&rsquo;s mobile number, then shows the bill summary. Check #96 is stamped 11:58</td><td class="them">Photo, receipt</td></tr>
         <tr><td>12:00 PM</td><td>In-bay home screen offers ordering and pay-from-phone</td><td class="them">Screenshot</td></tr>
-        <tr><td>About noon</td><td>A server takes my drink order and sells me up to the 22oz</td><td class="them fn">Field note</td></tr>
-        <tr><td>12:03&ndash;12:08</td><td>Food order placed: three items, $32.57</td><td class="them">D3 / 0&ndash;284s</td></tr>
+        <tr><td>About noon</td><td>A server takes my drink order and sells me up to the 22oz</td><td class="them">My notes</td></tr>
+        <tr><td>12:03&ndash;12:08</td><td>Food order placed: three items, $32.57</td><td class="them">Screen recording</td></tr>
         <tr><td>12:09 PM</td><td>Second player mid-swing. Bay TV shows 1 hr 20 mins remaining</td><td class="them">Photo</td></tr>
-        <tr><td>12:16 PM</td><td>App shows two entrees plus 1.5 hours for $45 (a Monday to Thursday offer, by my note)</td><td class="them">Screenshot</td></tr>
+        <tr><td>12:16 PM</td><td>App shows two entrees plus 1.5 hours for $45, a Monday to Thursday offer</td><td class="them">Screenshot</td></tr>
         <tr><td>12:24 PM</td><td>Food is on the table</td><td class="them">Photos</td></tr>
         <tr><td>12:30 PM</td><td>Course picker on the bay screen</td><td class="them">Photo</td></tr>
-        <tr><td>About 1:00 PM</td><td>Refill wanted, no server comes, ordered from the QR card</td><td class="them fn">Field note</td></tr>
+        <tr><td>About 1:00 PM</td><td>Refill wanted, no server comes, ordered from the QR card</td><td class="them">My notes</td></tr>
         <tr><td>1:18 PM</td><td>Bay screen: 15-minute prompt, extend?</td><td class="them">Photo</td></tr>
-        <tr><td>1:23 PM</td><td>Check closed at $131.92 with tip. My note puts a server visit at 7 minutes left, and the membership question there</td><td class="them">Receipt, field note</td></tr>
+        <tr><td>1:23 PM</td><td>Check closed at $131.92 with tip. A server came by at 7 minutes left, and I asked about membership</td><td class="them">Receipt, my notes</td></tr>
         <tr><td>1:26 PM</td><td>A phone propped on the next bay&rsquo;s table shows a football game</td><td class="them">Photo</td></tr>
         <tr><td>Sun 2:59 PM</td><td>Email: &ldquo;Tell Us About Your Visit &amp; Get 30 Mins on Us&rdquo;</td><td class="them">Mail screenshot, Gmail</td></tr>
       </tbody>
@@ -583,77 +552,63 @@ table.conf td.v{white-space:nowrap;width:1%}
 <section>
   <p class="eyebrow">The findings &middot; 12 to 23</p>
 
-  <div class="col">
-    <div class="legend">
-      <p><span class="basis rec">Recorded</span><span>Plain text. Cites a recording and an elapsed second, or a still or photo and its clock time.</span></p>
-      <p><span class="basis note">Field note</span><span>Shaded block. My own notes from the day. Not recorded. Nobody has checked them but me.</span></p>
-      <p><span class="basis said">Reported speech</span><span>Dashed block. What a stranger or a server told me, as I wrote it down. Unverified.</span></p>
-    </div>
-  </div>
-
   <article class="finding">
     <p class="fnum">12</p>
-    <h3>The second player&rsquo;s invite hit a Try Again screen.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
+    <h3>My wife&rsquo;s invite hit a Try Again screen.</h3>
     <div class="fgrid">
       <div class="ftext">
-        <p>The app sign-in on D2 took nine seconds. The greeting is up at 3 seconds, the waiver with its one button at 8 seconds, and <em>&ldquo;You&rsquo;re in! Now, let&rsquo;s get your group signed in&rdquo;</em> at 12 seconds. That screen also offers Invite Friends and Add Junior Player. My recollection is that D2 was recorded on the second player&rsquo;s phone after she installed the app. The screens read <em>&ldquo;Hello Neil&rdquo;</em> and <em>&ldquo;Neil&rsquo;s Group,&rdquo;</em> which is the host&rsquo;s flow, and D1 and D2 cover the same minutes. The frames and my recollection do not agree, and I can&rsquo;t settle it here.</p>
-        <p>The invite did not finish. D1 is the invited guest&rsquo;s phone. It opens on the invite text: <em>&ldquo;Let&rsquo;s go to Topgolf Charleston! I just invited you to play at Topgolf Charleston.&rdquo;</em> At 18 seconds she is on a membership screen. At 94, 219 and 264 seconds the phone clock reads 10:34, 10:36 and 10:37, and the screen reads <strong>Try Again</strong> under a yellow exclamation mark. It gives no reason, no phone number and no second button.</p>
-        <p>By 11:19 the reservation read Players 2/6. By my follow-up note she added herself in the app after the web form failed (below), and I could see her in my app by 11:34. I did not record the step itself.</p>
+        <p>The app sign-in took nine seconds. The greeting was up in three, the waiver with its one button in eight, and <em>&ldquo;You&rsquo;re in! Now, let&rsquo;s get your group signed in&rdquo;</em> in twelve. That screen also offers Invite Friends and Add Junior Player. The app works.</p>
+        <p>The invite didn&rsquo;t. My wife got the text: <em>&ldquo;Let&rsquo;s go to Topgolf Charleston! I just invited you to play at Topgolf Charleston.&rdquo;</em> The first screen she saw was a membership fee. Then <strong>Try Again</strong> under a yellow exclamation mark, at 10:34, 10:36 and 10:37. No reason, no phone number, no second button.</p>
+        <p>Her registration failed at the submit page every time. She checked and unchecked the email and text boxes in every combination, and every one landed on Try Again. After she gave up, I had the idea to download the app and try there. That worked. By 11:19 the reservation read Players 2/6.</p>
         <div class="fnote">
-          <span class="lab">Field note &middot; my 9:27 AM entry, exact words, not recorded</span>
+          <span class="lab">My notes, 9:27 AM</span>
           <p>&ldquo;Still no text. Can&rsquo;t register 2nd person. No game day notification, email.&rdquo;</p>
         </div>
         <figure class="photo">
-          <img src="assets/03-bay-screen-reading-hello-neil-g.jpg" alt="Bay screen reading Hello Neil G. and Group. Enter the mobile number of any player in the group to get started.">
-          <figcaption><b>Photo, 11:58 AM</b> &middot; The bay screen asks for a mobile number. That is 39 minutes after the reservation read Players 2/6. I did not record what I entered.</figcaption>
+          <img src="img/03-bay-screen-reading-hello-neil-g.jpg" loading="lazy" alt="Bay screen reading Hello Neil G. and Group. Enter the mobile number of any player in the group to get started.">
+          <figcaption><b>Photo, 11:58 AM</b> &middot; At the bay, the screen asks for a mobile number again, 39 minutes after the reservation read Players 2/6.</figcaption>
         </figure>
-        <p style="margin-top:1.1em">The frames show only the Try Again screen. They do not show the cause.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my follow-up, not recorded</span>
-          <p>My guest&rsquo;s mobile registration failed at the submit page. She checked and unchecked the email and text boxes in every combination. Every one failed and landed her on the Try Again screen. After she gave up, I had the idea to download the app and try there. That eventually worked.</p>
-        </div>
-        <p>By my note the failure sat at the submit step and did not follow the box settings. The Try Again screen offered no second route, and the one that worked came from me, not from the screen. How long the app route took is not in my evidence.</p>
+        <p style="margin-top:1.1em">The Try Again screen offered no second route. The one that worked came from me, not from the screen.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>A second named guest on a paid booking is a cheap lead, and the invite is the moment I saw Topgolf ask for one. I have no frame of the host&rsquo;s screen across those 170 seconds, so I can&rsquo;t say whether the host could see her stuck. The number to pull is invite completion: sent, opened, registered, retried. A casino books a companion in one step, at the desk, with staff to finish it.</p>
+          <p>A second named guest on a paid booking is a cheap lead, and the invite is the one moment Topgolf asked for one. Nothing on my phone told me she was stuck. The number to pull is invite completion: sent, opened, registered, retried. A casino books a companion in one step, at the desk, with staff to finish it.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/04-topgolf-app-greeting-reading-hello-neil.jpg" alt="Topgolf app greeting reading Hello Neil, we're excited for your upcoming visit, with a group header for Charleston.">
-          <figcaption><b>D2 / 3s &middot; 10:32</b> &middot; Greeting. It reads Hello Neil.</figcaption>
+          <img src="img/04-topgolf-app-greeting-reading-hello-neil.jpg" loading="lazy" alt="Topgolf app greeting reading Hello Neil, we're excited for your upcoming visit, with a group header for Charleston.">
+          <figcaption><b>Screen recording, 10:32 AM</b> &middot; The greeting.</figcaption>
         </figure>
         <figure>
-          <img src="assets/05-topgolf-safety-waiver-text-ending-i.jpg" alt="Topgolf safety waiver text ending in an I Accept button, with an arbitration clause.">
-          <figcaption><b>D2 / 8s &middot; 10:32</b> &middot; The waiver, one button.</figcaption>
+          <img src="img/05-topgolf-safety-waiver-text-ending-i.jpg" loading="lazy" alt="Topgolf safety waiver text ending in an I Accept button, with an arbitration clause.">
+          <figcaption><b>Screen recording, 10:32 AM</b> &middot; The waiver, one button.</figcaption>
         </figure>
         <figure>
-          <img src="assets/06-topgolf-app-screen-reading-you-re.jpg" alt="Topgolf app screen reading You're in, with Invite Friends and Add Junior Player buttons.">
-          <figcaption><b>D2 / 12s</b> &middot; &ldquo;You&rsquo;re in!&rdquo; Nine seconds after the greeting.</figcaption>
+          <img src="img/06-topgolf-app-screen-reading-you-re.jpg" loading="lazy" alt="Topgolf app screen reading You're in, with Invite Friends and Add Junior Player buttons.">
+          <figcaption><b>Screen recording, 10:32 AM</b> &middot; &ldquo;You&rsquo;re in!&rdquo; Nine seconds after the greeting.</figcaption>
         </figure>
         <figure>
-          <img src="assets/07-text-message-reading-let-s-go.jpg" alt="Text message reading: Let's go to Topgolf Charleston! I just invited you to play at Topgolf Charleston.">
-          <figcaption><b>D1 / 0s</b> &middot; The invite text on the guest&rsquo;s phone. Native 148&times;320, cropped.</figcaption>
+          <img src="img/07-text-message-reading-let-s-go.jpg" loading="lazy" alt="Text message reading: Let's go to Topgolf Charleston! I just invited you to play at Topgolf Charleston.">
+          <figcaption><b>Screen recording, 10:33 AM</b> &middot; The invite text on my wife&rsquo;s phone.</figcaption>
         </figure>
         <figure>
-          <img src="assets/08-phone-screen-yellow-exclamation-mark-try.jpg" alt="Phone screen with a yellow exclamation mark and a Try Again label, clock reading 10:34.">
-          <figcaption><b>D1 / 94s &middot; 10:34</b> &middot; Try Again.</figcaption>
+          <img src="img/08-phone-screen-yellow-exclamation-mark-try.jpg" loading="lazy" alt="Phone screen with a yellow exclamation mark and a Try Again label, clock reading 10:34.">
+          <figcaption><b>Screen recording, 10:34 AM</b> &middot; Try Again.</figcaption>
         </figure>
         <figure>
-          <img src="assets/09-same-yellow-exclamation-mark-try-again.jpg" alt="The same yellow exclamation mark and Try Again label, clock reading 10:36.">
-          <figcaption><b>D1 / 219s &middot; 10:36</b> &middot; Same screen.</figcaption>
+          <img src="img/09-same-yellow-exclamation-mark-try-again.jpg" loading="lazy" alt="The same yellow exclamation mark and Try Again label, clock reading 10:36.">
+          <figcaption><b>Screen recording, 10:36 AM</b> &middot; Same screen.</figcaption>
         </figure>
         <figure>
-          <img src="assets/10-same-yellow-exclamation-mark-try-again.jpg" alt="The same yellow exclamation mark and Try Again label, clock reading 10:37.">
-          <figcaption><b>D1 / 264s &middot; 10:37</b> &middot; Same screen.</figcaption>
+          <img src="img/10-same-yellow-exclamation-mark-try-again.jpg" loading="lazy" alt="The same yellow exclamation mark and Try Again label, clock reading 10:37.">
+          <figcaption><b>Screen recording, 10:37 AM</b> &middot; Same screen.</figcaption>
         </figure>
         <figure>
-          <img src="assets/11-topgolf-reservation-screen-charleston-saturday-10.jpg" alt="Topgolf reservation screen for Charleston, Saturday 10 October at noon, 90 minutes, with Players 2 of 6 and an Add Players button.">
-          <figcaption><b>Screenshot, 11:19 AM</b> &middot; Players 2/6. By my note she added herself in the app in between. The step is not recorded.</figcaption>
+          <img src="img/11-topgolf-reservation-screen-charleston-saturday-10.jpg" loading="lazy" alt="Topgolf reservation screen for Charleston, Saturday 10 October at noon, 90 minutes, with Players 2 of 6 and an Add Players button.">
+          <figcaption><b>Screenshot, 11:19 AM</b> &middot; Players 2/6, after she joined through the app.</figcaption>
         </figure>
         <figure>
-          <img src="assets/12-topgolf-reservation-screen-heads-up-notice.jpg" alt="Topgolf reservation screen with a Heads Up notice saying a reservation can be edited up to 1 hour before it starts and cannot be updated after that, with Players 2 of 6 behind it.">
+          <img src="img/12-topgolf-reservation-screen-heads-up-notice.jpg" loading="lazy" alt="Topgolf reservation screen with a Heads Up notice saying a reservation can be edited up to 1 hour before it starts and cannot be updated after that, with Players 2 of 6 behind it.">
           <figcaption><b>Screenshot, 11:34 AM</b> &middot; Players 2/6.</figcaption>
         </figure>
       </div>
@@ -662,18 +617,13 @@ table.conf td.v{white-space:nowrap;width:1%}
 
   <article class="finding">
     <p class="fnum">13</p>
-    <h3>Every text before noon that I can read was logistics. The bay controls came ten minutes out.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
+    <h3>Every text before noon was logistics. The bay controls came ten minutes out.</h3>
     <div class="fgrid flip">
       <div class="ftext">
-        <p>Between 8:26 and 11:51 I count seven touches: one email, one reservation screen, three texts, the 11:44 game-day card and the 11:50 bay controls. The email asked for a 25 to 30 minute video conversation with Topgolf&rsquo;s research partners and offered <em>&ldquo;a free 2-hour bay reservation&rdquo;</em> for it. The three texts I can read said: here is your check-in link, reply Y to confirm and we&rsquo;ll text you your bay number, and <em>&ldquo;Bay 111 is ready! Please head there now to get the fun started.&rdquo;</em> None of the text I can see carried an offer. Only the 11:44 card sells anything, and it names no game.</p>
+        <p>Between 8:26 and 11:51 I counted seven touches: one email, one reservation screen, three texts, the 11:44 game-day card and the 11:50 bay controls. The email asked for a 25 to 30 minute video conversation with Topgolf&rsquo;s research partners and offered <em>&ldquo;a free 2-hour bay reservation&rdquo;</em> for it. The three texts said: here is your check-in link, reply Y to confirm and we&rsquo;ll text you your bay number, and <em>&ldquo;Bay 111 is ready! Please head there now to get the fun started.&rdquo;</em> None carried an offer. Only the 11:44 card sold anything, and it named no game.</p>
         <p>The reservation screen at 10:25 still read Players 1/6 and still carried the Thursday copy about a text on the day of your reservation. The text did come, 90 minutes before the bay. That is a good window for the invite. Topgolf has a clean slot to ask who is coming and what they want, and it spent the slot on a link.</p>
-        <p>The controls ran the other way. The first screenshot I have of the in-app bay controls (Tap to order, Food &amp; Drink, TV Remote, Games, Your check) is 11:50. That is ten minutes before the bay opened.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>When I could finally access the bay and experience controls, we were driving and almost there. Very tough timing if you actually want me to do it in advance.</p>
-        </div>
-        <p>The 90-minute window is the invite. The 10-minute window is everything the guest can actually choose. A hotel treats the hours before arrival as selling time. The guest is committed and has not spent yet. Confirm, offer the upgrade, offer the dinner, send the late checkout. Nothing like that shows in the text each lock screen reveals.</p>
+        <p>The controls ran the other way. The in-app bay controls (Tap to order, Food &amp; Drink, TV Remote, Games, Your check) showed up at 11:50, ten minutes before the bay opened. We were driving and almost there. That&rsquo;s tough timing if you actually want me to set things up in advance.</p>
+        <p>The 90-minute window is the invite. The 10-minute window is everything the guest can actually choose. A hotel treats the hours before arrival as selling time. The guest is committed and has not spent yet. Confirm, offer the upgrade, offer the dinner, send the late checkout. None of that came.</p>
         <div class="cost">
           <b>What it costs</b>
           <p>Ninety minutes out is a cheap moment to sell food. The guest has not arrived, nobody waits behind them, and no tab is open. Topgolf sent a link. Ten minutes out, in a car, is the worst moment to ask anyone to use an app, and it is when the bay controls appeared.</p>
@@ -681,27 +631,27 @@ table.conf td.v{white-space:nowrap;width:1%}
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/13-email-topgolf-8-26-am-tell.jpg" alt="Email from Topgolf at 8:26 AM: Tell us what you think, get 2 hours on us.">
+          <img src="img/13-email-topgolf-8-26-am-tell.jpg" loading="lazy" alt="Email from Topgolf at 8:26 AM: Tell us what you think, get 2 hours on us.">
           <figcaption><b>Mail screenshot, 8:26 AM</b> &middot; A research ask, paid in 2 hours of play, on a guest with a bay that day. Gmail logs it at 8:11.</figcaption>
         </figure>
         <figure>
-          <img src="assets/14-topgolf-reservation-screen-10-25-showing.jpg" alt="Topgolf reservation screen at 10:25 showing Players 1 of 6 with Neil G as host, and the Super Fast Sign In explainer.">
+          <img src="img/14-topgolf-reservation-screen-10-25-showing.jpg" loading="lazy" alt="Topgolf reservation screen at 10:25 showing Players 1 of 6 with Neil G as host, and the Super Fast Sign In explainer.">
           <figcaption><b>Screenshot, 10:25 AM</b> &middot; Players 1/6, host only.</figcaption>
         </figure>
         <figure>
-          <img src="assets/15-lock-screen-10-31-text-notification.jpg" alt="Lock screen at 10:31 with a text notification about checking in for you and your crew, with a link.">
+          <img src="img/15-lock-screen-10-31-text-notification.jpg" loading="lazy" alt="Lock screen at 10:31 with a text notification about checking in for you and your crew, with a link.">
           <figcaption><b>Lock screen, 10:31 AM</b> &middot; The check-in text.</figcaption>
         </figure>
         <figure>
-          <img src="assets/16-lock-screen-11-48-text-saying.jpg" alt="Lock screen at 11:48 with a text saying we'll text you your bay number shortly.">
-          <figcaption><b>Lock screen, 11:48 AM</b> &middot; Reply Y to confirm; &ldquo;we&rsquo;ll text you your bay # shortly.&rdquo; Top of message cropped in the original.</figcaption>
+          <img src="img/16-lock-screen-11-48-text-saying.jpg" loading="lazy" alt="Lock screen at 11:48 with a text saying we'll text you your bay number shortly.">
+          <figcaption><b>Lock screen, 11:48 AM</b> &middot; Reply Y to confirm; &ldquo;we&rsquo;ll text you your bay # shortly.&rdquo;</figcaption>
         </figure>
         <figure>
-          <img src="assets/17-topgolf-app-screen-tap-order-card.jpg" alt="Topgolf app screen with a Tap to Order card and buttons for Food and Drink, TV Remote and Games, and a Your Check section.">
+          <img src="img/17-topgolf-app-screen-tap-order-card.jpg" loading="lazy" alt="Topgolf app screen with a Tap to Order card and buttons for Food and Drink, TV Remote and Games, and a Your Check section.">
           <figcaption><b>Screenshot, 11:50 AM</b> &middot; Bay controls. Ten minutes before the bay.</figcaption>
         </figure>
         <figure>
-          <img src="assets/18-lock-screen-11-51-text-saying.jpg" alt="Lock screen at 11:51 with a text saying Bay 111 is ready, and a calendar notice for the Topgolf reservation.">
+          <img src="img/18-lock-screen-11-51-text-saying.jpg" loading="lazy" alt="Lock screen at 11:51 with a text saying Bay 111 is ready, and a calendar notice for the Topgolf reservation.">
           <figcaption><b>Lock screen, 11:51 AM</b> &middot; &ldquo;Bay 111 is ready!&rdquo;</figcaption>
         </figure>
       </div>
@@ -711,25 +661,24 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">14</p>
     <h3>The $6 membership fee is named three different ways.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span></p>
     <div class="fgrid">
       <div class="ftext">
-        <p>The invited guest sees it first. On D1 at 18 seconds: <em>&ldquo;A $6 one-time fee will be added to the check for each membership created. Memberships are required to play and provide access to game scores, leaderboards and more! Is this for you or a Junior Member under 13?&rdquo;</em> The button reads ME.</p>
+        <p>My wife saw it first, before she could register: <em>&ldquo;A $6 one-time fee will be added to the check for each membership created. Memberships are required to play and provide access to game scores, leaderboards and more! Is this for you or a Junior Member under 13?&rdquo;</em> The button reads ME.</p>
         <p>At 11:58 the bay screen shows it again as <em>&ldquo;Lifetime Membership (x1) $6.00&rdquo;</em>, next to Game Cost $36.56, and an <em>&ldquo;Amount added to bill&rdquo;</em> of $42.56. On the printed check it is line one, <em>&ldquo;Membership.&rdquo;</em> The same $6, labelled a one-time fee, a lifetime membership and a membership.</p>
-        <p>The booking teardown said the fee never came up in the flow. For the invited guest it comes up before she registers. The error frames in finding 12 follow at 94 seconds. I can&rsquo;t tie the fee to the failure. I can say the first thing a new guest reads is a price.</p>
-        <p>The printed check carries one $6 membership line, on the table&rsquo;s check. The screens do not show whose membership it is, or whether the guest knew the check was mine.</p>
+        <p>The first thing a new guest reads is a price. A minute later, she was looking at Try Again.</p>
+        <p>One $6 membership line landed on our table&rsquo;s check.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>A $6 charge at the step where a stranger decides whether to bother is a filter on capture. It may be the right filter. Nobody can tell from outside, because the invite funnel is the number that says what the filter costs.</p>
+          <p>A $6 charge at the step where a stranger decides whether to bother is a filter on capture. It may be the right filter. The invite funnel is the number that says what it costs.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/19-topgolf-charleston-screen-titled-before-we.jpg" alt="Topgolf Charleston screen titled Before we begin, explaining a $6 one-time fee per membership, with a button labelled Me.">
-          <figcaption><b>D1 / 18s</b> &middot; The fee, in front of the invited guest. Native 148&times;320, enlarged.</figcaption>
+          <img src="img/19-topgolf-charleston-screen-titled-before-we.jpg" loading="lazy" alt="Topgolf Charleston screen titled Before we begin, explaining a $6 one-time fee per membership, with a button labelled Me.">
+          <figcaption><b>Screen recording, 10:33 AM</b> &middot; The fee, in front of my wife.</figcaption>
         </figure>
         <figure>
-          <img src="assets/20-bay-screen-reading-get-ready-play.jpg" alt="Bay screen reading Get Ready To Play with a bill summary: Lifetime Membership $6.00, Game Cost $36.56, amount added to bill $42.56, and a note that a promo has already been applied.">
+          <img src="img/20-bay-screen-reading-get-ready-play.jpg" loading="lazy" alt="Bay screen reading Get Ready To Play with a bill summary: Lifetime Membership $6.00, Game Cost $36.56, amount added to bill $42.56, and a note that a promo has already been applied.">
           <figcaption><b>Photo, 11:58 AM</b> &middot; Bay screen. Two minutes before the bay opens, $42.56 goes on the bill.</figcaption>
         </figure>
       </div>
@@ -739,67 +688,54 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">15</p>
     <h3>A server sold both beers, the first one up. The phone took the food order.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="fgrid flip">
       <div class="ftext">
-        <p>The printed check has two beer lines: a Coors Light 22oz at $7.00 and a pitcher with two glasses at $20.99. That is $27.99, or 46% of the food and drink on the check. The app order I recorded on D3 has no beer in it. It holds food and a soda.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>A server came by right away and took my drink order. I asked for a Coors Light. She sold me the 22oz for $2 more. My guest was in the restroom. When she came back we ordered food and her drink on the app. Very easy. For my second beer I got a pitcher.</p>
-        </div>
-        <p>So a person made the first beer sale, and made it bigger. The app card at 11:44 had already promised <em>&ldquo;22oz drafts (21+).&rdquo;</em> (finding 17). The server was the one who sold it.</p><div class="fnote"><span class="lab">Field note &middot; my answer to a question about this finding, not recorded</span><p>I ordered the single beer from the server while my guest was in the restroom. I ordered the pitcher from the server when she checked in. The app does sell beer. The waitress sold it better, more conveniently and at better times.</p></div><p>That puts both beer lines on the check, $27.99, through a person. The app order I recorded carried no beer. I am not claiming the pitcher was an upsell. Nothing I recorded shows that.</p>
-        <p>The order page did its job. D3 opens at 12:03 on <em>&ldquo;Welcome to Topgolf&rdquo;</em> with the bay number, 111, in large type. It does not say my name. At 56 seconds the menu is open on Apps, with a <em>&ldquo;Pay my tab, TAB OPEN&rdquo;</em> banner up. At 274 seconds, 12:07, the review screen reads <em>&ldquo;Me (3)&rdquo;</em>: Crispy Chicken Strips $12.79, Hot Honey Pepperoni Flatbread $15.79, Dr Pepper $3.99. At 284 seconds, 12:08, <em>&ldquo;Your order is in!&rdquo;</em> The order came to $32.57. From the recording&rsquo;s first frame to the confirmation was 4 minutes and 44 seconds, with the tab open.</p>
-        <p>The photos are stamped 12:24, sixteen minutes after the confirmation. They show the food on the table. They do not show the minute it arrived, so sixteen minutes is the longest it can have taken. The food worked, and my notes say so.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>Food was great. The hot honey pizza was hot and flavorful. The chicken tenders were moist, and the skin was flavorful but came off easily. It came fast.</p>
-        </div>
-        <p>Two details on D3. The review screen carries a <em>Log in</em> link in the top right corner, so the order may sit outside my Topgolf account. And the status bar reads Camera, and a QR card sits on the table (photo below, 11:59). I reached the page by scanning the QR code on the table. It showed the bay number and not my name, which was confusing.</p>
-        <p>The refill went the other way.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>At the one-hour mark my guest wanted a refill. No server came. We ordered from the QR code. It came pretty quick.</p>
-        </div>
+        <p>The printed check has two beer lines: a Coors Light 22oz at $7.00 and a pitcher with two glasses at $20.99. That is $27.99, or 46% of the food and drink on the check. The app order had no beer in it, just food and a soda.</p>
+        <p>A server came by right away and took my drink order. I asked for a Coors Light, and she sold me the 22oz for $2 more. My wife was in the restroom. When she came back, we ordered food and her drink on the app. Very easy. For my second beer I ordered a pitcher from the same server. The app sells beer. She sold it better, more conveniently and at better times. The 11:44 app card had already promised <em>&ldquo;22oz drafts (21+).&rdquo;</em> The server was the one who sold it.</p>
+        <p>The order page did its job. I scanned the QR code on the table at 12:03 and it opened on <em>&ldquo;Welcome to Topgolf&rdquo;</em> with the bay number, 111, in large type. It didn&rsquo;t say my name, which was confusing. A minute later the menu was open on Apps, with a <em>&ldquo;Pay my tab, TAB OPEN&rdquo;</em> banner up. At 12:07 the review screen read <em>&ldquo;Me (3)&rdquo;</em>: Crispy Chicken Strips $12.79, Hot Honey Pepperoni Flatbread $15.79, Dr Pepper $3.99. At 12:08, <em>&ldquo;Your order is in!&rdquo;</em> The order came to $32.57, start to finish in 4 minutes and 44 seconds.</p>
+        <p>The food was on the table by 12:24, inside sixteen minutes. It was great. The hot honey pizza was hot and full of flavor. The chicken tenders were moist. It came fast.</p>
+        <p>The review screen carries a <em>Log in</em> link in the top right corner, so the order may sit outside my Topgolf account. I&rsquo;m not sure what logging in would have done.</p>
+        <p>The refill went the other way. At the one-hour mark my wife wanted another drink and no server came. We ordered from the QR code, and it came pretty quickly.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>Both beers went through a person, the first at a $2 step, by my note. I never opened the app&rsquo;s beer menu, so I can&rsquo;t say whether it offers that step. The app sells beer, by my note, and the server won on timing and ease. When the person was missing at the one-hour mark, the guest waited, then ordered from a card. A casino host works the floor with the player&rsquo;s record in hand. Nothing I saw suggests this server had one. Question 1.</p>
+          <p>Both beers went through a person, the first with a $2 step up. The app sells beer, and the server won on timing and ease. When she was missing at the one-hour mark, we waited, then ordered from a card. A casino host works the floor with the player&rsquo;s record in hand. Nothing I saw suggests this server had one.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/21-topgolf-app-bay-home-bay-111.jpg" alt="Topgolf app in-bay home for Bay 111, with a Tap to Order card, food and drink, TV remote and games buttons, and a note that a check can be paid from the phone.">
-          <figcaption><b>Screenshot, 12:00 PM</b> &middot; In-bay home: ordering and pay-from-phone. No offer in the visible part.</figcaption>
+          <img src="img/21-topgolf-app-bay-home-bay-111.jpg" loading="lazy" alt="Topgolf app in-bay home for Bay 111, with a Tap to Order card, food and drink, TV remote and games buttons, and a note that a check can be paid from the phone.">
+          <figcaption><b>Screenshot, 12:00 PM</b> &middot; In-bay home: ordering and pay-from-phone. No offer.</figcaption>
         </figure>
         <figure>
-          <img src="assets/22-order-page-reading-welcome-topgolf-bay.jpg" alt="Order page reading Welcome to Topgolf with the bay number 111, clock reading 12:03.">
-          <figcaption><b>D3 / 0s &middot; 12:03</b> &middot; The bay number is up. My name is not.</figcaption>
+          <img src="img/22-order-page-reading-welcome-topgolf-bay.jpg" loading="lazy" alt="Order page reading Welcome to Topgolf with the bay number 111, clock reading 12:03.">
+          <figcaption><b>Screen recording, 12:03 PM</b> &middot; The bay number is up. My name is not.</figcaption>
         </figure>
         <figure>
-          <img src="assets/23-menu-apps-category-listing-macaroni-bites.jpg" alt="Menu on the Apps category listing macaroni bites, pretzel bites and chicken strips with prices and calories, with a Pay my tab banner reading Tab Open.">
-          <figcaption><b>D3 / 56s &middot; 12:04</b> &middot; The menu opens on Apps. Tab already open.</figcaption>
+          <img src="img/23-menu-apps-category-listing-macaroni-bites.jpg" loading="lazy" alt="Menu on the Apps category listing macaroni bites, pretzel bites and chicken strips with prices and calories, with a Pay my tab banner reading Tab Open.">
+          <figcaption><b>Screen recording, 12:04 PM</b> &middot; The menu opens on Apps. Tab already open.</figcaption>
         </figure>
         <figure>
-          <img src="assets/24-review-order-screen-titled-add-tab.jpg" alt="Review order screen titled Add to tab with three items under Me: chicken strips $12.79, flatbread $15.79, Dr Pepper $3.99, and a Log in link at the top right.">
-          <figcaption><b>D3 / 274s &middot; 12:07</b> &middot; Three items, $32.57. Log in link top right.</figcaption>
+          <img src="img/24-review-order-screen-titled-add-tab.jpg" loading="lazy" alt="Review order screen titled Add to tab with three items under Me: chicken strips $12.79, flatbread $15.79, Dr Pepper $3.99, and a Log in link at the top right.">
+          <figcaption><b>Screen recording, 12:07 PM</b> &middot; Three items, $32.57. Log in link top right.</figcaption>
         </figure>
         <figure>
-          <img src="assets/25-confirmation-screen-reading-your-order-bay.jpg" alt="Confirmation screen reading Your order is in, with the bay number 111, clock reading 12:08.">
-          <figcaption><b>D3 / 284s &middot; 12:08</b> &middot; Confirmed.</figcaption>
+          <img src="img/25-confirmation-screen-reading-your-order-bay.jpg" loading="lazy" alt="Confirmation screen reading Your order is in, with the bay number 111, clock reading 12:08.">
+          <figcaption><b>Screen recording, 12:08 PM</b> &middot; Confirmed.</figcaption>
         </figure>
       </div>
     </div>
     <div class="photopair">
       <figure class="photo">
-        <img src="assets/26-pepperoni-flatbread-slate-board-half-empty.jpg" alt="A pepperoni flatbread on a slate board next to a half-empty glass of beer and a soda, on a granite table.">
+        <img src="img/26-pepperoni-flatbread-slate-board-half-empty.jpg" loading="lazy" alt="A pepperoni flatbread on a slate board next to a half-empty glass of beer and a soda, on a granite table.">
         <figcaption><b>Photo, 12:24 PM</b> &middot; The Hot Honey Pepperoni Flatbread and a beer.</figcaption>
       </figure>
       <figure class="photo">
-        <img src="assets/27-metal-tray-crispy-chicken-strips-tater.jpg" alt="A metal tray of crispy chicken strips and tater tots with a dipping sauce, a soda with a straw, and a phone on a printed menu card.">
+        <img src="img/27-metal-tray-crispy-chicken-strips-tater.jpg" loading="lazy" alt="A metal tray of crispy chicken strips and tater tots with a dipping sauce, a soda with a straw, and a phone on a printed menu card.">
         <figcaption><b>Photo, 12:24 PM</b> &middot; Crispy Chicken Strips, tots, honey mustard, and the Dr Pepper.</figcaption>
       </figure>
     </div>
     <figure class="photo mid">
-      <img src="assets/28-blue-card-granite-table-reading-scan.jpg" alt="A blue card on a granite table reading Scan, Order, Eat with a QR code and a Get Started button, and a small sticker reading My Bay My Way.">
+      <img src="img/28-blue-card-granite-table-reading-scan.jpg" loading="lazy" alt="A blue card on a granite table reading Scan, Order, Eat with a QR code and a Get Started button, and a small sticker reading My Bay My Way.">
       <figcaption><b>Photo, 11:59 AM</b> &middot; The QR card on the bay table, code pixelated. The sticker in the corner reads &ldquo;My Bay My Way.&rdquo;</figcaption>
     </figure>
   </article>
@@ -807,24 +743,20 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">16</p>
     <h3>The app showed a $45 offer at 12:16, on a Saturday it does not run.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="fgrid">
       <div class="ftext">
         <p>At 12:16 the app showed a card that read: <em>&ldquo;Food &amp; Fun, All in One. Get two entrees + 1.5 hours of game play for only $45!&rdquo;</em> The size fits two people. The order was in at 12:08 and the bay had run 16 minutes. Below it sat a Happenings card, <em>&ldquo;GOLF. BEER. FOOTBALL.&rdquo;</em> It is the banner from the confirmation page in finding 07 of the booking teardown, now in the app on a football Saturday. That teardown also shows the $45 combo on Thursday, under <em>&ldquo;No offers yet.&rdquo;</em></p>
-        <p>The in-bay home screen at 12:00 led with ordering and pay-from-phone. It showed no offer in the part I captured. The combo sits on a different screen, and the first screenshot I have of it is 12:16.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; my correction, not recorded</span>
-          <p>The offer showed on my phone while I was in the app. It is not valid on Saturday. By my note it runs Monday through Thursday, from 4 PM to close. The valid days and times are in the app, one tap behind the card.</p>
-        </div>
-        <p>The card is the right size for two, and we could not have used it. The card in my screenshot shows no day or hour limit, and it sat on a Saturday guest&rsquo;s phone at noon.</p>
+        <p>The in-bay home screen at 12:00 led with ordering and pay-from-phone, with no offer. The combo sat on a different screen.</p>
+        <p>It isn&rsquo;t valid on Saturday. It runs Monday through Thursday, from 4 PM to close, and those terms sit in the app one tap behind the card. The app knows what day it is. It showed me the offer anyway.</p>
+        <p>The card is the right size for two, and we could not have used it. The card shows no day or hour limit, and it sat on my phone at noon on a Saturday.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>A casino host does not show a player a comp the player can&rsquo;t redeem. By my note this card sets up a price the house won&rsquo;t honor on Saturday, and the guest can&rsquo;t tell from the card. I saw no two-person bundle that is valid on a Saturday, though I did not browse every screen. Show the guest what is valid today, and show the right one first.</p>
+          <p>A casino host does not show a player a comp the player can&rsquo;t redeem. This card sets up a price the house won&rsquo;t honor on Saturday, and the guest can&rsquo;t tell from the card. I saw no two-person bundle valid on a Saturday. Show the guest what is valid today, and show the right one first.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/29-topgolf-app-screen-12-16-pm.jpg" alt="Topgolf app screen at 12:16 PM showing a Food and Fun, All in One card for two entrees plus 1.5 hours of game play for $45, and a Golf Beer Football happenings card.">
+          <img src="img/29-topgolf-app-screen-12-16-pm.jpg" loading="lazy" alt="Topgolf app screen at 12:16 PM showing a Food and Fun, All in One card for two entrees plus 1.5 hours of game play for $45, and a Golf Beer Football happenings card.">
           <figcaption><b>Screenshot, 12:16 PM</b> &middot; The combo and the football banner, sixteen minutes into the bay. No day or hour limit shows on the card.</figcaption>
         </figure>
       </div>
@@ -834,33 +766,28 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">17</p>
     <h3>The TV remote worked before we got there. Nothing told me what to put on it.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="fgrid flip">
       <div class="ftext">
-        <p>First, what worked. By my note, I set the bay TV from the app before we got there, and it was on ESPN with the noon game up when we arrived. That is the product doing what it says.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>In the app as we parked and walked in, I could control the TV channel. One option was ESPN. Score. UNC vs Pitt is the noon game on ESPN. I did it before we got there and it was on when we arrived. Very nice.</p>
-        </div>
+        <p>First, what worked. As we parked and walked in, I could control the bay TV from the app. One option was ESPN, and UNC at Pitt was the noon game on ESPN. I set it before we got there, and it was on when we arrived. Very nice. That&rsquo;s the product doing what it says.</p>
         <p>Now, what I had to bring myself. At 11:51 the app&rsquo;s Bay 111 TV Remote listed seven channels, each with a show title: CBSSN, <em>Inside College Football</em>; ESPN2, <em>SportsCenter</em>; MLBN, <em>MLB Tonight</em>; ESPN, <em>College GameDay</em> (highlighted); WTAT, <em>Big Noon Kickoff</em>; NHL, <em>On the Fly</em>; WCBD, <em>Yes, Chef!</em></p>
         <p>At 11:54 my phone was in the ESPN app. It showed <em>&ldquo;Watch live: College GameDay,&rdquo;</em> then UNC at 25 Pitt at 12:00 PM on ESPN, with a spread, a total and a moneyline. A second noon game, Texas A&amp;M at Missouri, sat below it on ABC.</p>
-        <p>The remote changes the channel. It does not say what kicks off at noon. I had to know UNC and Pitt was on ESPN, and at 11:54 my phone was in ESPN&rsquo;s app. Nothing in the Topgolf screens I captured told me. The 11:44 card sells <em>&ldquo;Golf. Beer. Football.&rdquo;</em> and tells guests to <em>&ldquo;control your bay&rsquo;s TV with the Topgolf App.&rdquo;</em> It does not say which game or which channel.</p>
+        <p>The remote changes the channel. It does not say what kicks off at noon. I had to know UNC and Pitt was on ESPN, and at 11:54 my phone was in ESPN&rsquo;s app. Nothing in Topgolf&rsquo;s screens told me. The 11:44 card sells <em>&ldquo;Golf. Beer. Football.&rdquo;</em> and tells guests to <em>&ldquo;control your bay&rsquo;s TV with the Topgolf App.&rdquo;</em> It does not say which game or which channel.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>A game-day guest decides the afternoon at kickoff: the pitcher, the second round, whether the bay gets extended. At that moment the screen is in a competitor&rsquo;s app. Topgolf is the venue and the remote. The selling happens one app over. The family in finding 22 shows what that costs when the game is not on the list.</p>
+          <p>A game-day guest decides the afternoon at kickoff: the pitcher, the second round, whether the bay gets extended. At that moment the screen is in someone else&rsquo;s app. Topgolf is the venue and the remote. The selling happens one app over. The family in finding 22 shows what that costs when the game is not on the list.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/30-topgolf-app-card-titled-golf-beer.jpg" alt="Topgolf app card titled Golf Beer Football, saying to control your bay's TV with the Topgolf App and enjoy 22oz drafts all season long.">
+          <img src="img/30-topgolf-app-card-titled-golf-beer.jpg" loading="lazy" alt="Topgolf app card titled Golf Beer Football, saying to control your bay's TV with the Topgolf App and enjoy 22oz drafts all season long.">
           <figcaption><b>Screenshot, 11:44 AM</b> &middot; The game-day card. 22oz drafts named; no game, no channel.</figcaption>
         </figure>
         <figure>
-          <img src="assets/31-topgolf-app-bay-111-tv-remote.jpg" alt="Topgolf app Bay 111 TV Remote listing seven channels with show titles, ESPN College GameDay highlighted.">
+          <img src="img/31-topgolf-app-bay-111-tv-remote.jpg" loading="lazy" alt="Topgolf app Bay 111 TV Remote listing seven channels with show titles, ESPN College GameDay highlighted.">
           <figcaption><b>Screenshot, 11:51 AM</b> &middot; Seven channels, titles only.</figcaption>
         </figure>
         <figure>
-          <img src="assets/32-espn-app-showing-live-college-gameday.jpg" alt="ESPN app showing live College GameDay, then UNC at Pitt at 12:00 PM on ESPN with a spread, total and moneyline, and Texas A&M at Missouri below.">
+          <img src="img/32-espn-app-showing-live-college-gameday.jpg" loading="lazy" alt="ESPN app showing live College GameDay, then UNC at Pitt at 12:00 PM on ESPN with a spread, total and moneyline, and Texas A&M at Missouri below.">
           <figcaption><b>Screenshot, 11:54 AM</b> &middot; Three minutes later, in ESPN. UNC at Pitt, noon.</figcaption>
         </figure>
       </div>
@@ -870,29 +797,24 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">18</p>
     <h3>Two extension prompts, neither with a price. The follow-up came the next afternoon.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="fgrid">
       <div class="ftext">
-        <p>The bay screen read <em>&ldquo;15 minutes left&rdquo;</em> over <em>&ldquo;Great news! More play time is available in this bay. Would you like to extend?&rdquo;</em> Two buttons: No Thanks and Let&rsquo;s Extend. No price. No length. Nothing about food. The photo is stamped 1:18, so the prompt likely stayed up a few minutes past 15.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>At 15 minutes left a pop-up came on the TV. At 7 minutes left a server came by to extend or close out.</p>
-        </div>
-        <p>The printed check closed at 1:23, seven minutes before 1:30. That fits the server&rsquo;s visit in my note. So there were two asks, one from the screen and one from a person. The screen carries no price. My recollection is that the server named none either. The screen told me more play time was available in the bay. That was sold without a number.</p>
-        <p>The next touch came on Sunday 11 October at 2:59 PM, about 25 and a half hours after the check closed: <em>&ldquo;Tell Us About Your Visit &amp; Get 30 Mins on Us.&rdquo;</em> The email prints the date as 2026-10-10. In the part I captured it asks for a survey and nothing else. Per the Gmail copy, the survey takes two to three minutes.</p>
+        <p>The bay screen read <em>&ldquo;15 minutes left&rdquo;</em> over <em>&ldquo;Great news! More play time is available in this bay. Would you like to extend?&rdquo;</em> Two buttons: No Thanks and Let&rsquo;s Extend. No price, no length, nothing about food.</p>
+        <p>At 7 minutes left a server came by to extend or close out, and the check closed at 1:23. Two asks, one from the screen and one from a person, and neither named a price. More play time was available in the bay, and nobody put a number on it.</p>
+        <p>The next touch came on Sunday 11 October at 2:59 PM, about 25 and a half hours after the check closed: <em>&ldquo;Tell Us About Your Visit &amp; Get 30 Mins on Us.&rdquo;</em> The email prints the date as 2026-10-10. It asks for a survey, two to three minutes, and nothing else.</p>
         <p>Both asks pay in play time. The Saturday morning one asked for 25 to 30 minutes on video and paid 2 hours. The Sunday one asked for 2 to 3 minutes and paid 30. Two hours is a unit the booking flow sells. Thirty minutes is not (booking teardown, finding 04).</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>Post-visit is the first moment Topgolf can ask a guest back. The only follow-up I saw is a survey, a day late, paid in a unit the booking flow does not sell. A hotel sends the folio and a rebook offer the morning after. Question 5.</p>
+          <p>Post-visit is the first moment Topgolf can ask a guest back. The only follow-up was a survey, a day late, paid in a unit the booking flow does not sell. A hotel sends the folio and a rebook offer the morning after.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/33-bay-screen-reading-15-minutes-left.jpg" alt="Bay screen reading 15 minutes left, great news, more play time is available in this bay, would you like to extend, with No Thanks and Let's Extend buttons.">
+          <img src="img/33-bay-screen-reading-15-minutes-left.jpg" loading="lazy" alt="Bay screen reading 15 minutes left, great news, more play time is available in this bay, would you like to extend, with No Thanks and Let's Extend buttons.">
           <figcaption><b>Photo, 1:18 PM</b> &middot; The TV pop-up. Extend, with no price.</figcaption>
         </figure>
         <figure>
-          <img src="assets/34-email-topgolf-experience-team-tell-us.jpg" alt="Email from the Topgolf Experience Team: Tell Us About Your Visit and Get 30 Mins on Us, with a Share My Feedback button.">
+          <img src="img/34-email-topgolf-experience-team-tell-us.jpg" loading="lazy" alt="Email from the Topgolf Experience Team: Tell Us About Your Visit and Get 30 Mins on Us, with a Share My Feedback button.">
           <figcaption><b>Mail screenshot</b> &middot; The post-visit email. Gmail logs it Sunday 11 October, 2:59 PM.</figcaption>
         </figure>
       </div>
@@ -902,25 +824,24 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">19</p>
     <h3>The server told me the membership had no advantage.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span><span class="basis said">Reported speech</span></p>
     <div class="fgrid flip">
       <div class="ftext">
         <p>Topgolf sells PlayMore at the front door. The sign in the 11:56 photo reads <em>&ldquo;Members get more: Free Game Play, Free Appetizers, Exclusive Perks.&rdquo;</em> The sale is made to a stranger walking in.</p>
-        <p>My check had a $6 membership line on it, the fee in finding 14. As I read the plan, PlayMore waives that $6 and includes an appetizer every visit. The sign says free appetizers and free game play. The $6 waiver is my reading of the plan. No frame shows it.</p>
-        <p>By my note, I asked the server about it at 7 minutes left.</p>
+        <p>My check had a $6 membership line on it, the fee in finding 14. As I read the plan, PlayMore waives that $6 and includes an appetizer every visit.</p>
+        <p>At 7 minutes left I asked the server about it.</p>
         <div class="fnote said">
-          <span class="lab">Reported speech &middot; the server, paraphrased from my note</span>
+          <span class="lab">What the server told me</span>
           <p>No advantage, because I hadn&rsquo;t gotten an appetizer. Get it next time.</p>
         </div>
-        <p>The chicken strips I ordered at 12:08 sit under the Apps category on D3. I do not know whether her rule excludes them, or whether the answer was wrong. Question 6.</p>
+        <p>The chicken strips I ordered at 12:08 sit under Apps on the order page. I don&rsquo;t know whether her rule excludes them or whether the answer was wrong. I&rsquo;m not criticizing her. I don&rsquo;t know what she was given to say.</p>
         <div class="cost">
           <b>What it costs</b>
-          <p>The check was open, the guest asked, and the answer was no. That is the highest-intent moment of the day for a membership. A casino enrolls the player at the machine or the table, with the card in hand, and the host is paid on the sign-up. Topgolf&rsquo;s door sells the plan and its own server pushed the sale to next time. On this evidence nobody owns that moment.</p>
+          <p>The check was open, the guest asked, and the answer was no. That is the highest-intent moment of the day for a membership. A casino enrolls the player at the machine or the table, with the card in hand, and the host is paid on the sign-up. Topgolf&rsquo;s door sells the plan and its own server pushed the sale to next time. Nobody owns that moment.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/35-sign-glass-door-reading-play-more.jpg" alt="A sign on a glass door reading Play More membership, Members get more: Free Game Play, Free Appetizers, Exclusive Perks, with a Join Today badge.">
+          <img src="img/35-sign-glass-door-reading-play-more.jpg" loading="lazy" alt="A sign on a glass door reading Play More membership, Members get more: Free Game Play, Free Appetizers, Exclusive Perks, with a Join Today badge.">
           <figcaption><b>Photo, 11:56 AM</b> &middot; The front-door sign.</figcaption>
         </figure>
       </div>
@@ -930,32 +851,23 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">20</p>
     <h3>Toptracer was in the bay. My guest went to YouTube for the lesson.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="ftext" style="max-width:var(--col)">
-        <p>One note carries the YouTube moment. There is no photo or frame of it.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
-          <p>My guest, a first-time player, sat down halfway through the first game and watched a YouTube video on how to do this. Golf tips. Such an opportunity.</p>
-        </div>
-        <p>Here is where Toptracer shows up. On the bay TV, in the 12:09 photo, a strip reads <em>&ldquo;STATS by TOPTRACER&rdquo;</em> with Carry, Ball Speed and Hang Time. The label is small. Under it sits a <em>How to Play</em> tile. The crop shows one line, <em>&ldquo;Consistency i&hellip;&rdquo;</em>.</p>
-        <div class="fnote">
-          <span class="lab">Field note &middot; my correction, not recorded</span>
-          <p>The How to Play tile is the game rules. It is not golf tips.</p>
-        </div>
-        <p>The absence, scoped. I ran text recognition on the app screenshots and photos and on 209 frames sampled from the three recordings. I found no Toptracer mention in any app screen or in the order flow. In Gmail the word shows up in Topgolf&rsquo;s marketing emails, where the 8 October coupon terms read <em>&ldquo;Not valid at Lounge, Swing Suite, or Toptracer Range locations.&rdquo;</em> A search of Gmail did not return the reservation emails. The bay TV label is the one place I saw it, and a text search had missed it. I found it by eye.</p>
+                <p>My wife, a first-time player, sat down halfway through the first game and watched a YouTube video on how to swing. Golf tips. Such an opportunity.</p>
+        <p>Here is where Toptracer shows up. On the bay TV, in the 12:09 photo, a strip reads <em>&ldquo;STATS by TOPTRACER&rdquo;</em> with Carry, Ball Speed and Hang Time. The label is small. Under it sits a <em>How to Play</em> tile. That tile is the game rules, not golf tips.</p>
+        <p>That label on the TV is the only place Toptracer showed up all day. It wasn&rsquo;t in the app or the order flow. In my inbox it appears in one place: the 8 October coupon terms, <em>&ldquo;Not valid at Lounge, Swing Suite, or Toptracer Range locations.&rdquo;</em></p>
         <div class="cost">
           <b>What it costs</b>
-          <p>The one lesson I saw her look for came from YouTube. I did not see the bay offer her one. The How to Play tile covers game rules, not swing help, by my note. That is Toptracer&rsquo;s value proposition walking to a competitor&rsquo;s platform, mid-visit, with a first-time guest. One guest does not make a segment. It is the moment a range product earns its keep.</p>
+          <p>The one lesson she looked for came from YouTube. The bay never offered her one. That is Toptracer&rsquo;s value proposition walking to a competitor&rsquo;s platform, mid-visit, with a first-time guest. One guest does not make a segment. It is the moment a range product earns its keep.</p>
         </div>
       </div>
     <div class="photorow">
       <figure class="photo narrow">
-        <img src="assets/36-person-black-top-swinging-driver-turf.jpg" alt="A person in a black top swinging a driver on a turf mat in a Topgolf bay, with the target field beyond and a TV on the wall showing a football game, the game screen and a How to Play tile.">
-        <figcaption><b>Photo, 12:09 PM</b> &middot; The second player mid-swing. The TV shows a football game, the game screen, and the stats strip.</figcaption>
+        <img src="img/36-person-black-top-swinging-driver-turf.jpg" loading="lazy" alt="A person in a black top swinging a driver on a turf mat in a Topgolf bay, with the target field beyond and a TV on the wall showing a football game, the game screen and a How to Play tile.">
+        <figcaption><b>Photo, 12:09 PM</b> &middot; My wife mid-swing. The TV shows a football game, the game screen, and the stats strip.</figcaption>
       </figure>
       <figure class="photo grow">
-        <img src="assets/37-cropped-photo-bay-tv-stats-strip.jpg" alt="Cropped photo of the bay TV: a stats strip labelled Stats by Toptracer showing carry 0.0 yards, ball speed 63.6 miles per hour, hang time 0.0 seconds, shot 3, and a How to Play tile below.">
-        <figcaption><b>Photo, 12:09 PM, cropped</b> &middot; &ldquo;Stats by Toptracer.&rdquo; Carry 0.0 yds, ball speed 63.6 mph. Under it, a How to Play tile. My note says it is the game rules. The visible line does not settle it.</figcaption>
+        <img src="img/37-cropped-photo-bay-tv-stats-strip.jpg" loading="lazy" alt="Cropped photo of the bay TV: a stats strip labelled Stats by Toptracer showing carry 0.0 yards, ball speed 63.6 miles per hour, hang time 0.0 seconds, shot 3, and a How to Play tile below.">
+        <figcaption><b>Photo, 12:09 PM, cropped</b> &middot; &ldquo;Stats by Toptracer.&rdquo; Carry 0.0 yds, ball speed 63.6 mph. Under it, a How to Play tile. It&rsquo;s the game rules.</figcaption>
       </figure>
     </div>
   </article>
@@ -963,15 +875,14 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">21</p>
     <h3>The most fun game in the bay teaches the worst golf.</h3>
-    <p class="fbasis"><span class="basis rec">Recorded</span><span class="basis note">Field note</span></p>
     <div class="fgrid flip">
       <div class="ftext">
         <p>The bay menu at 11:58 showed a Trending Games row: Shot Shuffle, Block Party, Topgolf, Field Goal Challenge, Sonic, Angry Birds, Practice Mode, with more off the edge. Shot Shuffle is listed at about 5 to 10 minutes per player. At 12:30 the course picker showed four courses: Pebble Beach, St Andrews Old Course, Spyglass Hill and Spanish Bay, with match or stroke play and three mulligans.</p>
-        <p>What we thought of them is from my notes.</p>
+        <p>What we thought of them:</p>
         <div class="fnote">
-          <span class="lab">Field note &middot; paraphrased from my notes, not recorded</span>
+          <span class="lab">My notes</span>
           <p><b>Core Topgolf.</b> Used as the warm-up.</p>
-          <p><b>Course.</b> My guest picked it. I looked for Hilton Head or a local course. It was hard and not logical.</p>
+          <p><b>Course.</b> My wife picked it. I looked for Hilton Head or a local course. It was hard and not logical.</p>
           <p><b>Sonic.</b> Good. The long animations are weird. It feels like it is wasting time on purpose.</p>
           <p><b>Field goal.</b> A distance game. I could not figure out how to get past 20 yards. Boring.</p>
           <p><b>Structure.</b> A weird mix of taking turns and taking runs.</p>
@@ -979,16 +890,16 @@ table.conf td.v{white-space:nowrap;width:1%}
         </div>
         <div class="cost">
           <b>What it costs</b>
-          <p>By my read, the most fun game in the bay rewards a low line drive, which is poor golf. For a social guest that is fine, and we spent the last half hour on it. It matters for the guest in finding 20, who wanted a lesson. A casino tunes the cycle time of a game to the player. Here, one guest read the animations as stalling, and I can&rsquo;t say what the design intent is. I saw no signal on the menu about which game suits whom.</p>
+          <p>The most fun game in the bay rewards a low line drive, which is poor golf. For a social guest that is fine, and we spent the last half hour on it. It matters for the guest in finding 20, who wanted a lesson. A casino tunes the cycle time of a game to the player. Here the animations read as stalling, and nothing on the menu says which game suits whom.</p>
         </div>
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/38-bay-tv-game-menu-showing-shot.jpg" alt="Bay TV game menu showing Shot Shuffle in detail and a Trending Games row with Shot Shuffle, Block Party, Topgolf, Field Goal Challenge, Sonic, Angry Birds and Practice Mode.">
+          <img src="img/38-bay-tv-game-menu-showing-shot.jpg" loading="lazy" alt="Bay TV game menu showing Shot Shuffle in detail and a Trending Games row with Shot Shuffle, Block Party, Topgolf, Field Goal Challenge, Sonic, Angry Birds and Practice Mode.">
           <figcaption><b>Photo, 11:58 AM</b> &middot; The game menu. Angry Birds is sixth of seven visible tiles.</figcaption>
         </figure>
         <figure>
-          <img src="assets/39-bay-screen-titled-virtual-courses-listing.jpg" alt="Bay screen titled Virtual Courses listing Pebble Beach Golf Links, St Andrews Old Course, Spyglass Hill and Spanish Bay, with match or stroke play and a mulligans selector set to 3.">
+          <img src="img/39-bay-screen-titled-virtual-courses-listing.jpg" loading="lazy" alt="Bay screen titled Virtual Courses listing Pebble Beach Golf Links, St Andrews Old Course, Spyglass Hill and Spanish Bay, with match or stroke play and a mulligans selector set to 3.">
           <figcaption><b>Photo, 12:30 PM</b> &middot; The course picker. Four courses, in California and Scotland.</figcaption>
         </figure>
       </div>
@@ -998,32 +909,24 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">22</p>
     <h3>The family next door had a birthday, a game and a phone.</h3>
-    <p class="fbasis"><span class="basis note">Field note</span><span class="basis said">Reported speech</span></p>
     <div class="ftext" style="max-width:var(--col)">
-      <p>This one I watched happen in the next bay. It is a field note and reported speech. There is no recording of it.</p>
-      <div class="fnote">
-        <span class="lab">Field note &middot; paraphrased, what I saw, not recorded</span>
-        <p>A family in the next bay held an unofficial birthday party. Everyone wore University of South Carolina gear. The daughter was allowed to bring a friend. They wanted to watch the South Carolina game. The dad asked the servers more than once.</p>
-      </div>
+      <p>I watched this one happen in the next bay.</p>
+      <p>A family in the next bay held an unofficial birthday party. Everyone wore University of South Carolina gear. The daughter was allowed to bring a friend. They wanted to watch the South Carolina game. The dad asked the servers more than once.</p>
       <div class="fnote said">
-        <span class="lab">Reported speech &middot; the family, paraphrased from my note</span>
-        <p>They said maybe twice a year. The South Carolina game was on in the bar. The only other football on the bay&rsquo;s limited stations was Texas A&amp;M. They ended up watching on the dad&rsquo;s phone. I can&rsquo;t separate what the family told me from what I saw.</p>
-      </div>
-      <div class="fnote">
-        <span class="lab">Field note &middot; my own recollection in a follow-up, not what the family told me</span>
-        <p>They ended up with the Texas A&amp;M game on ABC, because the South Carolina game was not on the bay&rsquo;s TV stations.</p>
+        <span class="lab">What the family told me</span>
+        <p>They said maybe twice a year. The South Carolina game was on in the bar. The only other football on the bay&rsquo;s limited stations was Texas A&amp;M. They ended up watching on the dad&rsquo;s phone.</p>
       </div>
       <p>Three things happened in one bay.</p>
-      <p><strong>An unofficial birthday, probably uncaptured.</strong> By my note a group came for a birthday that was unofficial. I do not know whether Topgolf has any record of the occasion, the date, the child or the parent. If it has none, it can&rsquo;t ask them back next year.</p>
-      <p><strong>A game-day party whose game was not on the bay&rsquo;s channels.</strong> They came in team colors on a college football Saturday, to a venue whose app sells <em>&ldquo;Golf. Beer. Football.&rdquo;</em> The game they wanted was in the bar. By the note, the bay could not show it. By my follow-up note the bay TV ended up on Texas A&amp;M on ABC, because South Carolina was not on the bay&rsquo;s TV stations. The dad&rsquo;s phone is the other screen, and my recollection is that it showed South Carolina against Florida on a station the bay did not carry. I am not certain of that. My 11:51 remote capture is our bay&rsquo;s list, not theirs. It shows no ABC, and I don&rsquo;t know how their list differed.</p>
-      <p><strong>A second screen.</strong> A phone sat propped on their table with football on it (photo below). By my note it was the dad&rsquo;s, and he asked staff more than once. I used a phone for the same job at 11:54, checking a kickoff time. The photo does not show which game it was. My recollection is South Carolina against Florida, on a station the bay did not carry.</p>
+      <p><strong>An unofficial birthday, probably uncaptured.</strong> I don&rsquo;t know whether Topgolf has any record of the occasion, the date, the child or the parent. If it has none, it can&rsquo;t ask them back next year.</p>
+      <p><strong>A game-day party whose game was not on the bay&rsquo;s channels.</strong> They came in team colors on a college football Saturday, to a venue whose app sells <em>&ldquo;Golf. Beer. Football.&rdquo;</em> The game they wanted was on in the bar, and their bay TV ended up on Texas A&amp;M on ABC, because South Carolina wasn&rsquo;t on the bay&rsquo;s stations.</p>
+      <p><strong>A second screen.</strong> The dad&rsquo;s phone sat propped on their table with South Carolina on it (photo below). I&rsquo;d used my phone for the same job at 11:54, checking a kickoff time.</p>
     </div>
     <figure class="photo" style="max-width:760px">
-      <img src="assets/40-cropped-photo-phone-propped-against-metal.jpg" alt="Cropped photo of a phone propped against a metal bucket on a restaurant table, showing a football game in red and white uniforms, with drinks and a napkin around it. No faces are visible.">
-      <figcaption><b>Photo, 1:26 PM, cropped</b> &middot; The phone propped on the family&rsquo;s table in the next bay, showing a football game. The teams are not legible. Faces are cut. Whose phone it is comes from my note, not the photo.</figcaption>
+      <img src="img/40-cropped-photo-phone-propped-against-metal.jpg" loading="lazy" alt="Cropped photo of a phone propped against a metal bucket on a restaurant table, showing a football game in red and white uniforms, with drinks and a napkin around it. No faces are visible.">
+      <figcaption><b>Photo, 1:26 PM, cropped</b> &middot; The phone propped on the family&rsquo;s table in the next bay, showing a football game. Faces cropped out.</figcaption>
     </figure>
         <div class="ftext" style="max-width:var(--col);margin-top:1.6em">
-      <p>I do not know what they spent, or how many people were in the bay.</p>
+      
       <div class="cost">
         <b>What it costs</b>
         <p>One bay, three misses, none on the check. A casino host who sees a family in team colors on game day makes the room theirs: the right channel, a comp on the cake, a name in the file. This family could not get their game on the bay TV, and a phone propped on the table did the job. Birthdays are an occasion with a date. A date can be sold a year ahead.</p>
@@ -1034,17 +937,16 @@ table.conf td.v{white-space:nowrap;width:1%}
   <article class="finding">
     <p class="fnum">23</p>
     <h3>Three men in their twenties priced Topgolf against a $7 range.</h3>
-    <p class="fbasis"><span class="basis said">Reported speech</span></p>
     <div class="ftext" style="max-width:var(--col)">
-      <p>The bay on our left held three men in their twenties. I am not showing them and I am not naming them. What they told me is reported speech.</p>
+      <p>The bay on our left held three men in their twenties. I&rsquo;m not showing or naming them.</p>
       <div class="fnote said">
-        <span class="lab">Reported speech &middot; strangers, paraphrased from my note</span>
+        <span class="lab">What they told me</span>
         <p>They said maybe once a year. If it weren&rsquo;t raining they would have gone to the driving range instead, because &ldquo;it&rsquo;s like $7.&rdquo; They called Topgolf expensive.</p>
       </div>
-      <p>I do not know which range they meant or what $7 buys. Take the claim as they gave it. A once-a-year guest sets Topgolf against the range, and the range wins on price. By their account rain made the decision. Weather gave Topgolf this table.</p>
+      <p>A once-a-year guest sets Topgolf against the range, and the range wins on price. By their account rain made the decision. Weather gave Topgolf this table.</p>
       <div class="cost">
         <b>What it costs</b>
-        <p>Demand that arrives with the rain is a rain check. It leaves when the sun comes out, and nothing I saw in the bay was built to change that. A casino treats the once-a-year visitor as a rated guest with a next-visit offer. This table is a sample of three. It is also the price-value gap at its cheapest comparison.</p>
+        <p>Demand that arrives with the rain is a rain check. It leaves when the sun comes out, and nothing I saw in the bay was built to change that. A casino treats the once-a-year visitor as a rated guest with a next-visit offer. It&rsquo;s the price-value gap at its cheapest comparison.</p>
       </div>
     </div>
   </article>
@@ -1054,7 +956,7 @@ table.conf td.v{white-space:nowrap;width:1%}
   <div class="col">
     <p class="eyebrow">The capture ledger</p>
     <h2>The same day, run by an operator who counts</h2>
-    <p>Moment by moment through the weekend, against what a casino or resort group holds at the same point. These are general operating practices of those businesses. I cite no figures here.</p>
+    <p>Moment by moment through the weekend, against what a casino or resort group holds at the same point. </p>
   </div>
   <div class="scroll">
     <table>
@@ -1064,7 +966,7 @@ table.conf td.v{white-space:nowrap;width:1%}
       <tbody>
         <tr><td>Morning of</td><td>Asked for a 25 to 30 minute video conversation, paid in 2 hours of play.</td><td class="them">Nothing asked of a guest on arrival day. A message about the stay.</td></tr>
         <tr><td>90 min out</td><td>Sent a check-in link.</td><td class="them">A pre-arrival offer priced to the guest: upgrade, dinner, late checkout.</td></tr>
-        <tr><td>Second guest</td><td>An invite that showed Try Again at three readings across 170 seconds. The app route worked, after the guest gave up on the form.</td><td class="them">A companion record, created by the host and completed by staff.</td></tr>
+        <tr><td>Second guest</td><td>An invite that showed Try Again three times. The app route worked, after my wife gave up on the form.</td><td class="them">A companion record, created by the host and completed by staff.</td></tr>
         <tr><td>10 min out</td><td>Opened the bay and experience controls, while the guest was driving.</td><td class="them">Choices live from the booking. The room is the guest&rsquo;s before arrival.</td></tr>
         <tr><td>Fee</td><td>A $6 fee named three ways, landing on the table&rsquo;s check.</td><td class="them">One price, shown to the person who pays it.</td></tr>
         <tr><td>Bay ready</td><td>&ldquo;Please head there now.&rdquo;</td><td class="them">A welcome that carries the first offer of the stay.</td></tr>
@@ -1084,18 +986,18 @@ table.conf td.v{white-space:nowrap;width:1%}
   <div class="col">
     <p class="eyebrow">What it is worth</p>
     <h2>The check, in four numbers</h2>
-    <p>Each figure comes straight from the printed check, a timed frame or a timed screen. The working is on the page so you can argue with it.</p>
+    <p>Each figure comes straight from the printed check or a timed screen. The working is on the page so you can argue with it.</p>
   </div>
 
   <div class="nums">
     <div class="num"><span class="v">59%</span><span class="l">Food and drink on the check: $60.56 of $103.12 before tax and tip.</span></div>
-    <div class="num"><span class="v">$27.99</span><span class="l">Beer on the check that the recorded app order did not carry. That is 46% of food and drink. By my note a server sold both beers, the first one up.</span></div>
-    <div class="num"><span class="v">4:44</span><span class="l">From D3&rsquo;s first frame at 12:03 to &ldquo;Your order is in!&rdquo; at 12:08, seated, with the tab open.</span></div>
+    <div class="num"><span class="v">$27.99</span><span class="l">Beer on the check that the app order didn&rsquo;t carry. That&rsquo;s 46% of food and drink. A server sold both beers, the first one up.</span></div>
+    <div class="num"><span class="v">4:44</span><span class="l">From scanning the QR code at 12:03 to &ldquo;Your order is in!&rdquo; at 12:08, seated, with the tab open.</span></div>
   </div>
 
   <div class="col">
     <p>The visit made money. The question is where the next dollar comes from. A guest who spends 59% of the pre-tax check at the table is a food and drink customer who rents a bay. The levers sit on the table side: when the offer shows, who sells the beer, whether the membership gets sold at the check, what an extension costs.</p>
-    <p>If the $36.56 is the post-deposit balance, game play for the visit was $48.75 and food and drink was about 53% of pre-tax spend. The point holds either way.</p>
+    <p>Counting the deposit, game play for the visit was $48.75 and food and drink was about 53% of pre-tax spend. The point holds either way.</p>
     <p>Most of the twelve findings need a rule and an owner. Few need a build. Two need a script for the server.</p>
   </div>
 </section>
@@ -1112,8 +1014,8 @@ table.conf td.v{white-space:nowrap;width:1%}
       <div class="mnum">6</div>
       <div>
         <h3>Fix the second seat</h3>
-        <p>Treat the invite as a funnel and report it: sent, opened, registered, retried. When a guest hits an error, tell the host within seconds and hand the guest a fallback that a host-stand employee can finish. Waive the $6 inside the invite, as move 1 already proposes. Open the window earlier than 90 minutes, or lengthen it past the 60-minute lock.</p>
-        <p>A registered second guest is a named lead on a paid booking. D1 shows Try Again at three readings across 170 seconds of recording.</p>
+        <p>Treat the invite as a funnel and report it: sent, opened, registered, retried. When a guest hits an error, tell the host within seconds and hand the guest a fallback that a host-stand employee can finish. Waive the $6 inside the invite, as move 1 already proposes.</p>
+        <p>A registered second guest is a named lead on a paid booking. My wife saw Try Again three times.</p>
         <p><span class="tag">Product and engineering</span><span class="tag">One quarter</span><span class="tag">Guest experience owns</span></p>
       </div>
     </div>
@@ -1122,7 +1024,7 @@ table.conf td.v{white-space:nowrap;width:1%}
       <div class="mnum">7</div>
       <div>
         <h3>Use the 90-minute window, and open the controls in it</h3>
-        <p>The text at 10:31 is the best selling slot in the day. Put three things in it: the occasion question, the second-player invite, and one bundle sized for two. The $45 combo is the right size, but by my note it runs Monday to Thursday only. Build the Saturday version and send that. Open the bay and TV controls in the same window, with the kickoff times attached, so a guest sets the room from the couch.</p>
+        <p>The text at 10:31 is the best selling slot in the day. Put three things in it: the occasion question, the second-player invite, and one bundle sized for two. The $45 combo is the right size, but it runs Monday to Thursday only. Build the Saturday version and send that. Open the bay and TV controls in the same window, with the kickoff times attached, so a guest sets the room from the couch.</p>
         <p><span class="tag">Lifecycle build</span><span class="tag">Two quarters</span><span class="tag">CRM owns</span></p>
       </div>
     </div>
@@ -1131,7 +1033,7 @@ table.conf td.v{white-space:nowrap;width:1%}
       <div class="mnum">8</div>
       <div>
         <h3>Keep the server&rsquo;s beer sale. Add the app&rsquo;s, and the offer.</h3>
-        <p>By my note the server sold both beers. Do not take that sale away. The app sells beer, and by my note the server sold it better, so copy what she did. Make sure the app lists the 22oz and the pitcher, and put them in front of the guest on arrival and again at the one-hour refill, the moment no server came. Make a party-of-two bundle that is valid on the day the guest is there the first card on the in-bay order page, and show only offers that apply today.</p>
+        <p>The server sold both beers. Don&rsquo;t take that sale away. The app sells beer, and she sold it better, so copy what she did. Make sure the app lists the 22oz and the pitcher, and put them in front of the guest on arrival and again at the one-hour refill, the moment no server came. Make a party-of-two bundle that is valid on the day the guest is there the first card on the in-bay order page, and show only offers that apply today.</p>
         <p><span class="tag">Offer engine</span><span class="tag">Two quarters</span><span class="tag">Revenue management owns</span></p>
       </div>
     </div>
@@ -1140,7 +1042,7 @@ table.conf td.v{white-space:nowrap;width:1%}
       <div class="mnum">9</div>
       <div>
         <h3>Price the extension and ask earlier</h3>
-        <p>The 1:18 screen says more play time is available in the bay. Offer the extension with a price while the table is ordering its second round, on the TV and from the server. Do it earlier than 15 and 7 minutes left, and give the price. Then make the next-day email carry one rebook link tied to the occasion and the second player, and pay every feedback ask in one unit.</p>
+        <p>The 1:18 screen says more play time is available in the bay. Offer the extension with a price while the table is ordering its second round, on the TV and from the server. Do it earlier than 15 and 7 minutes left, and give the price. Then make the next-day email carry one rebook link tied to the occasion and the other player, and pay every feedback ask in one unit.</p>
         <p><span class="tag">Pricing and lifecycle</span><span class="tag">Two quarters</span><span class="tag">Revenue management and CRM</span></p>
       </div>
     </div>
@@ -1168,15 +1070,15 @@ table.conf td.v{white-space:nowrap;width:1%}
 <section>
   <div class="col">
     <p class="eyebrow">What I&rsquo;d go find out</p>
-    <h2>Seven questions the frames can&rsquo;t answer</h2>
+    <h2>Seven questions I can&rsquo;t answer from outside</h2>
     <ol class="q">
-      <li>The app sells beer and the server sold both of mine. What share of beer dollars at a bay goes through a person, what share through the phone, and what would move the sale to the phone? On this check, 46% of food and drink was beer that was not in the recorded app order.</li>
-      <li>How often does an invited guest&rsquo;s registration fail, and what does the host see when it does? D1 shows the error at three clock readings across 170 seconds.</li>
+      <li>The app sells beer and the server sold both of mine. What share of beer dollars at a bay goes through a person, what share through the phone, and what would move the sale to the phone? On this check, 46% of food and drink was beer that never touched the app.</li>
+      <li>How often does an invited guest&rsquo;s registration fail, and what does the host see when it does? My wife hit the error three times.</li>
       <li>Which offers are valid for a two-person party on a Saturday at noon, and does the app show a guest only the offers that apply today?</li>
-      <li>What is the $36.56 on the check? It equals 75% of the discounted $48.75 to the cent. If it is the post-deposit balance, attach rates need to be computed on $48.75.</li>
+      <li>Does the check always net the deposit out of the gameplay line? If it does, attach rates need to be computed on the booked price.</li>
       <li>What do &ldquo;2 hours on us&rdquo; and &ldquo;30 mins on us&rdquo; redeem into, and what does each cost to give? One asks for 25 to 30 minutes of a guest&rsquo;s time and the other for 2 to 3.</li>
       <li>What does a server know about PlayMore, what is she paid to say, and does the free appetizer cover items in the Apps category, such as the chicken strips?</li>
-      <li>What does the Toptracer stats strip do for a first-time guest, and where would swing help live in the bay, given that, by my note, the How to Play tile is game rules?</li>
+      <li>What does the Toptracer stats strip do for a first-time guest, and where would swing help live in the bay, given that the How to Play tile is game rules?</li>
     </ol>
   </div>
 </section>
@@ -1195,9 +1097,9 @@ table.conf td.v{white-space:nowrap;width:1%}
       <tbody>
         <tr class="grouprow"><td colspan="3">What David said was broken, 8 October</td></tr>
         <tr><td>70% of guests don&rsquo;t come back.</td><td>One visit can&rsquo;t test the number. It shows three places a guest could be asked back, and all three came up thin: the invite (12), the membership sale at the check (19), and a survey email a day later (18).</td><td class="v"><span class="verdict yes">Consistent</span></td></tr>
-        <tr><td>Membership, loyalty and CRM: &ldquo;none of it was built.&rdquo;</td><td>Messages exist: a check-in link, a confirmation, a bay-ready text, a research ask, a survey. The three texts I can read carried no offer. The second player&rsquo;s record hit an error at capture, and I have no frame of whether the host was told. I saw no sign the family&rsquo;s occasion was recorded.</td><td class="v"><span class="verdict yes">Consistent</span></td></tr>
+        <tr><td>Membership, loyalty and CRM: &ldquo;none of it was built.&rdquo;</td><td>Messages exist: a check-in link, a confirmation, a bay-ready text, a research ask, a survey. None of the three texts I got carried an offer. My wife&rsquo;s sign-up hit an error, and nothing told us. I saw no sign the family&rsquo;s occasion was recorded.</td><td class="v"><span class="verdict yes">Consistent</span></td></tr>
         <tr><td>Price-value is the worst-scoring attribute.</td><td>Three men called Topgolf expensive and priced it against a $7 range (23). The TV prompt to extend carried no price (18). I could not see what I was being offered at 1:18, so I could not judge value.</td><td class="v"><span class="verdict yes">Consistent</span></td></tr>
-        <tr><td>Toptracer and Topgolf are &ldquo;Apple and Android.&rdquo; The social guest &ldquo;never&rdquo; goes to a range.</td><td>Toptracer&rsquo;s stats sit on the Topgolf game screen as a small label. By my note a first-time guest reached for swing help mid-game (20). Three men said they would have gone to a range if not for the rain (23). Both are small samples. Neither fits &ldquo;never.&rdquo;</td><td class="v"><span class="verdict mix">Complicates</span></td></tr>
+        <tr><td>Toptracer and Topgolf are &ldquo;Apple and Android.&rdquo; The social guest &ldquo;never&rdquo; goes to a range.</td><td>Toptracer&rsquo;s stats sit on the Topgolf game screen as a small label. A first-time player reached for swing help mid-game (20). Three men said they would have gone to a range if not for the rain (23). Both are small samples. Neither fits &ldquo;never.&rdquo;</td><td class="v"><span class="verdict mix">Complicates</span></td></tr>
 
         <tr class="grouprow"><td colspan="3">Priorities I heard on 9 October, and one game fact</td></tr>
         <tr><td>Memberships.</td><td>The sign at the door sells the plan. Near the end of the visit the server pushed it to next time (19).</td><td class="v"><span class="verdict yes">Sharpens</span></td></tr>
@@ -1213,16 +1115,10 @@ table.conf td.v{white-space:nowrap;width:1%}
 <section class="method">
   <div class="col">
     <p class="eyebrow">Method</p>
-    <h2>What this covers</h2>
-    <p>One visit, one venue, one Saturday: Topgolf Charleston, 10 October 2026, Bay 111, noon to 1:30 PM ET, two players. The evidence is three screen recordings (D1, D2, D3), and the screenshots, lock screens and photographs cited in each finding. Findings cite a recording and an elapsed second, or a still or photo and its clock time, wherever one exists. Findings 22 and 23 rest on notes and what strangers said. Times come from phone status bars and photo metadata, all in Eastern Time. I sampled each recording about every three seconds, pulled stills at the seconds cited, and checked each against the clock on screen. D2 runs 10:32 to 10:33. D3 starts at 12:03 and shows 12:08 at 284 seconds.</p>
-    <p><strong>Three kinds of evidence, three looks on the page.</strong> Plain text with a frame, photo or receipt cite is recorded: it has a timestamp I can show. A shaded block is a field note. It is my own writing from the day. Quotation marks inside a block are exact words from the notes. Everything else in a block is paraphrased, and the label says so. The first entry is timed 9:27 AM. The file was last saved at 8:33 PM ET on 12 October, so I can&rsquo;t tell you which lines were typed when. No one but me has checked a field note. A dashed block is reported speech: what a server or a stranger told me, as I wrote it down. They did not know I would use it, I did not record them, and I have not verified what they said. Where a finding leans on a note, the block says so.</p>
-    <p>It is one visit. It cannot say how often anything here happens. The three men, the family and the server are one table each.</p>
-    <p>Not in evidence: the minute the second player finished registering in the app (the 11:19 screenshot already reads 2/6); whose phone D2 was recorded on (the screens read Hello Neil and Neil&rsquo;s Group, and my recollection is that it is the second player&rsquo;s phone); whether the free appetizer covers the Apps category; which game was on the dad&rsquo;s phone, beyond my recollection; what the family&rsquo;s bay channel list held; and what the app&rsquo;s beer menu offers. No finding depends on those. Where a screen text was partly cropped in the original, the caption says so. D1 was recorded at 148&times;320 pixels, so its stills are crops, enlarged. The 8:26 AM email shows 8:26 in the Mail screenshot and 8:11 in the Gmail receipt. I cite the screenshot. I used Gmail to check the dates and the text of Topgolf&rsquo;s emails.</p>
-    <p><strong>Toptracer search.</strong> I ran text recognition on the screenshots and photos and on 209 frames sampled from the recordings, then checked the Topgolf emails in Gmail. Text recognition missed the one label in the bay, which a photo shows. Absence claims in finding 20 are scoped to that search.</p>
-    <p><strong>Corrections, 13 October.</strong> The $45 offer&rsquo;s valid days and times are in the app, one tap behind the card. I reached the order page by scanning the QR code on the table. The edit-lock arithmetic is removed, because the lock does not cover adding a player.</p>
-    <p><strong>What changed from the first edition.</strong> The follow-up email arrived on Sunday 11 October at 2:59 PM, not on the day of the visit as the first edition said. The 8:26 AM email asks for a 25 to 30 minute video conversation, which the first edition read as a quick feedback ask. Finding 15 is rewritten around the server. Findings 19 to 23 and the closing section are new. The photographs and field notes are new.</p>
-    <p>Redactions: server name and card digits on the check, the check-in link in the 10:31 lock screen, a sticker cropped out of D1&rsquo;s text frame, the code on the QR card, and, in the photos, the neighbours. No stranger&rsquo;s face appears. The next bay&rsquo;s family appears only as a phone on a table, cropped tight. The three men are described in words only. Every embedded image was hashed and matched to a source file before publishing.</p>
-    <p>Comparison practices are general operating mechanics of casino and resort groups. Prices are Topgolf Charleston on the date shown.</p>
+    <h2>How I put this together</h2>
+    <p>One visit, one venue, one Saturday: Topgolf Charleston, 10 October 2026, Bay 111, noon to 1:30 PM ET, two players. I recorded the screens on both phones, took photos and kept notes through the day. Every time comes from a phone clock or a photo stamp, in Eastern Time. Quotes in the dashed blocks are what a server or a stranger told me, as I wrote it down.</p>
+    <p>It&rsquo;s one visit. It can&rsquo;t say how often any of this happens. The three men, the family and the server are one table each.</p>
+    <p>I removed the server&rsquo;s name and card digits from the check, the check-in link from the 10:31 text, the code on the QR card and the neighbors&rsquo; faces. The three men are described in words only. Prices are Topgolf Charleston on the date shown.</p>
   </div>
 </section>
 

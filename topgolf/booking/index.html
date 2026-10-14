@@ -8,54 +8,29 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@600&family=DM+Sans:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap">
 
 <style>
 /* Layout: a single narrow reading column of argument, interrupted by full-width
    evidence blocks where a screen sits beside the sentence it proves. */
 :root{
-  --bg:#F6F7FA;
-  --panel:#FFFFFF;
-  --tray:#ECEFF5;
-  --ink:#0B1220;
-  --muted:#5A6477;
-  --rule:#DBE0EA;
-  --accent:#1A35FF;
-  --cost:#9E1420;
-  --cost-bg:#FBEDEE;
+  color-scheme:light;
+  --bg:#f5f2ec;
+  --panel:#faf8f4;
+  --tray:#ebe6dd;
+  --ink:#1a1814;
+  --muted:#6b6560;
+  --rule:rgba(26,24,20,0.12);
+  --accent:#003b7e;
+  --cost:#9e1420;
+  --cost-bg:#f7ebe8;
 
-  --f-display:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --f-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --f-display:'Playfair Display',Georgia,serif;
+  --f-body:'DM Sans',system-ui,sans-serif;
+  --f-data:'DM Sans',system-ui,sans-serif;
 
   --col:min(100%,68ch);
   --wide:min(100%,1180px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#090D15;
-    --panel:#111825;
-    --tray:#0E141F;
-    --ink:#E9EDF5;
-    --muted:#8D98AD;
-    --rule:#212A3B;
-    --accent:#6E85FF;
-    --cost:#F2737F;
-    --cost-bg:#231318;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#090D15;
-  --panel:#111825;
-  --tray:#0E141F;
-  --ink:#E9EDF5;
-  --muted:#8D98AD;
-  --rule:#212A3B;
-  --accent:#6E85FF;
-  --cost:#F2737F;
-  --cost-bg:#231318;
-  color-scheme:dark;
 }
 
 *{box-sizing:border-box}
@@ -421,8 +396,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
 .tgbar-in{max-width:var(--wide);margin-inline:auto;padding:1.1rem 20px .9rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem 1rem}
 .tgbar a{text-decoration:none;color:var(--ink)}
 .tgbar a:hover{color:var(--accent)}
-.tgbar-back{font-family:"Playfair Display",Georgia,serif;font-size:14px;font-weight:600}
-.tgbar-next{font-family:"DM Sans",system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
+.tgbar-back{font-family:var(--f-display);font-size:14px;font-weight:600}
+.tgbar-next{font-family:var(--f-body);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
 .tgbar-next:hover{color:var(--accent)!important}
 </style>
 </head>
@@ -465,8 +440,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
     <p class="rline"><span>Due at the venue</span><span>$38.39</span></p>
   </div>
   <figure class="ereceipt">
-    <img src="assets/01-topgolf-confirmation-email-showing-reservation-details.jpg" alt="Topgolf confirmation email showing the reservation details and a total of $51.19 after a 25 percent discount.">
-    <figcaption><b>Still, 6:55 PM</b> &middot; The confirmation email, 41 minutes in.</figcaption>
+    <img src="img/01-topgolf-confirmation-email-showing-reservation-details.jpg" loading="lazy" alt="Topgolf confirmation email showing the reservation details and a total of $51.19 after a 25 percent discount.">
+    <figcaption><b>Screenshot, 6:55 PM</b> &middot; The confirmation email, 41 minutes in.</figcaption>
   </figure>
   </div>
 
@@ -500,12 +475,12 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/02-topgolf-checkout-empty-state-showing-three.jpg" alt="Topgolf checkout in its empty state, showing three required fields for full name, phone number and email address.">
-          <figcaption><b>R1 / 210s</b> &middot; Everything the reservation demands: three required fields.</figcaption>
+          <img src="img/02-topgolf-checkout-empty-state-showing-three.jpg" loading="lazy" alt="Topgolf checkout in its empty state, showing three required fields for full name, phone number and email address.">
+          <figcaption><b>Web booking recording, 3:30</b> &middot; Everything the reservation demands: three required fields.</figcaption>
         </figure>
         <figure>
-          <img src="assets/03-topgolf-checkout-showing-name-phone-email.jpg" alt="Topgolf checkout showing name, phone and email fields, an unchecked offers opt-in, and a free-text accessibility field.">
-          <figcaption><b>R1 / 219s</b> &middot; And everything it holds afterwards. The marketing opt-in sits unchecked under a wall of legal copy.</figcaption>
+          <img src="img/03-topgolf-checkout-showing-name-phone-email.jpg" loading="lazy" alt="Topgolf checkout showing name, phone and email fields, an unchecked offers opt-in, and a free-text accessibility field.">
+          <figcaption><b>Web booking recording, 3:39</b> &middot; And everything it holds afterwards. The marketing opt-in sits unchecked under a wall of legal copy.</figcaption>
         </figure>
       </div>
     </div>
@@ -526,16 +501,16 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/04-topgolf-web-checkout-offering-find-account.jpg" alt="Topgolf web checkout offering Find Account or Continue as Guest, framed as saving time on the day.">
-          <figcaption><b>R1 / 192s</b> &middot; Sign-in offered as a time-saver, after floor selection.</figcaption>
+          <img src="img/04-topgolf-web-checkout-offering-find-account.jpg" loading="lazy" alt="Topgolf web checkout offering Find Account or Continue as Guest, framed as saving time on the day.">
+          <figcaption><b>Web booking recording, 3:12</b> &middot; Sign-in offered as a time-saver, after floor selection.</figcaption>
         </figure>
         <figure>
-          <img src="assets/05-topgolf-app-showing-welcome-back-neil.jpg" alt="Topgolf app showing Welcome Back Neil, account active since 2026.">
-          <figcaption><b>R2 / 107s</b> &middot; The recognition, after the total was confirmed.</figcaption>
+          <img src="img/05-topgolf-app-showing-welcome-back-neil.jpg" loading="lazy" alt="Topgolf app showing Welcome Back Neil, account active since 2026.">
+          <figcaption><b>App recording, 1:47</b> &middot; The recognition, after the total was confirmed.</figcaption>
         </figure>
         <figure>
-          <img src="assets/06-topgolf-app-warning-reservation-already-booked.jpg" alt="Topgolf app warning that a reservation is already booked for this date and time.">
-          <figcaption><b>R2 / 114s</b> &middot; It knew all along. Six screens too late to matter.</figcaption>
+          <img src="img/06-topgolf-app-warning-reservation-already-booked.jpg" loading="lazy" alt="Topgolf app warning that a reservation is already booked for this date and time.">
+          <figcaption><b>App recording, 1:54</b> &middot; It knew all along. Six screens too late to matter.</figcaption>
         </figure>
       </div>
     </div>
@@ -559,20 +534,20 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/07-topgolf-marketing-email-headed-weekend-deal.jpg" alt="Topgolf marketing email headed Weekend Deal Alert, 25% Off Play Inside, with code DRIVE25.">
+          <img src="img/07-topgolf-marketing-email-headed-weekend-deal.jpg" loading="lazy" alt="Topgolf marketing email headed Weekend Deal Alert, 25% Off Play Inside, with code DRIVE25.">
           <figcaption><b>Inbox</b> &middot; Topgolf sends the code the app says does not exist.</figcaption>
         </figure>
         <figure>
-          <img src="assets/08-topgolf-app-offers-tab-reading-you.jpg" alt="Topgolf app Offers tab reading: you don't have any offers yet, with an Eat and Golf Combo promotion directly below.">
-          <figcaption><b>Still, 6:53 PM</b> &middot; &ldquo;No offers yet,&rdquo; with the $45 combo on the next card down.</figcaption>
+          <img src="img/08-topgolf-app-offers-tab-reading-you.jpg" loading="lazy" alt="Topgolf app Offers tab reading: you don't have any offers yet, with an Eat and Golf Combo promotion directly below.">
+          <figcaption><b>Screenshot, 6:53 PM</b> &middot; &ldquo;No offers yet,&rdquo; with the $45 combo on the next card down.</figcaption>
         </figure>
         <figure>
-          <img src="assets/09-topgolf-app-promo-drawer-saying-there.jpg" alt="Topgolf app promo drawer saying there are no offers or promos to redeem right now.">
-          <figcaption><b>R3 / 54s</b> &middot; And again, in the promo drawer.</figcaption>
+          <img src="img/09-topgolf-app-promo-drawer-saying-there.jpg" loading="lazy" alt="Topgolf app promo drawer saying there are no offers or promos to redeem right now.">
+          <figcaption><b>Second app recording, 0:54</b> &middot; And again, in the promo drawer.</figcaption>
         </figure>
         <figure>
-          <img src="assets/10-topgolf-checkout-drive25-promo-applied-25.jpg" alt="Topgolf checkout with DRIVE25 promo applied, 25 percent off game play, total reduced.">
-          <figcaption><b>R1 / 249s</b> &middot; Pasted back in by hand, accepted instantly.</figcaption>
+          <img src="img/10-topgolf-checkout-drive25-promo-applied-25.jpg" loading="lazy" alt="Topgolf checkout with DRIVE25 promo applied, 25 percent off game play, total reduced.">
+          <figcaption><b>Web booking recording, 4:09</b> &middot; Pasted back in by hand, accepted instantly.</figcaption>
         </figure>
       </div>
     </div>
@@ -595,12 +570,12 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/11-topgolf-duration-picker-showing-90-120.jpg" alt="Topgolf duration picker showing 90 and 120 minute options priced, and 60 minutes marked unavailable.">
-          <figcaption><b>R1 / 171s</b> &middot; The 60-minute session, built for two, unavailable.</figcaption>
+          <img src="img/11-topgolf-duration-picker-showing-90-120.jpg" loading="lazy" alt="Topgolf duration picker showing 90 and 120 minute options priced, and 60 minutes marked unavailable.">
+          <figcaption><b>Web booking recording, 2:51</b> &middot; The 60-minute session, built for two, unavailable.</figcaption>
         </figure>
         <figure>
-          <img src="assets/12-topgolf-charleston-saturday-per-bay-pricing.jpg" alt="Topgolf Charleston Saturday per-bay pricing card with a six-dollar account activation fee notice.">
-          <figcaption><b>R1 / 72s</b> &middot; Per-bay pricing, and the instruction to bring four more people.</figcaption>
+          <img src="img/12-topgolf-charleston-saturday-per-bay-pricing.jpg" loading="lazy" alt="Topgolf Charleston Saturday per-bay pricing card with a six-dollar account activation fee notice.">
+          <figcaption><b>Web booking recording, 1:12</b> &middot; Per-bay pricing, and the instruction to bring four more people.</figcaption>
         </figure>
       </div>
     </div>
@@ -625,16 +600,16 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/13-topgolf-web-booking-page-playmore-membership.jpg" alt="Topgolf web booking page with the PlayMore membership card half off the edge of a horizontal carousel.">
-          <figcaption><b>R1 / 129s</b> &middot; Third card in a carousel, before the flow quotes a price.</figcaption>
+          <img src="img/13-topgolf-web-booking-page-playmore-membership.jpg" loading="lazy" alt="Topgolf web booking page with the PlayMore membership card half off the edge of a horizontal carousel.">
+          <figcaption><b>Web booking recording, 2:09</b> &middot; Third card in a carousel, before the flow quotes a price.</figcaption>
         </figure>
         <figure>
-          <img src="assets/14-topgolf-app-account-screen-playmore-membership.jpg" alt="Topgolf app Account screen with a PlayMore membership banner above account details.">
-          <figcaption><b>R2 / 146s</b> &middot; And again in Account, which I opened to fix my home venue.</figcaption>
+          <img src="img/14-topgolf-app-account-screen-playmore-membership.jpg" loading="lazy" alt="Topgolf app Account screen with a PlayMore membership banner above account details.">
+          <figcaption><b>App recording, 2:26</b> &middot; And again in Account, which I opened to fix my home venue.</figcaption>
         </figure>
         <figure>
-          <img src="assets/15-topgolf-app-platinum-club-platinum-elite.jpg" alt="Topgolf app Platinum Club and Platinum Elite membership tiers, buried under the Account tab.">
-          <figcaption><b>R2 / 150s</b> &middot; Platinum Club, &ldquo;perfect for up to two members,&rdquo; four taps deep in Account.</figcaption>
+          <img src="img/15-topgolf-app-platinum-club-platinum-elite.jpg" loading="lazy" alt="Topgolf app Platinum Club and Platinum Elite membership tiers, buried under the Account tab.">
+          <figcaption><b>App recording, 2:30</b> &middot; Platinum Club, &ldquo;perfect for up to two members,&rdquo; four taps deep in Account.</figcaption>
         </figure>
       </div>
     </div>
@@ -646,7 +621,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
     <div class="ftext col">
       <p>In the fine print on the pricing card: <em>&ldquo;$6 account activation fee required for new players.&rdquo;</em> Every player needs an account, and the account is the thing that holds their name, their scores and their history.</p>
       <p>So the first-time guest is charged for the privilege of being known, at the one moment you are trying to acquire them. The fee is already waived in three places: 2-Bay Packages, 3+ Bay Events, and anyone who signs up for PlayMore at the venue. Platinum Club adds five free registrations per visit as a membership perk. Four separate waivers exist. None of them is pointed at acquisition.</p>
-      <p>Where it lands is worse than what it costs. I booked for two and paid for two. The second player meets the $6 on her phone before she registers, and it lands again at the bay as a line on the table&rsquo;s check, during paid playing time. That is a six-dollar argument in the first five minutes of a 90-minute reservation, at the exact moment the table is deciding whether to order food and drinks.</p>
+      <p>Where it lands is worse than what it costs. I booked for two and paid for two. My wife meets the $6 on her phone before she registers, and it lands again at the bay as a line on the table&rsquo;s check, during paid playing time. That is a six-dollar argument in the first five minutes of a 90-minute reservation, at the exact moment the table is deciding whether to order food and drinks.</p>
       <p>Charge it in the flow where I can see it, waive it outright, or trade it. &ldquo;Add your guest now and we&rsquo;ll waive the fee&rdquo; costs you six dollars and buys you a second named guest before anybody arrives.</p>
     </div>
   </article>
@@ -667,8 +642,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/16-topgolf-confirmation-page-showing-golf-beer.jpg" alt="Topgolf confirmation page showing a Golf Beer Football game-day banner below the booking receipt.">
-          <figcaption><b>R1 / 276s</b> &middot; Game-day merchandising, served as a receipt decoration.</figcaption>
+          <img src="img/16-topgolf-confirmation-page-showing-golf-beer.jpg" loading="lazy" alt="Topgolf confirmation page showing a Golf Beer Football game-day banner below the booking receipt.">
+          <figcaption><b>Web booking recording, 4:36</b> &middot; Game-day merchandising, served as a receipt decoration.</figcaption>
         </figure>
       </div>
     </div>
@@ -689,16 +664,16 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/17-topgolf-app-home-screen-reading-welcome.jpg" alt="Topgolf app home screen reading Welcome, Guest and offering tonight's tee times.">
-          <figcaption><b>R2 / 48s &middot; 6:22 PM</b> &middot; Signed out. Charleston, because I typed it. The guest who just paid is &ldquo;Guest.&rdquo;</figcaption>
+          <img src="img/17-topgolf-app-home-screen-reading-welcome.jpg" loading="lazy" alt="Topgolf app home screen reading Welcome, Guest and offering tonight's tee times.">
+          <figcaption><b>App recording, 0:48 &middot; 6:22 PM</b> &middot; Signed out. Charleston, because I typed it. The guest who just paid is &ldquo;Guest.&rdquo;</figcaption>
         </figure>
         <figure>
-          <img src="assets/18-topgolf-app-home-screen-after-sign.jpg" alt="Topgolf app home screen after sign-in showing Georgia Atlanta as the home venue and tonight's time slots.">
-          <figcaption><b>R3 / 2s &middot; 6:54 PM</b> &middot; Signed in. Atlanta, my last venue played, and tonight&rsquo;s bays.</figcaption>
+          <img src="img/18-topgolf-app-home-screen-after-sign.jpg" loading="lazy" alt="Topgolf app home screen after sign-in showing Georgia Atlanta as the home venue and tonight's time slots.">
+          <figcaption><b>Second app recording, 0:02 &middot; 6:54 PM</b> &middot; Signed in. Atlanta, my last venue played, and tonight&rsquo;s bays.</figcaption>
         </figure>
         <figure>
-          <img src="assets/19-topgolf-app-showing-upcoming-charleston-visit.jpg" alt="Topgolf app showing an upcoming Charleston visit while promoting tonight's Atlanta time slots.">
-          <figcaption><b>R3 / 90s &middot; 6:55 PM</b> &middot; A confirmed noon visit, with tonight&rsquo;s bays sold underneath it.</figcaption>
+          <img src="img/19-topgolf-app-showing-upcoming-charleston-visit.jpg" loading="lazy" alt="Topgolf app showing an upcoming Charleston visit while promoting tonight's Atlanta time slots.">
+          <figcaption><b>Second app recording, 1:30 &middot; 6:55 PM</b> &middot; A confirmed noon visit, with tonight&rsquo;s bays sold underneath it.</figcaption>
         </figure>
       </div>
     </div>
@@ -715,8 +690,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/20-topgolf-app-edit-profile-screen-required.jpg" alt="Topgolf app Edit Profile screen with required name, phone and email fields and an empty optional birthday field.">
-          <figcaption><b>R2 / 165s</b> &middot; Four required fields. Birthday isn&rsquo;t one.</figcaption>
+          <img src="img/20-topgolf-app-edit-profile-screen-required.jpg" loading="lazy" alt="Topgolf app Edit Profile screen with required name, phone and email fields and an empty optional birthday field.">
+          <figcaption><b>App recording, 2:45</b> &middot; Four required fields. Birthday isn&rsquo;t one.</figcaption>
         </figure>
       </div>
     </div>
@@ -738,12 +713,12 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/21-topgolf-app-modal-reading-coupon-not.jpg" alt="Topgolf app modal reading Coupon Not Supported, preventing edits to a discounted reservation.">
-          <figcaption><b>Still, 6:52 PM</b> &middot; A discount that locks the booking.</figcaption>
+          <img src="img/21-topgolf-app-modal-reading-coupon-not.jpg" loading="lazy" alt="Topgolf app modal reading Coupon Not Supported, preventing edits to a discounted reservation.">
+          <figcaption><b>Screenshot, 6:52 PM</b> &middot; A discount that locks the booking.</figcaption>
         </figure>
         <figure>
-          <img src="assets/22-topgolf-cancellation-email-confirming-refund-no.jpg" alt="Topgolf cancellation email confirming a refund with no save offer or reason request.">
-          <figcaption><b>Still, 6:53 PM</b> &middot; The entire win-back programme.</figcaption>
+          <img src="img/22-topgolf-cancellation-email-confirming-refund-no.jpg" loading="lazy" alt="Topgolf cancellation email confirming a refund with no save offer or reason request.">
+          <figcaption><b>Screenshot, 6:53 PM</b> &middot; The entire win-back programme.</figcaption>
         </figure>
       </div>
     </div>
@@ -765,8 +740,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       </div>
       <div class="eshelf">
         <figure>
-          <img src="assets/23-topgolf-reservation-screen-showing-players-1.jpg" alt="Topgolf reservation screen showing Players 1 of 6 with only the host listed.">
-          <figcaption><b>R2 / 122s</b> &middot; The business model, displaying its own gap.</figcaption>
+          <img src="img/23-topgolf-reservation-screen-showing-players-1.jpg" loading="lazy" alt="Topgolf reservation screen showing Players 1 of 6 with only the host listed.">
+          <figcaption><b>App recording, 2:02</b> &middot; The business model, displaying its own gap.</figcaption>
         </figure>
       </div>
     </div>
@@ -900,12 +875,11 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
 <section class="method">
   <div class="col">
     <p class="eyebrow">Method</p>
-    <h2>What this is, and what it isn&rsquo;t</h2>
-    <p>One guest, one venue, one Thursday night. Charleston, 8 October 2026, 6:14 to 6:57 PM Central: two completed bookings, one attempt blocked, one cancellation, one app install. Captured in three screen recordings and four email screenshots. Every finding cites the recording and the elapsed second it came from, so each one can be checked or contradicted. Nothing here is modelled or inferred from a panel.</p>
-    <p>It is a teardown, not a study. A single session cannot tell you how often any of this happens, only that all of it is possible in one uninterrupted sitting by a repeat guest with the app installed. The visit itself is on 10 October, so the in-venue experience, the Toptracer handoff and whatever post-visit contact follows are not in evidence here. One observation sits outside the recordings and is flagged where it appears: since that visit the app has been defaulting to Charleston, which is the home-venue behaviour in finding 08 doing to Charleston exactly what it did to Atlanta.</p>
+    <h2>How I put this together</h2>
+    <p>One booking session, one venue, one Thursday night: Topgolf Charleston, 8 October 2026, 6:14 to 6:57 PM Central. Two completed bookings, one blocked attempt, one cancellation and one app install. I screen-recorded the web booking and two passes through the app, and kept the four emails. Each caption gives the recording and the minute and second, so you can check any screen yourself.</p>
+    <p>It&rsquo;s one session, so it can&rsquo;t tell you how often any of this happens. It shows that all of it can happen to a repeat player with the app installed, in one sitting. The visit itself was Saturday 10 October, and the day-of teardown covers it. One note comes from after that night: since the visit, the app has been defaulting to Charleston, which is finding 08 doing to Charleston what it did to Atlanta.</p>
     <p>Company figures are from Topgolf&rsquo;s own releases and from Topgolf Callaway Brands reporting through the third quarter of 2025, the last clean quarter before deconsolidation. Comparison mechanics are the published terms of Caesars Rewards, MGM Rewards, Dave &amp; Buster&rsquo;s Rewards and Puttshack Perks. Where a number is a guideline rather than an actual, it says so.</p>
     <p>Prices quoted are Topgolf Charleston on the dates shown and vary by venue.</p>
-    <p><strong>Corrections, 13 October.</strong> The booking night was Thursday, not Wednesday. The second player&rsquo;s $6 fee shows on her phone before she registers. The sign-in text arrives 90 minutes before the bay. The day-of teardown has the screens.</p>
   </div>
 </section>
 
