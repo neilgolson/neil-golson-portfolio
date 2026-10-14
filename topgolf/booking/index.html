@@ -410,6 +410,10 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
 .tgbar-back{font-family:var(--f-display);font-size:14px;font-weight:600}
 .tgbar-next{font-family:var(--f-body);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)!important}
 .tgbar-next:hover{color:var(--accent)!important}
+/* ---------- headlines span the body-copy column ---------- */
+@property --col-len{syntax:'<length>';inherits:true;initial-value:0px}
+body{--col-len:68ch}
+h1,h2,.finding h3{max-width:min(100%,var(--col-len));text-wrap:pretty}
 </style>
 </head>
 <body>
