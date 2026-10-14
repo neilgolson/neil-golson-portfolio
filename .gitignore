@@ -3,3 +3,8 @@
 
 # Broadcast video masters — site uses web-optimized copies in /assets/web/
 /assets/*.mp4
+
+# Private working docs, keep out of the published site
+CLAUDE_CODE_BRIEFING.md
+GolsonNeil.Resume.Summer26.VTshare.pdf
+VINCE_PAGE_BRIEFING.md
