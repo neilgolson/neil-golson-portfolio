@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winning Industry Audiences — Neil Golson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#c2410c;
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
+.nav-left{display:flex;align-items:center;gap:2rem;}
+.back-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.15s;}
+.back-link:hover{color:var(--ink)}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── CASE STUDY HERO ── */
+.cs-hero{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 2rem;}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
+.cs-eyebrow-tag{color:var(--light);font-weight:400;}
+.cs-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:760px;margin-bottom:1.75rem;}
+.cs-context{font-size:17px;line-height:1.85;color:var(--mid);max-width:760px;margin-bottom:1.5rem;}
+.metrics-bar{display:flex;gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.mb-item{flex:1;padding:1.25rem 1.5rem;border-right:0.5px solid var(--border);}
+.mb-item:last-child{border-right:none}
+.mb-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;margin-bottom:0.35rem;}
+.mb-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* ── CASE STUDY BODY ── */
+.cs-body{max-width:1100px;margin:0 auto;}
+.cs-section{padding:4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.cs-h2{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:1.25rem;max-width:680px;}
+.cs-p{font-size:15px;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:1.25rem;}
+.cs-p:last-child{margin-bottom:0}
+
+/* two-col layout */
+.two-col-wide{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
+
+/* pull quote */
+.pull-quote{border-left:2px solid var(--accent);padding:0.5rem 0 0.5rem 2rem;margin:2rem 0;}
+.pull-quote p{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.5;color:var(--ink);}
+
+/* stat row */
+.stat-row{display:flex;gap:3rem;flex-wrap:wrap;margin:2rem 0;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* press feature — hero card */
+.press-feature{background:var(--warm-white);border:0.5px solid var(--border);border-radius:3px;padding:2.5rem;margin:2rem 0;text-decoration:none;display:block;transition:background 0.15s;}
+.press-feature:hover{background:#edeae2}
+.press-feature-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+.press-feature-hed{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1.3;color:var(--ink);margin-bottom:0.75rem;}
+.press-feature-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:1rem;max-width:600px;}
+.press-feature-arrow{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);}
+
+/* press cards small */
+.press-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.press-card{background:var(--paper);padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.15s;}
+.press-card:hover{background:#edeae2}
+.press-card-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
+.press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
+.press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
+
+/* TL;DR */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border:0.5px solid var(--border);margin:0 4rem;}
+.cs-tldr-item{padding:1.25rem 4rem;}
+.cs-tldr-item:nth-child(2){padding-left:2rem;padding-right:2rem;border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+
+/* ── CASE NAV ── */
+.cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
+.cs-nav-link:hover{color:var(--ink)}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+.footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
+.footer-copy{font-size:12px;color:var(--light);}
+
+/* ── PER-SECTION GRID (text + section-specific rail) ── */
+.cs-section{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:3.5rem 4rem;border-bottom:0.5px solid var(--border);align-items:start;}
+.cs-section:last-of-type{border-bottom:none;}
+.cs-text{min-width:0;}
+.cs-rail{display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;align-self:start;}
+
+/* ── REEL TILES (videos and images) ── */
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:13px;height:13px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+.reel-tile.is-image .reel-play{background:rgba(255,255,255,0.85);}
+.reel-tile.is-image .reel-play svg{margin-left:0;}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe, .lb-stage img{width:100%;height:100%;display:block;border:none;object-fit:contain;background:#000;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-section{grid-template-columns:1fr;gap:1.5rem;}
+}
+@media(max-width:768px){
+  .nav{padding:1.25rem 1.5rem}
+  .nav-links{display:none;}
+  .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .cs-tldr{grid-template-columns:1fr;margin:0;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
+  .two-col-wide{grid-template-columns:1fr}
+  .metrics-bar{flex-wrap:wrap}
+  .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
+  footer{padding-left:1.5rem;padding-right:1.5rem}
+  .stat-row{gap:2rem}
+}
+</style>
+<script data-goatcounter="https://neilgolson.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="/#work" class="back-link">← All work</a>
+    <a href="/" class="logo">Neil Golson</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#built">Built</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Industry Audiences <span class="cs-eyebrow-tag">· B2B, Partnerships &amp; Advocacy · Realtor.com · Flash · Tesla/SolarCity</span></div>
+  <h1 class="cs-title">Making the professional worth more in the transaction they already own</h1>
+  <p class="cs-context">Three companies, three industries, one problem. Realtors, parking operators, and home improvement retail all sat between a platform and a customer, and all three had spent years being told technology was coming to replace them. Moving that audience takes proof that they get more valuable when you show up. This is the method, and the three times I've run it.</p>
+  <div class="metrics-bar">
+    <div class="mb-item">
+      <div class="mb-val">12,000</div>
+      <div class="mb-label">Realtors at NAR NXT</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">30 yrs</div>
+      <div class="mb-label">NAR partnership behind Realtor.com</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">800</div>
+      <div class="mb-label">Home Depot locations</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">1,500</div>
+      <div class="mb-label">Person field org</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">VP Brand &amp; Creative ·<br>Realtor.com ·<br>CMO · Flash ·<br>Field Marketing · SolarCity ·<br>2016–2026</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">B2B product architecture &amp; rebrand ·<br>RealPro Select elite tier ·<br>Demand gen creative pipeline ·<br>Trade presence at NAR NXT and IBS ·<br>National retail channel partnerships</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">Let America Build coalition ·<br>12,000-Realtor trade presence ·<br>800-store Home Depot channel ·<br>IPMI cover feature</div>
+    </div>
+  </div>
+
+  <!-- 1 · THE INSIGHT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The insight</div>
+      <h2 class="cs-h2">Every one of these audiences had already been told they were obsolete</h2>
+      <p class="cs-p">Realtors have heard since the first day of the internet that they wouldn't be needed. Parking operators heard the same thing about automation. Home improvement retail heard it about e-commerce. By the time you show up with a platform, the audience has a decade of practice reading you as the threat.</p>
+      <p class="cs-p">That's the actual starting position, and it rules out most of what B2B marketing does by default. Feature messaging lands as a replacement argument. Discounting reads as a race to commoditize them. Loyalty programs treat the relationship as a rebate.</p>
+      <p class="cs-p">What works is making the professional more valuable in the transaction they already control. Give them exposure they can't buy, credentials they can't self-issue, or a customer conversation they couldn't have started alone. Then the platform stops being the thing that displaces them and becomes the thing that funds them.</p>
+      <div class="pull-quote">
+        <p>"When realtors succeed, Realtor.com succeeds."</p>
+      </div>
+      <p class="cs-p">The three companies below are the same play run against three different industries. Real estate is a two-sided marketplace where agents are the supply. Parking was a category with no brand and no language. Energy needed a retail channel it didn't own. Same method, different terrain.</p>
+    </div>
+  </section>
+
+  <!-- 2 · REALTOR.COM — THE ARGUMENT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Realtor.com · The argument</div>
+      <h2 class="cs-h2">The consumer campaign is the B2B proof point</h2>
+      <p class="cs-p">The National Association of Realtors created Realtor.com 30 years ago to connect consumers to real estate professionals rather than route around them. That origin is the whole asset, and it's the one thing Zillow and Homes.com can't copy. The B2B film exists to put it back in front of the industry in the agents' own words, through NAR leadership and working brokers.</p>
+      <p class="cs-p">Here's the part that reframes the brand budget. Every dollar of the $50M consumer campaign buys exposure that lands on the listing agent, and agents don't pay for it out of dues dollars. The Expert Edge positioning makes the agent the expert. Reba sells the necessity of the person who knows the market.</p>
+      <p class="cs-p">So the Reba work does double duty. Aimed at consumers it drives traffic and trust. Aimed at the industry it's a retention argument for the supply side of the marketplace, which is the half of the business that decides whether there's anything to sell.</p>
+      <p class="cs-p">The advocacy work runs the same logic at the category level. Let America Build put us alongside Habitat for Humanity, ICON Homes, NAHB, Veterans United, and Zillow on housing supply. Sitting at a table with your largest competitor on a problem neither of you can solve alone is a credibility move you can't buy with media. We also co-sponsor the Good Neighbor Award, Fair Housing Champions, and the Realtor Relief Foundation, which is where the industry watches whether you mean it.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile" type="button"
+              data-type="youtube"
+              data-src="https://www.youtube.com/embed/pTYHjkuUFFU?autoplay=1&amp;rel=0"
+              data-title="Realtor.com — 30 years of the realtor partnership (B2B film)">
+        <div class="reel-thumb">
+          <img src="https://img.youtube.com/vi/pTYHjkuUFFU/maxresdefault.jpg" alt="Realtor.com B2B film — NAR leadership and brokers on the realtor partnership">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Realtor.com · B2B film</div>
+          <div class="reel-title">Thirty years of the realtor partnership</div>
+        </div>
+      </button>
+
+      <div class="press-list-label">Related</div>
+      <a class="press-link" href="/work/realtor/">
+        <div class="press-outlet">Case study</div>
+        <div class="press-hed">Rebuilding a challenger brand against a 10× outspend ↗</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 3 · REALTOR.COM — THE B2B ENGINE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Realtor.com · The B2B engine</div>
+      <h2 class="cs-h2">An industry audience needs a full go-to-market, not a trade booth</h2>
+      <p class="cs-p">The argument only converts if there's a machine behind it. I rebuilt the B2B product architecture and rebranded the portfolio so a broker could understand what they were buying and how the tiers related, which the prior naming actively worked against.</p>
+      <p class="cs-p">RealPro Select is the elite tier that came out of that work, built to compete directly with Zillow Flex for the agents who drive disproportionate volume. Around it sits ongoing product marketing and a run of B2B launches, each one needing its own positioning against a competitor with more money.</p>
+      <p class="cs-p">Underneath that, a demand gen creative pipeline: paid social, the demand gen CRM program, webinars, and the sales collateral the field actually carries into broker meetings. This is the unglamorous half, and it's the half that decides whether the brand argument reaches a decision maker or dies in a booth conversation.</p>
+      <p class="cs-p">Trade is where the industry takes your measure in person. At NAR NXT we ran a 40×80 footprint in front of 12,000 Realtors. The International Builder Show covers the other side of the supply equation, which is where the Let America Build thesis and the builder relationships meet. I also took the mainstage at the Top 100 Brokers and Top 100 Builders event on building trust and engaging consumers in today's media landscape, which is the version of this argument that gets made to the people who own the rooftops.</p>
+    </div>
+  </section>
+
+  <!-- 4 · FLASH -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Flash · Category creation</div>
+      <h2 class="cs-h2">Give an industry the language it's missing and it will carry your brand for you</h2>
+      <p class="cs-p">Parking operators ran a real business inside a category with no brand, no shared vocabulary, and buyers who thought they were making a procurement decision. Their own customers, commercial real estate owners, treated them as a line item.</p>
+      <p class="cs-p">Naming the category and building the Mobility Hub architecture gave operators a story to tell their landlords. That's the same move as agent exposure: the operator walks into a CRE conversation worth more than they were the week before, and the platform is why.</p>
+      <p class="cs-p">The trade press did the distribution. In a B2G and commercial real estate category, buyers read the trades and google vendors before every meeting, so the IPMI cover and the booth program did real work. They're how a category with no brand found out it had one.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/IPMI.Neil.Cover.png"
+              data-title="Parking &amp; Mobility · IPMI cover feature — From Tesla to Parking">
+        <div class="reel-thumb">
+          <img src="/assets/IPMI.Neil.Cover.png" alt="Parking &amp; Mobility magazine cover featuring Neil Golson">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Parking &amp; Mobility · IPMI</div>
+          <div class="reel-title">Cover feature</div>
+        </div>
+      </button>
+
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/FlashParking.TradeShow.jpeg"
+              data-title="Flash — IPMI trade floor presence">
+        <div class="reel-thumb">
+          <img src="/assets/FlashParking.TradeShow.jpeg" alt="FlashParking trade show floor presence at IPMI">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">IPMI · Trade floor</div>
+          <div class="reel-title">Meeting operators where they buy</div>
+        </div>
+      </button>
+
+      <div class="press-list-label">Related</div>
+      <a class="press-link" href="/work/flash/">
+        <div class="press-outlet">Case study</div>
+        <div class="press-hed">Category creation from zero to a $1B+ valuation ↗</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 5 · TESLA / SOLARCITY -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Tesla · SolarCity · Winning a channel</div>
+      <h2 class="cs-h2">The partner's floor associate is the audience</h2>
+      <p class="cs-p">SolarCity needed homeowners at the moment they were already thinking about energy, and it didn't own a store. Home Depot did, 800 of them, and the person who decided whether solar came up was an associate in the plumbing or lumber aisle.</p>
+      <p class="cs-p">So the channel strategy pointed at that associate. Branded endcaps in lumber and garden, a trained energy specialist in each location, and a 1,500-person field org built to support them. I'd managed a Home Depot store earlier in my career, which is why the program got designed around how the floor actually works instead of how a partnership deck imagines it.</p>
+      <p class="cs-p">The result of getting the channel right shows up in the numbers on that case study: national residential solar share moved from 26% to 37%, and install volume tripled.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button"
+              data-type="image"
+              data-src="/assets/HomeDepot.TeslaEndcap.jpeg"
+              data-title="SolarCity — branded endcap inside Home Depot"><div class="reel-thumb">
+          <img src="/assets/HomeDepot.TeslaEndcap.jpeg" alt="SolarCity branded endcap inside a Home Depot store">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Home Depot · Retail channel</div>
+          <div class="reel-title">800-store endcap program</div>
+        </div>
+      </button>
+
+      <div class="press-list-label">Related</div>
+      <a class="press-link" href="/work/tesla/">
+        <div class="press-outlet">Case study</div>
+        <div class="press-hed">Building Tesla's first retail experience ↗</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 6 · WHAT GENERALIZES -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">What generalizes</div>
+      <h2 class="cs-h2">The method, in the order it has to happen</h2>
+      <p class="cs-p"><strong>Find what the professional can't buy for themselves.</strong> Exposure, category language, a credential, a customer at the right moment. That's the only currency that outruns a discount, because a competitor can always pay more than you.</p>
+      <p class="cs-p"><strong>Point the consumer brand at them.</strong> The most persuasive B2B asset is usually the consumer work, because it's proof you can generate demand they'd otherwise buy themselves. Brand spend reads as a cost center until the supply side sees it as their lead flow.</p>
+      <p class="cs-p"><strong>Build the tiering before the loyalty program.</strong> Professionals sort themselves by volume and ambition. RealPro Select works because it's a status ladder with economics attached, which beats a rebate.</p>
+      <p class="cs-p"><strong>Show up where they take your measure.</strong> Trade floors, mainstages, and the trade press are where an industry decides if you're serious. A 40×80 booth in front of 12,000 Realtors is a credibility instrument.</p>
+      <p class="cs-p"><strong>Get caught doing something that doesn't pay you.</strong> Coalitions and advocacy, Let America Build, the Relief Foundation, Fair Housing. An industry can tell the difference between a sponsorship and a stake.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-val">3</span>
+          <span class="stat-label">Industries run through this method</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">2-sided</span>
+          <span class="stat-label">Marketplace supply-side ownership</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">10 yrs</span>
+          <span class="stat-label">2016–2026</span>
+        </div>
+      </div>
+      <p class="cs-p">The version of this that transfers cleanest is the marketplace one. When your supply is a fragmented, commoditized, price-pressured professional audience, the growth constraint usually sits on the supply side: whether the best operators want to be on your platform. That's a brand problem before it's an incentives problem.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="cs-nav">
+  <a href="/work/realtor/" class="cs-nav-link">← Realtor.com</a>
+  <a href="/work/flash/" class="cs-nav-link">Flash →</a>
+</div>
+<footer>
+  <span class="footer-name">Neil Golson</span>
+  <span class="footer-copy">© 2026 · neilgolson.com</span>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else if(type === 'image'){
+      media = document.createElement('img');
+      media.src = src;
+      media.alt = title || '';
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe,img');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe,img');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  if(p.get('from') === 'may26atl'){
+    var bl = document.querySelector('.back-link');
+    if(bl){ bl.href = '/may26atl/'; bl.textContent = '← Back'; }
+  }
+})();
+</script>
+
+</body>
+</html>
