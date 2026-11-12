@@ -181,6 +181,8 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .cs-feature{max-width:1100px;margin:0 auto;padding:2.5rem 4rem 0;}
 .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.75rem;}
 .photo-grid .cs-photo img{aspect-ratio:3/4;object-fit:cover;}
+.photo-grid .span-2{grid-column:span 2;}
+.photo-grid .span-2 .cs-photo img{aspect-ratio:3/2;}
 @media(max-width:768px){
   .cs-feature{padding:2rem 1.5rem 0;}
   .photo-grid{grid-template-columns:1fr 1fr;}
@@ -307,12 +309,14 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     <div class="cs-text">
       <div class="cs-section-label">Painting the town</div>
       <h2 class="cs-h2">From baggage claim to the main stage, one line</h2>
-      <p class="cs-p">Attendees met the campaign before they met the convention. "Be the expert who stands out" ran on the screens at baggage claim, on a wallscape and billboards around the convention center, on banners along the walkways, and on the shuttle buses and escalators in between.</p>
+      <p class="cs-p">Attendees met the campaign before they met the convention. In the airport concourse, the consumer work was already running: "Going places? Let a local agent get you home." At baggage claim the line switched to the agent: "Be the expert who stands out" ran on the screens there, on a wallscape and billboards around the convention center, on banners along the walkways, and on the shuttle buses and escalators in between.</p>
       <p class="cs-p">The Wall Street Journal's NAR NXT edition carried a Realtor.com cover wrap, with a commemorative poster inside. By the time an agent badged in, they'd already passed Reba on the way, and every time she was talking about them.</p>
       <div class="photo-grid">
-        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-airport.jpg" data-title="NAR NXT 2026, baggage claim screens at the New Orleans airport"><img src="/assets/web/nar-nxt-airport.jpg" alt="Be the expert who stands out screens at New Orleans airport baggage claim" loading="lazy"></button>
-        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-billboard.jpg" data-title="NAR NXT 2026, Reba billboard over the convention district"><img src="/assets/web/nar-nxt-billboard.jpg" alt="Reba McEntire Realtor.com billboard over a New Orleans parking garage" loading="lazy"></button>
-        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-skybridge.jpg" data-title="NAR NXT 2026, walkway banner outside the convention center"><img src="/assets/web/nar-nxt-skybridge.jpg" alt="Reba McEntire Realtor.com banner hanging over a convention center walkway" loading="lazy"></button>
+        <figure class="span-2" style="margin:0;"><button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-bus.jpg" data-title="NAR NXT 2026, shuttle bus wrap"><img src="/assets/web/nar-nxt-bus.jpg" alt="Shuttle bus wrapped with Reba McEntire and Be the expert who stands out, come see us at booth 700" loading="lazy"></button><div class="cs-photo-cap">Shuttle bus wrap · Booth #700</div></figure>
+        <figure class="" style="margin:0;"><button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-billboard.jpg" data-title="NAR NXT 2026, wallscape on the Hilton garage by the convention center"><img src="/assets/web/nar-nxt-billboard.jpg" alt="Be the expert who stands out wallscape with Reba McEntire on the Hilton garage" loading="lazy"></button><div class="cs-photo-cap">Wallscape on the Hilton garage</div></figure>
+        <figure class="" style="margin:0;"><button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-airport-concourse.jpg" data-title="NAR NXT 2026, Reba in the airport concourse"><img src="/assets/web/nar-nxt-airport-concourse.jpg" alt="Realtor.com digital screen in the New Orleans airport concourse: Going places? Let a local agent get you home." loading="lazy"></button><div class="cs-photo-cap">Airport concourse · Consumer campaign</div></figure>
+        <figure class="" style="margin:0;"><button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-airport.jpg" data-title="NAR NXT 2026, baggage claim screens at the New Orleans airport"><img src="/assets/web/nar-nxt-airport.jpg" alt="Be the expert who stands out screens at New Orleans airport baggage claim" loading="lazy"></button><div class="cs-photo-cap">Baggage claim · Agent campaign</div></figure>
+        <figure class="" style="margin:0;"><button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-skybridge.jpg" data-title="NAR NXT 2026, walkway banner outside the convention center"><img src="/assets/web/nar-nxt-skybridge.jpg" alt="Reba McEntire Realtor.com banner hanging over a convention center walkway" loading="lazy"></button><div class="cs-photo-cap">Convention center walkway</div></figure>
       </div>
     </div>
   </section>
@@ -368,6 +372,18 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </div>
     </div>
     <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/web/nar-nxt-team.jpg"
+              data-title="NAR NXT 2026, the Realtor.com team with Reba">
+        <div class="reel-thumb">
+          <img src="/assets/web/nar-nxt-team.jpg" alt="Reba McEntire with five members of the Realtor.com team in front of the NAR NXT backdrop" style="object-position:center 20%;">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">NAR NXT · The team</div>
+          <div class="reel-title">The Realtor.com team with Reba</div>
+        </div>
+      </button>
       <div class="press-list-label">Related</div>
       <a class="press-link" href="/work/realtor/">
         <div class="press-outlet">Case study</div>
