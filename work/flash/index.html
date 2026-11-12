@@ -157,6 +157,12 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   footer{padding-left:1.5rem;padding-right:1.5rem}
   .stat-row{gap:2rem}
 }
+
+/* ── FULL-WIDTH TEXT: match the stats and summary boxes ── */
+.cs-section:not(:has(.cs-rail)){grid-template-columns:1fr;}
+.cs-text .cs-p,.cs-text .cs-h2{max-width:none;}
+.cs-hero .cs-context{max-width:none;}
+.cs-hero .cs-title{max-width:920px;}
 </style>
 <script data-goatcounter="https://neilgolson.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>

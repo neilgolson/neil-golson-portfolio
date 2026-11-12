@@ -158,6 +158,12 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .reel-tile.is-image .reel-play{background:rgba(255,255,255,0.85);}
 .reel-tile.is-image .reel-play svg{margin-left:0;}
 .reel-thumb.is-tall{aspect-ratio:4/5;}
+.spread-tile{margin-top:2rem;}
+.cs-section:not(:has(.cs-rail)){grid-template-columns:1fr;}
+.cs-text .cs-p,.cs-text .cs-h2{max-width:none;}
+.cs-hero .cs-context{max-width:none;}
+.cs-hero .cs-title{max-width:920px;}
+.reel-thumb.is-spread{aspect-ratio:2400/2316;width:calc(100% - 1rem);}
 .reel-thumb.is-tall img{object-position:top;}
 .lb-stage.is-tall{aspect-ratio:auto;height:88vh;max-width:none;width:auto;}
 .lb-stage.is-tall img{width:auto;height:88vh;}
@@ -251,34 +257,20 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       <h2 class="cs-h2">Brands that compete every other day of the year, on one letter</h2>
       <p class="cs-p">We launched with 15 brands and wrapped with 17. Realtor.com and Zillow signed the same CEO letter in the Wall Street Journal, as "colleagues and competitors." So did NAR, NAHB, Habitat for Humanity, ICON, eXp, HomeServices of America, Veterans United, NextHome, T3 Sixty, RISMedia, Inman, AREAA, NAHREP, the LGBTQ+ Real Estate Alliance and Land Use Labs.</p>
       <p class="cs-p">That list is the strategy. A housing message from one portal is advertising. The same message signed by its competitors, its builders and its trade press reads as an industry position, and editors treat it like news.</p>
-      <p class="cs-p">Every partner got a co-brandable toolkit so the campaign ran through their channels as well as ours. The two brands that joined mid-flight are the number I watch most: partners signing on after launch means the work was worth attaching your name to.</p>
+      <p class="cs-p">Every partner got a co-brandable toolkit so the campaign ran through their channels as well as ours. Local associations picked it up too: Silver City REALTORS posted the coalition message to its own followers in October. The two brands that joined mid-flight are the number I watch most: partners signing on after launch means the work was worth attaching your name to.</p>
+      <button class="reel-tile is-image spread-tile" type="button" data-type="image" data-tall="1"
+              data-src="/assets/web/lab-wsj-spread.jpg"
+              data-title="Let America Build, two-page spread in the Wall Street Journal">
+        <div class="reel-thumb is-spread">
+          <img src="/assets/web/lab-wsj-spread.jpg" alt="Two-page Wall Street Journal spread: the An Industry United CEO letter facing The Race to Let America Build">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Wall Street Journal · Two-page spread</div>
+          <div class="reel-title">An Industry United, facing The Race to Let America Build</div>
+        </div>
+      </button>
     </div>
-    <aside class="cs-rail">
-      <button class="reel-tile is-image" type="button" data-type="image" data-tall="1"
-              data-src="/assets/web/lab-wsj-industry-united.jpg"
-              data-title="Let America Build — An Industry United, CEO letter in the Wall Street Journal">
-        <div class="reel-thumb is-tall">
-          <img src="/assets/web/lab-wsj-industry-united.jpg" alt="An Industry United: a CEO letter ad co-signed by the coalition's leaders">
-          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        </div>
-        <div class="reel-meta">
-          <div class="reel-co">Wall Street Journal · CEO letter</div>
-          <div class="reel-title">An Industry United</div>
-        </div>
-      </button>
-      <button class="reel-tile is-image" type="button" data-type="image" data-tall="1"
-              data-src="/assets/web/lab-wsj-race.jpg"
-              data-title="Let America Build — The Race, Wall Street Journal">
-        <div class="reel-thumb is-tall">
-          <img src="/assets/web/lab-wsj-race.jpg" alt="The Race to Let America Build print ad listing five planks for candidates">
-          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        </div>
-        <div class="reel-meta">
-          <div class="reel-co">Wall Street Journal · Print</div>
-          <div class="reel-title">The Race to Let America Build</div>
-        </div>
-      </button>
-    </aside>
   </section>
 
   <!-- 3 · THE CREATIVE -->
@@ -335,6 +327,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
     <aside class="cs-rail">
       <div class="press-list-label">Press</div>
+      <a class="press-link" href="https://www.yahoo.com/news/us/articles/realtor-com-assembles-star-crew-130053770.html" target="_blank">
+        <div class="press-outlet">Yahoo News · Sept 2026</div>
+        <div class="press-hed">'Let America Build': Realtor.com assembles all-star crew to fix US housing crisis</div>
+      </a>
+      <a class="press-link" href="https://nowbam.com/real-estate-giants-unite-behind-one-campaign-to-build-more-homes/" target="_blank">
+        <div class="press-outlet">BAM · Sept 2026</div>
+        <div class="press-hed">Real Estate Competitors Unite Behind One Campaign to Build More Homes</div>
+      </a>
+      <a class="press-link" href="https://www.zillow.com/news/a-new-coalition-is-organizing-to-promote-housing-supply-solutions/" target="_blank">
+        <div class="press-outlet">Zillow Front Porch · Sept 2026</div>
+        <div class="press-hed">A new coalition is organizing to promote housing supply solutions</div>
+      </a>
+      <a class="press-link" href="https://www.instagram.com/p/DewuEvpmaV_/" target="_blank">
+        <div class="press-outlet">Silver City REALTORS · Instagram · Oct 2026</div>
+        <div class="press-hed">A local association runs the coalition toolkit</div>
+      </a>
       <a class="press-link" href="https://www.realtor.com/homemade/realtor-com-posts-eighth-straight-quarter-of-growth/" target="_blank">
         <div class="press-outlet">Realtor.com Home Made · Nov 2026</div>
         <div class="press-hed">Realtor.com posts eighth straight quarter of growth</div>
@@ -356,7 +364,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- CASE STUDY NAV -->
 <div class="cs-nav">
   <a href="/work/mission-zero/" class="cs-nav-link">← Mission Zero</a>
-  <a href="/work/tesla/" class="cs-nav-link">Tesla · SolarCity →</a>
+  <a href="/work/nar-nxt/" class="cs-nav-link">NAR NXT 2026 →</a>
 </div>
 
 <footer>

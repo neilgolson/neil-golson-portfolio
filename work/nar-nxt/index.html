@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAR NXT 2026 — Neil Golson</title>
+<meta name="description" content="Realtor.com at NAR NXT 2026 in New Orleans: 10,000 real estate professionals, Reba McEntire in front of a maxed-out room of 4,000, and a city painted in one line.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1a1814;
+  --paper:#f5f2ec;
+  --warm-white:#faf8f4;
+  --mid:#6b6560;
+  --light:#9b9590;
+  --accent:#c2410c;
+  --border:rgba(26,24,20,0.12);
+  --border-strong:rgba(26,24,20,0.25);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--paper);z-index:100;}
+.nav-left{display:flex;align-items:center;gap:2rem;}
+.back-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.15s;}
+.back-link:hover{color:var(--ink)}
+.logo{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.15s;}
+.nav-links a:hover{color:var(--ink)}
+
+/* ── CASE STUDY HERO ── */
+.cs-hero{max-width:1100px;margin:0 auto;padding:1.5rem 4rem 2rem;border-bottom:0.5px solid var(--border);}
+.cs-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;}
+.cs-eyebrow-tag{color:var(--light);font-weight:400;}
+.cs-title{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-0.025em;max-width:760px;margin-bottom:1.75rem;}
+.cs-context{font-size:17px;line-height:1.85;color:var(--mid);max-width:760px;margin-bottom:1.5rem;}
+.metrics-bar{display:flex;gap:0;border:0.5px solid var(--border);border-radius:3px;overflow:hidden;}
+.mb-item{flex:1;padding:1.25rem 1.5rem;border-right:0.5px solid var(--border);}
+.mb-item:last-child{border-right:none}
+.mb-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;margin-bottom:0.35rem;}
+.mb-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+
+/* ── CASE STUDY BODY ── */
+.cs-body{max-width:1100px;margin:0 auto;}
+.cs-section{padding:4rem 4rem;border-bottom:0.5px solid var(--border);}
+.cs-section-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.cs-h2{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:-0.015em;line-height:1.2;margin-bottom:1.25rem;max-width:680px;}
+.cs-p{font-size:15px;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:1.25rem;}
+.cs-p:last-child{margin-bottom:0}
+
+/* two-col layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.two-col-wide{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
+
+/* video embed */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:3px;background:#1a1814;margin:2rem 0;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);margin-top:-1rem;margin-bottom:2rem;}
+
+/* kpi panel */
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin:2rem 0;}
+.kpi-item{background:var(--warm-white);padding:2rem;}
+.kpi-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+.kpi-title{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.3;margin-bottom:0.75rem;}
+.kpi-desc{font-size:13px;color:var(--mid);line-height:1.8;}
+
+/* pull quote */
+.pull-quote{border-left:2px solid var(--accent);padding:0.5rem 0 0.5rem 2rem;margin:2rem 0;}
+.pull-quote p{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.5;color:var(--ink);}
+
+/* press cards */
+.press-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin-top:2rem;}
+.press-card{background:var(--paper);padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;transition:background 0.15s;}
+.press-card:hover{background:#edeae2}
+.press-card-outlet{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);}
+.press-card-hed{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.45;color:var(--ink);flex:1;}
+.press-card-arrow{font-size:16px;color:var(--accent);margin-top:0.5rem;}
+
+/* ── CASE NAV ── */
+.cs-nav{max-width:1100px;margin:0 auto;padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.cs-nav-link{font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.15s;}
+.cs-nav-link:hover{color:var(--ink)}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}
+.footer-name{font-family:var(--serif);font-size:14px;font-weight:500;}
+.footer-copy{font-size:12px;color:var(--light);}
+
+/* ── PER-SECTION GRID (text + section-specific rail) ── */
+.cs-section{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;padding:3.5rem 4rem;border-bottom:0.5px solid var(--border);align-items:start;}
+.cs-section:last-of-type{border-bottom:none;}
+.cs-text{min-width:0;}
+.cs-rail{display:flex;flex-direction:column;gap:0.55rem;background:var(--warm-white);padding:1rem 1.1rem 1rem 1.6rem;border:0.5px solid var(--border);border-radius:3px;align-self:start;}
+
+/* ── REEL TILES (videos and images) ── */
+.reel-tile{position:relative;display:block;width:100%;background:var(--paper);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;cursor:pointer;transition:transform 0.18s, border-color 0.18s, box-shadow 0.18s;text-align:left;padding:0;font:inherit;color:inherit;}
+.reel-tile:hover{transform:translateY(-1px);border-color:var(--border-strong);box-shadow:0 4px 14px rgba(26,24,20,0.08);}
+.reel-tile:hover .reel-thumb img{filter:brightness(1.05);}
+.reel-tile:hover .reel-play{transform:translate(-50%,-50%) scale(1.08);}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#0a0908;overflow:hidden;width:90%;margin:0.4rem auto 0;border-radius:2px;}
+.reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.2s;}
+.reel-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.45) 100%);pointer-events:none;}
+.reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.18s;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.reel-play svg{width:13px;height:13px;fill:var(--ink);margin-left:2px;}
+.reel-meta{padding:0.4rem 0.7rem 0.55rem;}
+.reel-co{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.reel-title{font-family:var(--serif);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;line-height:1.3;color:var(--ink);}
+
+/* ── PRESS LIST (denser than press-cards) ── */
+.press-list-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);margin-top:1.1rem;padding-bottom:0.55rem;border-bottom:0.5px solid var(--border);}
+.press-link{display:block;padding:0.65rem 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;transition:opacity 0.15s;}
+.press-link:last-child{border-bottom:none;}
+.press-link:hover{opacity:0.7;}
+.press-outlet{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.press-hed{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--ink);font-weight:500;}
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(8,7,6,0.94);z-index:1000;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.2s;}
+.lb-overlay.active{display:flex;opacity:1;}
+.lb-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;background:#000;}
+.lb-stage video, .lb-stage iframe, .lb-stage img{width:100%;height:100%;display:block;border:none;object-fit:contain;background:#000;}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:transparent;border:none;color:var(--warm-white);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;padding:0.4rem 0.6rem;font-weight:500;}
+.lb-close:hover{color:#f0a878;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .cs-section{grid-template-columns:1fr;gap:1.5rem;}
+}
+@media(max-width:768px){
+  .nav{padding:1.25rem 1.5rem}
+  .nav-links{display:none;}
+  .cs-hero,.cs-section,.cs-nav{padding-left:1.5rem;padding-right:1.5rem}
+  .two-col,.two-col-wide,.kpi-grid{grid-template-columns:1fr}
+  .metrics-bar{flex-wrap:wrap}
+  .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
+  footer{padding-left:1.5rem;padding-right:1.5rem}
+}
+
+/* ── TL;DR + STAT ROW + IMAGE TILES ── */
+.cs-tldr{display:grid;grid-template-columns:1fr 1fr 1fr;border:0.5px solid var(--border);margin:0 4rem;}
+.cs-tldr-item{padding:1.25rem 2rem;}
+.cs-tldr-item:nth-child(2){border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);}
+.cs-tldr-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.35rem;}
+.cs-tldr-val{font-size:13px;line-height:1.7;color:var(--ink);font-weight:500;}
+.stat-row{display:flex;gap:3rem;flex-wrap:wrap;margin:2rem 0;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
+.reel-tile.is-image .reel-play{background:rgba(255,255,255,0.85);}
+.reel-tile.is-image .reel-play svg{margin-left:0;}
+.reel-thumb.is-tall{aspect-ratio:4/5;}
+.spread-tile{margin-top:2rem;}
+.cs-section:not(:has(.cs-rail)){grid-template-columns:1fr;}
+.cs-text .cs-p,.cs-text .cs-h2{max-width:none;}
+.cs-hero .cs-context{max-width:none;}
+.cs-hero .cs-title{max-width:920px;}
+.reel-thumb.is-spread{aspect-ratio:2400/2316;width:calc(100% - 1rem);}
+.reel-thumb.is-tall img{object-position:top;}
+.lb-stage.is-tall{aspect-ratio:auto;height:88vh;max-width:none;width:auto;}
+.lb-stage.is-tall img{width:auto;height:88vh;}
+@media(max-width:768px){
+  .cs-tldr{grid-template-columns:1fr;margin:0;}
+  .cs-tldr-item,.cs-tldr-item:nth-child(2){padding:1rem 1.5rem;border-left:none;border-right:none;border-top:0.5px solid var(--border);}
+  .cs-tldr-item:first-child{border-top:none;}
+  .stat-row{gap:2rem}
+}
+
+/* ── EVENT PHOTOS ── */
+.cs-photo{display:block;width:100%;padding:0;border:none;background:none;cursor:zoom-in;margin:0;}
+.cs-photo img{width:100%;display:block;border-radius:3px;}
+.cs-photo-cap{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);margin-top:0.6rem;text-align:left;}
+.cs-feature{max-width:1100px;margin:0 auto;padding:2.5rem 4rem 0;}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.75rem;}
+.photo-grid .cs-photo img{aspect-ratio:3/4;object-fit:cover;}
+@media(max-width:768px){
+  .cs-feature{padding:2rem 1.5rem 0;}
+  .photo-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+<script data-goatcounter="https://neilgolson.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="/#work" class="back-link">← All work</a>
+    <a href="/" class="logo">Neil Golson</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#built">Built</a></li>
+    <li><a href="/#speaking">Speaking</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-eyebrow">Realtor.com <span class="cs-eyebrow-tag">· NAR NXT 2026 · New Orleans · Nov 6–8</span></div>
+  <h1 class="cs-title">Ten thousand Realtors, one city, and Reba on the main stage</h1>
+  <p class="cs-context">NAR NXT is the one week a year the whole real estate industry is in the same building. Agents are the supply side of our marketplace, and the consumer campaign only pays off if they believe in it. So we took the campaign to them: Reba in front of a maxed-out General Session, a 50×80 booth on the floor, and New Orleans painted in one line from the airport to the convention center.</p>
+  <div class="metrics-bar">
+    <div class="mb-item">
+      <div class="mb-val">10,000</div>
+      <div class="mb-label">Real estate professionals at NAR NXT</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">4,000</div>
+      <div class="mb-label">Seats, maxed out, for Reba's General Session</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">50×80</div>
+      <div class="mb-label">Booth on the expo floor</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">1 line</div>
+      <div class="mb-label">Airport to stage: Be the expert who stands out</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- TL;DR -->
+  <div class="cs-tldr">
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Role</div>
+      <div class="cs-tldr-val">VP Brand &amp; Creative ·<br>Realtor.com ·<br>NAR NXT, New Orleans ·<br>Nov 6–8, 2026</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Built</div>
+      <div class="cs-tldr-val">Reba's General Session moment ·<br>"Be the expert who stands out" platform ·<br>50×80 booth ·<br>City-wide out of home ·<br>WSJ NAR NXT cover wrap</div>
+    </div>
+    <div class="cs-tldr-item">
+      <div class="cs-tldr-label">Produced</div>
+      <div class="cs-tldr-val">10,000 professionals reached ·<br>A maxed-out room of 4,000 ·<br>A hall full of white hats under a Realtor.com logo</div>
+    </div>
+  </div>
+
+  <!-- FEATURE PHOTO -->
+  <div class="cs-feature">
+    <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-hats.jpg" data-title="NAR NXT 2026, Reba and a maxed-out General Session in white hats"><img src="/assets/web/nar-nxt-hats.jpg" alt="Reba McEntire on stage holding a white hat as a packed hall of 4,000 waves white hats behind her"></button>
+    <div class="cs-photo-cap">General Session, Nov 7 · 4,000 seats, every one taken</div>
+  </div>
+
+  <!-- 1 · THE ROOM -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The room</div>
+      <h2 class="cs-h2">The consumer campaign has to win the agents too</h2>
+      <p class="cs-p">Reba sells consumers on the person who knows the market. That only works if the agents she's selling believe Realtor.com is on their side, and they've spent 30 years hearing that portals want to replace them.</p>
+      <p class="cs-p">NAR NXT is where that belief gets tested in person. Brokers, team leads and the agents who drive most of the volume all walk the same floor in the same three days, and they decide which platforms are serious by who shows up and how.</p>
+      <p class="cs-p">So the goal was simple to say and expensive to fake: make the industry's biggest week feel like it ran on our campaign.</p>
+    </div>
+  </section>
+
+  <!-- 2 · THE GENERAL SESSION -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The General Session</div>
+      <h2 class="cs-h2">Four thousand Realtors in white hats</h2>
+      <p class="cs-p">Reba took the General Session stage on Saturday morning for a fireside chat with Justin McIntosh. The room maxed out at 4,000.</p>
+      <p class="cs-p">We put white hats in the seats. When she raised hers, the whole hall did the same, under a Realtor.com logo. That's the photo at the top of this page.</p>
+      <p class="cs-p">The session was built around strategy and storytelling for agents. Our spokesperson, on their stage, talking about their job.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile" type="button" data-type="mp4"
+              data-src="/assets/web/nar-nxt-reba-general-session.mp4"
+              data-title="NAR NXT 2026, Reba General Session">
+        <div class="reel-thumb">
+          <img src="/assets/web/poster-nar-nxt-reba-general-session.jpg" alt="Reba McEntire fireside chat at the NAR NXT General Session">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">NAR NXT · General Session</div>
+          <div class="reel-title">Reba's fireside chat 2:56</div>
+        </div>
+      </button>
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/web/nar-nxt-fireside-wide.jpg"
+              data-title="NAR NXT 2026, Reba and Justin McIntosh on the General Session stage">
+        <div class="reel-thumb">
+          <img src="/assets/web/nar-nxt-fireside-wide.jpg" alt="Reba McEntire and Justin McIntosh seated on the NAR NXT 2026 main stage">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">NAR NXT · Main stage</div>
+          <div class="reel-title">Reba with Justin McIntosh</div>
+        </div>
+      </button>
+    </aside>
+  </section>
+
+  <!-- 3 · THE CITY -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Painting the town</div>
+      <h2 class="cs-h2">From baggage claim to the main stage, one line</h2>
+      <p class="cs-p">Attendees met the campaign before they met the convention. "Be the expert who stands out" ran on the screens at baggage claim, on a wallscape and billboards around the convention center, on banners along the walkways, and on the shuttle buses and escalators in between.</p>
+      <p class="cs-p">The Wall Street Journal's NAR NXT edition carried a Realtor.com cover wrap, with a commemorative poster inside. By the time an agent badged in, they'd already passed Reba on the way, and every time she was talking about them.</p>
+      <div class="photo-grid">
+        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-airport.jpg" data-title="NAR NXT 2026, baggage claim screens at the New Orleans airport"><img src="/assets/web/nar-nxt-airport.jpg" alt="Be the expert who stands out screens at New Orleans airport baggage claim" loading="lazy"></button>
+        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-billboard.jpg" data-title="NAR NXT 2026, Reba billboard over the convention district"><img src="/assets/web/nar-nxt-billboard.jpg" alt="Reba McEntire Realtor.com billboard over a New Orleans parking garage" loading="lazy"></button>
+        <button class="cs-photo" type="button" data-type="image" data-src="/assets/web/nar-nxt-skybridge.jpg" data-title="NAR NXT 2026, walkway banner outside the convention center"><img src="/assets/web/nar-nxt-skybridge.jpg" alt="Reba McEntire Realtor.com banner hanging over a convention center walkway" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · THE BOOTH -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">The booth</div>
+      <h2 class="cs-h2">A 50×80 booth that pointed at the agent's own business</h2>
+      <p class="cs-p">The booth carried the same line and turned it into product. Agent profiles with RealReels, Spotlight Listings with iGUIDE and Realtor.com+ were on the wall, each one framed as a way for an agent to stand out to the consumers Reba was sending.</p>
+      <p class="cs-p">Completing your agent profile was the entry to the sweepstakes, so the giveaway did product work: meet-and-greets with Reba, merch drawings through the weekend, and an iGUIDE camera. Reba walked the floor and spent time at the booth.</p>
+      <p class="cs-p">We also honored the Realtors Relief Foundation's 25th anniversary at NXT Fest with a $100,000 check. An industry notices which brands show up for it when there's nothing to sell.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/web/nar-nxt-booth-wall.jpg"
+              data-title="NAR NXT 2026, Reba at the Realtor.com booth">
+        <div class="reel-thumb">
+          <img src="/assets/web/nar-nxt-booth-wall.jpg" alt="Reba McEntire in front of the Realtor.com booth wall with RealReels and Spotlight Listings banners">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Expo floor · Booth #700</div>
+          <div class="reel-title">Be the expert who stands out</div>
+        </div>
+      </button>
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/web/nar-nxt-reba-booth.jpg"
+              data-title="NAR NXT 2026, Reba on the floor at the Realtor.com booth">
+        <div class="reel-thumb">
+          <img src="/assets/web/nar-nxt-reba-booth.jpg" alt="Reba McEntire standing on the red carpet at the Realtor.com booth">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Expo floor · Reba</div>
+          <div class="reel-title">Walking the floor</div>
+        </div>
+      </button>
+    </aside>
+  </section>
+
+  <!-- 5 · WHAT GENERALIZES -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">What generalizes</div>
+      <h2 class="cs-h2">An event is where the brand argument gets made in person</h2>
+      <p class="cs-p">The biggest opportunity at a trade show is to make the whole week an extension of the brand your customers' customers already know.</p>
+      <p class="cs-p">For a marketplace, that means pointing the consumer campaign at the supply side. Agents saw the spokesperson their clients watch on TV, on their stage, in their city and in our booth, pointing at the tools that put them in front of those clients. That's the B2B case for brand spend, made without a single slide.</p>
+      <div class="stat-row">
+        <div class="stat-item"><span class="stat-val">10,000</span><span class="stat-label">Professionals at NAR NXT</span></div>
+        <div class="stat-item"><span class="stat-val">4,000</span><span class="stat-label">Maxed-out General Session</span></div>
+        <div class="stat-item"><span class="stat-val">$100K</span><span class="stat-label">Realtors Relief Foundation, 25th anniversary</span></div>
+      </div>
+    </div>
+    <aside class="cs-rail">
+      <div class="press-list-label">Related</div>
+      <a class="press-link" href="/work/realtor/">
+        <div class="press-outlet">Case study</div>
+        <div class="press-hed">Rebuilding a challenger brand against a 10× outspend ↗</div>
+      </a>
+      <a class="press-link" href="/work/industry/">
+        <div class="press-outlet">Case study</div>
+        <div class="press-hed">The revenue that only arrives through somebody else ↗</div>
+      </a>
+    </aside>
+  </section>
+
+</div>
+
+<!-- CASE STUDY NAV -->
+<div class="cs-nav">
+  <a href="/work/let-america-build/" class="cs-nav-link">← Let America Build</a>
+  <a href="/work/tesla/" class="cs-nav-link">Tesla · SolarCity →</a>
+</div>
+
+<footer>
+  <span class="footer-name">Neil Golson</span>
+  <span class="footer-copy">© 2026 · neilgolson.com</span>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lb-stage" id="lb-stage">
+    <button class="lb-close" id="lb-close" type="button" aria-label="Close">Close ✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay = document.getElementById('lb');
+  var stage = document.getElementById('lb-stage');
+  var closeBtn = document.getElementById('lb-close');
+
+  function open(type, src, title){
+    var media;
+    if(type === 'youtube'){
+      media = document.createElement('iframe');
+      media.src = src;
+      media.title = title || '';
+      media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      media.setAttribute('allowfullscreen','');
+    } else if(type === 'image'){
+      media = document.createElement('img');
+      media.src = src;
+      media.alt = title || '';
+    } else {
+      media = document.createElement('video');
+      media.src = src;
+      media.controls = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+    }
+    var prior = stage.querySelector('video,iframe,img');
+    if(prior) stage.removeChild(prior);
+    stage.appendChild(media);
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close(){
+    var media = stage.querySelector('video,iframe,img');
+    if(media) stage.removeChild(media);
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.reel-tile, .cs-photo').forEach(function(tile){
+    tile.addEventListener('click', function(){
+      stage.classList.toggle('is-tall', !!tile.dataset.tall);
+      open(tile.dataset.type, tile.dataset.src, tile.dataset.title);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('active')) close();
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -234,6 +234,12 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .mz-sub{font-size:16px;line-height:1.75;color:rgba(250,248,244,0.78);max-width:680px;margin-bottom:2.5rem;}
 .mz-video{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:3px;overflow:hidden;background:#000;}
 .mz-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.mz-video video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;background:#000;}
+.mz-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.mz-col{display:flex;flex-direction:column;min-width:0;}
+.mz-grid .mz-title{font-size:clamp(24px,2.4vw,30px);min-height:2.3em;}
+.mz-grid .mz-sub{font-size:15px;margin-bottom:1.75rem;}
+.mz-col .mz-link{align-self:flex-start;}
 .mz-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#f0a878;text-decoration:none;border-bottom:0.5px solid #f0a878;padding-bottom:1px;margin-top:1.75rem;transition:opacity 0.15s;}
 .mz-link:hover{opacity:0.7}
 
@@ -274,6 +280,8 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   .hero-bio .bio-name-line{font-size:14px;}
   .hero-bio .bio-title-line{font-size:13px;}
   .mz-section{padding:3.5rem 1.5rem;}
+  .mz-grid{grid-template-columns:1fr;gap:3rem;}
+  .mz-grid .mz-title{min-height:0;}
   .lb-overlay{padding:3rem 1rem 1rem;}
   .lb-close{top:-2rem;font-size:10px;}
 }
@@ -399,7 +407,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     <span class="section-num">02</span>
     <h2 class="section-title">Selected work</h2>
   </div>
-  <p class="section-intro">Four case studies across consumer goods, retail, mobility, and real estate — each a different version of the same problem: how do you get someone to trust you enough to act? Coca-Cola to Realtor.com, $0.99 to $100K+ to a billion-dollar valuation.</p>
+  <p class="section-intro">Five case studies across consumer goods, retail, mobility, and real estate — each a different version of the same problem: how do you get someone to trust you enough to act? Coca-Cola to Realtor.com, $0.99 to $100K+ to a billion-dollar valuation.</p>
 
   <div class="cases">
 
@@ -418,6 +426,22 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
         <div class="metric"><span class="metric-val">2 Ogilvys</span><span class="metric-label">ARF Silver + Bronze</span></div>
       </div>
       <a href="/work/realtor/" class="case-link">Full case study ↗</a>
+    </div>
+
+    <div class="case">
+      <div class="case-co">Realtor.com · NAR NXT 2026</div>
+      <div class="case-header">
+        <h3 class="case-title">Taking the consumer campaign to 10,000 Realtors</h3>
+        <span class="case-tag">Events · Industry</span>
+      </div>
+      <p class="case-desc">NAR NXT is the one week the whole real estate industry is in one building. We put Reba on the General Session stage in front of a maxed-out room of 4,000, built a 50×80 booth around "Be the expert who stands out," and painted New Orleans in the same line from baggage claim to the convention center.</p>
+      <div class="case-metrics">
+        <div class="metric"><span class="metric-val">10,000</span><span class="metric-label">Real estate professionals</span></div>
+        <div class="metric"><span class="metric-val">4,000</span><span class="metric-label">Maxed-out General Session</span></div>
+        <div class="metric"><span class="metric-val">50×80</span><span class="metric-label">Booth on the expo floor</span></div>
+      </div>
+      <img class="case-photo" src="/assets/web/nar-nxt-hats.jpg" alt="Reba McEntire on stage as a packed hall of 4,000 Realtors waves white hats">
+      <a href="/work/nar-nxt/" class="case-link">Full case study ↗</a>
     </div>
 
     <div class="case">
@@ -475,19 +499,30 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 <!-- MISSION ZERO — beyond the brief -->
 <section class="mz-section">
   <div class="mz-inner">
-    <div class="mz-eyebrow">Beyond the brief</div>
-    <h2 class="mz-title">Mission Zero — every veteran deserves to know</h2>
-    <p class="mz-sub">Down payment is the #1 barrier to first-time home ownership. Veterans have a $0-down VA loan benefit that solves it — and only 3 in 10 know about it. A 9-partner coalition campaign with Realtor.com, Veterans United, Home Depot, NAR, RE/MAX, the New York Post, the Wall Street Journal, and two veteran advocacy groups. Brand health and conversion both moved — purpose work measured against the same P&amp;L logic as performance.</p>
-    <div class="mz-video">
-      <iframe
-        src="https://www.youtube.com/embed/R6OW89Dr5Ew"
-        title="Mission Zero — long-form campaign film"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="mz-eyebrow">Beyond the brief · Coalition campaigns</div>
+    <div class="mz-grid">
+      <div class="mz-col">
+        <h2 class="mz-title">Mission Zero: every veteran deserves to know</h2>
+        <p class="mz-sub">Only 3 in 10 veterans know they can buy a home with $0 down. Realtor.com built a coalition with Veterans United, Home Depot, NAR, the VFW, the Wall Street Journal and the New York Post to close that gap. The 2026 flight told it through multi-generational military families and landed on Fox &amp; Friends on launch day.</p>
+        <div class="mz-video">
+          <iframe
+            src="https://www.youtube.com/embed/R6OW89Dr5Ew"
+            title="Mission Zero, long-form campaign film"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <a href="/work/mission-zero/" class="mz-link">Full case study ↗</a>
+      </div>
+      <div class="mz-col">
+        <h2 class="mz-title">Let America Build: seventeen competitors, one housing message</h2>
+        <p class="mz-sub">The U.S. is 4 million homes short. In the six weeks before the 2026 midterms, Realtor.com led 17 real estate brands, Zillow included, to put housing supply on the local ballot. The campaign earned $5M+ in media value and 400+ earned media mentions.</p>
+        <div class="mz-video">
+          <video src="/assets/web/lab-hero-film.mp4" poster="/assets/web/poster-lab-hero-film.jpg" controls preload="none" playsinline title="Let America Build 2.0, Boston documentary"></video>
+        </div>
+        <a href="/work/let-america-build/" class="mz-link">Full case study ↗</a>
+      </div>
     </div>
-    <a href="/work/mission-zero/" class="mz-link">Full case study ↗</a>
-    <a href="/work/let-america-build/" class="mz-link" style="margin-left:2rem;">Let America Build 2.0: 17 brands, $5M+ earned media ↗</a>
   </div>
 </section>
 
