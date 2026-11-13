@@ -90,6 +90,9 @@ body{font-family:var(--sans);font-weight:400;background:var(--paper);color:var(-
 /* stat callout */
 .stat-row{display:flex;gap:3rem;flex-wrap:wrap;margin:2rem 0;padding:2rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);}
 .stat-item{display:flex;flex-direction:column;gap:4px;}
+@media(min-width:1280px){
+  .stat-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:2.5rem;row-gap:2rem;}
+}
 .stat-val{font-family:var(--serif);font-size:32px;font-weight:700;line-height:1;}
 .stat-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);}
 
@@ -163,7 +166,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   .metrics-bar{flex-wrap:wrap}
   .mb-item{flex:none;width:50%;border-bottom:0.5px solid var(--border);}
   footer{padding-left:1.5rem;padding-right:1.5rem}
-  .stat-row{gap:2rem}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem 1rem;}
 }
 
 /* ── FULL-WIDTH TEXT: match the stats and summary boxes ── */
@@ -209,7 +212,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </div>
     <div class="mb-item">
       <div class="mb-val">Effie</div>
-      <div class="mb-label">2026 Finalist x2, including David vs. Goliath</div>
+      <div class="mb-label">2026 Finalist</div>
     </div>
     <div class="mb-item">
       <div class="mb-val">2 Ogilvys</div>
@@ -553,41 +556,17 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     <div class="cs-text">
       <div class="cs-section-label">Results</div>
       <h2 class="cs-h2">What the numbers say</h2>
-      <p class="cs-p">The bet was that trust compounds differently than awareness. Awareness peaks and fades. Trust builds visit share, repeat intent, and conversion over time. The data across 18 months bears that out.</p>
-      <div class="stat-row">
-        <div class="stat-item">
-          <span class="stat-val">+20%</span>
-          <span class="stat-label">CPIV improvement</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">8</span>
-          <span class="stat-label">Consecutive quarters of YoY revenue growth</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">7+ mo</span>
-          <span class="stat-label">Brand health improvement streak</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">2</span>
-          <span class="stat-label">ARF David Ogilvy Awards, 2026 (Silver + Bronze)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">$160M</span>
-          <span class="stat-label">Q3 2026 (+5%)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">3.4×</span>
-          <span class="stat-label">Visit share vs. Homes.com (Comscore)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">&gt;50%</span>
-          <span class="stat-label">Visit share gap closed vs. Zillow in 18 months</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">+17%</span>
-          <span class="stat-label">Response lift over prior creative</span>
-        </div>
-      </div>
+<p class="cs-p">Five releases of Nearly Home. Each one beat the one before it on TV response rate. By the fifth, Realtor.com had its biggest share of the market ever. Nearly Home was a 2026 Effie finalist, and Seat at the Table won two 2026 ARF David Ogilvy Awards.</p>
+<div class="stat-row">
+  <div class="stat-item"><span class="stat-val">+24.6%</span><span class="stat-label">TV response vs. pre-Reba</span></div>
+  <div class="stat-item"><span class="stat-val">33%</span><span class="stat-label">Visit share, record (Comscore)</span></div>
+  <div class="stat-item"><span class="stat-val">40+</span><span class="stat-label">Campaigns in FY26</span></div>
+  <div class="stat-item"><span class="stat-val">250+</span><span class="stat-label">Creative assets a month</span></div>
+  <div class="stat-item"><span class="stat-val">8</span><span class="stat-label">Quarters of YoY revenue growth</span></div>
+  <div class="stat-item"><span class="stat-val">17</span><span class="stat-label">Industry partners, Let America Build</span></div>
+  <div class="stat-item"><span class="stat-val">$5M+</span><span class="stat-label">Earned media from advocacy</span></div>
+  <div class="stat-item"><span class="stat-val">+50%</span><span class="stat-label">Productivity, year 2 with AI</span></div>
+</div>
     </div>
   </section>
 
