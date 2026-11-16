@@ -8,12 +8,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Neil Golson">
 <meta property="og:title" content="Tesla · SolarCity | Neil Golson">
-<meta property="og:description" content="From the hardware store to building Tesla's first retail experience, then scaling demand at SolarCity.">
+<meta property="og:description" content="How I built SolarCity's Home Depot demand channel, ran it on unit economics, and turned Model 3 buyers into energy buyers at Tesla.">
 <meta property="og:url" content="https://neilgolson.com/work/tesla/">
 <meta property="og:image" content="https://neilgolson.com/assets/og-neil-golson-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<title>Tesla · SolarCity — Neil Golson</title>
-<meta name="description" content="From the hardware store to building Tesla's first retail experience, then scaling demand at SolarCity.">
+<title>Tesla · SolarCity · Neil Golson</title>
+<meta name="description" content="How I built SolarCity's Home Depot demand channel, ran it on unit economics, and turned Model 3 buyers into energy buyers at Tesla.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -178,6 +178,42 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 .cs-text .cs-p,.cs-text .cs-h2{max-width:none;}
 .cs-hero .cs-context{max-width:none;}
 .cs-hero .cs-title{max-width:920px;}
+
+/* ── KPI PANEL (shared with Mission Zero) ── */
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:3px;overflow:hidden;margin:2rem 0;}
+.kpi-grid.three{grid-template-columns:repeat(3,1fr);}
+.kpi-item{background:var(--warm-white);padding:2rem;}
+.kpi-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;}
+.kpi-title{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.3;margin-bottom:0.75rem;}
+.kpi-desc{font-size:13px;color:var(--mid);line-height:1.8;}
+.kpi-item.is-before .kpi-label{color:var(--light);}
+.loop-return{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);margin:-1.25rem 0 2rem;text-align:right;}
+
+/* ── FUNNEL ── */
+.funnel{display:flex;flex-direction:column;gap:0.6rem;margin:2rem 0 0.75rem;}
+.funnel-row{display:grid;grid-template-columns:200px 1fr 48px;gap:1rem;align-items:center;}
+.funnel-lbl{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);line-height:1.4;}
+.funnel-bar{height:30px;background:var(--accent);border-radius:2px;min-width:6px;}
+.funnel-val{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1;text-align:right;}
+.funnel-note{font-size:12px;color:var(--light);margin-bottom:2rem;}
+
+/* ── UNIT ECONOMICS ── */
+.math{border:0.5px solid var(--border);border-radius:3px;margin:2rem 0;overflow:hidden;}
+.math-row{display:flex;justify-content:space-between;gap:1.5rem;padding:0.85rem 1.25rem;border-bottom:0.5px solid var(--border);font-size:14px;line-height:1.5;}
+.math-row:last-child{border-bottom:none;}
+.math-row span:first-child{color:var(--mid);}
+.math-row span:last-child{font-weight:500;color:var(--ink);text-align:right;white-space:nowrap;}
+.math-row.is-key{background:var(--warm-white);}
+.math-row.is-key span:last-child{color:var(--accent);}
+
+@media(max-width:768px){
+  .kpi-grid,.kpi-grid.three{grid-template-columns:1fr;}
+  .loop-return{text-align:left;}
+  .funnel-row{grid-template-columns:1fr 40px;gap:0.35rem 0.75rem;}
+  .funnel-lbl{grid-column:1 / -1;}
+  .math-row{flex-direction:column;gap:0.15rem;}
+  .math-row span:last-child{text-align:left;white-space:normal;}
+}
 </style>
 <script data-goatcounter="https://neilgolson.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -198,25 +234,29 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
 
 <!-- HERO -->
 <div class="cs-hero">
-  <div class="cs-eyebrow">Tesla · SolarCity <span class="cs-eyebrow-tag">· High-Consideration Retail · 2016–2018</span></div>
-  <h1 class="cs-title">From the hardware store to building Tesla's first retail experience</h1>
-  <p class="cs-context">Two acts, one insight. The parallel challenge across Tesla and SolarCity: how do you position sustainable energy generation as the obvious accompaniment to home and vehicle ownership — not an upsell, not an add-on, but the logical move for anyone who wants cost-efficient, convenient energy on their own terms? At Tesla, that meant making solar and Powerwall feel like the natural next question inside a vehicle purchase. At SolarCity, it meant finding the moments — in 800 Home Depot stores, through a 1,500-person field org — when homeowners were already thinking about energy and making it easy to say yes.</p>
+  <div class="cs-eyebrow">Tesla · SolarCity <span class="cs-eyebrow-tag">· Retail Demand &amp; Conversion · 2014–2018</span></div>
+  <h1 class="cs-title">Building SolarCity's retail demand engine, then running it on the numbers</h1>
+  <p class="cs-context">I joined SolarCity in April 2014, about 16 months after its IPO. Revenue had been about $160M the year before. By 2016, when Tesla bought the company, it was $730M. My job was to find homeowners ready to buy solar at a lower cost per install than digital. Home Depot turned out to be the answer, and about half of sales came through that one channel. After the acquisition I ran the other end of the funnel at Tesla: turning a Model 3 purchase into an energy purchase.</p>
   <div class="metrics-bar">
     <div class="mb-item">
-      <div class="mb-val">30%+</div>
-      <div class="mb-label">Energy attachment on Model 3</div>
+      <div class="mb-val">~½</div>
+      <div class="mb-label">About half of sales through the Home Depot channel</div>
     </div>
     <div class="mb-item">
-      <div class="mb-val">26% → 37%</div>
-      <div class="mb-label">National solar market share</div>
+      <div class="mb-val">¼ → ⅓+</div>
+      <div class="mb-label">National residential share, about a quarter to more than a third</div>
     </div>
     <div class="mb-item">
-      <div class="mb-val">3×</div>
-      <div class="mb-label">Install volume growth</div>
+      <div class="mb-val">⅓ lower</div>
+      <div class="mb-label">Cost per install than digital (~$1,000 vs. ~$1,500)</div>
     </div>
     <div class="mb-item">
       <div class="mb-val">800</div>
-      <div class="mb-label">Home Depot locations</div>
+      <div class="mb-label">Home Depot stores</div>
+    </div>
+    <div class="mb-item">
+      <div class="mb-val">30%+</div>
+      <div class="mb-label">Energy attach on Model 3</div>
     </div>
   </div>
 </div>
@@ -228,15 +268,15 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <div class="cs-tldr">
     <div class="cs-tldr-item">
       <div class="cs-tldr-label">Role</div>
-      <div class="cs-tldr-val">Sales &amp; Energy Operations ·<br>Tesla ·<br>Field Marketing ·<br>SolarCity ·<br>2016–2018</div>
+      <div class="cs-tldr-val">SolarCity retail demand ·<br>Tesla energy retail and Model 3 launch ·<br>2014–2018</div>
     </div>
     <div class="cs-tldr-item">
       <div class="cs-tldr-label">Built</div>
-      <div class="cs-tldr-val">Integrated retail experience (vehicle + energy) ·<br>1,500-person field org ·<br>National retail partnerships</div>
+      <div class="cs-tldr-val">Home Depot demand channel, 800 stores ·<br>1,500-person field team ·<br>Model 3 energy integration</div>
     </div>
     <div class="cs-tldr-item">
       <div class="cs-tldr-label">Produced</div>
-      <div class="cs-tldr-val">30%+ energy attachment on Model 3 ·<br>26%→37% national solar market share ·<br>3× install volume</div>
+      <div class="cs-tldr-val">About half of sales through Home Depot ·<br>~⅓ lower cost per install than digital ·<br>30%+ energy attach on Model 3</div>
     </div>
   </div>
 
@@ -244,18 +284,225 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
   <section class="cs-section">
     <div class="cs-text">
       <div class="cs-section-label">The insight</div>
-      <h2 class="cs-h2">Purchase decisions don't happen in isolation — they happen in moments</h2>
-      <p class="cs-p">The Model 3 was Tesla's mass market moment — a $35–45K EV launching into stores that already had the $100K+ Model S and X on the floor. The strategic opportunity was to integrate solar and home charging into the Model 3 purchase at launch, not as an add-on but as the financial argument that completed the decision. In California, a customer who added a solar system and home charging to their new Model 3 could bring the net effective cost of ownership materially closer to Elon's public target of $30K — through energy savings, credits, and the elimination of a gas bill. The math made the bundle feel inevitable.</p>
+      <h2 class="cs-h2">Purchase decisions happen in moments</h2>
+      <p class="cs-p">A homeowner in the plumbing aisle pricing a water heater is already thinking about energy bills. A Model 3 buyer who just put down a deposit is already running ten-year numbers. In both moments, solar is the next logical question.</p>
       <div class="pull-quote">
-        <p>"The best upsell feels like the obvious next question, not a new conversation."</p>
+        <p>"The best pitch answers the question the buyer is already asking."</p>
       </div>
-      <p class="cs-p">The retail design problem was: how do you make that moment feel seamless rather than like a sales pitch on top of a sales pitch? A customer who just committed to a Model 3 is emotionally committed but hasn't signed — that's the window. They're already thinking long-term, already running numbers. Solar and home charging fit that mental state because they extend the same logic: lower cost, greater independence, a decision that compounds in your favor over time.</p>
-      <p class="cs-p">The answer was integration — physical merchandising, digital tools, and advisor training that made energy a natural part of the vehicle conversation, not a separate department with a separate pitch.</p>
+      <p class="cs-p">The job was to be standing there when that question came up, and to know what it cost us to be there. Find the moment, put a rep in it, measure the cost of every install that came out of it.</p>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/HomeDepot.TeslaEndcap.jpeg"
+              data-title="Tesla Solar + Powerwall endcap in Home Depot">
+        <div class="reel-thumb">
+          <img src="/assets/HomeDepot.TeslaEndcap.jpeg" alt="Tesla endcap inside Home Depot">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Home Depot</div>
+          <div class="reel-title">Solar endcap in the aisle</div>
+        </div>
+      </button>
+    </aside>
+  </section>
+
+  <!-- 2 · ACT ONE: THE DEMAND ENGINE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act one · The demand engine</div>
+      <h2 class="cs-h2">Go where homeowners are already spending on their homes</h2>
+      <p class="cs-p">Door-to-door and digital were expensive ways to find buyers. Home Depot had something neither one had: homeowners standing in the store, already spending money on their houses.</p>
+      <p class="cs-p">Big box worked because of context. A rep can ask, "What are you working on today?" and get a real answer. Then they can walk the customer to what they need and pitch solar in a way that ties to that project. I'd managed a Home Depot store earlier in my career, so I knew how much that first question opens up.</p>
+      <p class="cs-p">We built the channel to 800 Home Depot stores, with Best Buy and other partners alongside, and staffed it with a 1,500-person field team.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-val">800</span>
+          <span class="stat-label">Home Depot stores</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">1,500</span>
+          <span class="stat-label">Field team</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">3×</span>
+          <span class="stat-label">Install volume growth</span>
+        </div>
+      </div>
+    </div>
+    <aside class="cs-rail">
+      <button class="reel-tile is-image" type="button" data-type="image"
+              data-src="/assets/SolarCity.HomeDepot.Social.png"
+              data-title="SolarCity field specialist in a Home Depot store">
+        <div class="reel-thumb">
+          <img src="/assets/SolarCity.HomeDepot.Social.png" alt="SolarCity field rep at Home Depot store">
+          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
+        </div>
+        <div class="reel-meta">
+          <div class="reel-co">Field</div>
+          <div class="reel-title">SolarCity specialist in-store</div>
+        </div>
+      </button>
+      <div class="press-list-label">Press</div>
+      <a class="press-link" href="https://www.prnewswire.com/news-releases/solarcity-awarded-home-depots-environmental-partner-of-the-year-award-300160279.html" target="_blank">
+        <div class="press-outlet">PR Newswire · Oct 2015</div>
+        <div class="press-hed">SolarCity awarded Home Depot's Environmental Partner of the Year</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 3 · THE FUNNEL AND THE ECONOMICS -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act one · The funnel and the math</div>
+      <h2 class="cs-h2">About 20 rep-hours for every installed system</h2>
+      <p class="cs-p">The goal was one opportunity per rep-hour. Reps averaged about half that. About 20% of opportunities closed, and about half of those closes made it to install. The rest fell out to operational issues and cold feet.</p>
+      <div class="funnel" role="img" aria-label="Per installed system: about 20 rep-hours, 10 opportunities, 2 closes, 1 install">
+        <div class="funnel-row">
+          <span class="funnel-lbl">Rep-hours in store</span>
+          <div class="funnel-bar" style="width:100%"></div>
+          <span class="funnel-val">20</span>
+        </div>
+        <div class="funnel-row">
+          <span class="funnel-lbl">Opportunities (~0.5 an hour)</span>
+          <div class="funnel-bar" style="width:50%"></div>
+          <span class="funnel-val">10</span>
+        </div>
+        <div class="funnel-row">
+          <span class="funnel-lbl">Closed (~20%)</span>
+          <div class="funnel-bar" style="width:10%"></div>
+          <span class="funnel-val">2</span>
+        </div>
+        <div class="funnel-row">
+          <span class="funnel-lbl">Installed (~50% of closes)</span>
+          <div class="funnel-bar" style="width:5%"></div>
+          <span class="funnel-val">1</span>
+        </div>
+      </div>
+      <p class="funnel-note">Per installed system. Approximate averages for Home Depot reps.</p>
+      <p class="cs-p">Reps earned about $40K base and about $70K at target. That put rep-level CAC at about $700 to $750 per installed system. Add managers and Home Depot's share and the fully loaded number was about $1,000. Digital ran about $1,500.</p>
+      <div class="math">
+        <div class="math-row"><span>Rep comp</span><span>~$40K base, ~$70K OTE</span></div>
+        <div class="math-row"><span>Rep-level CAC</span><span>~$700–750 per install</span></div>
+        <div class="math-row"><span>Fully loaded CAC (managers + Home Depot's share)</span><span>~$1,000</span></div>
+        <div class="math-row"><span>Digital CAC</span><span>~$1,500</span></div>
+        <div class="math-row is-key"><span>Retail vs. digital</span><span>About a third less per install</span></div>
+        <div class="math-row"><span>Average system</span><span>~$30,000</span></div>
+        <div class="math-row is-key"><span>Fully loaded CAC as share of sale</span><span>~3.3%</span></div>
+        <div class="math-row"><span>Field payroll I ran</span><span>~$100M a year</span></div>
+      </div>
+      <p class="cs-p">At about $100M a year in field payroll, small changes in rep productivity moved real money. So we kept changing things.</p>
+    </div>
+  </section>
+
+  <!-- 4 · THE OPTIMIZATION LOOP -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act one · Measure, change, verify</div>
+      <h2 class="cs-h2">Fewer hours, more installs</h2>
+      <p class="cs-p">In the bottom 10% of stores, we cut staffing to Saturday and Sunday only. Opportunity rates rose to quota, one an hour. Close rates climbed from single digits to the 20% national average. We stopped paying reps to stand in empty aisles on weekdays.</p>
+      <div class="kpi-grid">
+        <div class="kpi-item is-before">
+          <div class="kpi-label">Before · Bottom 10% of stores</div>
+          <div class="kpi-title">Staffed through the week</div>
+          <div class="kpi-desc">Opportunities below quota. Close rates in the single digits.</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">After · Same stores</div>
+          <div class="kpi-title">Saturday and Sunday only</div>
+          <div class="kpi-desc">Opportunities at quota, one an hour. Close rates up to the 20% national average.</div>
+        </div>
+      </div>
+      <p class="cs-p">That was one turn of a loop we ran constantly. We measured each store, changed something, and checked that the change happened before we trusted the numbers.</p>
+      <div class="kpi-grid three">
+        <div class="kpi-item">
+          <div class="kpi-label">01 · Measure</div>
+          <div class="kpi-title">Read every store</div>
+          <div class="kpi-desc">Opportunities per rep-hour, close rate and install rate, store by store.</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">02 · Change</div>
+          <div class="kpi-title">Pull a lever</div>
+          <div class="kpi-desc">Hours and days, reps per store, the store list, the table, the script.</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">03 · Verify</div>
+          <div class="kpi-title">Secret shop it</div>
+          <div class="kpi-desc">Confirm reps actually ran the change before reading the result.</div>
+        </div>
+      </div>
+      <p class="loop-return">↻ Back to measure</p>
+      <p class="cs-p">The levers were plain. We moved the hours and days we staffed. We changed how many reps worked each store. We added stores that performed and dropped the ones that didn't. We got Home Depot's own store associates to send customers our way. We redesigned the table and the kiosk more than once.</p>
+      <p class="cs-p">We rewrote the script over and over. A new script only counts if reps say it, so we secret shopped stores to confirm they did. Without that step, a bad number could mean a bad script or a script nobody used, and we'd have no way to tell which.</p>
+    </div>
+  </section>
+
+  <!-- 5 · CHANNELS CUT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act one · Channels I cut</div>
+      <h2 class="cs-h2">Two channels that didn't pay back</h2>
+      <p class="cs-p">The same math that scaled Home Depot shut other channels down. Two didn't survive the numbers.</p>
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-label">Cut · Mall kiosks</div>
+          <div class="kpi-title">Too general</div>
+          <div class="kpi-desc">Mall shoppers weren't in the middle of a home project. Reps had no project context to work with and no natural way to start the conversation, which is the whole advantage of a big box store.</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-label">Cut · AT&amp;T / DirecTV</div>
+          <div class="kpi-title">The partner's reps didn't engage</div>
+          <div class="kpi-desc">Their reps did their own job and wanted to get out. A few figured out how to sell solar alongside it. Not enough to scale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · THE PARTNER SIDE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act one · The partner side</div>
+      <h2 class="cs-h2">1,500 people inside someone else's stores</h2>
+      <p class="cs-p">Every rep worked for two audiences at once. Home Depot's shoppers came in for their own projects, and our reps had to help with those first. Home Depot's leadership and store managers had to keep seeing us as good for their shoppers and their stores, or we'd lose the floor space.</p>
+      <p class="cs-p">In 2015 Home Depot named SolarCity its Environmental Partner of the Year.</p>
+      <p class="cs-p">The channel scaled under SolarCity and reached 800 stores under Tesla in 2018.</p>
+    </div>
+    <aside class="cs-rail">
+      <div class="press-list-label">Press</div>
+      <a class="press-link" href="https://electrek.co/2018/02/01/tesla-solar-sale-home-depots/" target="_blank">
+        <div class="press-outlet">Electrek · Feb 2018</div>
+        <div class="press-hed">Tesla's solar division is expanding to 800 Home Depot stores</div>
+      </a>
+      <a class="press-link" href="https://electrek.co/2017/06/25/tesla-solar-branded-solar-panels-store/" target="_blank">
+        <div class="press-outlet">Electrek · Jun 2017</div>
+        <div class="press-hed">Tesla solar branded panels in-store: the retail expansion begins</div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- 7 · ACT TWO: THE CONVERSION LAYER -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <div class="cs-section-label">Act two · The conversion layer</div>
+      <h2 class="cs-h2">Turning a car purchase into an energy purchase</h2>
+      <p class="cs-p">The demand engine found buyers. At Tesla, the job was converting a different buyer: someone already in a store for a car. Vehicle and energy had been running as parallel tracks, with different spaces, different advisors and different conversations. A customer could leave with a Model 3 having never heard about Powerwall, even if they would have bought it.</p>
+      <p class="cs-p">We merged the tracks for the Model 3 launch. The Solar + Powerwall energy wall went onto the sales floor. Advisors could pull up a household energy profile, linked in the CRM, in the middle of a vehicle conversation. Test drives were paired with energy consults, and come-to-you drives included a home walkthrough. Online booking fed one CRM that treated the car and the house as one household decision.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-val">30%+</span>
+          <span class="stat-label">Model 3 buyers who added energy</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">50–100%</span>
+          <span class="stat-label">Sales productivity lift vs. best non-Tesla retail locations</span>
+        </div>
+      </div>
+      <p class="cs-p">Solar needs a separate install, separate financing and a separate decision. More than 30% of Model 3 buyers added it anyway, because the conversation was already happening.</p>
     </div>
     <aside class="cs-rail">
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/2017-07-16_19-55-24_861.jpeg"
-              data-title="Tesla Solar in-store retail display — the integrated energy wall">
+              data-title="Tesla Solar in-store retail display: the integrated energy wall">
         <div class="reel-thumb">
           <img src="/assets/2017-07-16_19-55-24_861.jpeg" alt="Tesla Solar retail display inside Tesla store">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -265,29 +512,6 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
           <div class="reel-title">Integrated energy wall</div>
         </div>
       </button>
-    </aside>
-  </section>
-
-  <!-- 2 · TESLA ACT -->
-  <section class="cs-section">
-    <div class="cs-text">
-      <div class="cs-section-label">Act one · Experience design</div>
-      <h2 class="cs-h2">Designing the environment where a $100K decision felt inevitable</h2>
-      <p class="cs-p">The best retail environments don't sell — they make the decision feel like it was yours all along. It's the same principle whether you're in a 500-square-foot Tesla store or a 100,000-square-foot home improvement warehouse: a well-designed environment doesn't make it easier to buy, it makes it easier to choose. I joined Tesla at the launch of the Model X. The in-store experience for vehicles and the solar/energy product line were operating as parallel tracks — different spaces, different advisors, different conversations. The unified pitch took shape over the Model X period and was fully realized for the Model 3 launch. A customer could leave with a Model 3 having never heard about Powerwall, even if they would have bought it. The product was there. The environment wasn't doing the work.</p>
-      <p class="cs-p">The redesign was an experience problem, not a sales problem. Physical merchandising — the Solar + Powerwall wall — integrated with digital tools that let advisors pull up a customer's home energy profile mid-vehicle conversation. Test drives were paired with energy consultations. Come-to-you drives included a home energy walkthrough. Online booking fed into a single CRM that treated vehicle and energy as one household decision. When the environment is right, the product sells itself into a conversation that's already happening.</p>
-      <div class="stat-row">
-        <div class="stat-item">
-          <span class="stat-val">30%+</span>
-          <span class="stat-label">Energy / solar attachment rate on Model 3 purchases</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">50–100%</span>
-          <span class="stat-label">Sales productivity lift vs. best non-Tesla retail locations</span>
-        </div>
-      </div>
-      <p class="cs-p">A 30%+ attachment rate on a vehicle purchase for a product that requires a separate installation, separate financing, and a separate decision process is not a sales result. It's a design result. The experience created the conditions for that decision to happen naturally.</p>
-    </div>
-    <aside class="cs-rail">
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/Tesla.Retail.EnergyWall.ModelX.jpeg"
               data-title="Model X on the floor, energy wall behind">
@@ -302,7 +526,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </button>
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/Tesla.Retail.EnergyWall.ModelS.jpeg"
-              data-title="Tesla Solar + Powerwall energy wall — the integrated retail build-out">
+              data-title="Tesla Solar + Powerwall energy wall">
         <div class="reel-thumb">
           <img src="/assets/Tesla.Retail.EnergyWall.ModelS.jpeg" alt="Tesla Solar and Powerwall in-store energy wall">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -314,7 +538,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </button>
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/Tesla Solar Hawaii Opening.jpeg"
-              data-title="Tesla Solar Hawaii — store grand opening">
+              data-title="Tesla Solar Hawaii store grand opening">
         <div class="reel-thumb">
           <img src="/assets/Tesla Solar Hawaii Opening.jpeg" alt="Tesla Solar Hawaii store grand opening">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -326,7 +550,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </button>
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/Tesla.Retail.Team.jpeg"
-              data-title="Tesla Solar retail team — the energy specialists">
+              data-title="Tesla Solar retail team, the energy specialists">
         <div class="reel-thumb">
           <img src="/assets/Tesla.Retail.Team.jpeg" alt="Tesla Solar retail team in store">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -339,23 +563,23 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       <div class="press-list-label">Press</div>
       <a class="press-link" href="https://www.businessinsider.com/tesla-launching-retail-expansion-2017-5" target="_blank">
         <div class="press-outlet">Business Insider · May 2017</div>
-        <div class="press-hed">Tesla is about to significantly expand its retail presence — and solar is the reason</div>
+        <div class="press-hed">Tesla is about to significantly expand its retail presence, and solar is the reason</div>
       </a>
     </aside>
   </section>
 
-  <!-- 3 · SOLAR ROOF -->
+  <!-- 8 · SOLAR ROOF -->
   <section class="cs-section">
     <div class="cs-text">
-      <div class="cs-section-label">Act one, cont. · Product launch</div>
-      <h2 class="cs-h2">Solar Roof: managing the commercialization of a product that didn't exist yet</h2>
-      <p class="cs-p">In October 2016, Elon Musk unveiled the Tesla Solar Roof on a residential street in Los Angeles — a row of classic American homes, each with a different tile style, all generating power. Not a panel bolted onto an existing roof, but a roofing material that generates electricity. Glass tiles, four styles, an infinite warranty on power generation. It was the most ambitious product claim Tesla had made since the original Roadster.</p>
-      <p class="cs-p">I managed early VIP customer relationships and the commercialization process — the work of translating a highly public demonstration into an orderable, installable, warrantied product. Early VIP customers put deposits down on something that didn't yet exist in shippable form. Holding that relationship through a long development timeline required trust-building in both directions: keeping customers bought in while feeding real demand signals and customer feedback back into the product and installation pipeline. The Solar Roof is now installed on thousands of homes globally.</p>
+      <div class="cs-section-label">Act two, cont. · Product launch</div>
+      <h2 class="cs-h2">Solar Roof: commercializing a product that didn't exist yet</h2>
+      <p class="cs-p">In October 2016, Elon Musk unveiled the Tesla Solar Roof on a residential street in Los Angeles: glass tiles that work as the roof and generate power.</p>
+      <p class="cs-p">I managed early VIP customer relationships and the commercialization process, turning a public demo into an orderable, installable, warrantied product. Those customers put down deposits on something that didn't ship yet. My job was keeping them bought in through a long development timeline while feeding their demand signals and feedback back into the product and install pipeline.</p>
     </div>
     <aside class="cs-rail">
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/2017-05-13_17-11-05_000.png"
-              data-title="Tesla Solar Roof — product launch page">
+              data-title="Tesla Solar Roof product launch page">
         <div class="reel-thumb">
           <img src="/assets/2017-05-13_17-11-05_000.png" alt="Tesla Solar Roof product page">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -367,9 +591,9 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </button>
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/2018-10-08_11-12-00_000.png"
-              data-title="Tesla Power Everything — Solar Roof homepage">
+              data-title="Tesla Power Everything: Solar Roof homepage">
         <div class="reel-thumb">
-          <img src="/assets/2018-10-08_11-12-00_000.png" alt="Tesla Power Everything — Solar Roof homepage">
+          <img src="/assets/2018-10-08_11-12-00_000.png" alt="Tesla Power Everything Solar Roof homepage">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
         </div>
         <div class="reel-meta">
@@ -379,7 +603,7 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
       </button>
       <button class="reel-tile is-image" type="button" data-type="image"
               data-src="/assets/TeslaEnergyInstallers.jpeg"
-              data-title="Tesla Solar installation crew — translating VIP deposits into installed systems">
+              data-title="Tesla Solar installation crew">
         <div class="reel-thumb">
           <img src="/assets/TeslaEnergyInstallers.jpeg" alt="Tesla Solar installation crew on rooftop">
           <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
@@ -401,81 +625,13 @@ footer{padding:1.5rem 4rem;border-top:0.5px solid var(--border);display:flex;jus
     </aside>
   </section>
 
-  <!-- 4 · SOLARCITY ACT -->
-  <section class="cs-section">
-    <div class="cs-text">
-      <div class="cs-section-label">Act two · Retail channel partnerships</div>
-      <h2 class="cs-h2">Building a retail partnership strategy from the inside out</h2>
-      <p class="cs-p">The Home Depot insight started with knowing how the store works from the inside. I managed a Home Depot location earlier in my career. The customer buying a water heater in the plumbing aisle isn't just price-comparing appliances — they're thinking about energy costs, about their home as a system, about what the next ten years looks like. That customer, at that moment, is the right conversation for solar. You don't manufacture that moment. You find it and show up where it already exists.</p>
-      <p class="cs-p">That understanding shaped the retail partnership strategy at SolarCity. Home Depot was the anchor — 800 stores, branded endcap placement in the lumber and garden departments, a trained energy specialist at each location. But every partner in the portfolio was chosen for the same reason: ownership of a specific customer moment. Best Buy put us in front of connected-home buyers already evaluating energy efficiency. BMW gave us access to luxury buyers who had already signaled they'd pay a premium for sustainability. AT&amp;T and DIRECTV placed us with customers comfortable with long-term contracts and recurring service relationships — the same financial structure as a solar lease.</p>
-      <p class="cs-p">I negotiated and operationalized all five retail partnerships and built the 1,500-person field organization that activated them — designing the quality tracking and conversion system that kept CAC in check as the channel scaled. The same lead generation discipline that made the retail partnerships work also applied to door-to-door and events, which ran in parallel.</p>
-      <div class="stat-row">
-        <div class="stat-item">
-          <span class="stat-val">26% → 37%</span>
-          <span class="stat-label">National solar market share</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">3×</span>
-          <span class="stat-label">Install volume</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">800</span>
-          <span class="stat-label">Home Depot store presence</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">1,500</span>
-          <span class="stat-label">Field marketing team</span>
-        </div>
-      </div>
-    </div>
-    <aside class="cs-rail">
-      <button class="reel-tile is-image" type="button" data-type="image"
-              data-src="/assets/HomeDepot.TeslaEndcap.jpeg"
-              data-title="Tesla Solar + Powerwall endcap in Home Depot — 800-store rollout">
-        <div class="reel-thumb">
-          <img src="/assets/HomeDepot.TeslaEndcap.jpeg" alt="Tesla endcap inside Home Depot">
-          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        </div>
-        <div class="reel-meta">
-          <div class="reel-co">Home Depot</div>
-          <div class="reel-title">Tesla Solar endcap — 800 stores</div>
-        </div>
-      </button>
-      <button class="reel-tile is-image" type="button" data-type="image"
-              data-src="/assets/SolarCity.HomeDepot.Social.png"
-              data-title="SolarCity field specialist in-store — 1,500-person org in action">
-        <div class="reel-thumb">
-          <img src="/assets/SolarCity.HomeDepot.Social.png" alt="SolarCity field rep at Home Depot store">
-          <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        </div>
-        <div class="reel-meta">
-          <div class="reel-co">Field</div>
-          <div class="reel-title">SolarCity specialist in-store</div>
-        </div>
-      </button>
-      <div class="press-list-label">Press</div>
-      <a class="press-link" href="https://www.prnewswire.com/news-releases/solarcity-awarded-home-depots-environmental-partner-of-the-year-award-300160279.html" target="_blank">
-        <div class="press-outlet">PR Newswire · Oct 2015</div>
-        <div class="press-hed">SolarCity awarded Home Depot's Environmental Partner of the Year</div>
-      </a>
-      <a class="press-link" href="https://electrek.co/2018/02/01/tesla-solar-sale-home-depots/" target="_blank">
-        <div class="press-outlet">Electrek · Feb 2018</div>
-        <div class="press-hed">Tesla's solar division is expanding to 800 Home Depot stores</div>
-      </a>
-      <a class="press-link" href="https://electrek.co/2017/06/25/tesla-solar-branded-solar-panels-store/" target="_blank">
-        <div class="press-outlet">Electrek · Jun 2017</div>
-        <div class="press-hed">Tesla solar branded panels in-store — the retail expansion begins</div>
-      </a>
-    </aside>
-  </section>
-
-  <!-- 5 · THE BRIDGE -->
+  <!-- 9 · THE BRIDGE -->
   <section class="cs-section">
     <div class="cs-text">
       <div class="cs-section-label">What came next</div>
       <h2 class="cs-h2">The through-line from Tesla to what followed</h2>
-      <p class="cs-p">The Tesla and SolarCity chapters taught me something that transferred directly to what came next. The parallels are hard to miss: a category-defining company, a product most people hadn't bought before, a brand that needed to earn credibility fast in a market that didn't have a brand leader yet. FlashParking was all of those things — just in B2B / B2G parking technology instead of consumer energy.</p>
-      <p class="cs-p">At Tesla I learned that the retail experience has to do the trust work advertising can't. At SolarCity I learned how to build a field organization that could scale that trust across hundreds of locations without losing conversion quality. At FlashParking, both of those capabilities — physical presence, field-level credibility, brand as the thing that gets you on the shortlist before the RFP — applied directly. A parking technology company with no brand, no category, and less than 1% market share went to 33% and a $1.1B valuation. The toolkit was the same. The category was different.</p>
+      <p class="cs-p">The Tesla and SolarCity chapters taught me something that transferred directly to what came next. The parallels are hard to miss: a category-defining company, a product most people hadn't bought before, a brand that needed to earn credibility fast in a market that didn't have a brand leader yet. FlashParking was all of those things, just in B2B / B2G parking technology instead of consumer energy.</p>
+      <p class="cs-p">At Tesla I learned that the retail experience has to do the trust work advertising can't. At SolarCity I learned how to build a field organization that could scale that trust across hundreds of locations without losing conversion quality. At FlashParking, both of those capabilities (physical presence, field-level credibility, brand as the thing that gets you on the shortlist before the RFP) applied directly. A parking technology company with no brand, no category, and less than 1% market share went to 33% and a $1.1B valuation. The toolkit was the same. The category was different.</p>
       <div class="bridge">
         <div class="bridge-label">The next chapter</div>
         <div class="bridge-title">From Tesla to Parking: An Executive's Bold Move</div>
