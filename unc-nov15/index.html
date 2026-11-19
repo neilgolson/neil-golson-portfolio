@@ -996,7 +996,7 @@ window.__runDraws = function(){ draws.forEach(function(d){ document.querySelecto
 .uw a:hover { text-decoration-color:currentColor; }
 .uw-svg a circle { cursor:pointer; }
 .uw-pt { border-collapse:separate; border-spacing:4px; width:100%; min-width:540px; font-variant-numeric:tabular-nums; }
-.uw-pt th { font-size:var(--cds-font-size-caption); color:var(--color-fg-muted); font-weight:var(--cds-font-weight-medium); text-align:center; padding:2px 4px; }
+.uw-pt th { font-size:var(--cds-font-size-caption); color:var(--color-fg-muted); font-weight:var(--cds-font-weight-medium); text-align:center; padding:2px 4px;  white-space:nowrap; }
 .uw-pt th.game { color:var(--color-fg); font-size:var(--cds-font-size-body); border-bottom:1px solid var(--color-border-line); padding-bottom:6px; }
 .uw-pt th.voice { text-align:left; white-space:nowrap; color:var(--color-fg); }
 .uw-pt td { border-radius:6px; text-align:center; padding:8px 4px 7px; color:var(--color-fg); }
@@ -1319,9 +1319,11 @@ node.textContent = r ? r.share_label : '—';
 dash.draw('phase-mini', (node) => {
 const d = dash.data('sov_phase_share');
 if (d.status !== 'ok' || !Array.isArray(d.data)) { node.replaceChildren(UW.el('div', 'uw-fail', 'Failed to load')); return; }
-const games = [['Georgia (Fri)', 'Georgia, Friday', 'Georgia'], ['Louisville (Sat)', 'Louisville, Saturday', 'Louisville']];
+const allGames = [['Georgia (Fri)', 'Georgia, Friday', 'Georgia'], ['Louisville (Sat)', 'Louisville, Saturday', 'Louisville']];
 const phases = ['Pregame', 'In game', 'Postgame'];
 const find = (g, p, v) => d.data.find((r) => r.game === g && r.phase === p && r.voice === v && r.metric === 'likes');
+const cells = [];
+const build = (games) => {
 const t = UW.el('table', 'uw-pt');
 const h1 = UW.el('tr'); h1.appendChild(UW.el('th'));
 games.forEach(([g, title], gi) => { if (gi) h1.appendChild(UW.el('th', 'gap')); const th = UW.el('th', 'game', title); th.colSpan = 3; h1.appendChild(th); });
@@ -1329,7 +1331,6 @@ const h2 = UW.el('tr'); h2.appendChild(UW.el('th'));
 games.forEach((g, gi) => { if (gi) h2.appendChild(UW.el('th', 'gap')); phases.forEach((p) => h2.appendChild(UW.el('th', '', p))); });
 const thead = UW.el('thead'); thead.append(h1, h2); t.appendChild(thead);
 const tb = UW.el('tbody');
-const cells = [];
 [['UNC official', 'UNC', 'var(--c-unc)'], ['Opponent official', 'Opponent', 'var(--c-opp)'], ['Media and fans', 'Media and fans', 'var(--c-media)']].forEach(([v, lab, c]) => {
 const tr = UW.el('tr');
 const th = UW.el('th', 'voice');
@@ -1350,7 +1351,16 @@ tr.appendChild(td);
 tb.appendChild(tr);
 });
 t.appendChild(tb);
-node.replaceChildren(t);
+return t;
+};
+const narrow = (node.clientWidth || window.innerWidth) < 600;
+if (narrow) {
+const tables = allGames.map((g) => { const t = build([g]); t.style.minWidth = '0'; return t; });
+tables[1].style.marginTop = '14px';
+node.replaceChildren(...tables);
+} else {
+node.replaceChildren(build(allGames));
+}
 const tp = UW.tip(node);
 cells.forEach(([td, lines]) => { td.addEventListener('pointermove', (e) => tp.show(lines, e)); td.addEventListener('pointerleave', () => tp.hide()); });
 });
